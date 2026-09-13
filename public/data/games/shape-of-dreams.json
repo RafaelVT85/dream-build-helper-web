@@ -327,6 +327,169 @@
             }
           ],
           "notes": "Build hibrida fogo/gelo com 5 Memories — usa a identidade fixa Pólvora da Salamandra (crítico a cada 4º ataque que explode em área). Mistura sustain (Fé Divina, Voracidade) com controle (Passo Atrás, Escudo de Gelo)."
+        },
+        {
+          "id": "lacerta-arihsd-incendiary-quickdraw",
+          "name": "Munição + Tiro Rápido — by arihsd_",
+          "tag": "4ª mais vista",
+          "likes": 10,
+          "views": 5051,
+          "season": "Temporada 1",
+          "date": "2025-09-17",
+          "memories": [
+            {
+              "name": "Munição Incendiária",
+              "key": "incendiary-rounds",
+              "type": "fire",
+              "effect": "Os próximos 4 ataques básicos ficam 60% mais rápidos e causam 100% de dano de Fogo adicional, aumentando brevemente a velocidade de movimento.",
+              "essences": [
+                {
+                  "name": "Essência da Presa",
+                  "key": "essence-of-fangs",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga reduz 0,7s e lança 2 Presas em inimigos próximos.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Tiro Rápido",
+              "key": "quick-draw",
+              "type": "physical",
+              "effect": "Dispara rapidamente 3 tiros perfurantes que causam 120% de dano a até 3 inimigos.",
+              "essences": []
+            }
+          ],
+          "notes": "Build simples: sobe Presa e Toque Duplo (identidade) pra maximizar a primeira skill o quanto antes. O resto é só bônus."
+        },
+        {
+          "id": "lacerta-ionz-full-hybrid",
+          "name": "Híbrido Completo (5 Memories) — by ioNz",
+          "tag": "5ª mais vista",
+          "likes": 6,
+          "views": 1596,
+          "season": "Temporada 1",
+          "date": "2026-01-08",
+          "memories": [
+            {
+              "name": "Munição Incendiária",
+              "key": "incendiary-rounds",
+              "type": "fire",
+              "effect": "Os próximos 4 ataques básicos ficam 60% mais rápidos e causam 100% de dano de Fogo adicional.",
+              "essences": [
+                {
+                  "name": "Essência da Presa",
+                  "key": "essence-of-fangs",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga reduz 0,7s e lança 2 Presas em inimigos próximos.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Cauda de Brasa",
+              "key": "embertail",
+              "type": "fire",
+              "effect": "Seus ataques ricocheteiam causando 100% de dano de Fogo a um inimigo próximo. A cada inimigo em chamas próximo, o dano/cura aumenta 8% e o tempo de recarga reduz 8%.",
+              "essences": [
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Queimadura de Gelo",
+              "key": "frostbite",
+              "type": "ice",
+              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos: o primeiro causa 50% de dano de Frio adicional e concede um Escudo de 110%; o segundo causa 180% de dano de Frio adicional.",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Núcleo Glacial",
+              "key": "glacial-core",
+              "type": "ice",
+              "effect": "A cada 5s, causar dano com esta Memory recupera 3,6% da sua vida máxima (100% a mais se for dano de Frio). 272% de toda vida recuperada vira dano de Frio, disparando estilhaços de gelo.",
+              "essences": [
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s. Se causar dano de Frio, o efeito aumenta 80%.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Fio Umbral",
+              "key": "umbral-edge",
+              "type": "dark",
+              "effect": "Por 7s, imbui sua arma com o poder das Trevas, aumentando a chance de crítico em 20% e causando 52% de dano das Trevas adicional ao atacar.",
+              "essences": [
+                {
+                  "name": "Essência do Céu Noturno",
+                  "key": "essence-of-the-starry-sky",
+                  "type": "dark",
+                  "effect": "Cada vez que esta Memory acerta um inimigo, sua velocidade de ataque aumenta 10% por 3s (até 20%, ou 40% se causar dano das Trevas).",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Umbra",
+                  "key": "essence-of-umbra",
+                  "type": "dark",
+                  "effect": "O dano desta Memory aumenta com 42% da sua chance de crítico. Se for dano das Trevas, recupera 6% do dano causado como vida."
+                },
+                {
+                  "name": "Essência do Crepúsculo",
+                  "key": "essence-of-twilight",
+                  "type": "dark",
+                  "effect": "Seus ataques básicos viram dano das Trevas. Ao acertar um inimigo com 3+ stacks de Trevas, consome tudo pra causar dano extra e curar por stack.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Tempestade de Flechas",
+              "key": "arrow-storm",
+              "type": "physical",
+              "effect": "Por 6s, aumenta a velocidade de ataque em 15% e a de movimento em 10%. Cada ataque dispara 3 flechas.",
+              "essences": [
+                {
+                  "name": "Essência de Ricochete",
+                  "key": "essence-of-ricochet",
+                  "type": "neutral",
+                  "effect": "O dano ou cura desta Memory tem 50% de chance de ricochetear pra outro alvo próximo, causando/curando 90% do valor original.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Choque",
+                  "key": "essence-of-shock",
+                  "type": "light",
+                  "effect": "A cada 4º ataque básico fica fortalecido, soltando um raio que salta entre inimigos, causando 40% de dano de Luz até 2 vezes.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Carvão",
+                  "key": "essence-of-charcoal",
+                  "type": "fire",
+                  "effect": "Ao acertar um inimigo, dispara um estilhaço de carvão causando 60% de dano (100% de Fogo se já estiver queimando).",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ],
+          "notes": "Sobe Presa e Toque Duplo pra maximizar a primeira skill o quanto antes. Queimadura de Gelo e Ímpeto dão boa sobrevivência. Pode trocar Febre por Cauda de Brasa se não achar; Tempestade de Flechas pode virar qualquer dash de sua preferência ou Proteção em Massa pra mais sobrevivência."
         }
       ],
       "constellation": [
@@ -3812,6 +3975,368 @@
               "effect": "Dispara 3 mísseis da alma contra inimigos próximos, cada um explodindo com dano de Luz e reduzindo a velocidade de movimento dos inimigos."
             }
           ]
+        },
+        {
+          "id": "bismuth-goldenfury-nightmare-easy",
+          "name": "Nightmare Fácil (AFK) — by Golden Fury",
+          "tag": "3ª mais vista",
+          "likes": 21,
+          "views": 7963,
+          "season": "Temporada 1",
+          "date": "2025-09-16",
+          "memories": [
+            {
+              "name": "Coração Valente",
+              "key": "valiant-heart",
+              "type": "physical",
+              "effect": "Golpeia com uma espada mágica os inimigos mais próximos, causando 300% de dano e empurrando levemente. Ao acertar, a velocidade de movimento de Bismuth aumenta 15% por 1s.",
+              "essences": [
+                {
+                  "name": "Essência da Voracidade",
+                  "key": "essence-of-predation",
+                  "type": "physical",
+                  "effect": "Esta Memory causa 60% de dano a mais a Chefes e Caçadores.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Queimadura de Gelo",
+              "key": "frostbite",
+              "type": "ice",
+              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos: o primeiro causa 50% de dano de Frio adicional e concede um Escudo de 110% por 2s; o segundo causa 180% de dano de Frio adicional.",
+              "essences": [
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s. Se causar dano de Frio, o efeito aumenta 80%.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Congelamento",
+                  "key": "essence-of-freezing",
+                  "type": "ice",
+                  "effect": "Ao conjurar esta Memory, libera uma explosão de frio que causa 160% de dano de Frio aos inimigos.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Proteção em Massa (1ª cópia)",
+              "key": "mass-protection",
+              "type": "neutral",
+              "effect": "Concede um Escudo de 250% a aliados próximos, que se dissipa em 1,5 segundo.",
+              "essences": [
+                {
+                  "name": "Essência do Amor",
+                  "key": "essence-of-love",
+                  "type": "heal",
+                  "effect": "Quando esta Memory cura ou dá Escudo a um aliado, a velocidade de movimento e ataque dele aumentam 16% por 2s.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Regeneração",
+                  "key": "essence-of-regeneration",
+                  "type": "heal",
+                  "effect": "Se conjurada em combate, recupera 41 de vida ao longo de 7 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Proteção",
+                  "key": "essence-of-protection",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory concede 40 de armadura por 3s, reduzindo o dano recebido e te tornando Inabalável.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Proteção em Massa (2ª cópia)",
+              "key": "mass-protection",
+              "type": "neutral",
+              "effect": "Concede um Escudo de 250% a aliados próximos, que se dissipa em 1,5 segundo.",
+              "essences": [
+                {
+                  "name": "Essência do Corte",
+                  "key": "essence-of-sharpness",
+                  "type": "physical",
+                  "effect": "Ao conjurar, dispara 5 flechas causando 90% de dano em inimigos aleatórios.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Virtude",
+                  "key": "essence-of-virtue",
+                  "type": "neutral",
+                  "effect": "O número de cargas desta Memory aumenta em 1. Cada 150% de qualidade adicional aumenta mais 1 carga.",
+                  "rarity": "epic"
+                }
+              ]
+            }
+          ],
+          "notes": "Modo fácil pra limpar o Nightmare: usa o Sonho Selvagem pra empilhar Voracidade e ficar com escudo infinito. Busque 150+ de Memory Haste pra manter os escudos sempre ativos."
+        },
+        {
+          "id": "bismuth-escalus-afk-double-valiant",
+          "name": "AFK — 2x Coração Valente — by Escalus",
+          "tag": "4ª mais vista",
+          "likes": 18,
+          "views": 4761,
+          "season": "Temporada 1",
+          "date": "2025-09-18",
+          "memories": [
+            {
+              "name": "Coração Valente (1ª cópia)",
+              "key": "valiant-heart",
+              "type": "physical",
+              "effect": "Golpeia com uma espada mágica os inimigos mais próximos, causando 300% de dano e empurrando levemente.",
+              "essences": [
+                {
+                  "name": "Essência do Mercúrio",
+                  "key": "essence-of-quicksilver",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory ou causar dano de Fogo com ela aumenta a velocidade de movimento em 30%.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "Queimadura de Gelo",
+              "key": "frostbite",
+              "type": "ice",
+              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos, causando dano de Frio adicional e concedendo um Escudo.",
+              "essences": [
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s. Se causar dano de Frio, o efeito aumenta 80%.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto ativo, lança bolas de neve em inimigos próximos.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Proteção em Massa",
+              "key": "mass-protection",
+              "type": "neutral",
+              "effect": "Concede um Escudo de 250% a aliados próximos, que se dissipa em 1,5 segundo.",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Amor",
+                  "key": "essence-of-love",
+                  "type": "heal",
+                  "effect": "Quando esta Memory cura ou dá Escudo a um aliado, a velocidade de movimento e ataque dele aumentam 16% por 2s.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência do Congelamento",
+                  "key": "essence-of-freezing",
+                  "type": "ice",
+                  "effect": "Ao conjurar esta Memory, libera uma explosão de frio que causa 160% de dano de Frio aos inimigos.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Tempestade de Flechas",
+              "key": "arrow-storm",
+              "type": "physical",
+              "effect": "Por 6s, aumenta a velocidade de ataque em 15% e a de movimento em 10%. Cada ataque dispara 3 flechas.",
+              "essences": [
+                {
+                  "name": "Essência de Enxofre",
+                  "key": "essence-of-sulfur",
+                  "type": "fire",
+                  "effect": "Todo dano causado por esta Memory aumenta 15% e vira dano de Fogo.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Eficiência",
+                  "key": "essence-of-efficiency",
+                  "type": "neutral",
+                  "effect": "Esta Memory ganha 36 de Memory Haste, reduzindo o tempo de recarga em 26%.",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ],
+          "notes": "Build AFK, não precisa de habilidade nenhuma. Foco em velocidade de ataque/dano e Memory Haste. Precisa de 2 cópias de Coração Valente (pode trocar uma por Queimadura de Gelo). Essências principais: Clemência + Orientação + Ímpeto. Esquivar reseta o tempo de recarga do Coração Valente."
+        },
+        {
+          "id": "bismuth-foff-quad-lightning-dance",
+          "name": "4x Dança do Raio (Flicker Madness) — by Foff",
+          "tag": "5ª mais vista",
+          "likes": 10,
+          "views": 2676,
+          "season": "Temporada 1",
+          "date": "2025-09-24",
+          "memories": [
+            {
+              "name": "Dança do Raio (1)",
+              "key": "lightning-dance",
+              "type": "light",
+              "effect": "Transforma-se brevemente num raio Invencível que salta entre o alvo e inimigos próximos, causando 120% de dano de Luz. Pode saltar até 4 vezes.",
+              "essences": [
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto ativo, lança bolas de neve em inimigos próximos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Trovão",
+                  "key": "essence-of-thunder",
+                  "type": "light",
+                  "effect": "Conjurar outra Memory ou usar Esquiva concede 1 stack de Trovão (até 7). Conjurar esta Memory consome todos os stacks, chamando um raio pra cada um, causando 117% de dano de Luz cada."
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s. Se causar dano de Frio, o efeito aumenta 80%.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Dança do Raio (2)",
+              "key": "lightning-dance",
+              "type": "light",
+              "effect": "Transforma-se brevemente num raio Invencível que salta entre o alvo e inimigos próximos, causando 120% de dano de Luz.",
+              "essences": [
+                {
+                  "name": "Essência do Fluxo",
+                  "key": "essence-of-flow",
+                  "type": "light",
+                  "effect": "Causar dano de Luz com qualquer Memory reduz o tempo de recarga desta Memory em 6%.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Dança do Raio (3)",
+              "key": "lightning-dance",
+              "type": "light",
+              "effect": "Transforma-se brevemente num raio Invencível que salta entre o alvo e inimigos próximos, causando 120% de dano de Luz.",
+              "essences": [
+                {
+                  "name": "Essência da Virtude",
+                  "key": "essence-of-virtue",
+                  "type": "neutral",
+                  "effect": "O número de cargas desta Memory aumenta em 1. Cada 150% de qualidade adicional aumenta mais 1 carga.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Voracidade",
+                  "key": "essence-of-predation",
+                  "type": "physical",
+                  "effect": "Esta Memory causa 60% de dano a mais a Chefes e Caçadores.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Dança do Raio (4)",
+              "key": "lightning-dance",
+              "type": "light",
+              "effect": "Transforma-se brevemente num raio Invencível que salta entre o alvo e inimigos próximos, causando 120% de dano de Luz.",
+              "essences": [
+                {
+                  "name": "Essência da Eficiência",
+                  "key": "essence-of-efficiency",
+                  "type": "neutral",
+                  "effect": "Esta Memory ganha 36 de Memory Haste, reduzindo o tempo de recarga em 26%.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência do Choque",
+                  "key": "essence-of-shock",
+                  "type": "light",
+                  "effect": "A cada 4º ataque básico fica fortalecido, soltando um raio que salta entre inimigos, causando 40% de dano de Luz até 2 vezes.",
+                  "rarity": "rare"
+                }
+              ]
+            }
+          ],
+          "notes": "'Loucura de flicker permanente' — o jogo praticamente se joga sozinho. Compre todas as Danças do Raio que achar o quanto antes. Mantenha cada cópia num nível diferente pra ter tempos de recarga diferentes. Stat principal: Memory Haste. Segunda Vida como seguro contra imprevistos."
         }
       ],
       "constellation": [
