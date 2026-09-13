@@ -303,7 +303,7 @@ function galleryCardHtml(kind, item) {
       <div class="gallery-row-actions">
         <label class="gallery-upload-btn" for="${uid}">${item.icon ? "Trocar imagem" : "Enviar imagem"}</label>
         <input type="file" id="${uid}" accept="image/*" class="gallery-file-input"
-          data-kind="${kind}" data-key="${escapeHtml(item.key || "")}" data-value="${escapeHtml(kind === "star" ? (item.category || "") : (item.type || ""))}">
+          data-kind="${kind}" data-key="${escapeHtml(overrideKey)}" data-value="${escapeHtml(kind === "star" ? (item.category || "") : (item.type || ""))}">
       </div>
     </div>`;
 }
