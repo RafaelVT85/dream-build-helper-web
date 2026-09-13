@@ -2776,6 +2776,294 @@
               "icon": "Memorias/Character/St_Q_MoonlightPact.avif"
             }
           ]
+        },
+        {
+          "id": "nachia-medse-sylvan-shadow",
+          "name": "Cães + Passo nas Sombras — by Medse",
+          "tag": "3ª mais vista",
+          "likes": 30,
+          "views": 12525,
+          "season": "Temporada 1",
+          "date": "2025-09-22",
+          "memories": [
+            {
+              "name": "Chamado da Floresta",
+              "key": "sylvan-call",
+              "type": "nature",
+              "effect": "Invoca um Cão-folha que segue Nachia até o local alvo, causando 130% de dano e atordoando por 0,4s. O Cão-folha tem 140 de vida e 40 de armadura, dura até 25s e ataca causando 60% de dano. Até 5 Cães-folha podem estar ativos ao mesmo tempo.",
+              "essences": [
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s. Se causar dano de Frio, o efeito aumenta 80%.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Voracidade",
+                  "key": "essence-of-predation",
+                  "type": "physical",
+                  "effect": "Esta Memory causa 60% de dano a mais a Chefes e Caçadores. Derrotar um deles solta Orbes de Poder.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência do Carvão",
+                  "key": "essence-of-charcoal",
+                  "type": "fire",
+                  "effect": "Ao acertar um inimigo, dispara um estilhaço de carvão causando 60% de dano (100% de Fogo se já estiver queimando).",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "Sussurro da Natureza",
+              "key": "natures-whisper",
+              "type": "nature",
+              "effect": "Comanda todas as invocações de Nachia pra se mover até o local alvo ou atacar o inimigo alvo. Aumenta a velocidade de ataque de Nachia e das invocações em 18% por 3s.",
+              "essences": [
+                {
+                  "name": "Essência da Aventura",
+                  "key": "essence-of-adventure",
+                  "type": "neutral",
+                  "effect": "Sempre que você muda de local, aumenta a qualidade de outra Essência equipada nesta Memory em +10% e ganha 19 de ouro.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto ativo, lança bolas de neve em inimigos próximos periodicamente.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Passo nas Sombras",
+              "key": "shadow-walk",
+              "type": "dark",
+              "effect": "Avança rapidamente e dispara 3 estilhaços das trevas em inimigos próximos. Cada estilhaço causa 65% de dano das Trevas e ativa 50% dos efeitos de ataque.",
+              "essences": [
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência do Redemoinho",
+                  "key": "essence-of-the-vortex",
+                  "type": "fire",
+                  "effect": "Dispara periodicamente uma bola de fogo num inimigo próximo aleatório, causando 90% de dano de Fogo.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Proteção em Massa",
+              "key": "mass-protection",
+              "type": "neutral",
+              "effect": "Concede um Escudo de 250% a aliados próximos, que se dissipa em 1,5 segundo.",
+              "essences": [
+                {
+                  "name": "Essência da Proteção",
+                  "key": "essence-of-protection",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory concede 40 de armadura por 3s, reduzindo o dano recebido e te tornando Inabalável (a cada 5s no máximo).",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Virtude",
+                  "key": "essence-of-virtue",
+                  "type": "neutral",
+                  "effect": "O número de cargas desta Memory aumenta em 1. Cada 150% de qualidade adicional aumenta mais 1 carga.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência do Amor",
+                  "key": "essence-of-love",
+                  "type": "heal",
+                  "effect": "Quando esta Memory cura ou dá Escudo a um aliado, a velocidade de movimento e ataque dele aumentam 16% por 2s (metade em você mesma).",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ],
+          "notes": "Pode trocar Noite (constelação) por Guardião da Ordem ou Ferocidade Aprimorada. Mistura os cães do Chamado da Floresta com Passo nas Sombras pra dano extra e Proteção em Massa pro time."
+        },
+        {
+          "id": "nachia-goofy-moonlight-fenrir-spam",
+          "name": "Spam do Fenrir — by goofy ahh fenrir",
+          "tag": "4ª mais vista",
+          "likes": 8,
+          "views": 3248,
+          "season": "Temporada 1",
+          "date": "2025-09-19",
+          "memories": [
+            {
+              "name": "Pacto do Luar",
+              "key": "moonlight-pact",
+              "type": "physical",
+              "effect": "Fenrir salta até o alvo, cortando inimigos por 200% de dano e atordoando por 0,5s. A cada inimigo atingido, Fenrir recupera 8% da vida dele e o tempo de recarga reduz 1s. Passiva: invoca Fenrir, o Lobo, que ataca inimigos por 130% de dano.",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "Sussurro da Natureza",
+              "key": "natures-whisper",
+              "type": "nature",
+              "effect": "Comanda todas as invocações de Nachia pra se mover até o local alvo ou atacar o inimigo alvo. Aumenta a velocidade de ataque de Nachia e das invocações em 18% por 3s.",
+              "essences": [
+                {
+                  "name": "Essência do Vento",
+                  "key": "essence-of-wind",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ],
+          "notes": "'Spam de clique direito sem pensar.' A 3ª essência do Pacto do Luar é flexível: mais dano (Voracidade, Cauda de Brasa, Ferida) ou utilidade (Rigidez, Ricochete, Fé Divina). Sussurro da Natureza dá velocidade de ataque/movimento consistente pra você e o Fenrir."
+        },
+        {
+          "id": "nachia-teenwolf-werewolf-onhit",
+          "name": "Build Lobisomem (On-Hit) — by Teen Wolf",
+          "tag": "5ª mais vista",
+          "likes": 21,
+          "views": 2921,
+          "season": "Temporada 1",
+          "date": "2025-11-12",
+          "memories": [
+            {
+              "name": "Pacto do Luar",
+              "key": "moonlight-pact",
+              "type": "physical",
+              "effect": "Fenrir salta até o alvo, cortando inimigos por 200% de dano e atordoando por 0,5s. A cada inimigo atingido, Fenrir recupera 8% da vida dele. Passiva: invoca Fenrir, o Lobo, que ataca inimigos por 130% de dano.",
+              "essences": [
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Regeneração",
+                  "key": "essence-of-regeneration",
+                  "type": "heal",
+                  "effect": "Se conjurada em combate, recupera 41 de vida ao longo de 7 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência de Enxofre",
+                  "key": "essence-of-sulfur",
+                  "type": "fire",
+                  "effect": "Todo dano causado por esta Memory aumenta 15% e vira dano de Fogo.",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "Bênção da Serpente",
+              "key": "serpents-blessing",
+              "type": "neutral",
+              "effect": "Concede a Bênção da Serpente a você e um aliado por 12s: +55 de armadura e +25% de velocidade de ataque. Quando o alvo abençoado ataca, recupera 2,5% da vida máxima e o inimigo atingido toma 100% de dano extra e fica atordoado por 0,5s.",
+              "essences": [
+                {
+                  "name": "Cauda de Brasa",
+                  "key": "embertail",
+                  "type": "fire",
+                  "effect": "Seus ataques ricocheteiam causando 100% de dano de Fogo a um inimigo próximo. A cada inimigo em chamas próximo, o dano/cura aumenta 8% e o tempo de recarga reduz 8%."
+                }
+              ]
+            },
+            {
+              "name": "Grito de Guerra",
+              "key": "battle-cry",
+              "type": "neutral",
+              "effect": "Inspira aliados próximos por 4s: +10% de velocidade de ataque e +13% de dano no ataque. Você recebe 200% desse efeito.",
+              "essences": [
+                {
+                  "name": "Essência da Riqueza",
+                  "key": "essence-of-wealth",
+                  "type": "neutral",
+                  "effect": "Quando um inimigo danificado por esta Memory morre em até 2s, ele solta 1,7 de ouro."
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto ativo, lança bolas de neve em inimigos próximos periodicamente.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Vento",
+                  "key": "essence-of-wind",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "Pilar de Fogo",
+              "key": "pillar-of-flame",
+              "type": "fire",
+              "effect": "Invoca um pilar de fogo no local alvo, causando imediatamente 250% de dano de Fogo em área, depois mais 275% de dano de Fogo ao longo de 2,4s.",
+              "essences": [
+                {
+                  "name": "Essência do Carvão",
+                  "key": "essence-of-charcoal",
+                  "type": "fire",
+                  "effect": "Ao acertar um inimigo, dispara um estilhaço de carvão causando 60% de dano (100% de Fogo se já estiver queimando).",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Desolação",
+                  "key": "essence-of-bleakness",
+                  "type": "ice",
+                  "effect": "Esta Memory causa 50% de dano a mais a inimigos afetados por Frio, lentidão, enraizamento ou atordoamento."
+                },
+                {
+                  "name": "Essência do Corte",
+                  "key": "essence-of-sharpness",
+                  "type": "physical",
+                  "effect": "Ao conjurar, dispara 5 flechas causando 90% de dano em inimigos aleatórios.",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ],
+          "notes": "Conceito 'lobisomem': empilha efeitos de ataque com o Fenrir em alta velocidade de ataque. Prioridade de nível: Fenrir até 10, Bênção da Serpente até 5, passiva até 5, depois Cauda de Brasa. Alternativas citadas: Chama Eterna, Febre, Redemoinho nas essências; Tempestade de Flechas, Golpe das Sombras, Fio Umbral nas memories."
         }
       ],
       "constellation": [
@@ -2963,6 +3251,294 @@
               "effect": "Um ataque rápido e de alto impacto."
             }
           ]
+        },
+        {
+          "id": "casca-zoefulday-lightning-dance-fangs",
+          "name": "Dança do Raio + Presa (AD) — by Zoeful Day",
+          "tag": "3ª mais vista",
+          "likes": 34,
+          "views": 11757,
+          "season": "Temporada 1",
+          "date": "2025-09-25",
+          "memories": [
+            {
+              "name": "Laceração",
+              "key": "annihilation-stance",
+              "type": "dark",
+              "effect": "Cada ataque básico alterna a Laceração entre Forma Vermelha e Forma Azul, cada uma com um efeito diferente ao conjurar (Vermelha: avança cortando; Azul: pula ficando Invencível e golpeia em área).",
+              "essences": [
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Céu Noturno",
+                  "key": "essence-of-the-starry-sky",
+                  "type": "dark",
+                  "effect": "Cada vez que esta Memory acerta um inimigo, sua velocidade de ataque aumenta 10% por 3s (até 20%, ou 40% se causar dano das Trevas).",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência de Carmesim",
+                  "key": "essence-of-crimson",
+                  "type": "dark",
+                  "effect": "A cada 4º ataque básico fica fortalecido, causando uma Explosão Carmesim de 100% de dano das Trevas. Recupera 22% de vida por inimigo atingido (dobrado contra chefes).",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Postura da Aniquilação",
+              "key": "annihilation-stance",
+              "type": "dark",
+              "effect": "Por 10s, sua espada é imbuída com Energia destrutiva. Você não pode conjurar Memories, mas o dano de ataque aumenta 30%, o alcance aumenta, e cada ataque dispara Energia da Espada causando 400% de dano das Trevas.",
+              "essences": [
+                {
+                  "name": "Essência da Presa",
+                  "key": "essence-of-fangs",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga reduz 0,7s e lança 2 Presas em inimigos próximos, cada uma causando 60% de dano.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "Dança do Raio",
+              "key": "lightning-dance",
+              "type": "light",
+              "effect": "Transforma-se brevemente num raio Invencível que salta entre o alvo e inimigos próximos, causando 120% de dano de Luz. Pode saltar até 4 vezes. Atacar reduz o tempo de recarga em 5%.",
+              "essences": [
+                {
+                  "name": "Essência do Fluxo",
+                  "key": "essence-of-flow",
+                  "type": "light",
+                  "effect": "Causar dano de Luz com qualquer Memory reduz o tempo de recarga desta Memory em 6%.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Flexibilidade",
+                  "key": "essence-of-flexibility",
+                  "type": "neutral",
+                  "effect": "Enquanto esta Memory está em tempo de recarga, 37% do dano recebido é dividido ao longo de 4s, com redução de 20%.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência Celestial",
+                  "key": "essence-of-the-celestial",
+                  "type": "light",
+                  "effect": "A cada 10s, o cast desta Memory fica fortalecido. Ao acertar um inimigo pela primeira vez, derruba 4 meteoros causando 130% de dano de Luz cada."
+                }
+              ]
+            },
+            {
+              "name": "Tempestade de Flechas",
+              "key": "arrow-storm",
+              "type": "physical",
+              "effect": "Por 6s, aumenta a velocidade de ataque em 15% e a de movimento em 10%. Cada ataque dispara 3 flechas.",
+              "essences": [
+                {
+                  "name": "Essência do Crepúsculo",
+                  "key": "essence-of-twilight",
+                  "type": "dark",
+                  "effect": "Seus ataques básicos viram dano das Trevas. Ao acertar um inimigo com 3+ stacks de Trevas, consome tudo pra causar dano extra e curar por stack.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Anoitecer",
+                  "key": "essence-of-dusk",
+                  "type": "dark",
+                  "effect": "Ao conjurar esta Memory, dispara 2 estilhaços do anoitecer que causam 30% de dano das Trevas a cada ataque, por 5 segundos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                }
+              ]
+            }
+          ],
+          "notes": "Build AD focada em Dança do Raio + Presa: a Dança do Raio sozinha pode ativar 4 ataques críticos se a Postura da Aniquilação estiver bem nivelada. Presa dá recarga infinita da Postura. Essências listadas são flexíveis — o build não depende muito de Clemência."
+        },
+        {
+          "id": "casca-arihsd-flaming-whip-dodge",
+          "name": "Chicote Flamejante + Esquiva — by arihsd",
+          "tag": "4ª mais vista",
+          "likes": 4,
+          "views": 2734,
+          "season": "Temporada 1",
+          "date": "2025-09-15",
+          "memories": [
+            {
+              "name": "Laceração",
+              "key": "annihilation-stance",
+              "type": "dark",
+              "effect": "Cada ataque básico alterna a Laceração entre Forma Vermelha e Forma Azul, cada uma com um efeito diferente ao conjurar.",
+              "essences": []
+            },
+            {
+              "name": "Postura da Aniquilação",
+              "key": "annihilation-stance",
+              "type": "dark",
+              "effect": "Por 10s, sua espada é imbuída com Energia destrutiva, aumentando dano e alcance de ataque, mas impedindo conjurar Memories.",
+              "essences": []
+            },
+            {
+              "name": "Chicote Flamejante",
+              "key": "flaming-whip",
+              "type": "fire",
+              "effect": "Golpeia com um chicote flamejante, causando 200% de dano de Fogo a inimigos à frente e reduzindo brevemente a velocidade de movimento deles. Conjurar qualquer outra Memory reseta o tempo de recarga do chicote.",
+              "essences": [
+                {
+                  "name": "Essência do Fluxo",
+                  "key": "essence-of-flow",
+                  "type": "light",
+                  "effect": "Causar dano de Luz com qualquer Memory reduz o tempo de recarga desta Memory em 6%.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Oportunidade",
+                  "key": "essence-of-opportunity",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory reduz o tempo de recarga da sua Esquiva em 3s. Só pode ativar uma vez a cada 8 segundos.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Corte Veloz",
+              "key": "swift-slash",
+              "type": "physical",
+              "effect": "Avança rapidamente cortando inimigos, causando 220% de dano e ativando 50% dos efeitos de ataque. O primeiro inimigo atingido reduz o tempo de recarga em 40%.",
+              "essences": [
+                {
+                  "name": "Essência da Presa",
+                  "key": "essence-of-fangs",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga reduz 0,7s e lança 2 Presas em inimigos próximos, cada uma causando 60% de dano.",
+                  "rarity": "epic"
+                }
+              ]
+            }
+          ],
+          "notes": "No início de jogo, usa Déjà Vu com Presa; depois acha Chicote Flamejante com Oportunidade e Fluxo, pra ficar spammando ataques de esquiva e resetar o chicote com outras Memories em loop."
+        },
+        {
+          "id": "casca-zoefulday2-depth6-walkthrough",
+          "name": "Walkthrough Depth 6 — by Zoeful Day",
+          "tag": "5ª mais vista",
+          "likes": 12,
+          "views": 2173,
+          "season": "Temporada 1",
+          "date": "2025-12-31",
+          "memories": [
+            {
+              "name": "Postura da Aniquilação",
+              "key": "annihilation-stance",
+              "type": "dark",
+              "effect": "Por 10s, sua espada é imbuída com Energia destrutiva, aumentando dano e alcance de ataque, mas impedindo conjurar Memories.",
+              "essences": [
+                {
+                  "name": "Essência do Céu Noturno",
+                  "key": "essence-of-the-starry-sky",
+                  "type": "dark",
+                  "effect": "Cada vez que esta Memory acerta um inimigo, sua velocidade de ataque aumenta 10% por 3s (até 20%, ou 40% se causar dano das Trevas).",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Presa",
+                  "key": "essence-of-fangs",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga reduz 0,7s e lança 2 Presas em inimigos próximos, cada uma causando 60% de dano.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s. Se causar dano de Frio, o efeito aumenta 80%.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Dança do Raio",
+              "key": "lightning-dance",
+              "type": "light",
+              "effect": "Transforma-se brevemente num raio Invencível que salta entre o alvo e inimigos próximos, causando 120% de dano de Luz. Pode saltar até 4 vezes.",
+              "essences": [
+                {
+                  "name": "Essência do Fluxo",
+                  "key": "essence-of-flow",
+                  "type": "light",
+                  "effect": "Causar dano de Luz com qualquer Memory reduz o tempo de recarga desta Memory em 6%.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Quietude",
+                  "key": "essence-of-stillness",
+                  "type": "light",
+                  "effect": "A cada 5s, o cast desta Memory fica Aprimorado, emitindo luz que causa 200% de dano de Luz e atordoa por 2s. Qualidade maior aumenta o raio."
+                }
+              ]
+            },
+            {
+              "name": "Golpe Vil",
+              "key": "vile-strike",
+              "type": "dark",
+              "effect": "Desaparece brevemente e reaparece no local alvo, cortando inimigos por 200% de dano das Trevas, atordoando por 1s. O dano aumenta 50% contra inimigos com menos de 50% de vida.",
+              "essences": [
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência de Carmesim",
+                  "key": "essence-of-crimson",
+                  "type": "dark",
+                  "effect": "A cada 4º ataque básico fica fortalecido, causando uma Explosão Carmesim de 100% de dano das Trevas. Recupera 22% de vida por inimigo atingido (dobrado contra chefes).",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ],
+          "notes": "Walkthrough completo de Depth 6 com comentário em inglês, focado em Dança do Raio como build AD."
         }
       ],
       "constellation": [
