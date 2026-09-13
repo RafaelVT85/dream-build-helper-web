@@ -1085,6 +1085,381 @@
               "icon": "Memorias/Character/St_R_BaptismOfSun.avif"
             }
           ]
+        },
+        {
+          "id": "vesper-wohyk-spinning-whirlwind",
+          "name": "Spin 2 Win — by Wohyk",
+          "tag": "3ª mais vista",
+          "likes": 22,
+          "views": 8387,
+          "season": "Temporada 1",
+          "date": "2025-09-25",
+          "memories": [
+            {
+              "name": "Redemoinho Giratório",
+              "key": "spinning-whirlwind",
+              "type": "physical",
+              "effect": "Canaliza por 3,5s girando sua espada, causando 170% de dano por segundo a inimigos próximos e ativando 25% dos efeitos de ataque. Gira mais rápido com velocidade de ataque maior.",
+              "essences": [
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Fé Divina",
+              "key": "divine-faith",
+              "type": "light",
+              "effect": "Cada vez que você mata um inimigo com esta Memory, ganha uma carga de Fé (até 75). Cada carga aumenta o dano/cura em 0,5% e sua vida máxima em 4.",
+              "essences": []
+            },
+            {
+              "name": "Grito de Guerra",
+              "key": "battle-cry",
+              "type": "neutral",
+              "effect": "Inspira aliados próximos por 4s: +10% de velocidade de ataque e +13% de dano no ataque. Você recebe 200% desse efeito.",
+              "essences": [
+                {
+                  "name": "Essência do Vento",
+                  "key": "essence-of-wind",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Compostura",
+                  "key": "essence-of-composure",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory aumenta sua chance de crítico em 20% por 5s. O efeito termina antes se você tomar dano de inimigos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Desfazer",
+              "key": "undo",
+              "type": "neutral",
+              "effect": "Reduz o tempo de recarga da última Memory usada em 5,5s. A próxima Memory conjurada em até 8s fica fortalecida, causando 160% de dano adicional no primeiro acerto.",
+              "essences": [
+                {
+                  "name": "Essência do Pânico",
+                  "key": "essence-of-panic",
+                  "type": "neutral",
+                  "effect": "Tomar qualquer dano concede 30 de Memory Haste a esta Memory e aumenta sua velocidade de movimento em 20% por 3s.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Flexibilidade",
+                  "key": "essence-of-flexibility",
+                  "type": "neutral",
+                  "effect": "Enquanto esta Memory está em tempo de recarga, 37% do dano recebido é dividido ao longo de 4s, com redução de 20%.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Voracidade",
+                  "key": "essence-of-predation",
+                  "type": "physical",
+                  "effect": "Esta Memory causa 60% de dano a mais a Chefes e Caçadores. Derrotar um deles solta Orbes de Poder, que aumentam permanentemente dano de ataque ou poder de habilidade.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Santuário de El",
+              "key": "els-sanctuary",
+              "type": "light",
+              "effect": "Abençoa o chão ao redor por 10s, causando 500% de dano de Luz a inimigos próximos e dando aos aliados um Escudo de 200% por 4s. Aliados na área ganham 18 de armadura e 20% de velocidade de ataque; Vesper recebe 200% do efeito e fica Inabalável enquanto durar.",
+              "essences": [
+                {
+                  "name": "Essência da Aventura",
+                  "key": "essence-of-adventure",
+                  "type": "neutral",
+                  "effect": "Sempre que você muda de local, aumenta a qualidade de outra Essência equipada nesta Memory em +10% e ganha 19 de ouro.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Perfeição",
+                  "key": "perfection",
+                  "type": "neutral",
+                  "effect": "Aumenta o dano de ataque em 7, o poder de habilidade em 7, a vida máxima em 35, a velocidade de ataque em 10%, a chance de crítico em 6% e o Memory Haste em 10.",
+                  "rarity": "legendary"
+                }
+              ]
+            }
+          ],
+          "notes": "'Spin 2 win': o núcleo é o Redemoinho Giratório com Clemência (cura ~10%) e Ímpeto pra manter o tempo de recarga baixo. Sempre usa Grito de Guerra com Vento, Compostura e Insaciabilidade pra turbinar o Redemoinho. Desfazer serve só de apoio."
+        },
+        {
+          "id": "vesper-attack-speed-hysteria",
+          "name": "Vesper Attack Speed",
+          "tag": "4ª mais vista",
+          "likes": 5,
+          "views": 2874,
+          "season": "Temporada 1",
+          "date": "2025-09-18",
+          "memories": [
+            {
+              "name": "Histeria",
+              "key": "hysteria",
+              "type": "dark",
+              "effect": "Abraça uma raiva intensa por 6s, durante os quais você não pode conjurar outras Memories. Desfere cortes de garra contínuos causando 100% de dano das Trevas e recuperando 13% de vida (150% se sua vida estiver abaixo de 40%). Ativa efeitos de ataque no primeiro alvo atingido. Corta mais rápido com mais velocidade de ataque.",
+              "essences": [
+                {
+                  "name": "Essência do Excesso",
+                  "key": "essence-of-overload",
+                  "type": "neutral",
+                  "effect": "Ao conjurar esta Memory, sacrifica 20% da vida atual pra fortalecer o cast. O dano/cura do cast fortalecido aumenta 45%.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Fé Divina",
+                  "key": "essence-of-divine-faith",
+                  "type": "light",
+                  "effect": "Cada vez que você mata um inimigo com esta Memory, ganha uma carga de Fé (até 75). Cada carga aumenta o dano/cura em 0,5% e sua vida máxima em 4.",
+                  "rarity": "legendary"
+                }
+              ]
+            },
+            {
+              "name": "Tempestade de Flechas",
+              "key": "arrow-storm",
+              "type": "physical",
+              "effect": "Por 6s, aumenta a velocidade de ataque em 15% e a de movimento em 10%. Cada ataque dispara 3 flechas.",
+              "essences": [
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência do Vento",
+                  "key": "essence-of-wind",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência do Céu Noturno",
+                  "key": "essence-of-the-starry-sky",
+                  "type": "dark",
+                  "effect": "Cada vez que esta Memory acerta um inimigo, sua velocidade de ataque aumenta 10% por 3s (até 20%, ou 40% se causar dano das Trevas). Atacar renova a duração.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Fio Umbral",
+              "key": "umbral-edge",
+              "type": "dark",
+              "effect": "Por 7s, imbui sua arma com o poder das Trevas, aumentando a chance de crítico em 20% e causando 52% de dano das Trevas adicional ao atacar.",
+              "essences": [
+                {
+                  "name": "Essência do Crepúsculo",
+                  "key": "essence-of-twilight",
+                  "type": "dark",
+                  "effect": "Seus ataques básicos viram dano das Trevas. Ao acertar um inimigo com 3+ stacks de Trevas, consome tudo pra causar dano extra e curar por stack."
+                },
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência de Obsidiana",
+                  "key": "essence-of-obsidian",
+                  "type": "dark",
+                  "effect": "Conjurar esta Memory fortalece seu próximo ataque em até 5s: causa 250% de dano das Trevas e reduz o tempo de recarga desta Memory em 1s.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Queimadura de Gelo",
+              "key": "frostbite",
+              "type": "ice",
+              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos, causando dano de Frio adicional.",
+              "essences": [
+                {
+                  "name": "Perfeição",
+                  "key": "perfection",
+                  "type": "neutral",
+                  "effect": "Aumenta o dano de ataque em 7, o poder de habilidade em 7, a vida máxima em 35, a velocidade de ataque em 10%, a chance de crítico em 6% e o Memory Haste em 10.",
+                  "rarity": "legendary"
+                },
+                {
+                  "name": "Essência da Riqueza",
+                  "key": "essence-of-wealth",
+                  "type": "neutral",
+                  "effect": "Quando um inimigo danificado por esta Memory morre em até 2s, ele solta 1,7 de ouro, compartilhado entre todos os Viajantes."
+                },
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente (1 vez a cada 5s por inimigo). Cada vez que ativa, aumenta permanentemente sua vida máxima em 1.",
+                  "rarity": "rare"
+                }
+              ]
+            }
+          ],
+          "notes": "Build focada em empilhar todos os bônus de velocidade de ataque antes de ativar a Histeria. Bem direta: ataca normalmente até acumular os buffs, ativa Histeria e desfere os cortes."
+        },
+        {
+          "id": "vesper-goaty-autopilot-hysteria",
+          "name": "Auto Pilot Hysteria — by goaty",
+          "tag": "5ª mais vista",
+          "likes": 9,
+          "views": 2154,
+          "season": "Temporada 1",
+          "date": "2025-12-08",
+          "memories": [
+            {
+              "name": "Histeria",
+              "key": "hysteria",
+              "type": "dark",
+              "effect": "Abraça uma raiva intensa por 6s, durante os quais você não pode conjurar outras Memories. Desfere cortes de garra contínuos causando 100% de dano das Trevas e recuperando 13% de vida (150% se sua vida estiver abaixo de 40%). Ativa efeitos de ataque no primeiro alvo atingido.",
+              "essences": [
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Fio Umbral",
+              "key": "umbral-edge",
+              "type": "dark",
+              "effect": "Por 7s, imbui sua arma com o poder das Trevas, aumentando a chance de crítico em 20% e causando 52% de dano das Trevas adicional ao atacar.",
+              "essences": [
+                {
+                  "name": "Essência da Voracidade",
+                  "key": "essence-of-predation",
+                  "type": "physical",
+                  "effect": "Esta Memory causa 60% de dano a mais a Chefes e Caçadores. Derrotar um deles solta Orbes de Poder, que aumentam permanentemente dano de ataque ou poder de habilidade.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência do Céu Noturno",
+                  "key": "essence-of-the-starry-sky",
+                  "type": "dark",
+                  "effect": "Cada vez que esta Memory acerta um inimigo, sua velocidade de ataque aumenta 10% por 3s (até 20%, ou 40% se causar dano das Trevas). Atacar renova a duração.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Eficiência",
+                  "key": "essence-of-efficiency",
+                  "type": "neutral",
+                  "effect": "Esta Memory ganha 36 de Memory Haste, reduzindo o tempo de recarga em 26%.",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "Santuário de El",
+              "key": "els-sanctuary",
+              "type": "light",
+              "effect": "Abençoa o chão ao redor por 10s, causando 500% de dano de Luz a inimigos próximos e dando aos aliados um Escudo de 200% por 4s. Vesper recebe 200% do efeito e fica Inabalável enquanto durar.",
+              "essences": [
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente (1 vez a cada 5s por inimigo). Cada vez que ativa, aumenta permanentemente sua vida máxima em 1.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s. Se causar dano de Frio, o efeito aumenta 80%.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto ativo, lança bolas de neve em inimigos próximos periodicamente.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Grito de Guerra",
+              "key": "battle-cry",
+              "type": "neutral",
+              "effect": "Inspira aliados próximos por 4s: +10% de velocidade de ataque e +13% de dano no ataque. Você recebe 200% desse efeito.",
+              "essences": [
+                {
+                  "name": "Essência do Vento",
+                  "key": "essence-of-wind",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Regeneração",
+                  "key": "essence-of-regeneration",
+                  "type": "heal",
+                  "effect": "Se conjurada em combate, recupera 41 de vida ao longo de 7 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Perfeição",
+                  "key": "perfection",
+                  "type": "neutral",
+                  "effect": "Aumenta o dano de ataque em 7, o poder de habilidade em 7, a vida máxima em 35, a velocidade de ataque em 10%, a chance de crítico em 6% e o Memory Haste em 10.",
+                  "rarity": "legendary"
+                }
+              ]
+            }
+          ],
+          "notes": "'No piloto automático': investe pó de sonho em Ímpeto até ~1s de recarga, depois Histeria/Orientação igualmente, depois passiva/Clemência igualmente. Segundo o autor, é só seguir o instinto."
         }
       ],
       "constellation": [
