@@ -1799,6 +1799,376 @@
               "effect": "Dispara uma rajada de flechas mentais nos inimigos próximos, causando dano de Frio."
             }
           ]
+        },
+        {
+          "id": "yubar-wohyk-mass-protection-fire",
+          "name": "Fogo Sem Fim — by Wohyk",
+          "tag": "3ª mais vista",
+          "likes": 18,
+          "views": 3691,
+          "season": "Temporada 1",
+          "date": "2025-09-25",
+          "memories": [
+            {
+              "name": "Proteção em Massa",
+              "key": "mass-protection",
+              "type": "neutral",
+              "effect": "Concede um Escudo de 250% a aliados próximos, que se dissipa em 1,5 segundo.",
+              "essences": [
+                {
+                  "name": "Essência da Queimadura",
+                  "key": "essence-of-scorch",
+                  "type": "fire",
+                  "effect": "Ao conjurar esta Memory, dispara 3 bolas de fogo, cada uma causando 47% de dano de Fogo a inimigos próximos."
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Paranoia",
+                  "key": "essence-of-paranoia",
+                  "type": "dark",
+                  "effect": "Ao tomar qualquer dano, esta Memory ganha 150 de Memory Haste por 6s, mas é conjurada automaticamente em inimigos próximos.",
+                  "rarity": "legendary"
+                }
+              ]
+            },
+            {
+              "name": "Trilhas Corrosivas",
+              "key": "corrosive-trails",
+              "type": "nature",
+              "effect": "Por 4s, deixa um rastro de gás tóxico que envenena inimigos por 3s, aumentando sua velocidade de movimento em 15%. Inimigos envenenados tomam 100% de dano por segundo.",
+              "essences": [
+                {
+                  "name": "Essência do Carvão",
+                  "key": "essence-of-charcoal",
+                  "type": "fire",
+                  "effect": "Ao acertar um inimigo, dispara um estilhaço de carvão causando 60% de dano (100% de Fogo se o alvo já estiver queimando).",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência de Enxofre",
+                  "key": "essence-of-sulfur",
+                  "type": "fire",
+                  "effect": "Todo dano causado por esta Memory aumenta 15% e vira dano de Fogo. Seu dano de Fogo ao longo do tempo aumenta 50%.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Febre",
+                  "key": "essence-of-fever",
+                  "type": "fire",
+                  "effect": "Ao causar dano de Fogo, infecta o alvo com Febre. Inimigos infectados explodem após 2s, causando 130% de dano de Fogo em área.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Ignição",
+              "key": "ignite",
+              "type": "fire",
+              "effect": "Causa 115% de dano de Fogo ao alvo. Se já estiver queimando, o dano aumenta 50% e vira dano em área. As cargas são totalmente restauradas de uma vez.",
+              "essences": []
+            },
+            {
+              "name": "Cauda de Brasa",
+              "key": "embertail",
+              "type": "fire",
+              "effect": "Seus ataques ricocheteiam causando 100% de dano de Fogo a um inimigo próximo. A cada inimigo em chamas próximo, o dano/cura desta Memory aumenta 8% e o tempo de recarga reduz 8%. Seu dano de Fogo ao longo do tempo aumenta 100%.",
+              "essences": [
+                {
+                  "name": "Essência da Voracidade",
+                  "key": "essence-of-predation",
+                  "type": "physical",
+                  "effect": "Esta Memory causa 60% de dano a mais a Chefes e Caçadores. Derrotar um deles solta Orbes de Poder, que aumentam permanentemente dano de ataque ou poder de habilidade.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Chama Eterna",
+                  "key": "eternal-flame",
+                  "type": "fire",
+                  "effect": "Causar dano de Fogo com esta Memory aplica a maldição Chama Eterna por 5s: qualquer dano que você causar aplica 1 stack de Queimadura. Todo dano desta Memory aumenta 2% por stack de Queimadura no alvo."
+                }
+              ]
+            },
+            {
+              "name": "Tranquilidade",
+              "key": "tranquility",
+              "type": "light",
+              "effect": "Yubar canaliza por 1s pra recuperar a tranquilidade, ficando Invencível, com +40% de velocidade de movimento, e reduz o tempo de recarga de todas as outras Memories em 3,5s.",
+              "essences": [
+                {
+                  "name": "Essência da Aventura",
+                  "key": "essence-of-adventure",
+                  "type": "neutral",
+                  "effect": "Sempre que você muda de local, aumenta a qualidade de outra Essência equipada nesta Memory em +10% e ganha 19 de ouro.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Perfeição",
+                  "key": "perfection",
+                  "type": "neutral",
+                  "effect": "Aumenta o dano de ataque em 7, o poder de habilidade em 7, a vida máxima em 35, a velocidade de ataque em 10%, a chance de crítico em 6% e o Memory Haste em 10.",
+                  "rarity": "legendary"
+                }
+              ]
+            }
+          ],
+          "notes": "CD absurdamente baixo em Proteção em Massa, que dispara uma quantidade enorme de bolas de fogo — não precisa nem mirar, só ficar andando e conjurando o escudo repetidamente. Ignição é só pra chefes."
+        },
+        {
+          "id": "yubar-neo-starfall-dps",
+          "name": "Solo DPS Starfall — by Neo",
+          "tag": "4ª mais vista",
+          "likes": 9,
+          "views": 3527,
+          "season": "Temporada 1",
+          "date": "2025-09-15",
+          "memories": [
+            {
+              "name": "Ignição",
+              "key": "ignite",
+              "type": "fire",
+              "effect": "Causa 115% de dano de Fogo ao alvo. Se já estiver queimando, o dano aumenta 50% e vira dano em área. As cargas são totalmente restauradas de uma vez.",
+              "essences": [
+                {
+                  "name": "Essência de Ricochete",
+                  "key": "essence-of-ricochet",
+                  "type": "neutral",
+                  "effect": "O dano ou cura desta Memory tem 50% de chance de ricochetear pra outro alvo próximo, causando/curando 90% do valor original, mantendo o tipo elemental.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Eficiência",
+                  "key": "essence-of-efficiency",
+                  "type": "neutral",
+                  "effect": "Esta Memory ganha 36 de Memory Haste, reduzindo o tempo de recarga em 26%.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Hemorragia",
+              "key": "hemorrhage",
+              "type": "physical",
+              "effect": "Seu próximo ataque causa 460% de dano ao longo de 1,2s e reduz a velocidade de movimento do alvo em 70%.",
+              "essences": [
+                {
+                  "name": "Essência da Dor",
+                  "key": "essence-of-pain",
+                  "type": "neutral",
+                  "effect": "Todo dano causado por esta Memory também causa 40% de dano em área ao redor do alvo, mantendo o tipo elemental original."
+                },
+                {
+                  "name": "Essência da Riqueza",
+                  "key": "essence-of-wealth",
+                  "type": "neutral",
+                  "effect": "Quando um inimigo danificado por esta Memory morre em até 2s, ele solta 1,7 de ouro, compartilhado entre todos os Viajantes."
+                },
+                {
+                  "name": "Essência do Gigante",
+                  "key": "essence-of-the-giant",
+                  "type": "neutral",
+                  "effect": "Aumenta sua vida máxima em 260. O dano desta Memory aumenta 1% a cada 50 pontos de vida máxima.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Chuva de Estrelas",
+              "key": "starfall",
+              "type": "light",
+              "effect": "Invoca 4 estrelas cadentes sobre inimigos próximos aleatórios. Cada estrela causa 70% de dano de Luz.",
+              "essences": [
+                {
+                  "name": "Essência da Febre",
+                  "key": "essence-of-fever",
+                  "type": "fire",
+                  "effect": "Ao causar dano de Fogo, infecta o alvo com Febre. Inimigos infectados explodem após 2s, causando 130% de dano de Fogo em área.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Cauda de Brasa",
+                  "key": "embertail",
+                  "type": "fire",
+                  "effect": "Seus ataques ricocheteiam causando 100% de dano de Fogo a um inimigo próximo. A cada inimigo em chamas próximo, o dano/cura aumenta 8% e o tempo de recarga reduz 8%."
+                },
+                {
+                  "name": "Essência de Enxofre",
+                  "key": "essence-of-sulfur",
+                  "type": "fire",
+                  "effect": "Todo dano causado por esta Memory aumenta 15% e vira dano de Fogo. Seu dano de Fogo ao longo do tempo aumenta 50%.",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "Escudo de Gelo",
+              "key": "ice-shield",
+              "type": "ice",
+              "effect": "Envolve um aliado num escudo de gelo, dando um Escudo de 130% por 3s. Ao se romper, causa 160% de dano de Frio a inimigos próximos e recupera 60% de vida do aliado por inimigo atingido.",
+              "essences": [
+                {
+                  "name": "Essência da Aventura",
+                  "key": "essence-of-adventure",
+                  "type": "neutral",
+                  "effect": "Sempre que você muda de local, aumenta a qualidade de outra Essência equipada nesta Memory em +10% e ganha 19 de ouro.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Regeneração",
+                  "key": "essence-of-regeneration",
+                  "type": "heal",
+                  "effect": "Se conjurada em combate, recupera 41 de vida ao longo de 7 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ],
+          "notes": "Build de dano solo baseada em 'Starfallfevertail' — mistura fogo (Febre, Cauda de Brasa, Enxofre) na Chuva de Estrelas pra queimar tudo em volta, com Ignição/Hemorragia pra execução e Escudo de Gelo pra sobreviver."
+        },
+        {
+          "id": "yubar-escalus-quad-starfall",
+          "name": "4x Chuva de Estrelas — by Escalus",
+          "tag": "5ª mais vista",
+          "likes": 7,
+          "views": 2493,
+          "season": "Temporada 1",
+          "date": "2025-09-18",
+          "memories": [
+            {
+              "name": "Chuva de Estrelas (1)",
+              "key": "starfall",
+              "type": "light",
+              "effect": "Invoca 4 estrelas cadentes sobre inimigos próximos aleatórios. Cada estrela causa 70% de dano de Luz.",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Chuva de Estrelas (2)",
+              "key": "starfall",
+              "type": "light",
+              "effect": "Invoca 4 estrelas cadentes sobre inimigos próximos aleatórios. Cada estrela causa 70% de dano de Luz.",
+              "essences": [
+                {
+                  "name": "Essência do Talco",
+                  "key": "essence-of-talc",
+                  "type": "light",
+                  "effect": "A cada 10s, o cast desta Memory fica fortalecido: o dano inicial a cada inimigo aumenta 400%."
+                },
+                {
+                  "name": "Essência da Fragmentação",
+                  "key": "essence-of-shatter",
+                  "type": "light",
+                  "effect": "A cada 10s, o cast desta Memory fica fortalecido: o dano aumenta 40% (72% se for dano de Luz)."
+                },
+                {
+                  "name": "Branco Puro",
+                  "key": "pure-white",
+                  "type": "light",
+                  "effect": "A cada 10s, o cast desta Memory fica fortalecido, disparando 3 projéteis que causam 20% do dano inicial a cada inimigo. O número de disparos aumenta com os stacks de Luz no alvo.",
+                  "rarity": "legendary"
+                }
+              ]
+            },
+            {
+              "name": "Chuva de Estrelas (3)",
+              "key": "starfall",
+              "type": "light",
+              "effect": "Invoca 4 estrelas cadentes sobre inimigos próximos aleatórios. Cada estrela causa 70% de dano de Luz.",
+              "essences": [
+                {
+                  "name": "Essência do Fluxo",
+                  "key": "essence-of-flow",
+                  "type": "light",
+                  "effect": "Causar dano de Luz com qualquer Memory reduz o tempo de recarga desta Memory em 6% (40% em Ultimates). Também reduz o tempo de recarga das Essências equipadas.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Corte",
+                  "key": "essence-of-sharpness",
+                  "type": "physical",
+                  "effect": "Ao conjurar, dispara 5 flechas causando 90% de dano em inimigos aleatórios.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência do Carvão",
+                  "key": "essence-of-charcoal",
+                  "type": "fire",
+                  "effect": "Ao acertar um inimigo, dispara um estilhaço de carvão causando 60% de dano (100% de Fogo se o alvo já estiver queimando).",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "Chuva de Estrelas (4)",
+              "key": "starfall",
+              "type": "light",
+              "effect": "Invoca 4 estrelas cadentes sobre inimigos próximos aleatórios. Cada estrela causa 70% de dano de Luz.",
+              "essences": [
+                {
+                  "name": "Essência da Eficiência",
+                  "key": "essence-of-efficiency",
+                  "type": "neutral",
+                  "effect": "Esta Memory ganha 36 de Memory Haste, reduzindo o tempo de recarga em 26%.",
+                  "rarity": "common"
+                },
+                {
+                  "name": "Essência do Redemoinho",
+                  "key": "essence-of-the-vortex",
+                  "type": "fire",
+                  "effect": "Dispara periodicamente uma bola de fogo num inimigo próximo aleatório, causando 90% de dano de Fogo.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto ativo, lança bolas de neve em inimigos próximos periodicamente.",
+                  "rarity": "rare"
+                }
+              ]
+            }
+          ],
+          "notes": "Build peculiar pra completar o 'sonho branco' usando a MESMA Memory (Chuva de Estrelas) 4 vezes, cada cópia com um conjunto diferente de essências de Luz/Fogo/Frio."
         }
       ],
       "constellation": [
