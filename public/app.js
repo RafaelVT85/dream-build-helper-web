@@ -48,6 +48,7 @@ function relIconPath(kind, key, value) {
   if (kind === "item") return `essencias/${key}.png`;
   if (kind === "star") return `memorias/${value}/${key}.png`; // value = categoria
   if (kind === "traveler") return `travelers/${key}.png`;
+  if (kind === "game") return `covers/${key}.png`;
   return `${key}.png`;
 }
 
@@ -109,7 +110,7 @@ async function postJson(url, body) {
 // Ficam salvas no servidor (Vercel Blob) via /api/*, então aparecem pra
 // qualquer visitante do site, não só no seu navegador.
 
-let overridesStore = { skill: {}, item: {}, star: {} };
+let overridesStore = { skill: {}, item: {}, star: {}, game: {} };
 let overridesLoaded = false;
 
 async function fetchOverrides() {
@@ -194,7 +195,11 @@ let currentBuildId = null;
 let currentSort = "likes";
 
 const el = {
-  gameSelect: document.getElementById("gameSelect"),
+  gameHome: document.getElementById("gameHome"),
+  gameView: document.getElementById("gameView"),
+  gameGrid: document.getElementById("gameGrid"),
+  btnChangeGame: document.getElementById("btnChangeGame"),
+  currentGameName: document.getElementById("currentGameName"),
   travelerList: document.getElementById("travelerList"),
   buildList: document.getElementById("buildList"),
   buildListTitle: document.getElementById("buildListTitle"),
@@ -347,7 +352,7 @@ async function onGalleryFileChosen(ev) {
   const file = input.files[0];
   if (!file) return;
 
-  const card = input.closest(".gallery-card, .gallery-row");
+  const card = input.closest(".gallery-card, .gallery-row, .game-card");
   const label = card.querySelector(".gallery-upload-btn");
   const originalText = label.textContent;
   label.textContent = "Enviando...";
@@ -371,7 +376,7 @@ async function onGalleryFileChosen(ev) {
       };
     }
     label.textContent = "Salvo ✓";
-    setTimeout(() => renderGallery(), 500);
+    setTimeout(() => (input.dataset.kind === "game" ? renderGameHome() : renderGallery()), 500);
   } catch (err) {
     alert("Erro ao salvar: " + err.message);
     label.textContent = originalText;
@@ -518,9 +523,9 @@ init();
 async function init() {
   await fetchOverrides();
   gamesIndex = await fetchJson("data/games/index.json");
-  fillSelect(el.gameSelect, gamesIndex.map(g => ({ value: g.id, label: g.name })));
+  renderGameHome();
 
-  el.gameSelect.addEventListener("change", onGameChange);
+  el.btnChangeGame.addEventListener("click", goToGameHome);
   el.btnBack.addEventListener("click", goBack);
   el.btnSaveState.addEventListener("click", saveCurrentAsSlot);
   el.sortBtns.forEach(btn => btn.addEventListener("click", () => {
@@ -544,20 +549,63 @@ async function init() {
     if (savedCurrent.buildId) {
       selectBuild(savedCurrent.buildId, { record: false });
     }
-  } else if (gamesIndex.length) {
-    await selectGame(gamesIndex[0].id, { silent: true });
   }
+  // Sem seleção salva: fica na tela inicial de escolha de jogo (gameHome).
 }
 
-async function onGameChange() {
-  await selectGame(el.gameSelect.value, { silent: false });
+function gameCoverHtml(game) {
+  const override = getOverride("game", game.id);
+  const cover = override.cover || override.icon || game.cover;
+  if (cover) {
+    return `<img src="${resolveIconSrc(cover)}" alt="" class="game-cover-img" data-kind="game-cover">`;
+  }
+  return `<div class="game-cover-fallback" style="background:${colorFor(game.id)}">${escapeHtml(game.name.charAt(0).toUpperCase())}</div>`;
+}
+
+function renderGameHome() {
+  el.gameGrid.innerHTML = gamesIndex.map(g => `
+    <div class="game-card">
+      <button class="game-card-enter" data-game="${escapeHtml(g.id)}">
+        ${gameCoverHtml(g)}
+        <span class="game-card-name">${escapeHtml(g.name)}</span>
+      </button>
+      <label class="gallery-upload-btn game-cover-upload" for="gamecover-${escapeHtml(g.id)}">🖼️ Capa</label>
+      <input type="file" id="gamecover-${escapeHtml(g.id)}" accept="image/*" class="gallery-file-input"
+        data-kind="game" data-key="${escapeHtml(g.id)}" data-value="">
+    </div>
+  `).join("");
+
+  el.gameGrid.querySelectorAll(".game-card-enter").forEach(btn => {
+    btn.addEventListener("click", () => enterGame(btn.dataset.game));
+  });
+  el.gameGrid.querySelectorAll(".gallery-file-input").forEach(input => {
+    input.addEventListener("change", onGalleryFileChosen);
+  });
+  el.gameGrid.querySelectorAll(".game-cover-img").forEach(img => {
+    img.addEventListener("error", () => {
+      const game = gamesIndex.find(g => g.id === img.closest(".game-card").querySelector(".game-card-enter").dataset.game);
+      img.outerHTML = `<div class="game-cover-fallback" style="background:${colorFor(game.id)}">${escapeHtml(game.name.charAt(0).toUpperCase())}</div>`;
+    }, { once: true });
+  });
+}
+
+async function enterGame(gameId) {
+  await selectGame(gameId, { silent: false });
+}
+
+function goToGameHome() {
+  el.gameHome.style.display = "block";
+  el.gameView.style.display = "none";
+  renderGameHome();
 }
 
 async function selectGame(gameId, { silent }) {
   const entry = gamesIndex.find(g => g.id === gameId);
   if (!entry) return;
-  el.gameSelect.value = gameId;
   currentGameData = await fetchJson(`data/games/${entry.file}`);
+  el.currentGameName.textContent = entry.name;
+  el.gameHome.style.display = "none";
+  el.gameView.style.display = "block";
   renderTravelerList();
   if (currentGameData.travelers.length) {
     selectTraveler(currentGameData.travelers[0].id, { record: false, autoPick: true });
@@ -648,7 +696,7 @@ function selectBuild(buildId, { record }) {
   });
   renderBuildDetails();
   state.current = {
-    gameId: el.gameSelect.value,
+    gameId: currentGameData?.id,
     travelerId: currentTravelerId,
     buildId: buildId || null,
   };
@@ -921,7 +969,7 @@ function saveState() {
 
 function persistCurrentSelectionOnly() {
   state.current = {
-    gameId: el.gameSelect.value,
+    gameId: currentGameData?.id,
     travelerId: currentTravelerId,
     buildId: currentBuildId,
   };

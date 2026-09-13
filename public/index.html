@@ -2,12 +2,12 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <title>Dream Build Helper</title>
+  <title>Ajuda Jogos</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
-    <span class="title">Dream Build Helper</span>
+    <span class="title">Ajuda Jogos</span>
     <div class="topbar-actions">
       <button id="btnPip" class="ghost" title="Fixar por cima do jogo (Chrome/Edge)">📌</button>
       <button id="btnToggleGameMode" class="ghost" title="Modo Jogo — só Memories e Essências">🎮</button>
@@ -34,16 +34,21 @@
   </div>
 
   <main id="mainView">
-    <section class="selectors">
-      <label>Jogo
-        <select id="gameSelect"></select>
-      </label>
+    <section id="gameHome" class="game-home">
+      <div class="section-label">Escolha o jogo</div>
+      <div class="game-grid" id="gameGrid"></div>
     </section>
 
-    <section class="traveler-row">
-      <div class="section-label">Personagem</div>
-      <div id="travelerList" class="traveler-list"></div>
-    </section>
+    <section id="gameView" style="display:none;">
+      <div class="game-view-header">
+        <button id="btnChangeGame" class="ghost">← Trocar jogo</button>
+        <span id="currentGameName" class="current-game-name"></span>
+      </div>
+
+      <section class="traveler-row">
+        <div class="section-label">Personagem</div>
+        <div id="travelerList" class="traveler-list"></div>
+      </section>
 
     <section class="build-browser">
       <div class="build-browser-header">
@@ -67,6 +72,7 @@
         <button id="btnSaveState" class="ghost">+ Salvar atual</button>
       </div>
       <ul id="savesList"></ul>
+    </section>
     </section>
   </main>
 

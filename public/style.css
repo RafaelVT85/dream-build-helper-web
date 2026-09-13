@@ -73,6 +73,33 @@ select {
 .sort-row span { color: var(--text-dim); font-size: 11px; }
 .sortBtn { padding: 4px 8px; font-size: 11px; }
 
+.game-home { padding: 4px 0; }
+.game-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px;
+  padding: 0 2px;
+}
+.game-card { display: flex; flex-direction: column; gap: 4px; }
+.game-card-enter {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 10px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px;
+}
+.game-card-enter:hover { border-color: var(--accent); }
+.game-cover-img, .game-cover-fallback {
+  width: 100%; aspect-ratio: 3 / 4; border-radius: 8px; object-fit: cover;
+}
+.game-cover-fallback {
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 700; font-size: 32px;
+}
+.game-card-name { font-weight: 600; font-size: 13px; text-align: center; }
+.game-cover-upload { display: block; text-align: center; font-size: 10px; }
+
+.game-view-header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; margin-bottom: 10px;
+}
+.current-game-name { font-weight: 600; font-size: 13px; color: var(--text-dim); }
+
 .traveler-row { display: flex; flex-direction: column; gap: 6px; }
 .traveler-list {
   display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px;
@@ -233,7 +260,7 @@ select {
   background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 4px 6px;
 }
 
-body.game-mode .selectors,
+body.game-mode .game-view-header,
 body.game-mode .traveler-row,
 body.game-mode .build-browser,
 body.game-mode .saves { display: none; }
