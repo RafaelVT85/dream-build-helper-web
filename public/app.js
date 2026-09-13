@@ -444,6 +444,7 @@ async function togglePip() {
     }
   });
 
+  pipWindow.document.body.className = document.body.className;
   pipWindow.document.body.setAttribute("data-theme", document.body.getAttribute("data-theme") || "roxo");
   pipWindow.document.body.style.margin = "0";
   pipWindow.document.body.style.background = "rgb(var(--bg-rgb))";
@@ -453,7 +454,8 @@ async function togglePip() {
   btnPip.classList.add("active");
 
   pipWindow.addEventListener("pagehide", () => {
-    document.getElementById("mainView").appendChild(el.buildDetails);
+    const savesSection = el.gameView.querySelector(".saves");
+    el.gameView.insertBefore(el.buildDetails, savesSection);
     pipWindow = null;
     btnPip.classList.remove("active");
   });
@@ -469,6 +471,7 @@ const gameModeSections = document.querySelectorAll(".selectors, .traveler-row, .
 
 function applyGameMode(on) {
   document.body.classList.toggle("game-mode", on);
+  if (pipWindow) pipWindow.document.body.classList.toggle("game-mode", on);
   btnGameMode.classList.toggle("active", on);
   btnGameMode.title = on ? "Sair do Modo Jogo" : "Modo Jogo — só Memories e Essências";
 }
@@ -515,6 +518,7 @@ bgAlphaSlider.addEventListener("input", () => {
 themeSelect.addEventListener("change", () => {
   appearance.theme = themeSelect.value;
   document.body.setAttribute("data-theme", appearance.theme);
+  if (pipWindow) pipWindow.document.body.setAttribute("data-theme", appearance.theme);
   saveAppearance(appearance);
 });
 
