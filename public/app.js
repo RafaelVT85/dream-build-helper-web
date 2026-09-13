@@ -71,7 +71,8 @@ function iconOrBadge(key, kind, value, explicitPath, rarity) {
   return `<img src="${path}" alt="" class="type-icon"${rarityStyle} data-kind="${kind}" data-value="${escapeHtml(value || "")}">`;
 }
 
-function travelerAvatar(traveler) {
+function travelerAvatar(rawTraveler) {
+  const traveler = withOverride("traveler", rawTraveler);
   const path = traveler.icon ? resolveIconSrc(traveler.icon) : `data/icons/${relIconPath("traveler", traveler.id)}`;
   const initial = escapeHtml((traveler.name || "?").charAt(0).toUpperCase());
   return `<img src="${path}" alt="" class="avatar-img" data-kind="traveler-avatar" data-initial="${initial}" data-color="${colorFor(traveler.id)}">`;
@@ -139,9 +140,15 @@ async function setOverride(kind, key, patch) {
   }
 }
 // Devolve uma cópia do item com as edições já aplicadas por cima.
+// Cadeia de fallback única pra achar a "chave" de qualquer item: a maioria
+// usa `key`, personagens usam `id`, e o raríssimo item sem nenhum dos dois
+// (ex.: a skill "Déjà Vu inicial") cai pro próprio nome.
+function overrideKeyFor(item) {
+  return item.key || item.id || item.name;
+}
+
 function withOverride(kind, item) {
-  const key = item.key || item.name;
-  return { ...item, ...getOverride(kind, key) };
+  return { ...item, ...getOverride(kind, overrideKeyFor(item)) };
 }
 
 const RARITY_COLORS = {
@@ -235,16 +242,16 @@ function collectGalleryItems() {
     travelers.push({ id: t.id, name: t.name, icon: t.icon });
     (t.builds || []).forEach(b => {
       (b.memories || []).forEach(rawM => {
-        const k = rawM.key || rawM.name;
+        const k = overrideKeyFor(rawM);
         if (!skills.has(k)) skills.set(k, withOverride("skill", { key: rawM.key, name: rawM.name, type: rawM.type, effect: rawM.effect, icon: rawM.icon }));
         (rawM.essences || []).forEach(rawE => {
-          const ek = rawE.key || rawE.name;
+          const ek = overrideKeyFor(rawE);
           if (!essences.has(ek)) essences.set(ek, withOverride("item", { key: rawE.key, name: rawE.name, type: rawE.type, rarity: rawE.rarity, effect: rawE.effect, icon: rawE.icon }));
         });
       });
     });
     (t.constellation || []).forEach(rawS => {
-      const sk = rawS.key || rawS.name;
+      const sk = overrideKeyFor(rawS);
       if (!stars.has(sk)) stars.set(sk, withOverride("star", { key: rawS.key, name: rawS.name, category: rawS.category, effect: rawS.effect, icon: rawS.icon }));
     });
   });
@@ -264,7 +271,7 @@ const CATEGORY_LABEL = { destruicao: "Destruição", vida: "Vida", imaginacao: "
 
 function galleryCardHtml(kind, item) {
   const displayName = kind === "item" ? abbrevEssence(item.name) : item.name;
-  const overrideKey = item.key || item.name;
+  const overrideKey = overrideKeyFor(item);
   const iconHtml = kind === "traveler"
     ? travelerAvatar(item)
     : iconOrBadge(item.key, kind, kind === "star" ? item.category : item.type, item.icon, item.rarity);
@@ -277,7 +284,7 @@ function galleryCardHtml(kind, item) {
         <span class="gallery-card-name">${escapeHtml(displayName)}</span>
         <label class="gallery-upload-btn" for="${uid}">${item.icon ? "Trocar" : "Enviar imagem"}</label>
         <input type="file" id="${uid}" accept="image/*" class="gallery-file-input"
-          data-kind="${kind}" data-key="${escapeHtml(item.key || "")}" data-value="">
+          data-kind="${kind}" data-key="${escapeHtml(overrideKey)}" data-value="">
       </div>`;
   }
 
@@ -728,7 +735,7 @@ function renderBuildDetails() {
 
   const memoriesHtml = (build.memories || []).map((rawM, i) => {
     const m = withOverride("skill", rawM);
-    const mKey = m.key || m.name;
+    const mKey = overrideKeyFor(m);
     const essencesHtml = (rawM.essences || []).map((rawE, ei) => {
       const e = withOverride("item", rawE);
       const eKey = e.key || `${mKey}__${e.name}`;
@@ -784,7 +791,7 @@ function renderBuildDetails() {
 
   const constellationHtml = (traveler.constellation || []).map(rawS => {
     const s = withOverride("star", rawS);
-    const sKey = s.key || s.name;
+    const sKey = overrideKeyFor(s);
     if (editMode) {
       return `<li>
         ${iconOrBadge(s.key, "star", s.category, s.icon)}
