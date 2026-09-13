@@ -1,47 +1,48 @@
 // POST /api/save-override
-// Body: { kind: "skill"|"item"|"star", key: string, patch: { name?, effect?, rarity?, category?, icon? } }
-// Lê o overrides.json atual do Vercel Blob, aplica o patch por cima da chave
-// certa, e salva de volta — assim fica permanente pra qualquer visitante.
+// Body: { kind: "skill"|"item"|"star"|"game", key: string, patch: { name?, effect?, rarity?, category?, icon? } }
+// Lê o arquivo PRÓPRIO desse item (overrides/<kind>/<key>.json), aplica o
+// patch, e salva de volta. Cada item tem seu próprio arquivo no Blob —
+// editar dois itens diferentes ao mesmo tempo nunca derruba um ao outro
+// (diferente de guardar tudo num overrides.json compartilhado).
 import { list, put } from "@vercel/blob";
+
+function safeKey(k) {
+  return String(k).replace(/[^a-zA-Z0-9_-]/g, "_");
+}
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método não permitido" });
   }
   const { kind, key, patch } = req.body || {};
-  if (!kind || !key || !patch || !["skill", "item", "star"].includes(kind)) {
+  if (!kind || !key || !patch || !["skill", "item", "star", "game"].includes(kind)) {
     return res.status(400).json({ error: "kind, key e patch são obrigatórios" });
   }
 
   try {
-    const { blobs } = await list({ prefix: "overrides.json", limit: 1 });
-    let data = { skill: {}, item: {}, star: {} };
+    const path = `overrides/${kind}/${safeKey(key)}.json`;
+    let current = {};
+    const { blobs } = await list({ prefix: path, limit: 1 });
     if (blobs.length) {
       const response = await fetch(blobs[0].url);
-      data = await response.json();
+      current = await response.json();
     }
 
-    data[kind] = data[kind] || {};
-    data[kind][key] = { ...(data[kind][key] || {}) };
     for (const [field, value] of Object.entries(patch)) {
       if (value === undefined || value === "") {
-        delete data[kind][key][field];
+        delete current[field];
       } else {
-        data[kind][key][field] = value;
+        current[field] = value;
       }
     }
-    if (Object.keys(data[kind][key]).length === 0) {
-      delete data[kind][key];
-    }
+    current._originalKey = key; // preserva o nome exato (pode ter acento/espaço)
 
-    await put("overrides.json", JSON.stringify(data), {
-      access: "public",
-      contentType: "application/json",
-      addRandomSuffix: false,
-      allowOverwrite: true,
+    await put(path, JSON.stringify(current), {
+      access: "public", contentType: "application/json",
+      addRandomSuffix: false, allowOverwrite: true,
     });
 
-    return res.status(200).json({ ok: true, data });
+    return res.status(200).json({ ok: true, data: current });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: String(err) });

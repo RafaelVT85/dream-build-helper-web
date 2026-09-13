@@ -1,12 +1,18 @@
 // POST /api/upload-icon
-// Body: { kind: "skill"|"item"|"star"|"traveler", key: string, relPath: string, dataBase64: string, contentType: string }
-// Sobe a imagem pro Vercel Blob (pasta icons/) e grava a URL pública no
-// overrides.json, na chave certa, pra aparecer pra todo mundo que visitar.
+// Body: { kind: "skill"|"item"|"star"|"traveler"|"game", key: string, relPath: string, dataBase64: string, contentType: string }
+// Sobe a imagem pro Vercel Blob (pasta icons/) e grava a URL num arquivo
+// PRÓPRIO desse item (overrides/<kind>/<key>.json) — cada item tem seu
+// arquivo, então enviar várias imagens ao mesmo tempo nunca derruba a
+// edição de outra (diferente de guardar tudo num overrides.json só).
 import { list, put } from "@vercel/blob";
 
 export const config = {
   api: { bodyParser: { sizeLimit: "8mb" } },
 };
+
+function safeKey(k) {
+  return String(k).replace(/[^a-zA-Z0-9_-]/g, "_");
+}
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -26,18 +32,19 @@ export default async function handler(req, res) {
       allowOverwrite: true,
     });
 
-    // Além de subir o arquivo, já grava a URL no overrides.json (se o
-    // chamador mandou kind+key — a Galeria manda; um upload avulso não).
+    // Grava a URL no arquivo PRÓPRIO desse item (kind+key), não num arquivo
+    // global — assim uploads simultâneos de itens diferentes nunca colidem.
     if (kind && key) {
-      const { blobs } = await list({ prefix: "overrides.json", limit: 1 });
-      let data = { skill: {}, item: {}, star: {} };
+      const path = `overrides/${kind}/${safeKey(key)}.json`;
+      let current = {};
+      const { blobs } = await list({ prefix: path, limit: 1 });
       if (blobs.length) {
         const response = await fetch(blobs[0].url);
-        data = await response.json();
+        current = await response.json();
       }
-      data[kind] = data[kind] || {};
-      data[kind][key] = { ...(data[kind][key] || {}), icon: blob.url };
-      await put("overrides.json", JSON.stringify(data), {
+      current.icon = blob.url;
+      current._originalKey = key; // preserva o nome exato (pode ter acento/espaço)
+      await put(path, JSON.stringify(current), {
         access: "public",
         contentType: "application/json",
         addRandomSuffix: false,
