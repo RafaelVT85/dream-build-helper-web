@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dream Build Helper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <span class="title">Dream Build Helper</span>
+    <div class="topbar-actions">
+      <button id="btnPip" class="ghost" title="Fixar por cima do jogo (Chrome/Edge)">📌</button>
+      <button id="btnToggleGameMode" class="ghost" title="Modo Jogo — só Memories e Essências">🎮</button>
+      <button id="btnToggleGallery" class="ghost" title="Ver/completar os ícones">🖼️</button>
+      <button id="btnToggleSettings" class="ghost" title="Aparência">⚙️</button>
+      <button id="btnBack" class="ghost" title="Voltar pra seleção anterior">↩</button>
+    </div>
+  </header>
+
+  <div id="settingsPanel" class="settings-panel" style="display:none;">
+    <label class="settings-row">
+      <span>Transparência do fundo</span>
+      <input type="range" id="bgAlphaSlider" min="15" max="100" value="100">
+    </label>
+    <label class="settings-row">
+      <span>Skin</span>
+      <select id="themeSelect">
+        <option value="roxo">Roxo (padrão)</option>
+        <option value="azul">Azul</option>
+        <option value="verde">Verde</option>
+        <option value="vermelho">Vermelho</option>
+      </select>
+    </label>
+  </div>
+
+  <main id="mainView">
+    <section class="selectors">
+      <label>Jogo
+        <select id="gameSelect"></select>
+      </label>
+    </section>
+
+    <section class="traveler-row">
+      <div class="section-label">Personagem</div>
+      <div id="travelerList" class="traveler-list"></div>
+    </section>
+
+    <section class="build-browser">
+      <div class="build-browser-header">
+        <span id="buildListTitle" class="section-label">Builds</span>
+        <div class="sort-row">
+          <button class="sortBtn active" data-sort="likes">👍 Curtidas</button>
+          <button class="sortBtn" data-sort="views">👁 Vistas</button>
+          <button class="sortBtn" data-sort="date">🕒 Recentes</button>
+        </div>
+      </div>
+      <div id="buildList" class="build-cards"></div>
+    </section>
+
+    <section id="buildDetails" class="build-details">
+      <p class="empty-hint">Escolha um personagem e uma build acima.</p>
+    </section>
+
+    <section class="saves">
+      <div class="saves-header">
+        <span>Estados salvos</span>
+        <button id="btnSaveState" class="ghost">+ Salvar atual</button>
+      </div>
+      <ul id="savesList"></ul>
+    </section>
+  </main>
+
+  <main id="galleryView" style="display:none;">
+    <section class="gallery-header">
+      <p class="hint">
+        Mostra tudo que já está mapeado nos dados (skills/essências/estrelas usadas nas
+        builds) — não é o catálogo completo do jogo. Clique em "Enviar imagem" pra completar
+        um que ainda não tem, ou edite nome/descrição/raridade direto aqui — fica salvo pra
+        qualquer visitante do site.
+      </p>
+      <div class="gallery-filter-row">
+        <button class="ghost galleryFilterBtn active" data-filter="missing">Só faltando</button>
+        <button class="ghost galleryFilterBtn" data-filter="all">Todos</button>
+      </div>
+    </section>
+    <section id="galleryTravelers" class="gallery-section">
+      <div class="section-label">Personagens</div>
+      <div class="gallery-grid" id="galleryTravelersGrid"></div>
+    </section>
+    <section id="gallerySkills" class="gallery-section">
+      <div class="section-label">Memories (skills)</div>
+      <div class="gallery-list" id="gallerySkillsGrid"></div>
+    </section>
+    <section id="galleryEssences" class="gallery-section">
+      <div class="section-label">Essences (itens)</div>
+      <div class="gallery-list" id="galleryEssencesGrid"></div>
+    </section>
+    <section id="galleryStars" class="gallery-section">
+      <div class="section-label">Estrelas de Constelação</div>
+      <div class="gallery-list" id="galleryStarsGrid"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

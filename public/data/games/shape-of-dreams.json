@@ -1,0 +1,2610 @@
+{
+  "id": "shape-of-dreams",
+  "name": "Shape of Dreams",
+  "_readme": "Os nomes em 'name' são traduções de melhor esforço (não confirmadas oficialmente). Use o Modo de Aprendizado no app pra ensinar o texto exato que aparece no seu jogo. Os campos likes/views são PLACEHOLDERS ilustrativos (não são dados reais do site da comunidade) — atualize à mão se quiser refletir números de verdade. 'type' controla o ícone/cor do selo: fire, ice, light, dark, nature, physical, heal, neutral.",
+  "travelers": [
+    {
+      "id": "lacerta",
+      "name": "Lacerta",
+      "role": "Ataque à distância",
+      "builds": [
+        {
+          "id": "lacerta-incendiary-burn",
+          "name": "Queima Total (4 Memories) — by Fear",
+          "tag": "meta",
+          "likes": 123,
+          "views": 29280,
+          "season": "Temporada 2",
+          "date": "2025-09-15",
+          "notes": "Build completa tirada direto da página oficial. A passiva de identidade Tiro Duplo (aumenta AD/crítico e dobra o próximo ataque básico após usar uma Memory ou a esquiva) já vem de graça, sem precisar equipar nada. As 4 Memories cobrem cada uma um elemento: fogo (Munição Incendiária, foco em sustain com Clemência/Orientação), gelo (Queimadura de Gelo, cura e redução de cooldown ao matar), trevas (Fio Umbral, crítico com Presas/Carmesim) e físico puro (Tempestade de Flechas, projéteis extras e ricochete). Dá pra jogar só com 2-3 dessas Memories também, priorizando a que combinar mais com o que você achar na run.",
+          "memories": [
+            {
+              "name": "Munição Incendiária",
+              "key": "incendiary-rounds",
+              "type": "fire",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Clemency.avif"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                }
+              ],
+              "effect": "Os próximos 4 ataques básicos ficam 60% mais rápidos e causam 100% de dano de Fogo adicional, aumentando brevemente a velocidade de movimento.",
+              "icon": "Memorias/Character/St_Q_IncendiaryRounds.avif"
+            },
+            {
+              "name": "Queimadura de Gelo",
+              "key": "frostbite",
+              "type": "ice",
+              "essences": [
+                {
+                  "name": "Essência do Congelamento",
+                  "key": "essence-of-freezing",
+                  "type": "ice",
+                  "effect": "Ao conjurar esta Memory, libera uma explosão de frio que causa 160% de dano de Frio aos inimigos. A área aumenta com a qualidade.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Núcleo Glacial",
+                  "key": "glacial-core",
+                  "type": "ice",
+                  "effect": "A cada 5s, causar dano com esta Memory recupera 3,6% da sua vida máxima (100% a mais se for dano de Frio). 272% de toda vida recuperada vira dano de Frio, disparando estilhaços de gelo em inimigos próximos.",
+                  "icon": "Essencias/Unico/Gem_U_GlacialCore.avif"
+                },
+                {
+                  "name": "Essência do Metal",
+                  "key": "essence-of-metal",
+                  "type": "neutral",
+                  "effect": "Ao matar um inimigo, o tempo de recarga desta Memory é reduzido em 1 segundo.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Metal.avif"
+                }
+              ],
+              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos: o primeiro causa 50% de dano de Frio adicional e concede um Escudo de 110% por 2s; o segundo causa 180% de dano de Frio adicional.",
+              "icon": "Memorias/Raro/St_R_Frostbite.avif"
+            },
+            {
+              "name": "Fio Umbral",
+              "key": "umbral-edge",
+              "type": "dark",
+              "essences": [
+                {
+                  "name": "Essência da Presa",
+                  "key": "essence-of-fangs",
+                  "type": "physical",
+                  "note": "core",
+                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga desta Memory reduz 0,7s e lança 2 Presas em inimigos próximos, cada uma causando 60% de dano.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Fangs.avif"
+                },
+                {
+                  "name": "Essência do Céu Noturno",
+                  "key": "essence-of-the-starry-sky",
+                  "type": "dark",
+                  "effect": "Cada vez que esta Memory acerta um inimigo, sua velocidade de ataque aumenta 10% por 3s (até 20%, ou 40% se causar dano das Trevas). Atacar renova a duração.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência de Carmesim",
+                  "key": "essence-of-crimson",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico fica fortalecido, causando uma Explosão Carmesim de 100% de dano das Trevas. O raio escala com a chance de crítico. Recupera 22% de vida por inimigo atingido (dobrado contra chefes).",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Crimson.avif"
+                }
+              ],
+              "effect": "Por 7s, imbui sua arma com o poder das Trevas, aumentando a chance de crítico em 20% e causando 52% de dano das Trevas adicional ao atacar. Corpo a corpo causa 25% a mais desse adicional.",
+              "icon": "Memorias/Epico/St_E_UmbralEdge.avif"
+            },
+            {
+              "name": "Tempestade de Flechas",
+              "key": "arrow-storm",
+              "type": "physical",
+              "essences": [
+                {
+                  "name": "Essência da Precisão",
+                  "key": "essence-of-accuracy",
+                  "type": "physical",
+                  "effect": "Ao causar dano a um inimigo distante, dispara um projétil adicional que causa 50% de dano, do mesmo tipo elemental do original.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Accuracy.avif"
+                },
+                {
+                  "name": "Essência de Ricochete",
+                  "key": "essence-of-ricochet",
+                  "type": "neutral",
+                  "effect": "O dano ou cura desta Memory tem 50% de chance de ricochetear pra outro alvo próximo, causando/curando 90% do valor original, mantendo o tipo elemental.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Ricochet.avif"
+                },
+                {
+                  "name": "Essência do Choque",
+                  "key": "essence-of-shock",
+                  "type": "light",
+                  "effect": "A cada 4º ataque básico fica fortalecido, soltando um raio que salta entre inimigos, causando 40% de dano de Luz até 2 vezes. A cada 20% de chance de crítico, o número de saltos aumenta em 1.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Shock.avif"
+                }
+              ],
+              "effect": "Por 6s, aumenta a velocidade de ataque em 15% e a de movimento em 10%. Cada ataque dispara 3 flechas (35% de dano cada); a primeira ativa efeitos de ataque."
+            }
+          ]
+        },
+        {
+          "id": "lacerta-fiery-crit",
+          "name": "Crítico Flamejante — Pólvora + Canhão de Mão",
+          "tag": "alternativa",
+          "likes": 10,
+          "views": 5042,
+          "season": "Temporada 2",
+          "date": "2025-09-17",
+          "notes": "Variante mais focada em crítico e velocidade de ataque em vez de dano em área — vira um show de pirotecnia contra grupos. Upe Pólvora da Salamandra e Canhão de Mão antes de espalhar dust nas outras skills.",
+          "memories": [
+            {
+              "name": "Pólvora da Salamandra",
+              "key": "salamander-powder",
+              "type": "fire",
+              "essences": [
+                {
+                  "name": "Essência de Enxofre",
+                  "key": "essence-of-sulfur",
+                  "type": "fire",
+                  "note": "core",
+                  "effect": "Todo dano causado por esta Memory aumenta 15% e vira dano de Fogo. Seu dano de Fogo ao longo do tempo aumenta 50%.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Sulfur.avif"
+                },
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "note": "suporte",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                }
+              ],
+              "effect": "A cada 4º ataque básico vira crítico e explode, causando 145% de dano de Fogo em área. O dano da explosão dobra contra inimigos queimando.",
+              "icon": "Memorias/Identy/St_D_SalamanderPowder.avif"
+            }
+          ]
+        },
+        {
+          "id": "lacerta-shafar-hybrid",
+          "name": "Híbrido Fogo/Gelo (5 Memories) — by Shafar",
+          "tag": "3ª mais vista",
+          "likes": 6,
+          "views": 2312,
+          "season": "Temporada 1",
+          "date": "2025-09-16",
+          "memories": [
+            {
+              "name": "Munição Incendiária",
+              "key": "incendiary-rounds",
+              "type": "fire",
+              "effect": "Os próximos 4 ataques básicos ficam 60% mais rápidos e causam 100% de dano de Fogo adicional, aumentando brevemente a velocidade de movimento.",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s (+80% se causar dano de Frio).",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Rigidity.avif"
+                },
+                {
+                  "name": "Essência da Febre",
+                  "key": "essence-of-fever",
+                  "type": "fire",
+                  "effect": "Ao causar dano de Fogo, infecta o alvo com Febre. Inimigos infectados explodem após 2s, causando 130% de dano de Fogo em área. Cada stack de Fogo aumenta o raio e o dano da explosão.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Fever.avif"
+                }
+              ],
+              "icon": "Memorias/Character/St_Q_IncendiaryRounds.avif"
+            },
+            {
+              "name": "Tempestade de Flechas",
+              "key": "arrow-storm",
+              "type": "physical",
+              "effect": "Por 6s, aumenta a velocidade de ataque em 15% e a de movimento em 10%. Cada ataque dispara 3 flechas.",
+              "essences": [
+                {
+                  "name": "Essência da Eficiência",
+                  "key": "essence-of-efficiency",
+                  "type": "neutral",
+                  "effect": "Esta Memory ganha 36 de Memory Haste, reduzindo o tempo de recarga em 26%.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Efficiency.avif"
+                }
+              ]
+            },
+            {
+              "name": "Fé Divina",
+              "key": "divine-faith",
+              "type": "light",
+              "effect": "Cada vez que você mata um inimigo com esta Memory, ganha uma carga de Fé (até 75). Cada carga aumenta dano/cura e sua vida máxima.",
+              "essences": [
+                {
+                  "name": "Essência do Vento",
+                  "key": "essence-of-wind",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Wind.avif"
+                }
+              ],
+              "icon": "Essencias/Lendario/Gem_L_DivineFaith.avif"
+            },
+            {
+              "name": "Passo Atrás",
+              "key": "backstep",
+              "type": "physical",
+              "effect": "Salta pra trás e deixa 3 bombas de choque na posição original, cada uma causando 120% de dano e atordoando por 1 segundo.",
+              "essences": [
+                {
+                  "name": "Essência do Carvão",
+                  "key": "essence-of-charcoal",
+                  "type": "fire",
+                  "effect": "Ao acertar um inimigo, dispara um estilhaço de carvão causando 60% de dano (100% de Fogo se o alvo já estiver queimando).",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Charcoal.avif"
+                },
+                {
+                  "name": "Essência do Redemoinho",
+                  "key": "essence-of-the-vortex",
+                  "type": "fire",
+                  "effect": "Dispara periodicamente uma bola de fogo num inimigo próximo aleatório, causando 90% de dano de Fogo. Quanto maior a qualidade, mais rápido dispara.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Riqueza",
+                  "key": "essence-of-wealth",
+                  "type": "neutral",
+                  "effect": "Quando um inimigo danificado por esta Memory morre em até 2s, ele solta 1,7 de ouro, compartilhado entre todos os Viajantes.",
+                  "icon": "Essencias/Raro/Gem_R_Wealth.avif"
+                }
+              ],
+              "icon": "Memorias/Comun/St_C_BackStep.avif"
+            },
+            {
+              "name": "Escudo de Gelo",
+              "key": "ice-shield",
+              "type": "ice",
+              "effect": "Envolve um aliado num escudo de gelo. Ao se romper, causa dano de Frio a inimigos próximos e cura o aliado.",
+              "essences": [
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência de Enxofre",
+                  "key": "essence-of-sulfur",
+                  "type": "fire",
+                  "effect": "Todo dano causado por esta Memory aumenta 15% e vira dano de Fogo.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Sulfur.avif"
+                },
+                {
+                  "name": "Essência do Mercúrio",
+                  "key": "essence-of-quicksilver",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory ou causar dano de Fogo com ela aumenta a velocidade de movimento em 30%.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Quicksilver.avif"
+                }
+              ]
+            }
+          ],
+          "notes": "Build hibrida fogo/gelo com 5 Memories — usa a identidade fixa Pólvora da Salamandra (crítico a cada 4º ataque que explode em área). Mistura sustain (Fé Divina, Voracidade) com controle (Passo Atrás, Escudo de Gelo)."
+        }
+      ],
+      "constellation": [
+        {
+          "category": "destruicao",
+          "name": "Mira Improvisada",
+          "effect": "Aumenta o alcance de ataque em 1,5m.",
+          "key": "mira-improvisada"
+        },
+        {
+          "category": "destruicao",
+          "name": "Maestria em Recarga",
+          "effect": "Aumenta a velocidade de ataque em 1400%.",
+          "key": "maestria-em-recarga"
+        },
+        {
+          "category": "destruicao",
+          "name": "Intelecto do Lagarto",
+          "effect": "Aumenta o poder de habilidade em 10.",
+          "key": "intelecto-do-lagarto"
+        },
+        {
+          "category": "destruicao",
+          "name": "Hora da Noite",
+          "effect": "Aumenta o poder de habilidade em 8.",
+          "key": "hora-da-noite"
+        },
+        {
+          "category": "destruicao",
+          "name": "Trevo da Sorte",
+          "effect": "Aumenta a chance de crítico em 13%.",
+          "key": "trevo-da-sorte"
+        },
+        {
+          "category": "destruicao",
+          "name": "Golpe Poderoso",
+          "effect": "Aumenta o dano crítico em 24%.",
+          "key": "golpe-poderoso"
+        },
+        {
+          "category": "destruicao",
+          "name": "Cinto de Cartuchos",
+          "effect": "O cooldown de Munição Incendiária aumenta 2s, mas o número de balas disparadas aumenta em 2.",
+          "key": "cinto-de-cartuchos"
+        },
+        {
+          "category": "destruicao",
+          "name": "Munição Explosiva",
+          "effect": "Munição Incendiária explode ao acertar, causando dano a inimigos próximos.",
+          "key": "municao-explosiva"
+        },
+        {
+          "category": "vida",
+          "name": "Pele Regenerativa",
+          "effect": "Aumenta a cura e o escudo recebidos em 18%.",
+          "key": "pele-regenerativa"
+        },
+        {
+          "category": "vida",
+          "name": "Refinamento de Aço",
+          "effect": "Aumenta a vida máxima em 24 a cada nível.",
+          "key": "refinamento-de-aco"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Negociação Lagarto do Norte",
+          "effect": "O preço de ouro de itens vendidos por alguns comerciantes aumenta 30%, mas eles oferecem 2 itens extras à venda.",
+          "key": "negociacao-lagarto-do-norte"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Charme Monstruoso",
+          "effect": "100% de chance de Jonas oferecer 2 itens adicionais à venda.",
+          "key": "charme-monstruoso"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Negociador Habilidoso",
+          "effect": "O preço de ouro de itens vendidos por comerciantes é reduzido em 25%.",
+          "key": "negociador-habilidoso"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Negociador Afiado",
+          "effect": "O preço de ouro de itens vendidos por comerciantes é reduzido em 18%.",
+          "key": "negociador-afiado"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Mercado Negro",
+          "effect": "Ganha 3 Moedas de Platina no início da aventura e sempre que muda de mundo (máx. 3). Use pra atualizar o estoque do mercador.",
+          "key": "mercado-negro"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Sorte de Iniciante",
+          "effect": "Aumenta a qualidade da primeira Essência equipada em 13000%.",
+          "key": "sorte-de-iniciante"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Coleta Recompensadora",
+          "effect": "Quebrar Fragmentos de Ouro ou Dream Dust concede 12 de ouro e Dream Dust extras.",
+          "key": "coleta-recompensadora"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Caos Primordial",
+          "effect": "Quando Caos é obtido como recompensa, 20% de chance de ganhar um Caos adicional.",
+          "key": "caos-primordial"
+        }
+      ],
+      "_constellation_note": "Referência solta, não um guia exato: os nomes das estrelas no jogo só aparecem ao passar o mouse/analógico em cima delas, então não dá pra garantir que essa tradução bate 100% com o que você vê na tela. Use como ideia geral dos efeitos disponíveis pra esse personagem, não como um mapa certeiro de qual ícone é qual.",
+      "icon": "Viajantes/Hero_Lacerta.avif"
+    },
+    {
+      "id": "mist",
+      "name": "Mist",
+      "role": "Ataque corpo a corpo",
+      "builds": [
+        {
+          "id": "mist-fleche-paranoia",
+          "name": "VOID FLÈCHE MIST V2 — by Fish",
+          "tag": "meta",
+          "likes": 105,
+          "views": 26450,
+          "season": "Temporada 2",
+          "date": "2025-09-21",
+          "notes": "Build completa tirada da página oficial (v2 final do autor). A passiva de identidade En Garde (os 3 primeiros ataques em cada inimigo causam dano extra e dão escudo) é fixa, não precisa equipar. Ordem de prioridade de nível do próprio autor: 1º En Garde (identidade), 2º Fio Umbral, 3º Fleche, 4º Grito de Guerra, 5º Determinação Inabalável — e nas essências principais: Ímpeto até ~2s de cooldown, depois Confiança e Voracidade a 400%, e Ferida a 400%. Jogo é: segura o botão esquerdo e fica spammando Fleche bem rápido.",
+          "memories": [
+            {
+              "name": "Déjà Vu inicial",
+              "key": null,
+              "type": "neutral",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                }
+              ]
+            },
+            {
+              "name": "Fleche",
+              "key": "fleche",
+              "type": "physical",
+              "essences": [
+                {
+                  "name": "Essência da Ferida",
+                  "key": "essence-of-the-wound",
+                  "type": "dark",
+                  "effect": "Ao causar dano, aplica uma Marca. Cada ataque num alvo Marcado causa 44% de dano a mais. Após 3 ataques, a Marca explode causando 275% de dano em área.",
+                  "icon": "Essencias/Raro/Gem_R_Wound.avif"
+                },
+                {
+                  "name": "Essência da Confiança",
+                  "key": "essence-of-confidence",
+                  "type": "physical",
+                  "effect": "O dano desta Memory a inimigos próximos aumenta 40%.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Confidence.avif"
+                }
+              ],
+              "effect": "Avança até o alvo causando 140% de dano, realiza um ataque básico imediato e aumenta brevemente a velocidade de movimento. Se matar o alvo, recupera 15 de vida e reduz o tempo de recarga em 15%; as cargas são totalmente restauradas.",
+              "icon": "Memorias/Character/St_Q_Fleche.avif"
+            },
+            {
+              "name": "Fio Umbral",
+              "key": "umbral-edge",
+              "type": "dark",
+              "essences": [
+                {
+                  "name": "Essência do Vazio",
+                  "key": "essence-of-the-void",
+                  "type": "dark",
+                  "effect": "Depois de conjurar esta Memory, seu próximo ataque em até 4s explode, causando 150% de dano das Trevas ao alvo e inimigos próximos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Void.avif"
+                },
+                {
+                  "name": "Essência do Céu Noturno",
+                  "key": "essence-of-the-starry-sky",
+                  "type": "dark",
+                  "effect": "Cada vez que esta Memory acerta um inimigo, sua velocidade de ataque aumenta 10% por 3s (até 20%, ou 40% se causar dano das Trevas). Atacar renova a duração.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência do Fluxo",
+                  "key": "essence-of-flow",
+                  "type": "neutral",
+                  "effect": "Causar dano de Luz com qualquer Memory reduz o tempo de recarga desta Memory em 6% (40% do efeito em Ultimates). A redução também se aplica às Essências equipadas.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Flow.avif"
+                }
+              ],
+              "effect": "Por 7s, imbui sua arma com o poder das Trevas, aumentando a chance de crítico em 20% e causando 52% de dano das Trevas adicional ao atacar. Corpo a corpo causa 25% a mais desse adicional.",
+              "icon": "Memorias/Epico/St_E_UmbralEdge.avif"
+            },
+            {
+              "name": "Grito de Guerra",
+              "key": "battle-cry",
+              "type": "physical",
+              "essences": [
+                {
+                  "name": "Essência de Obsidiana",
+                  "key": "essence-of-obsidian",
+                  "type": "dark",
+                  "effect": "Conjurar esta Memory fortalece seu próximo ataque em até 5s: causa 250% de dano das Trevas e reduz o tempo de recarga desta Memory em 1s.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Obsidian.avif"
+                },
+                {
+                  "name": "Essência do Vento",
+                  "key": "essence-of-wind",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Wind.avif"
+                },
+                {
+                  "name": "Essência da Compostura",
+                  "key": "essence-of-composure",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory aumenta sua chance de crítico em 20% por 5s. O efeito termina antes se você tomar dano de inimigos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Composure.avif"
+                }
+              ],
+              "effect": "Inspira aliados próximos por 4s: +10% de velocidade de ataque e +13% de dano no ataque. Você recebe 200% desse efeito."
+            },
+            {
+              "name": "Determinação Inabalável",
+              "key": "unbreakable-determination",
+              "type": "light",
+              "essences": [
+                {
+                  "name": "Essência de Carmesim",
+                  "key": "essence-of-crimson",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico fica fortalecido, causando uma Explosão Carmesim de 100% de dano das Trevas. O raio escala com a chance de crítico. Recupera 22% de vida por inimigo atingido (dobrado contra chefes).",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Crimson.avif"
+                },
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                }
+              ],
+              "effect": "Reseta o tempo de recarga de Pés Ligeiros e da Obra-Prima de Astrid, causa 400% de dano em área e entra em estado desperto por 12s: +25% de velocidade de ataque e cada ataque dispara uma explosão de raio (90% de dano). Enquanto desperta, a Obra-Prima de Astrid recupera 4% da vida perdida.",
+              "icon": "Memorias/Character/St_R_UnbreakableDetermination.avif"
+            }
+          ]
+        },
+        {
+          "id": "mist-triple-dash-parry",
+          "name": "Esquiva Tripla + Parry (defensivo)",
+          "tag": "alternativa",
+          "likes": 8,
+          "views": 4455,
+          "season": "Temporada 1",
+          "date": "2025-09-22",
+          "notes": "Build mais defensiva, focada em ganhar cargas extras de esquiva e um contra-ataque (Parry) em vez do autopilot do Fleche. Informação de comunidade mais escassa que a build meta — trate como ponto de partida, não receita fechada.",
+          "memories": [
+            {
+              "name": "En Garde (Parry)",
+              "key": "en-garde",
+              "type": "physical",
+              "essences": [
+                {
+                  "name": "Essência do Vento",
+                  "key": "essence-of-wind",
+                  "type": "neutral",
+                  "note": "core",
+                  "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Wind.avif"
+                },
+                {
+                  "name": "Essência da Compostura",
+                  "key": "essence-of-composure",
+                  "type": "neutral",
+                  "note": "suporte",
+                  "effect": "Conjurar esta Memory aumenta sua chance de crítico em 20% por 5s. O efeito termina antes se você tomar dano de inimigos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Composure.avif"
+                }
+              ],
+              "effect": "Os 3 primeiros ataques contra cada inimigo causam 40% de dano extra e dão a Mist um Escudo de 47% que desaparece em 1,5s. Pode reativar em cada inimigo a cada 6 segundos.",
+              "icon": "Memorias/Identy/St_D_AstridsMasterpieceEnGarde.avif"
+            }
+          ]
+        },
+        {
+          "id": "mist-ilost-fast-tank-dmg",
+          "name": "Fast, Tank, Dmg, and FUN — by iLOST_xX",
+          "tag": "3ª mais vista",
+          "likes": 43,
+          "views": 3901,
+          "season": "Temporada 1",
+          "date": "2026-01-15",
+          "memories": [
+            {
+              "name": "Tempestade de Flechas (Déjà Vu)",
+              "key": "arrow-storm",
+              "type": "physical",
+              "effect": "Por 6s, aumenta a velocidade de ataque em 15% e a de movimento em 10%. Cada ataque dispara 3 flechas. Ocupa o slot inicial de Déjà Vu, sem essências equipadas.",
+              "essences": []
+            },
+            {
+              "name": "Fio Umbral",
+              "key": "umbral-edge",
+              "type": "dark",
+              "effect": "Por 7s, imbui sua arma com o poder das Trevas, aumentando a chance de crítico e o dano nas Trevas ao atacar.",
+              "essences": [
+                {
+                  "name": "Essência da Voracidade",
+                  "key": "essence-of-predation",
+                  "type": "physical",
+                  "effect": "Esta Memory causa 60% de dano a mais a Chefes e Caçadores. Derrotar um deles solta Orbes de Poder, que aumentam permanentemente dano de ataque ou poder de habilidade.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Predation.avif"
+                },
+                {
+                  "name": "Essência da Aventura",
+                  "key": "essence-of-adventure",
+                  "type": "neutral",
+                  "effect": "Sempre que você muda de local, aumenta a qualidade de outra Essência equipada nesta Memory em +10% e ganha 19 de ouro.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Adventure.avif"
+                },
+                {
+                  "name": "Essência do Crepúsculo",
+                  "key": "essence-of-twilight",
+                  "type": "dark",
+                  "effect": "Seus ataques básicos viram dano das Trevas. Ao acertar um inimigo com 3+ stacks de Trevas, consome tudo pra causar dano extra e curar por stack.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Epico/Gem_E_Twilight.avif"
+                }
+              ],
+              "icon": "Memorias/Epico/St_E_UmbralEdge.avif"
+            },
+            {
+              "name": "Fleche",
+              "key": "fleche",
+              "type": "physical",
+              "effect": "Avança até o alvo causando dano, realiza um ataque básico imediato e aumenta brevemente a velocidade de movimento.",
+              "essences": [
+                {
+                  "name": "Essência da Percepção",
+                  "key": "essence-of-insight",
+                  "type": "light",
+                  "effect": "Ao causar qualquer dano, causa 200% de dano de Luz adicional a até 3 inimigos e aumenta o Memory Haste em 20 por 5s.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Insight.avif"
+                },
+                {
+                  "name": "Essência da Regeneração",
+                  "key": "essence-of-regeneration",
+                  "type": "heal",
+                  "effect": "Se conjurada em combate, recupera 41 de vida ao longo de 7 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Regeneration.avif"
+                },
+                {
+                  "name": "Essência da Eficiência",
+                  "key": "essence-of-efficiency",
+                  "type": "neutral",
+                  "effect": "Esta Memory ganha 36 de Memory Haste, reduzindo o tempo de recarga em 26%.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Efficiency.avif"
+                }
+              ],
+              "icon": "Memorias/Character/St_Q_Fleche.avif"
+            },
+            {
+              "name": "Queimadura de Gelo",
+              "key": "frostbite",
+              "type": "ice",
+              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos, causando dano de Frio adicional e concedendo um Escudo.",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                },
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Frost.avif"
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo que recarrega se você evitar dano por 5s; enquanto ativo, lança bolas de neve em inimigos próximos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Snow.avif"
+                }
+              ],
+              "icon": "Memorias/Raro/St_R_Frostbite.avif"
+            },
+            {
+              "name": "Tempestade de Flechas",
+              "key": "arrow-storm",
+              "type": "physical",
+              "effect": "Por 6s, aumenta a velocidade de ataque em 15% e a de movimento em 10%. Cada ataque dispara 3 flechas.",
+              "essences": [
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                },
+                {
+                  "name": "Essência do Anoitecer",
+                  "key": "essence-of-dusk",
+                  "type": "dark",
+                  "effect": "Ao conjurar esta Memory, dispara 2 estilhaços do anoitecer que causam 30% de dano das Trevas a cada ataque, por 5 segundos.",
+                  "icon": "Essencias/Raro/Gem_R_Dusk.avif"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Clemency.avif"
+                }
+              ]
+            }
+          ],
+          "notes": "Build rápida, tanque e divertida — usa Tempestade de Flechas duas vezes (uma no slot de Déjà Vu, sem essência, outra completa) junto com o combo clássico Fio Umbral + Fleche + Queimadura de Gelo. Foco em sobrevivência (Predação, Regeneração, Geada) sem abrir mão de dano."
+        }
+      ],
+      "constellation": [
+        {
+          "category": "destruicao",
+          "name": "Ataque a Fraqueza!",
+          "effect": "Após um dash ou teleporte, ganha +11 de dano físico e +20% de chance de crítico por 2,5s.",
+          "key": "ataque-a-fraqueza"
+        },
+        {
+          "category": "destruicao",
+          "name": "Hora da Noite",
+          "effect": "Aumenta o poder de habilidade em 8.",
+          "key": "hora-da-noite"
+        },
+        {
+          "category": "destruicao",
+          "name": "Mente Madura",
+          "effect": "Ganha 3,5 de poder de habilidade ao alcançar os níveis 5, 10, 15 e 20.",
+          "key": "mente-madura"
+        },
+        {
+          "category": "destruicao",
+          "name": "Trevo da Sorte",
+          "effect": "Aumenta a chance de crítico em 13%.",
+          "key": "trevo-da-sorte"
+        },
+        {
+          "category": "destruicao",
+          "name": "Golpe Poderoso",
+          "effect": "Aumenta o dano crítico em 24%.",
+          "key": "golpe-poderoso"
+        },
+        {
+          "category": "destruicao",
+          "name": "Malícia Suprema",
+          "effect": "Aumenta a velocidade de carga do Ultimate em 40%.",
+          "key": "malicia-suprema"
+        },
+        {
+          "category": "destruicao",
+          "name": "Mente Corrompida",
+          "effect": "Seu dano das trevas contra inimigos expostos às trevas aumenta 3% adicional por stack.",
+          "key": "mente-corrompida"
+        },
+        {
+          "category": "flexivel",
+          "name": "Respiração do Raio",
+          "effect": "O dano do Fleche vira dano de Luz, e você teleporta em vez de avançar correndo.",
+          "key": "respiracao-do-raio"
+        },
+        {
+          "category": "flexivel",
+          "name": "Golpe de Misericórdia",
+          "effect": "Quando o Fleche acerta no alcance máximo, o dano aumenta 80% e explode numa área ampla.",
+          "key": "golpe-de-misericordia"
+        },
+        {
+          "category": "flexivel",
+          "name": "Luz do Dia",
+          "effect": "Seu dano de Luz contra inimigos expostos à Luz aumenta 3% adicional por stack.",
+          "key": "luz-do-dia"
+        },
+        {
+          "category": "vida",
+          "name": "Pele Regenerativa",
+          "effect": "Aumenta a cura e o escudo recebidos em 18%.",
+          "key": "pele-regenerativa"
+        },
+        {
+          "category": "vida",
+          "name": "Segundo Fôlego",
+          "effect": "Ao tomar dano fatal, ignora esse dano e fica invulnerável por 2,5s (uma vez por partida).",
+          "key": "segundo-folego"
+        },
+        {
+          "category": "vida",
+          "name": "Resistência Elemental",
+          "effect": "Reduz em 55% a duração de efeitos elementais sobre você; pra Queimadura, reduz o dano em vez disso.",
+          "key": "resistencia-elemental"
+        },
+        {
+          "category": "vida",
+          "name": "Refinamento de Aço",
+          "effect": "Aumenta a vida máxima em 24 a cada nível.",
+          "key": "refinamento-de-aco"
+        },
+        {
+          "category": "vida",
+          "name": "Leve como uma Pluma",
+          "effect": "Aumenta a velocidade de movimento em 1200%; se a vida estiver acima de 90%, o efeito aumenta 50%.",
+          "key": "leve-como-uma-pluma"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Charme Monstruoso",
+          "effect": "100% de chance de Jonas oferecer 2 itens adicionais à venda.",
+          "key": "charme-monstruoso"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Negociador Afiado",
+          "effect": "O preço de ouro de itens vendidos por comerciantes é reduzido em 18%.",
+          "key": "negociador-afiado"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Mercado Negro",
+          "effect": "Ganha 3 Moedas de Platina no início da aventura e sempre que muda de mundo (máx. 3).",
+          "key": "mercado-negro"
+        }
+      ],
+      "_constellation_note": "Referência solta, não um guia exato: os nomes das estrelas no jogo só aparecem ao passar o mouse/analógico em cima delas, então não dá pra garantir que essa tradução bate 100% com o que você vê na tela. Use como ideia geral dos efeitos disponíveis pra esse personagem, não como um mapa certeiro de qual ícone é qual.",
+      "icon": "Viajantes/Hero_Mist.avif"
+    },
+    {
+      "id": "vesper",
+      "name": "Vesper",
+      "role": "Corpo a corpo / controle",
+      "builds": [
+        {
+          "id": "vesper-arrow-storm-tanky",
+          "name": "Ice Tank Vesper — by Brenola",
+          "tag": "meta",
+          "likes": 47,
+          "views": 17145,
+          "season": "Temporada 2",
+          "date": "2025-09-17",
+          "notes": "Build completa da página oficial (o próprio autor: 'não sei se é boa, mas é divertida'). Foco em gelo e tanque: a identidade El's Mercy já dá crítico e cura passiva. Prioridade de status do autor: 1º velocidade de ataque, 2º vida, 3º poder de habilidade — e investir primeiro em El's Mercy. Sol Cruel é um cast segurado que atordoa; Santuário de El abençoa o chão pra você e aliados; Escudo de Gelo protege um aliado; Imolação sacrifica sua própria vida por dano em área.",
+          "memories": [
+            {
+              "name": "Déjà Vu inicial",
+              "key": null,
+              "type": "neutral",
+              "essences": [
+                {
+                  "name": "Essência da Paranoia",
+                  "key": "essence-of-paranoia",
+                  "type": "dark",
+                  "effect": "Ao tomar qualquer dano, esta Memory ganha 150 de Memory Haste por 6s (reduzindo o tempo de recarga em 60%), mas é conjurada automaticamente em inimigos próximos.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_Paranoia.avif"
+                }
+              ]
+            },
+            {
+              "name": "Sol Cruel",
+              "key": "cruel-sun",
+              "type": "fire",
+              "essences": [
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, esta Memory também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente (1 vez a cada 5s por inimigo). Cada vez que ativa, aumenta permanentemente sua vida máxima em 1.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Frost.avif"
+                },
+                {
+                  "name": "Essência da Proteção",
+                  "key": "essence-of-protection",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory concede 40 de armadura por 3s, reduzindo o dano recebido e te tornando Inabalável (a cada 5s no máximo).",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Protection.avif"
+                },
+                {
+                  "name": "Essência do Vento",
+                  "key": "essence-of-wind",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Wind.avif"
+                }
+              ],
+              "effect": "Segure o botão pra concentrar o poder do sol no martelo. Ao soltar, bate no chão causando 100%-350% de dano de Fogo e atordoando por 0,5-1,5s. Durante a concentração, você fica Inabalável e ganha 60 de armadura.",
+              "icon": "Memorias/Character/St_Q_CruelSun.avif"
+            },
+            {
+              "name": "Santuário de El",
+              "key": "els-sanctuary",
+              "type": "light",
+              "essences": [
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto o Escudo está ativo, lança periodicamente uma bola de neve num inimigo próximo, causando 80% de dano de Frio. Quanto maior o Escudo, mais rápido dispara.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Snow.avif"
+                },
+                {
+                  "name": "Essência de Tremor Replicado",
+                  "key": "essence-of-aftershock",
+                  "type": "ice",
+                  "effect": "Ao conjurar, libera uma onda de choque atrasada que causa 200% de dano de Frio ao redor e atordoa por 0,5s. A cada inimigo atingido, ganha 4 de armadura (até 22). Contra chefes, ganha o máximo de armadura, que dura até você conjurar esta Memory de novo.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Aftershock.avif"
+                }
+              ],
+              "effect": "Abençoa o chão ao redor por 10s, causando 500% de dano de Luz a inimigos próximos e dando aos aliados um Escudo de 200% por 4s. Aliados na área ganham 18 de armadura e 20% de velocidade de ataque; Vesper recebe 200% do efeito e fica Inabalável enquanto durar."
+            },
+            {
+              "name": "Escudo de Gelo",
+              "key": "ice-shield",
+              "type": "ice",
+              "essences": [
+                {
+                  "name": "Essência da Paranoia",
+                  "key": "essence-of-paranoia",
+                  "type": "dark",
+                  "effect": "Ao tomar qualquer dano, esta Memory ganha 150 de Memory Haste por 6s (reduzindo o tempo de recarga em 60%), mas é conjurada automaticamente em inimigos próximos.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_Paranoia.avif"
+                },
+                {
+                  "name": "Essência do Congelamento",
+                  "key": "essence-of-freezing",
+                  "type": "ice",
+                  "effect": "Ao conjurar esta Memory, libera uma explosão de frio que causa 160% de dano de Frio aos inimigos. A área aumenta com a qualidade.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Regeneração",
+                  "key": "essence-of-regeneration",
+                  "type": "heal",
+                  "effect": "Se conjurada em combate, recupera 41 de vida ao longo de 7 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Regeneration.avif"
+                }
+              ],
+              "effect": "Envolve um aliado num escudo de gelo, dando um Escudo de 130% por 3s. Quando o Escudo se rompe, causa 160% de dano de Frio a inimigos próximos e recupera 60% de vida do aliado por inimigo atingido."
+            },
+            {
+              "name": "Imolação",
+              "key": "immolation",
+              "type": "fire",
+              "essences": [
+                {
+                  "name": "Essência da Reversão",
+                  "key": "essence-of-inversion",
+                  "type": "neutral",
+                  "effect": "O tempo de recarga desta Memory aumenta 15%, mas o dano causado aumenta 20%. O tipo elemental dela é invertido (Fogo/Frio, Luz/Trevas).",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Inversion.avif"
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s. Se causar dano de Frio, o efeito aumenta 80%.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Rigidity.avif"
+                },
+                {
+                  "name": "Essência do Metal",
+                  "key": "essence-of-metal",
+                  "type": "neutral",
+                  "effect": "Ao matar um inimigo, o tempo de recarga desta Memory é reduzido em 1 segundo.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Metal.avif"
+                }
+              ],
+              "effect": "Incendeia seu corpo, sacrificando 12% da vida atual ao longo de 3,5s. Enquanto queima, sua velocidade de movimento aumenta 20% e você causa 165% de dano de Fogo por segundo a inimigos próximos.",
+              "icon": "Memorias/Raro/St_R_Immolation.avif"
+            }
+          ]
+        },
+        {
+          "id": "vesper-baptism-facetank",
+          "name": "Batismo do Sol — facetank",
+          "tag": "alternativa",
+          "likes": 22,
+          "views": 8334,
+          "season": "Temporada 1",
+          "date": "2025-09-25",
+          "notes": "É praticamente uma build de uma skill só: investe tudo em Batismo do Sol e redução de cooldown, e ele sozinho carrega dano e sustain. Simples de jogar, mas menos flexível que a Tempestade de Flechas — bom pra quem não quer gerenciar muita coisa ao mesmo tempo.",
+          "memories": [
+            {
+              "name": "Batismo do Sol",
+              "key": "baptism-of-the-sun",
+              "type": "fire",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "note": "core",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                }
+              ],
+              "effect": "Segure para carregar o poder do sol; ao soltar, causa dano de Fogo em área e cura você e aliados próximos.",
+              "icon": "Memorias/Character/St_R_BaptismOfSun.avif"
+            }
+          ]
+        }
+      ],
+      "constellation": [
+        {
+          "category": "destruicao",
+          "name": "Furacão",
+          "effect": "Aumenta a velocidade de ataque em 1050%.",
+          "key": "furacao"
+        },
+        {
+          "category": "destruicao",
+          "name": "Tempestade Crescente",
+          "effect": "A velocidade de ataque é reduzida em 10%, mas aumenta 160% a cada nível.",
+          "key": "tempestade-crescente"
+        },
+        {
+          "category": "destruicao",
+          "name": "Fúria Imprudente",
+          "effect": "Vida máxima reduzida em 20%, mas velocidade de ataque aumenta 3000%.",
+          "key": "furia-imprudente"
+        },
+        {
+          "category": "destruicao",
+          "name": "Pulverizador",
+          "effect": "Aumenta a velocidade de ataque em 1500%.",
+          "key": "pulverizador"
+        },
+        {
+          "category": "destruicao",
+          "name": "Fúria do Gelo",
+          "effect": "O dano do Sol Cruel vira dano de gelo, o atordoamento dura +2s, e a armadura concedida aumenta 50%.",
+          "key": "furia-do-gelo"
+        },
+        {
+          "category": "destruicao",
+          "name": "Chama do Orgulho",
+          "effect": "Aumenta o dano do Sol Cruel em 25% e permite se mover durante o cast, mas remove o bônus de armadura.",
+          "key": "chama-do-orgulho"
+        },
+        {
+          "category": "vida",
+          "name": "Afinidade com o Frio",
+          "effect": "Dano recebido de inimigos afligidos por Frio reduzido em 40%.",
+          "key": "afinidade-com-o-frio"
+        },
+        {
+          "category": "vida",
+          "name": "Refinamento de Aço",
+          "effect": "Aumenta a vida máxima em 24 a cada nível.",
+          "key": "refinamento-de-aco"
+        },
+        {
+          "category": "vida",
+          "name": "Pele Regenerativa",
+          "effect": "Aumenta a cura e o escudo recebidos em 18%.",
+          "key": "pele-regenerativa"
+        },
+        {
+          "category": "vida",
+          "name": "Maestria em Armadura Pesada",
+          "effect": "Aumenta o escudo do Golpe Pesado em 75% e a duração em 150%.",
+          "key": "maestria-em-armadura-pesada"
+        },
+        {
+          "category": "vida",
+          "name": "Músculos Maravilhosos",
+          "effect": "Aumenta a vida máxima em 25 a cada nível.",
+          "key": "musculos-maravilhosos"
+        },
+        {
+          "category": "vida",
+          "name": "Fé Crescente",
+          "effect": "Ganha 4 de armadura ao alcançar os níveis 5, 10, 15 e 20.",
+          "key": "fe-crescente"
+        },
+        {
+          "category": "vida",
+          "name": "Pele de Pedra",
+          "effect": "Aumenta a armadura em 11.",
+          "key": "pele-de-pedra"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Charme Monstruoso",
+          "effect": "100% de chance de Jonas oferecer 2 itens adicionais à venda.",
+          "key": "charme-monstruoso"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Mercado Negro",
+          "effect": "Ganha 3 Moedas de Platina no início da aventura e sempre que muda de mundo (máx. 3).",
+          "key": "mercado-negro"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Negociador Afiado",
+          "effect": "O preço de ouro de itens vendidos por comerciantes é reduzido em 18%.",
+          "key": "negociador-afiado"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Sobrevivente de Provações",
+          "effect": "Aumenta a armadura em 12.",
+          "key": "sobrevivente-de-provacoes"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Desmontar e Analisar",
+          "effect": "Derrotar um inimigo tem 18% de chance de conceder 2 Dream Dust.",
+          "key": "desmontar-e-analisar"
+        }
+      ],
+      "_constellation_note": "Referência solta, não um guia exato: os nomes das estrelas no jogo só aparecem ao passar o mouse/analógico em cima delas, então não dá pra garantir que essa tradução bate 100% com o que você vê na tela. Use como ideia geral dos efeitos disponíveis pra esse personagem, não como um mapa certeiro de qual ícone é qual.",
+      "icon": "Viajantes/Hero_Vesper.avif"
+    },
+    {
+      "id": "yubar",
+      "name": "Yubar",
+      "role": "Dano mágico à distância",
+      "builds": [
+        {
+          "id": "yubar-infinite-shield",
+          "name": "Escudo Infinito (Early→Late Game) — by Mzungu",
+          "tag": "meta",
+          "likes": 52,
+          "views": 20717,
+          "season": "Temporada 2",
+          "date": "2025-09-16",
+          "notes": "Build completa da página oficial (inspirada num guia da comunidade no Reddit). Estratégia do autor: no início de jogo, a Essência do Ímpeto fica na Queimadura de Gelo pro loop de escudo infinito; usa Metal ou Fluxo e Tranquilidade; no fim de jogo, quando toda essência estiver acima de 1000% de qualidade e toda skill acima do nível 20-30, move o Ímpeto pra Tranquilidade em vez da Queimadura de Gelo.",
+          "memories": [
+            {
+              "name": "Déjà Vu inicial",
+              "key": null,
+              "type": "neutral",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "note": "início de jogo",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                }
+              ]
+            },
+            {
+              "name": "Queimadura de Gelo",
+              "key": "frostbite",
+              "type": "ice",
+              "essences": [
+                {
+                  "name": "Essência do Gigante",
+                  "key": "essence-of-the-giant",
+                  "type": "neutral",
+                  "effect": "Aumenta sua vida máxima em 260. O dano desta Memory aumenta 1% a cada 50 pontos de vida máxima.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência do Vazio",
+                  "key": "essence-of-the-void",
+                  "type": "dark",
+                  "effect": "Depois de conjurar esta Memory, seu próximo ataque em até 4s explode, causando 150% de dano das Trevas ao alvo e inimigos próximos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Void.avif"
+                },
+                {
+                  "name": "Essência da Proteção",
+                  "key": "essence-of-protection",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory concede 40 de armadura por 3s, reduzindo o dano recebido e te tornando Inabalável (a cada 5s no máximo).",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Protection.avif"
+                }
+              ],
+              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos: o primeiro causa 50% de dano de Frio adicional e concede um Escudo de 110% por 2s; o segundo causa 180% de dano de Frio adicional.",
+              "icon": "Memorias/Raro/St_R_Frostbite.avif"
+            },
+            {
+              "name": "Fio Umbral",
+              "key": "umbral-edge",
+              "type": "dark",
+              "essences": [
+                {
+                  "name": "Essência da Fé Divina",
+                  "key": "essence-of-divine-faith",
+                  "type": "light",
+                  "effect": "Cada vez que você mata um inimigo com esta Memory, ganha uma carga de Fé (até 75). Cada carga aumenta o dano/cura desta Memory em 0,5% e sua vida máxima em 4.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_DivineFaith.avif"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Clemency.avif"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                }
+              ],
+              "effect": "Por 7s, imbui sua arma com o poder das Trevas, aumentando a chance de crítico em 20% e causando 52% de dano das Trevas adicional ao atacar. Corpo a corpo causa 25% a mais desse adicional.",
+              "icon": "Memorias/Epico/St_E_UmbralEdge.avif"
+            },
+            {
+              "name": "Tempestade de Flechas",
+              "key": "arrow-storm",
+              "type": "physical",
+              "essences": [
+                {
+                  "name": "Núcleo Glacial",
+                  "key": "glacial-core",
+                  "type": "ice",
+                  "effect": "A cada 5s, causar dano com esta Memory recupera 3,6% da sua vida máxima (100% a mais se for dano de Frio). 272% de toda vida recuperada vira dano de Frio, disparando estilhaços de gelo em inimigos próximos.",
+                  "icon": "Essencias/Unico/Gem_U_GlacialCore.avif"
+                },
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, esta Memory também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente (1 vez a cada 5s por inimigo). Cada vez que ativa, aumenta permanentemente sua vida máxima em 1.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Frost.avif"
+                },
+                {
+                  "name": "Essência da Riqueza",
+                  "key": "essence-of-wealth",
+                  "type": "neutral",
+                  "effect": "Quando um inimigo danificado por esta Memory morre em até 2s, ele solta 1,7 de ouro. O ouro é compartilhado entre todos os Viajantes.",
+                  "icon": "Essencias/Raro/Gem_R_Wealth.avif"
+                }
+              ],
+              "effect": "Por 6s, aumenta a velocidade de ataque em 15% e a de movimento em 10%. Cada ataque dispara 3 flechas (35% de dano cada); a primeira ativa efeitos de ataque."
+            },
+            {
+              "name": "Tranquilidade",
+              "key": "tranquility",
+              "type": "light",
+              "essences": [
+                {
+                  "name": "Perfeição",
+                  "key": "perfection",
+                  "type": "neutral",
+                  "effect": "Aumenta o dano de ataque em 7, o poder de habilidade em 7, a vida máxima em 35, a velocidade de ataque em 10%, a chance de crítico em 6% e o Memory Haste em 10.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_Perfect.avif"
+                },
+                {
+                  "name": "Essência da Virtude",
+                  "key": "essence-of-virtue",
+                  "type": "neutral",
+                  "effect": "O número de cargas desta Memory aumenta em 1. Cada 150% de qualidade adicional aumenta mais 1 carga.",
+                  "rarity": "epic"
+                }
+              ],
+              "effect": "Yubar canaliza por 1s pra recuperar a tranquilidade, ficando Invencível, com +40% de velocidade de movimento, e reduz o tempo de recarga de todas as outras Memories em 3,5s.",
+              "icon": "Memorias/Character/St_R_Tranquility.avif"
+            }
+          ]
+        },
+        {
+          "id": "yubar-exodia",
+          "name": "Exodia — Fio Umbral + Rajada de Flechas",
+          "tag": "avançada",
+          "likes": 18,
+          "views": 3664,
+          "season": "Temporada 1",
+          "date": "2025-09-25",
+          "notes": "Build mais avançada e cara de montar (precisa de bastante RNG de drops), combinando cura pesada no Fio Umbral com controle de gelo na Rajada de Flechas. Recompensa muito quando fecha, mas não é o ponto de partida ideal pra quem tá aprendendo o personagem.",
+          "memories": [
+            {
+              "name": "Fio Umbral",
+              "key": "umbral-edge",
+              "type": "dark",
+              "essences": [
+                {
+                  "name": "Essência da Fé Divina",
+                  "key": "essence-of-divine-faith",
+                  "type": "light",
+                  "note": "core",
+                  "effect": "Cada vez que você mata um inimigo com esta Memory, ganha uma carga de Fé (até 75). Cada carga aumenta o dano/cura desta Memory em 0,5% e sua vida máxima em 4.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_DivineFaith.avif"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "note": "core",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Clemency.avif"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "note": "suporte",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                }
+              ],
+              "effect": "Por 7s, imbui sua arma com o poder das Trevas, aumentando a chance de crítico em 20% e causando 52% de dano das Trevas adicional ao atacar. Corpo a corpo causa 25% a mais desse adicional.",
+              "icon": "Memorias/Epico/St_E_UmbralEdge.avif"
+            },
+            {
+              "name": "Rajada de Flechas",
+              "key": "arrow-barrage",
+              "type": "ice",
+              "essences": [
+                {
+                  "name": "Núcleo Glacial",
+                  "key": "glacial-core",
+                  "type": "ice",
+                  "note": "core",
+                  "effect": "A cada 5s, causar dano com esta Memory recupera 3,6% da sua vida máxima (100% a mais se for dano de Frio). 272% de toda vida recuperada vira dano de Frio, disparando estilhaços de gelo em inimigos próximos.",
+                  "icon": "Essencias/Unico/Gem_U_GlacialCore.avif"
+                },
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "note": "suporte",
+                  "effect": "Ao causar dano de Frio, esta Memory também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente (1 vez a cada 5s por inimigo). Cada vez que ativa, aumenta permanentemente sua vida máxima em 1.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Frost.avif"
+                }
+              ],
+              "effect": "Dispara uma rajada de flechas mentais nos inimigos próximos, causando dano de Frio."
+            }
+          ]
+        }
+      ],
+      "constellation": [
+        {
+          "category": "destruicao",
+          "name": "Furacão",
+          "effect": "Aumenta a velocidade de ataque em 1050%.",
+          "key": "furacao"
+        },
+        {
+          "category": "destruicao",
+          "name": "Tempestade Crescente",
+          "effect": "A velocidade de ataque é reduzida em 10%, mas aumenta 160% a cada nível.",
+          "key": "tempestade-crescente"
+        },
+        {
+          "category": "destruicao",
+          "name": "Eclipse",
+          "effect": "Ganha poder de habilidade igual a 45% do seu dano de ataque.",
+          "key": "eclipse"
+        },
+        {
+          "category": "destruicao",
+          "name": "Canhão de Vidro",
+          "effect": "Ganha 9 de dano de ataque e 13 de poder de habilidade, mas a vida máxima é reduzida em 15%.",
+          "key": "canhao-de-vidro"
+        },
+        {
+          "category": "destruicao",
+          "name": "Natureza Destrutiva",
+          "effect": "Ganha 3,5 de dano de ataque ao alcançar os níveis 5, 10, 15 e 20.",
+          "key": "natureza-destrutiva"
+        },
+        {
+          "category": "destruicao",
+          "name": "Mente Madura",
+          "effect": "Ganha 3,5 de poder de habilidade ao alcançar os níveis 5, 10, 15 e 20.",
+          "key": "mente-madura"
+        },
+        {
+          "category": "destruicao",
+          "name": "Hora da Noite",
+          "effect": "Aumenta o poder de habilidade em 8.",
+          "key": "hora-da-noite"
+        },
+        {
+          "category": "vida",
+          "name": "Pele Regenerativa",
+          "effect": "Aumenta a cura e o escudo recebidos em 18%.",
+          "key": "pele-regenerativa"
+        },
+        {
+          "category": "vida",
+          "name": "Refinamento de Aço",
+          "effect": "Aumenta a vida máxima em 24 a cada nível.",
+          "key": "refinamento-de-aco"
+        },
+        {
+          "category": "vida",
+          "name": "Segundo Fôlego",
+          "effect": "Ao tomar dano fatal, ignora esse dano e fica invulnerável por 2,5s (uma vez por partida).",
+          "key": "segundo-folego"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Sorte de Iniciante",
+          "effect": "Aumenta a qualidade da primeira Essência equipada em 13000%.",
+          "key": "sorte-de-iniciante"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Mercado Negro",
+          "effect": "Ganha 3 Moedas de Platina no início da aventura e sempre que muda de mundo (máx. 3).",
+          "key": "mercado-negro"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Desmontar e Analisar",
+          "effect": "Derrotar um inimigo tem 18% de chance de conceder 2 Dream Dust.",
+          "key": "desmontar-e-analisar"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Memórias Cruzadas",
+          "effect": "Ganha uma Memory aleatória de nível 4 no início da aventura.",
+          "key": "memorias-cruzadas"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Caos Primordial",
+          "effect": "Quando Caos é obtido como recompensa, 20% de chance de ganhar um Caos adicional.",
+          "key": "caos-primordial"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Negociador Afiado",
+          "effect": "O preço de ouro de itens vendidos por comerciantes é reduzido em 18%.",
+          "key": "negociador-afiado"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Acúmulo de Riqueza",
+          "effect": "Aumenta em 10% o ouro ganho ao derrotar inimigos.",
+          "key": "acumulo-de-riqueza"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Nascido do Sonho",
+          "effect": "Ao usar o Santuário de Desmontagem, ganha Dream Dust adicional igual a 150% do ouro recebido como recompensa.",
+          "key": "nascido-do-sonho"
+        }
+      ],
+      "_constellation_note": "Referência solta, não um guia exato: os nomes das estrelas no jogo só aparecem ao passar o mouse/analógico em cima delas, então não dá pra garantir que essa tradução bate 100% com o que você vê na tela. Use como ideia geral dos efeitos disponíveis pra esse personagem, não como um mapa certeiro de qual ícone é qual.",
+      "icon": "Viajantes/Hero_Yubar.avif"
+    },
+    {
+      "id": "aurena",
+      "name": "Aurena",
+      "role": "Cura / suporte",
+      "builds": [
+        {
+          "id": "aurena-md-clear-nightmare",
+          "name": "Explosão Dourada + Teoria Perigosa — by Md",
+          "tag": "meta",
+          "likes": 43,
+          "views": 20769,
+          "season": "Temporada 2",
+          "date": "2025-09-15",
+          "memories": [
+            {
+              "name": "Explosão Dourada",
+              "key": "golden-burst",
+              "type": "light",
+              "effect": "Cria uma Explosão Dourada à frente que causa 110% de dano de Luz e recupera 28% de vida de aliados (dobrado se atingir 1 só alvo). Ganha cargas de Definhamento por 3,5s e sacrifica 5% da vida máxima; cada carga aumenta dano/cura em 100% e o sacrifício em 7%.",
+              "essences": [
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Clemency.avif"
+                }
+              ],
+              "icon": "Memorias/Character/St_Q_GoldenBurst.avif"
+            },
+            {
+              "name": "Teoria Perigosa",
+              "key": "dangerous-theory",
+              "type": "physical",
+              "effect": "Avança e fortalece seu próximo ataque básico: vira crítico, causa 125% de dano adicional e empurra o alvo. Com vida abaixo de 60%, o dano adicional dobra, o tempo de recarga reduz 25% e você recupera 67% de vida por inimigo atingido. Contra chefes, dano e cura extra dobram.",
+              "essences": [],
+              "icon": "Memorias/Character/St_R_DangerousTheory.avif"
+            }
+          ],
+          "notes": "Build real, mais vista da comunidade pra Aurena. A identidade fixa Garra Desintegradora já cura 16% da vida por inimigo atingido sozinha. Fácil de jogar, boa até pra limpar o Nightmare — o autor diz que dá pra montar seu próprio esquema em cima disso."
+        },
+        {
+          "id": "aurena-lukstrike-op-meta",
+          "name": "OP Meta (4 Memories) — by Lukstrike",
+          "tag": "alternativa",
+          "likes": 31,
+          "views": 12509,
+          "season": "Temporada 2",
+          "date": "2025-09-15",
+          "memories": [
+            {
+              "name": "Explosão Dourada",
+              "key": "golden-burst",
+              "type": "light",
+              "effect": "Cria uma Explosão Dourada à frente que causa 110% de dano de Luz e recupera 28% de vida de aliados. Ganha cargas de Definhamento e sacrifica vida máxima; cada carga aumenta dano/cura mas também o sacrifício.",
+              "essences": [
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Clemency.avif"
+                },
+                {
+                  "name": "Essência da Retaliação",
+                  "key": "essence-of-vengeance",
+                  "type": "dark",
+                  "effect": "Ao tomar qualquer dano, dispara 2 lâminas que causam 102% de dano a inimigos próximos. Depois de tomar dano, o dano/cura desta Memory aumenta 34% por 5 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_C_Vengeance.avif"
+                }
+              ],
+              "icon": "Memorias/Character/St_Q_GoldenBurst.avif"
+            },
+            {
+              "name": "Teoria Perigosa",
+              "key": "dangerous-theory",
+              "type": "physical",
+              "effect": "Avança e fortalece seu próximo ataque básico, virando crítico com dano extra e empurrão. Fica mais forte com vida baixa.",
+              "essences": [
+                {
+                  "name": "Essência da Flexibilidade",
+                  "key": "essence-of-flexibility",
+                  "type": "neutral",
+                  "effect": "Enquanto esta Memory está em tempo de recarga, 37% do dano recebido é dividido ao longo de 4s, com redução de 20%.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Flexibility.avif"
+                },
+                {
+                  "name": "Essência do Fluxo",
+                  "key": "essence-of-flow",
+                  "type": "neutral",
+                  "effect": "Causar dano de Luz com qualquer Memory reduz o tempo de recarga desta Memory em 6%. Também reduz o tempo de recarga das Essências equipadas.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Flow.avif"
+                },
+                {
+                  "name": "Essência do Gigante",
+                  "key": "essence-of-the-giant",
+                  "type": "neutral",
+                  "effect": "Aumenta sua vida máxima em 260. O dano desta Memory aumenta 1% a cada 50 pontos de vida máxima.",
+                  "rarity": "epic"
+                }
+              ],
+              "icon": "Memorias/Character/St_R_DangerousTheory.avif"
+            },
+            {
+              "name": "Escudo Repulsivo",
+              "key": "repulsive-shield",
+              "type": "light",
+              "effect": "Bloqueia dano de inimigos à frente por 1,9s. Cada vez que bloqueia, causa 240% de dano a até 4 inimigos à frente.",
+              "essences": [
+                {
+                  "name": "Essência da Fé Divina",
+                  "key": "essence-of-divine-faith",
+                  "type": "light",
+                  "effect": "Cada vez que você mata um inimigo com esta Memory, ganha uma carga de Fé (até 75). Cada carga aumenta o dano/cura em 0,5% e sua vida máxima em 4.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_DivineFaith.avif"
+                },
+                {
+                  "name": "Perfeição",
+                  "key": "perfection",
+                  "type": "neutral",
+                  "effect": "Aumenta o dano de ataque em 7, o poder de habilidade em 7, a vida máxima em 35, a velocidade de ataque em 10%, a chance de crítico em 6% e o Memory Haste em 10.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_Perfect.avif"
+                },
+                {
+                  "name": "Prisão da Alma",
+                  "key": "soul-prison",
+                  "type": "light",
+                  "effect": "Ao tomar dano fatal, você ignora esse dano e fica Invencível por 3s, e a Essência é destruída. A cada 1% de qualidade dela, recupera 3 de vida; o excesso vira Escudo.",
+                  "icon": "Essencias/Unico/Gem_U_SoulPrison.avif"
+                }
+              ],
+              "icon": "Memorias/Raro/St_R_RepulsiveShield.avif"
+            },
+            {
+              "name": "Escudo de Gelo",
+              "key": "ice-shield",
+              "type": "ice",
+              "effect": "Envolve um aliado num escudo de gelo, dando um Escudo de 130% por 3s. Ao se romper, causa dano de Frio a inimigos próximos e cura o aliado.",
+              "essences": [
+                {
+                  "name": "Essência do Mercúrio",
+                  "key": "essence-of-quicksilver",
+                  "type": "neutral",
+                  "effect": "Conjurar esta Memory ou causar dano de Fogo com ela aumenta a velocidade de movimento em 30%, retornando ao normal em 2,5s.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Quicksilver.avif"
+                },
+                {
+                  "name": "Essência da Paranoia",
+                  "key": "essence-of-paranoia",
+                  "type": "dark",
+                  "effect": "Ao tomar qualquer dano, esta Memory ganha 150 de Memory Haste por 6s, mas é conjurada automaticamente em inimigos próximos.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_Paranoia.avif"
+                },
+                {
+                  "name": "Essência da Virtude",
+                  "key": "essence-of-virtue",
+                  "type": "neutral",
+                  "effect": "O número de cargas desta Memory aumenta em 1. Cada 150% de qualidade adicional aumenta mais 1 carga.",
+                  "rarity": "epic"
+                }
+              ]
+            }
+          ],
+          "notes": "Build de 4 Memories completas, considerada 'OP' pela comunidade. Segundo o autor: você não toma dano na primeira Explosão Dourada por causa do 'vínculo forte' da identidade, e não toma dano ao esquivar por causa do 'desmontar'. O lifesteal é gigantesco — ele relata mais de 3 milhões de escudo acumulado com Orientação."
+        },
+        {
+          "id": "aurena-saltine-healer-support",
+          "name": "Suporte Curandeira (Co-op) — by Saltine",
+          "tag": "3ª mais vista",
+          "likes": 15,
+          "views": 2180,
+          "season": "Temporada 1",
+          "date": "2025-11-22",
+          "memories": [
+            {
+              "name": "Explosão Dourada",
+              "key": "golden-burst",
+              "type": "light",
+              "effect": "Cria uma Explosão Dourada à frente que causa dano de Luz e recupera vida de aliados, sacrificando sua própria vida a cada uso.",
+              "essences": [
+                {
+                  "name": "Essência de Ricochete",
+                  "key": "essence-of-ricochet",
+                  "type": "neutral",
+                  "effect": "O dano ou cura desta Memory tem 50% de chance de ricochetear pra outro alvo próximo, causando/curando 90% do valor original, mantendo o tipo elemental.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Ricochet.avif"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                },
+                {
+                  "name": "Essência da Retaliação",
+                  "key": "essence-of-vengeance",
+                  "type": "dark",
+                  "effect": "Ao tomar qualquer dano, dispara 2 lâminas que causam 102% de dano a inimigos próximos. Depois de tomar dano, o dano/cura desta Memory aumenta 34% por 5 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_C_Vengeance.avif"
+                }
+              ],
+              "icon": "Memorias/Character/St_Q_GoldenBurst.avif"
+            },
+            {
+              "name": "Reação em Cadeia",
+              "key": "chain-reaction",
+              "type": "light",
+              "effect": "Inscreve um Selo de Desmontagem no local alvo por 6s: inimigos dentro tomam 150% de dano por segundo, aliados dentro curam 44% de vida por segundo por inimigo dentro. Contra chefes, dano e cura dobram.",
+              "essences": [
+                {
+                  "name": "Essência do Fluxo",
+                  "key": "essence-of-flow",
+                  "type": "neutral",
+                  "effect": "Causar dano de Luz com qualquer Memory reduz o tempo de recarga desta Memory em 6%.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Flow.avif"
+                },
+                {
+                  "name": "Essência do Excesso",
+                  "key": "essence-of-overload",
+                  "type": "neutral",
+                  "effect": "Ao conjurar esta Memory, sacrifica 20% da vida atual pra fortalecer o cast. O dano/cura do cast fortalecido aumenta 45%.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Overload.avif"
+                },
+                {
+                  "name": "Essência da Aventura",
+                  "key": "essence-of-adventure",
+                  "type": "neutral",
+                  "effect": "Sempre que você muda de local, aumenta a qualidade de outra Essência equipada nesta Memory em +10% e ganha 19 de ouro.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Adventure.avif"
+                }
+              ],
+              "icon": "Memorias/Character/St_R_ChainReaction.avif"
+            },
+            {
+              "name": "Proteção em Massa",
+              "key": "mass-protection",
+              "type": "neutral",
+              "effect": "Concede um Escudo de 250% a aliados próximos, que se dissipa em 1,5 segundo.",
+              "essences": [
+                {
+                  "name": "Essência do Amor",
+                  "key": "essence-of-love",
+                  "type": "heal",
+                  "effect": "Quando esta Memory cura ou dá Escudo a um aliado, a velocidade de movimento e ataque dele aumentam 16% por 2s (metade em você mesma).",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Love.avif"
+                },
+                {
+                  "name": "Essência da Eficiência",
+                  "key": "essence-of-efficiency",
+                  "type": "neutral",
+                  "effect": "Esta Memory ganha 36 de Memory Haste, reduzindo o tempo de recarga em 26%.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Efficiency.avif"
+                },
+                {
+                  "name": "Essência do Pânico",
+                  "key": "essence-of-panic",
+                  "type": "neutral",
+                  "effect": "Tomar qualquer dano concede 30 de Memory Haste a esta Memory e aumenta sua velocidade de movimento em 20% por 3s.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Panic.avif"
+                }
+              ],
+              "icon": "Memorias/Comun/St_C_MassProtection.avif"
+            },
+            {
+              "name": "Limpeza em Massa",
+              "key": "mass-cleanse",
+              "type": "light",
+              "effect": "Limpa o local alvo, causando 300% de dano de Luz a inimigos e dando Inabalável a aliados por 1,5s, removendo a maioria dos efeitos negativos. Aliados recuperam 80% de vida por efeito removido.",
+              "essences": [
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto ativo, lança bolas de neve em inimigos próximos periodicamente.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Snow.avif"
+                },
+                {
+                  "name": "Essência da Riqueza",
+                  "key": "essence-of-wealth",
+                  "type": "neutral",
+                  "effect": "Quando um inimigo danificado por esta Memory morre em até 2s, ele solta 1,7 de ouro, compartilhado entre todos os Viajantes.",
+                  "icon": "Essencias/Raro/Gem_R_Wealth.avif"
+                }
+              ],
+              "icon": "Memorias/Epico/St_E_MassCleanse.avif"
+            }
+          ],
+          "notes": "Build focada em cura/suporte pra co-op — o carro-chefe é a combinação Ricochete + Orientação na Explosão Dourada, deixando você curando o time (dentro ou fora de combate) quase sem esforço. Limpeza em Massa remove maldições e efeitos negativos dos aliados; Proteção em Massa com Amor dá velocidade de ataque/movimento ao time."
+        }
+      ],
+      "icon": "Viajantes/Hero_Aurena.avif"
+    },
+    {
+      "id": "nachia",
+      "name": "Nachia",
+      "role": "Invocação / dano constante",
+      "builds": [
+        {
+          "id": "nachia-healing-to-damage",
+          "name": "Suporte Consistente (Bread & Butter) — by K",
+          "tag": "meta",
+          "likes": 51,
+          "views": 22147,
+          "season": "Temporada 2",
+          "date": "2025-09-15",
+          "notes": "Build completa da página oficial — suporte consistente que também solo. Resumo do autor: 'Bread & Butter = Orientação + Paranoia/Ímpeto no Pacto do Luar'; a segunda Proteção em Massa pode ser trocada mais tarde, e as essências dela são opcionais; Ricochete ajuda a curar o time em co-op. Substituições sugeridas: trocar o Lobo (Pacto do Luar) pelo Cão (outra invocação) + essência de efeito-ao-atacar; pra escalar mais, Paranoia funciona em qualquer Memory, Fé Divina na Bênção, e Predação + matar Hunters.",
+          "memories": [
+            {
+              "name": "Pacto do Luar",
+              "key": "moonlight-pact",
+              "type": "dark",
+              "essences": [
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "note": "core",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                },
+                {
+                  "name": "Essência de Ricochete",
+                  "key": "essence-of-ricochet",
+                  "type": "neutral",
+                  "effect": "O dano ou cura desta Memory tem 50% de chance de ricochetear pra outro alvo próximo, causando/curando 90% do valor original, mantendo o tipo elemental.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Ricochet.avif"
+                },
+                {
+                  "name": "Essência da Paranoia",
+                  "key": "essence-of-paranoia",
+                  "type": "dark",
+                  "note": "core",
+                  "effect": "Ao tomar qualquer dano, esta Memory ganha 150 de Memory Haste por 6s (reduzindo o tempo de recarga em 60%), mas é conjurada automaticamente em inimigos próximos.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_Paranoia.avif"
+                }
+              ],
+              "effect": "Fenrir salta até o alvo, cortando inimigos por 200% de dano e atordoando por 0,5s. A cada inimigo atingido, Fenrir recupera 8% da vida dele e o tempo de recarga reduz 1s. Passiva: invoca Fenrir, o Lobo, que ataca inimigos por 130% de dano e ativa 50% dos efeitos de ataque.",
+              "icon": "Memorias/Character/St_Q_MoonlightPact.avif"
+            },
+            {
+              "name": "Proteção em Massa (1ª cópia)",
+              "key": "mass-protection",
+              "type": "neutral",
+              "essences": [
+                {
+                  "name": "Essência do Corte",
+                  "key": "essence-of-sharpness",
+                  "type": "physical",
+                  "effect": "Ao conjurar, dispara 5 flechas que causam 90% de dano em inimigos aleatórios.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Sharp.avif"
+                },
+                {
+                  "name": "Essência do Carvão",
+                  "key": "essence-of-charcoal",
+                  "type": "fire",
+                  "effect": "Ao acertar um inimigo, dispara um estilhaço de carvão causando 60% de dano (100% de dano de Fogo se o alvo já estiver queimando).",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Charcoal.avif"
+                },
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                }
+              ],
+              "effect": "Concede um Escudo de 250% a aliados próximos, que se dissipa em 1,5 segundo.",
+              "icon": "Memorias/Comun/St_C_MassProtection.avif"
+            },
+            {
+              "name": "Proteção em Massa (2ª cópia)",
+              "key": "mass-protection",
+              "type": "neutral",
+              "essences": [
+                {
+                  "name": "Essência do Congelamento",
+                  "key": "essence-of-freezing",
+                  "type": "ice",
+                  "note": "opcional",
+                  "effect": "Ao conjurar esta Memory, libera uma explosão de frio que causa 160% de dano de Frio aos inimigos. A área aumenta com a qualidade.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "note": "opcional",
+                  "effect": "Ao causar dano de Frio, esta Memory também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente (1 vez a cada 5s por inimigo). Cada vez que ativa, aumenta permanentemente sua vida máxima em 1.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Frost.avif"
+                },
+                {
+                  "name": "Essência do Amor",
+                  "key": "essence-of-love",
+                  "type": "heal",
+                  "note": "opcional",
+                  "effect": "Quando esta Memory cura ou dá Escudo a um aliado, a velocidade de movimento e de ataque dele aumentam 16% por 2s (efeito reduzido pela metade em você mesma).",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Love.avif"
+                }
+              ],
+              "effect": "Concede um Escudo de 250% a aliados próximos, que se dissipa em 1,5 segundo.",
+              "icon": "Memorias/Comun/St_C_MassProtection.avif"
+            },
+            {
+              "name": "Bênção da Serpente",
+              "key": "serpents-blessing",
+              "type": "light",
+              "essences": [
+                {
+                  "name": "Essência da Virtude",
+                  "key": "essence-of-virtue",
+                  "type": "neutral",
+                  "effect": "O número de cargas desta Memory aumenta em 1. Cada 150% de qualidade adicional aumenta mais 1 carga.",
+                  "rarity": "epic"
+                }
+              ],
+              "effect": "Concede a Bênção da Serpente a você e um aliado por 12s: +55 de armadura e +25% de velocidade de ataque. Quando o alvo abençoado ataca, recupera 2,5% da vida máxima dele e o inimigo atingido toma 100% de dano extra e fica atordoado por 0,5s."
+            }
+          ]
+        },
+        {
+          "id": "nachia-moonlight-pact",
+          "name": "Pacto do Luar — invocação do lobo",
+          "tag": "alternativa",
+          "likes": 30,
+          "views": 12453,
+          "season": "Temporada 1",
+          "date": "2025-09-22",
+          "notes": "Build alternativa girando em torno do Pacto do Luar, aumentando velocidade de ataque e cura pra empoderar o Sussurro da Natureza e o Círculo da Vida, enquanto o lobo invocado (Fenrir) carrega boa parte do combate. Build autossuficiente e fácil de manter, boa pra quem quer algo estável sem depender de drops raros.",
+          "memories": [
+            {
+              "name": "Pacto do Luar",
+              "key": "moonlight-pact",
+              "type": "dark",
+              "essences": [
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "note": "core",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Clemency.avif"
+                }
+              ],
+              "effect": "Fenrir salta até o alvo, cortando inimigos por 200% de dano e atordoando por 0,5s. A cada inimigo atingido, Fenrir recupera 8% da vida dele e o tempo de recarga reduz 1s. Passiva: invoca Fenrir, o Lobo, que ataca inimigos por 130% de dano.",
+              "icon": "Memorias/Character/St_Q_MoonlightPact.avif"
+            }
+          ]
+        }
+      ],
+      "constellation": [
+        {
+          "category": "destruicao",
+          "name": "Brisa Suave",
+          "effect": "Aumenta o Memory Haste em 15.",
+          "key": "brisa-suave"
+        },
+        {
+          "category": "destruicao",
+          "name": "Guardião da Ordem",
+          "effect": "Aumenta o poder de habilidade em 10.",
+          "key": "guardiao-da-ordem"
+        },
+        {
+          "category": "destruicao",
+          "name": "Malícia Suprema",
+          "effect": "Aumenta a velocidade de carga do Ultimate em 40%.",
+          "key": "malicia-suprema"
+        },
+        {
+          "category": "destruicao",
+          "name": "Valsa da Morte",
+          "effect": "O Pacto do Luar ganha +1 carga, mas ao usar, Fenrir corta uma área ampla em vez de saltar até o alvo.",
+          "key": "valsa-da-morte"
+        },
+        {
+          "category": "vida",
+          "name": "Prática da Valsa",
+          "effect": "Os benefícios da Valsa dos Sonhos também se aplicam a você mesma, com 100% de efetividade.",
+          "key": "pratica-da-valsa"
+        },
+        {
+          "category": "vida",
+          "name": "Vínculo Inabalável",
+          "effect": "Quando as invocações estão por perto, ganha +15 de armadura, e a cura/escudo que dá a elas aumenta 45%.",
+          "key": "vinculo-inabalavel"
+        },
+        {
+          "category": "vida",
+          "name": "Vida é Sagrada",
+          "effect": "Aumenta a cura e o escudo que você dá a si mesma em 15%, e aos aliados em 25%.",
+          "key": "vida-e-sagrada"
+        },
+        {
+          "category": "vida",
+          "name": "Segundo Fôlego",
+          "effect": "Ao tomar dano fatal, ignora esse dano e fica invulnerável por 2,5s (uma vez por partida).",
+          "key": "segundo-folego"
+        },
+        {
+          "category": "vida",
+          "name": "Conceder Força de Vontade",
+          "effect": "Ao aplicar um buff num aliado, ele fica Imparável por 2,5s (cooldown de 5s por alvo).",
+          "key": "conceder-forca-de-vontade"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Desmontar e Analisar",
+          "effect": "Derrotar um inimigo tem 18% de chance de conceder 2 Dream Dust.",
+          "key": "desmontar-e-analisar"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Negociador Afiado",
+          "effect": "O preço de ouro de itens vendidos por comerciantes é reduzido em 18%.",
+          "key": "negociador-afiado"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Mercado Negro",
+          "effect": "Ganha 3 Moedas de Platina no início da aventura e sempre que muda de mundo (máx. 3).",
+          "key": "mercado-negro"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Charme Monstruoso",
+          "effect": "100% de chance de Jonas oferecer 2 itens adicionais à venda.",
+          "key": "charme-monstruoso"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Pacto do Destino",
+          "effect": "Nachia também recebe 50% da cura do efeito de conjuração do Pacto do Luar.",
+          "key": "pacto-do-destino"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Proteção Imortal",
+          "effect": "Quando um aliado com a Bênção da Serpente sofreria dano letal, a bênção é removida na hora e ele recupera 50% da vida máxima.",
+          "key": "protecao-imortal"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Detecção de Ameaça",
+          "effect": "Reduz o cooldown da esquiva em 22%.",
+          "key": "deteccao-de-ameaca"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Caos Primordial",
+          "effect": "Quando Caos é obtido como recompensa, 20% de chance de ganhar um Caos adicional.",
+          "key": "caos-primordial"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Colheita de Vida",
+          "effect": "Aumenta a velocidade de movimento em 1200% na Floresta da Turbulência e concede 1 Dream Dust por inimigo morto.",
+          "key": "colheita-de-vida"
+        }
+      ],
+      "_constellation_note": "Referência solta, não um guia exato: os nomes das estrelas no jogo só aparecem ao passar o mouse/analógico em cima delas, então não dá pra garantir que essa tradução bate 100% com o que você vê na tela. Use como ideia geral dos efeitos disponíveis pra esse personagem, não como um mapa certeiro de qual ícone é qual.",
+      "icon": "Viajantes/Hero_Nachia.avif"
+    },
+    {
+      "id": "shell",
+      "name": "Casca",
+      "role": "Assassino",
+      "builds": [
+        {
+          "id": "shell-blade-storm-crit",
+          "name": "Um Passo, Uma Morte — by arihsd_",
+          "tag": "meta (alto risco)",
+          "likes": 72,
+          "views": 22885,
+          "season": "Temporada 2",
+          "date": "2025-09-16",
+          "notes": "Build da página oficial — o autor deixou de propósito só essas 2 Memories e 1 Essência fixas, o resto é flexível: 'no slot de Destruição, use Segundo Fôlego e Reparo de Emergência como Déjà Vu; Essência da Predação com Sonhos Lúcidos; Superpopulação, Selvagem, Abraçar a Mortalidade e Frasco do Sonho Cintilante são opcionais'. A identidade Um Passo, Uma Morte converte todo bônus de velocidade de ataque em dano físico, e garante crítico garantido depois de um dash/teleporte. Laceração alterna entre uma forma vermelha (dash cortante) e azul (salto com invencibilidade breve) a cada uso; a Postura de Aniquilação troca suas Memories por 10s de ataques básicos supercarregados com energia da espada.",
+          "memories": [
+            {
+              "name": "Postura da Aniquilação",
+              "key": "annihilation-stance",
+              "type": "dark",
+              "essences": [
+                {
+                  "name": "Essência da Voracidade",
+                  "key": "essence-of-predation",
+                  "type": "physical",
+                  "note": "core",
+                  "effect": "Esta Memory causa 60% de dano a mais em Chefes e Caçadores. Derrotar um Caçador solta 1 Orbe de Poder; um Chefe solta 3. Coletar um Orbe aumenta permanentemente o dano de ataque ou o poder de habilidade em 1, aleatoriamente.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Predation.avif"
+                }
+              ],
+              "effect": "Por 10s, sua espada é imbuída com uma Aura de Espada destrutiva. Durante esse tempo você não pode conjurar Memories, mas o dano de ataque aumenta 30%, o alcance de ataque aumenta, e cada ataque básico dispara Energia da Espada que causa 400% de dano das Trevas. Você pode realizar 1,5 ataques básicos por segundo enquanto ativa, sem ser afetado por outros efeitos de velocidade de ataque.",
+              "icon": "Memorias/Character/St_R_AnnihilationStance.avif"
+            }
+          ]
+        },
+        {
+          "id": "shell-swift-strike-mobility",
+          "name": "Golpe Veloz — mobilidade",
+          "tag": "alternativa",
+          "likes": 34,
+          "views": 11688,
+          "season": "Temporada 1",
+          "date": "2025-09-25",
+          "notes": "Versão mais simples e rápida de montar que a Tempestade de Lâminas, priorizando ataques rápidos e de alto impacto em vez do combo completo de dash. Boa pra quem tá aprendendo Shell antes de partir pra build de risco alto.",
+          "memories": [
+            {
+              "name": "Golpe Veloz",
+              "key": "swift-strike",
+              "type": "physical",
+              "essences": [
+                {
+                  "name": "Essência do Vento",
+                  "key": "essence-of-wind",
+                  "type": "neutral",
+                  "note": "core",
+                  "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Wind.avif"
+                },
+                {
+                  "name": "Essência da Voracidade",
+                  "key": "essence-of-predation",
+                  "type": "physical",
+                  "note": "suporte",
+                  "effect": "Esta Memory causa 60% de dano a mais em Chefes e Caçadores. Derrotar um Caçador solta 1 Orbe de Poder; um Chefe solta 3. Coletar um Orbe aumenta permanentemente o dano de ataque ou o poder de habilidade em 1, aleatoriamente.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Predation.avif"
+                }
+              ],
+              "effect": "Um ataque rápido e de alto impacto."
+            }
+          ]
+        }
+      ],
+      "constellation": [
+        {
+          "category": "destruicao",
+          "name": "Hora da Noite",
+          "effect": "Aumenta o poder de habilidade em 8.",
+          "key": "hora-da-noite"
+        },
+        {
+          "category": "destruicao",
+          "name": "Mente Corrompida",
+          "effect": "Seu dano das trevas contra inimigos expostos às trevas aumenta 3% adicional por stack.",
+          "key": "mente-corrompida"
+        },
+        {
+          "category": "destruicao",
+          "name": "Desafiante Valoroso",
+          "effect": "Aumenta todo o dano causado a chefes em 16%.",
+          "key": "desafiante-valoroso"
+        },
+        {
+          "category": "destruicao",
+          "name": "Sem Piedade",
+          "effect": "Aumenta em 24% o dano a inimigos com vida abaixo de 35%.",
+          "key": "sem-piedade"
+        },
+        {
+          "category": "destruicao",
+          "name": "Loucura Controlada",
+          "effect": "A Postura de Aniquilação vira uma habilidade normal (14s de cooldown) que permite usar outras Memories durante ela, mas o bônus de dano cai 40% e dura só 4s.",
+          "key": "loucura-controlada"
+        },
+        {
+          "category": "vida",
+          "name": "Aceleração da Alma",
+          "effect": "Reduz em 30% o cooldown de todas as Memories de dash e teleporte.",
+          "key": "aceleracao-da-alma"
+        },
+        {
+          "category": "vida",
+          "name": "Sede de Sangue Encadeada",
+          "effect": "Durante a Postura de Aniquilação, cada acerto (básico ou energia da espada) aumenta a duração dela em 0,2s.",
+          "key": "sede-de-sangue-encadeada"
+        },
+        {
+          "category": "vida",
+          "name": "Salto Propulsado a Pólvora",
+          "effect": "O cooldown do Passo Relâmpago aumenta 1s, mas ganha +1 carga máxima e +30% de alcance.",
+          "key": "salto-propulsado-a-polvora"
+        },
+        {
+          "category": "vida",
+          "name": "Transcendência",
+          "effect": "O cooldown do Passo Relâmpago aumenta 1s. Quando não tem cargas e mata um inimigo, o cooldown atual é reduzido em 70%.",
+          "key": "transcendencia"
+        },
+        {
+          "category": "vida",
+          "name": "Imersão Completa",
+          "effect": "Matar um inimigo ou acertar um ataque básico num chefe reduz o cooldown do Passo Relâmpago em 25%.",
+          "key": "imersao-completa"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Mercado Negro",
+          "effect": "Ganha 3 Moedas de Platina no início da aventura e sempre que muda de mundo (máx. 3).",
+          "key": "mercado-negro"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Desmontar e Analisar",
+          "effect": "Derrotar um inimigo tem 18% de chance de conceder 2 Dream Dust.",
+          "key": "desmontar-e-analisar"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Sorte de Iniciante",
+          "effect": "Aumenta a qualidade da primeira Essência equipada em 13000%.",
+          "key": "sorte-de-iniciante"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Asclépio",
+          "effect": "Aumenta em 100% a chance de uma Poção de Vida aparecer.",
+          "key": "asclepio"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Amor Incondicional",
+          "effect": "Reduz em 100% o custo do Santuário de Orientação.",
+          "key": "amor-incondicional"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Detecção de Ameaça",
+          "effect": "Reduz o cooldown da esquiva em 22%.",
+          "key": "deteccao-de-ameaca"
+        }
+      ],
+      "_constellation_note": "Referência solta, não um guia exato: os nomes das estrelas no jogo só aparecem ao passar o mouse/analógico em cima delas, então não dá pra garantir que essa tradução bate 100% com o que você vê na tela. Use como ideia geral dos efeitos disponíveis pra esse personagem, não como um mapa certeiro de qual ícone é qual.",
+      "aliases": [
+        "Shell"
+      ],
+      "icon": "Viajantes/Hero_Husk.avif"
+    },
+    {
+      "id": "bismuth",
+      "name": "Bismuth",
+      "role": "Dano à distância sustentado",
+      "builds": [
+        {
+          "id": "bismuth-pure-soul-flow",
+          "name": "Escudeira Suprema (Best in Slot) — by Elrondel",
+          "tag": "meta",
+          "likes": 151,
+          "views": 39773,
+          "season": "Temporada 2",
+          "date": "2025-09-15",
+          "notes": "Build completa (pegamos direto da página oficial da build, então essa é 100% fiel ao original — não é aproximação de guia). Truque principal: Bismuth pode equipar a MESMA Memory (Alma Pura) duas vezes, cada cópia com essências diferentes — uma focada em sustain (Clemência/Orientação/Ímpeto), outra em dano contra chefes (Predação/Neve/Rigidez). Proteção em Massa dá escudo em área pro grupo, e Tempestade de Flechas empresta velocidade de ataque. Contra fases de invencibilidade de boss, o autor recomenda trocar a Essência do Ímpeto por Proteção em Massa extra. A passiva de identidade da Bismuth (Prismatic Vision) já ataca sozinha com um livro flutuante — não precisa apertar nada pra isso funcionar.",
+          "memories": [
+            {
+              "name": "Alma Pura (1ª cópia)",
+              "key": "pure-soul",
+              "type": "light",
+              "essences": [
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Clemency.avif"
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                },
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                }
+              ],
+              "effect": "Dispara 3 mísseis da alma contra inimigos próximos. Cada míssil explode causando 120% de dano de Luz aos inimigos e reduz a velocidade de movimento deles em 60% por 1s."
+            },
+            {
+              "name": "Alma Pura (2ª cópia)",
+              "key": "pure-soul",
+              "type": "light",
+              "essences": [
+                {
+                  "name": "Essência da Voracidade",
+                  "key": "essence-of-predation",
+                  "type": "physical",
+                  "note": "core",
+                  "effect": "Esta Memory causa 60% de dano a mais em Chefes e Caçadores. Derrotar um Caçador solta 1 Orbe de Poder; um Chefe solta 3. Coletar um Orbe aumenta permanentemente o dano de ataque ou o poder de habilidade em 1, aleatoriamente.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Predation.avif"
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto o Escudo está ativo, lança periodicamente uma bola de neve num inimigo próximo, causando 80% de dano de Frio. Quanto maior o Escudo, mais rápido dispara.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Snow.avif"
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s. Se causar dano de Frio, o efeito aumenta 80%.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Rigidity.avif"
+                }
+              ],
+              "effect": "Dispara 3 mísseis da alma contra inimigos próximos. Cada míssil explode causando 120% de dano de Luz aos inimigos e reduz a velocidade de movimento deles em 60% por 1s."
+            },
+            {
+              "name": "Proteção em Massa",
+              "key": "mass-protection",
+              "type": "neutral",
+              "essences": [
+                {
+                  "name": "Essência do Fluxo",
+                  "key": "essence-of-flow",
+                  "type": "neutral",
+                  "note": "core",
+                  "effect": "Causar dano de Luz com qualquer Memory reduz o tempo de recarga desta Memory em 6% (40% do efeito em Ultimates). A redução também se aplica às Essências equipadas.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Flow.avif"
+                },
+                {
+                  "name": "Perfeição",
+                  "key": "perfection",
+                  "type": "neutral",
+                  "effect": "Aumenta o dano de ataque em 7, o poder de habilidade em 7, a vida máxima em 35, a velocidade de ataque em 10%, a chance de crítico em 6% e o Memory Haste em 10.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_Perfect.avif"
+                }
+              ],
+              "effect": "Concede um Escudo de 250% a aliados próximos, que se dissipa em 1,5 segundo.",
+              "icon": "Memorias/Comun/St_C_MassProtection.avif"
+            },
+            {
+              "name": "Tempestade de Flechas",
+              "key": "arrow-storm",
+              "type": "physical",
+              "essences": [
+                {
+                  "name": "Essência da Flexibilidade",
+                  "key": "essence-of-flexibility",
+                  "type": "neutral",
+                  "effect": "Enquanto esta Memory está em tempo de recarga, 37% do dano recebido é dividido ao longo de 4 segundos, com redução de 20%.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Flexibility.avif"
+                },
+                {
+                  "name": "Branco Puro",
+                  "key": "pure-white",
+                  "type": "light",
+                  "effect": "A cada 10s, o próximo cast desta Memory fica fortalecido e dispara 3 projéteis, cada um causando dano de Luz igual a 20% do dano do cast original a cada inimigo.",
+                  "icon": "Essencias/Lendario/Gem_L_PureWhite.avif"
+                },
+                {
+                  "name": "Essência da Percepção",
+                  "key": "essence-of-insight",
+                  "type": "light",
+                  "effect": "Quando esta Memory causa qualquer dano, causa 200% de dano de Luz adicional a até 3 inimigos e aumenta o Memory Haste em 20 por 5s (1 vez a cada 3s).",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Insight.avif"
+                }
+              ],
+              "effect": "Por 6s, aumenta a velocidade de ataque em 15% e a de movimento em 10%. Cada ataque dispara 3 flechas (35% de dano cada); a primeira ativa efeitos de ataque."
+            }
+          ]
+        },
+        {
+          "id": "bismuth-autocast-boss",
+          "name": "Autocast — Alma Pura + Purgatório",
+          "tag": "alternativa (boss)",
+          "likes": 21,
+          "views": 7919,
+          "season": "Temporada 1",
+          "date": "2025-09-16",
+          "notes": "Foca em memórias que ficam disparando sozinhas (autocast), incluindo o Purgatório curando automaticamente quando sua vida cai. Deixa a build mais 'de boa' contra chefes longos, trocando um pouco de dano por muito mais segurança.",
+          "memories": [
+            {
+              "name": "Alma Pura",
+              "key": "pure-soul",
+              "type": "light",
+              "essences": [
+                {
+                  "name": "Essência do Fluxo",
+                  "key": "essence-of-flow",
+                  "type": "neutral",
+                  "note": "core",
+                  "effect": "Causar dano de Luz com qualquer Memory reduz o tempo de recarga desta Memory em 6% (40% do efeito em Ultimates). A redução também se aplica às Essências equipadas.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Flow.avif"
+                }
+              ],
+              "effect": "Dispara 3 mísseis da alma contra inimigos próximos, cada um explodindo com dano de Luz e reduzindo a velocidade de movimento dos inimigos."
+            }
+          ]
+        }
+      ],
+      "constellation": [
+        {
+          "category": "destruicao",
+          "name": "Iluminação",
+          "effect": "Ao desmontar uma Memory ou Essência, ganha aumento permanente de velocidade de ataque (70/100/150/300% conforme a raridade), mas reduz o Dream Dust ganho em 35%.",
+          "key": "iluminacao"
+        },
+        {
+          "category": "destruicao",
+          "name": "Leitura Veloz",
+          "effect": "Aumenta a velocidade de ataque em 1500%.",
+          "key": "leitura-veloz"
+        },
+        {
+          "category": "destruicao",
+          "name": "Tempestade Crescente",
+          "effect": "A velocidade de ataque é reduzida em 10%, mas aumenta 160% a cada nível.",
+          "key": "tempestade-crescente"
+        },
+        {
+          "category": "destruicao",
+          "name": "Mente Madura",
+          "effect": "Ganha 3,5 de poder de habilidade ao alcançar os níveis 5, 10, 15 e 20.",
+          "key": "mente-madura"
+        },
+        {
+          "category": "vida",
+          "name": "Segundo Fôlego",
+          "effect": "Ao tomar dano fatal, ignora esse dano e fica invulnerável por 2,5s (uma vez por partida).",
+          "key": "segundo-folego"
+        },
+        {
+          "category": "vida",
+          "name": "Detecção de Ameaça",
+          "effect": "Reduz o cooldown da esquiva em 22%.",
+          "key": "deteccao-de-ameaca"
+        },
+        {
+          "category": "vida",
+          "name": "Pele Regenerativa",
+          "effect": "Aumenta a cura e o escudo recebidos em 18%.",
+          "key": "pele-regenerativa"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Livro do Conhecimento",
+          "effect": "Ganha 1-4 Livros do Conhecimento a cada chefe derrotado, cada um concedendo um status aleatório equivalente a uma Essência Comum.",
+          "key": "livro-do-conhecimento"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Bom Material",
+          "effect": "Aumenta em 35% o Dream Dust obtido ao desmontar Memories.",
+          "key": "bom-material"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Diário Secreto",
+          "effect": "Começa a aventura com a Essência Nossa História; a qualidade dela aumenta 50% a cada 75 inimigos derrotados, completando ao chegar em 500%.",
+          "key": "diario-secreto"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Mercado Negro",
+          "effect": "Ganha 3 Moedas de Platina no início da aventura e sempre que muda de mundo (máx. 3).",
+          "key": "mercado-negro"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Extração Eficiente",
+          "effect": "Aumenta em 15% o Dream Dust ganho ao desmontar Memories ou Essências.",
+          "key": "extracao-eficiente"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Charme Monstruoso",
+          "effect": "100% de chance de Jonas oferecer 2 itens adicionais à venda.",
+          "key": "charme-monstruoso"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Caos Primordial",
+          "effect": "Quando Caos é obtido como recompensa, 20% de chance de ganhar um Caos adicional.",
+          "key": "caos-primordial"
+        },
+        {
+          "category": "imaginacao",
+          "name": "Tópicos Diversos",
+          "effect": "Cada míssil da Alma Pura ganha um efeito elemental aleatório.",
+          "key": "topicos-diversos"
+        },
+        {
+          "category": "flexivel",
+          "name": "Diga Olá aos Meus Amiguinhos!",
+          "effect": "O cooldown da Alma Pura aumenta 2s, mas o número de mísseis por ativação aumenta com sua velocidade de ataque.",
+          "key": "diga-ola-aos-meus-amiguinhos"
+        },
+        {
+          "category": "flexivel",
+          "name": "Subtensão",
+          "effect": "A Alma Pura atira 2 mísseis a menos, mas o cooldown cai pela metade.",
+          "key": "subtensao"
+        }
+      ],
+      "_constellation_note": "Referência solta, não um guia exato: os nomes das estrelas no jogo só aparecem ao passar o mouse/analógico em cima delas, então não dá pra garantir que essa tradução bate 100% com o que você vê na tela. Use como ideia geral dos efeitos disponíveis pra esse personagem, não como um mapa certeiro de qual ícone é qual.",
+      "icon": "Viajantes/Hero_Bismuth.avif"
+    },
+    {
+      "id": "cetus",
+      "name": "Cetus",
+      "role": "Traveler mais recente do jogo — papel ainda sendo definido pela comunidade",
+      "builds": []
+    }
+  ]
+}
