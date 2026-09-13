@@ -738,15 +738,16 @@ function renderBuildDetails() {
     const mKey = overrideKeyFor(m);
     const essencesHtml = (rawM.essences || []).map((rawE, ei) => {
       const e = withOverride("item", rawE);
-      const eKey = e.key || `${mKey}__${e.name}`;
+      const eKey = e.key || `${mKey}__${e.name}`; // usado só pra marcar "já consegui" (pode repetir entre memórias)
+      const eOverrideKey = overrideKeyFor(e); // identidade real da essência, usada pra editar nome/raridade/efeito
       if (editMode) {
         return `<li class="${e.note === "core" ? "core" : ""}">
           <div class="essence-row">
             ${iconOrBadge(e.key, "item", e.type, e.icon, e.rarity)}
-            <input type="text" class="gallery-edit-input inline-edit-name" data-field="name" data-kind="item" data-key="${escapeHtml(eKey)}" value="${escapeHtml(e.name)}">
-            ${rarityFieldHtml("item", eKey, e.rarity)}
+            <input type="text" class="gallery-edit-input inline-edit-name" data-field="name" data-kind="item" data-key="${escapeHtml(eOverrideKey)}" value="${escapeHtml(e.name)}">
+            ${rarityFieldHtml("item", eOverrideKey, e.rarity)}
           </div>
-          <textarea class="gallery-edit-textarea" data-field="effect" data-kind="item" data-key="${escapeHtml(eKey)}" placeholder="Descrição / efeito...">${escapeHtml(e.effect || "")}</textarea>
+          <textarea class="gallery-edit-textarea" data-field="effect" data-kind="item" data-key="${escapeHtml(eOverrideKey)}" placeholder="Descrição / efeito...">${escapeHtml(e.effect || "")}</textarea>
         </li>`;
       }
       return `<li class="${e.note === "core" ? "core" : ""} ${isObtained(build.id, eKey) ? "obtained" : ""}">
