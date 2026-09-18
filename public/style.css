@@ -353,3 +353,48 @@ body.game-mode #buildDetails > .notes { display: none; }
 
 .notes-list { margin: 4px 0 14px; padding-left: 18px; color: var(--text); font-size: 13px; }
 .notes-list li { margin: 3px 0; }
+
+
+/* Diablo build details - layout follows the source guide (Maxroll) closely:
+   stacked full-width sections, each with a colored bar next to the title
+   (not loose cards in a grid), equipment items with the item name in
+   emphasis and the slot as a discreet caption, numbered priority lists,
+   and a two-color Pros/Cons box. */
+.diablo-section { margin: 14px 0; }
+.diablo-section-title {
+    margin: 0 0 8px; padding-left: 10px;
+    border-left: 3px solid var(--accent);
+    font-size: 15px; font-weight: 700; color: var(--text);
+}
+.diablo-section-body { font-size: 13px; }
+
+.diablo-equip-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.diablo-equip-row { display: flex; align-items: center; gap: 8px; }
+.diablo-equip-slot { font-size: 10px; text-transform: uppercase; letter-spacing: .3px; color: var(--text-dim); }
+.diablo-equip-name { font-size: 13px; font-weight: 600; color: var(--accent-hover); }
+
+.diablo-skill-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.diablo-skill-list li { display: flex; align-items: center; gap: 7px; }
+
+.diablo-priority-list { list-style: none; margin: 4px 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.diablo-priority-list li { display: flex; align-items: center; gap: 7px; }
+.diablo-priority-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-size: 10px; font-weight: 700; flex-shrink: 0;
+}
+
+.diablo-proscons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; }
+.diablo-pros, .diablo-cons { border-radius: 8px; padding: 8px 10px; }
+.diablo-pros { background: rgba(74,222,128,.1); border: 1px solid rgba(74,222,128,.3); }
+.diablo-cons { background: rgba(224,85,107,.1); border: 1px solid rgba(224,85,107,.3); }
+.diablo-proscons-title { font-weight: 700; font-size: 12px; margin-bottom: 4px; }
+.diablo-pros .diablo-proscons-title { color: #4ade80; }
+.diablo-cons .diablo-proscons-title { color: #e0556b; }
+.diablo-proscons ul { list-style: none; margin: 0; padding: 0; font-size: 12px; }
+.diablo-proscons li { margin: 2px 0; }
+.diablo-pros li { color: #a7e8bb; }
+.diablo-cons li { color: #f0aab4; }
+@media (max-width: 480px) {
+    .diablo-proscons { grid-template-columns: 1fr; }
+}
