@@ -1,6 +1,7 @@
 {
     "$schema_note": "Versão 1 — Diablo IV, classe Sorcerer (Mago). Ainda não integrado ao app Ajuda Jogos. Todos os dados vêm de fontes públicas citadas em coleta-v1.md; nenhum arquivo do jogo foi acessado.",
     "game": "Diablo IV",
+    "id": "diablo-iv-mago",
     "class": {
           "id": "sorcerer",
           "name_pt": "Mago",

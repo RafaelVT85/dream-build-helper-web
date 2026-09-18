@@ -3,5 +3,10 @@
     "id": "shape-of-dreams",
     "name": "Shape of Dreams",
     "file": "shape-of-dreams.json"
-  }
+  },
+    {
+          "id": "diablo-iv-mago",
+          "name": "Diablo IV - Mago",
+          "file": "diablo-iv-mago-v1.json"
+    }
 ]
