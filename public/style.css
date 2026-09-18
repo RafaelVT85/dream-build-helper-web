@@ -337,3 +337,19 @@ body.game-mode #buildDetails > .notes { display: none; }
 }
 #savesList li .label { flex: 1; }
 #savesList li button.del { color: var(--danger); border-color: transparent; background: transparent; padding: 2px 5px; }
+
+
+/* Games with their own schema (e.g. Diablo IV) have no "character" concept
+   nor likes/views/date, so those sections hide in this mode. */
+.diablo-mode .sort-row,
+.diablo-mode .traveler-row { display: none; }
+
+.diablo-table { width: 100%; border-collapse: collapse; margin: 6px 0 14px; font-size: 12px; }
+.diablo-table th, .diablo-table td {
+    text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--border); vertical-align: top;
+}
+.diablo-table th { color: var(--text-dim); font-weight: 600; text-transform: uppercase; font-size: 10px; }
+.diablo-table .lvl-cell { white-space: nowrap; color: var(--accent-hover); font-weight: 600; }
+
+.notes-list { margin: 4px 0 14px; padding-left: 18px; color: var(--text); font-size: 13px; }
+.notes-list li { margin: 3px 0; }
