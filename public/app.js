@@ -344,6 +344,7 @@ function renderDiabloBuildDetails(buildId) {
   }
 
   const sourceLink = build.source ? `<a href="${escapeHtml(build.source)}" target="_blank" rel="noopener" class="tag-pill">🔗 Guia fonte</a>` : "";
+        const plannerLink = build.planner_url ? `<a href="${escapeHtml(build.planner_url)}" target="_blank" rel="noopener" class="tag-pill">🧭 Planner interativo</a>` : "";
         const statusPill = build.status ? `<span class="tag-pill">${escapeHtml(build.status)}</span>` : "";
         const phasePill = `<span class="tag-pill">${build._phase === "leveling" ? "🌱 Leveling" : "🏆 Endgame"}</span>`;
 
@@ -400,6 +401,12 @@ function renderDiabloBuildDetails(buildId) {
                                   const items = build.uniques_useful.map(u => `<li>${diabloEquipBadge("ring")} ${escapeHtml(u)}</li>`).join("");
                                   sections.push(diabloSection("Uniques que ajudam a acelerar", `<ul class="diablo-skill-list">${items}</ul>`));
               }
+              if (build.equipment) {
+                                  let htmlEq = "";
+                                  if (build.equipment_notes) htmlEq += `<p class="notes">${escapeHtml(build.equipment_notes)}</p>`;
+                                  htmlEq += equipmentHtml(build.equipment);
+                                  sections.push(diabloSection("Aspects pra imprimir (upgrade do ferreiro)", htmlEq));
+              }
               if (build.mercenary) {
                                   sections.push(diabloSection("Mercenário", diabloMercenaryTree(build.mercenary)));
               }
@@ -447,6 +454,12 @@ function renderDiabloBuildDetails(buildId) {
                                   html += equipmentHtml(build.equipment);
                                   sections.push(diabloSection("Equipamento", html));
               }
+              if (build.enchantments?.length) {
+                                  sections.push(diabloSection("Encantamentos", diabloNoteList(build.enchantments, () => diabloSkillBadge(""))));
+              }
+              if (build.runes_note) {
+                                  sections.push(diabloSection("Runas / Talismã", `<p class="notes">${escapeHtml(build.runes_note)}</p>`));
+              }
               if (build.mythic_priority?.length) {
                                   sections.push(diabloSection("Prioridade de Míticos", diabloNoteList(build.mythic_priority, () => `<span class="type-badge">✨</span>`)));
               }
@@ -472,6 +485,7 @@ function renderDiabloBuildDetails(buildId) {
                                                         ${statusPill}
                                                                                     ${season ? `<span>Temporada ${escapeHtml(String(season.number))} — ${escapeHtml(season.name)}</span>` : ""}
                                                                                                                       ${sourceLink}
+                                                                                                                                                            ${plannerLink}
                                                                                                                                                             </div>
                                                                                                                                                                                                       ${sections.join("")}
                                                                                                                                                                                                                                                     `;
