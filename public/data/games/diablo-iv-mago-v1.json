@@ -1,228 +1,686 @@
 {
-    "$schema_note": "Versão 1 — Diablo IV, classe Sorcerer (Mago). Ainda não integrado ao app Ajuda Jogos. Todos os dados vêm de fontes públicas citadas em coleta-v1.md; nenhum arquivo do jogo foi acessado.",
-    "game": "Diablo IV",
-    "id": "diablo-iv-mago",
-    "class": {
-          "id": "sorcerer",
-          "name_pt": "Mago",
-          "name_en": "Sorcerer"
-    },
-    "season": {
-          "number": 15,
-          "name": "Hell's Legacy",
-          "patch": "3.2.0"
-    },
-    "season_mechanic": {
-          "splinters_of_evil": {
-                  "description": "3 facções ligadas aos Prime Evils: Terror (Diablo/Fogo), Destruction (Baal/Frio), Hatred (Mephisto/Físico). Cada uma dá uma 'Iconic Power' que ativa sozinha, mais uma trilha de reputação, com o custo de aumentar a vulnerabilidade àquele Prime Evil.",
-                  "factions": ["Terror", "Destruction", "Hatred"]
-          },
-          "soul_splinters": {
-                  "description": "Gemas especiais da temporada, até 3 por personagem, encaixadas em joias. 4 raridades; a versão Unique de cada uma dá um efeito forte + uma desvantagem real.",
-                  "examples": [
-                            { "name": "Splinter of Hellfire", "effect": "+100% dano", "drawback": "-100% Chance de Crítico" },
-                            { "name": "Splinter of Sin", "effect": "+40% Vida" },
-                            { "name": "Splinter of the Black Soulstone", "effect": "escala dano matando grupos de inimigos", "drawback": "leve aumento no dano recebido" },
-                            { "name": "Splinter of Pain", "effect": "redução de dano extra", "drawback": "reduz velocidade de movimento" },
-                            { "name": "Splinter of Anguish", "effect": "+Crit Chance", "drawback": "+custo de recurso" }
-                  ]
-          }
-    },
-    "mercenaries_system": {
-          "slots": ["hired (permanente)", "reinforcement (situacional)"],
-          "roster": ["Raheir (tanque)", "Varyana (berserker)", "Aldkin (suporte mágico)", "Subo (utilidade à distância)"],
-          "currency": "Pale Marks"
-    },
-    "enchantment_slots": {
-          "description": "Mecânica exclusiva do Mago. Uma skill num slot de encantamento não vira uma 2ª cópia ativa — dá um efeito passivo condicional.",
-          "slot_1_unlock_level": 15,
-          "slot_2_unlock_level": 30
-    },
-    "leveling_builds": [
-          {
-                  "id": "firewall_leveling",
-                  "name": "Firewall (Ring of Fire)",
-                  "status": "verified_S15",
-                  "source": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-leveling-guide",
-                  "leads_to_endgame_build": "ring_of_fire",
-                  "skill_progression": [
-                            { "level": "1-2", "action": "Arc Lash (skill básica, AoE + Mana)" },
-                            { "level": 3, "action": "Fireball — Core Skill de AoE" },
-                            { "level": 4, "action": "Teleport" },
-                            { "level": 6, "action": "Ice Armor" },
-                            { "level": 7, "action": "upgrade Mana Regen em Ice Armor" },
-                            { "level": 8, "action": "Hydra" },
-                            { "level": 9, "action": "upgrade Resource Generation em Arc Lash" },
-                            { "level": 13, "action": "Firewall vira principal — reseta tudo, mantém só Arc Lash+RG, Teleport, Ice Armor+RR, joga 12 pontos em Firewall" },
-                            { "level": 14, "action": "variante Inescapable Reach em Arc Lash" },
-                            { "level": 15, "action": "1 ponto em Fireball p/ Enchantment; libera Slot 1 de Encantamento" },
-                            { "level": 16, "action": "variante Wormhole em Teleport" },
-                            { "level": "18/21/23", "action": "upgrades de Firewall: Healing, Cost Reduction, variante Ring of Fire (23)" },
-                            { "level": "pós-23", "action": "completa Hydra, depois Inferno, depois upgrades restantes" },
-                            { "level": 40, "action": "upgrade Lifecoil em Inferno — troca Hydra por Familiar" },
-                            { "level": "resto até 70", "action": "sobe rank de Familiar → Ice Armor → Fireball" }
-                  ],
-                  "total_points": 83,
-                  "enchantment_slot_1": "Fireball",
-                  "enchantment_slot_2": "Teleport (ou Firewall se preferir dano a mobilidade)",
-                  "glyph_priority": ["Pyromaniac", "Reinforced", "Tactician", "Flamefeeder", "Adept"]
-          },
-          {
-                  "id": "static_field_blizzard_leveling",
-                  "name": "Static Field Blizzard",
-                  "status": "verified_S15",
-                  "source": "https://maxroll.gg/d4/build-guides/blizzard-sorcerer-leveling-guide",
-                  "leads_to_endgame_build": "static_field_blizzard",
-                  "skill_progression": [
-                            { "level": "1-2", "action": "Arc Lash" },
-                            { "level": 3, "action": "Fireball (Core, temporário)" },
-                            { "level": 4, "action": "Teleport" },
-                            { "level": 6, "action": "Ice Armor" },
-                            { "level": 7, "action": "upgrade Mana Regen em Ice Armor" },
-                            { "level": 8, "action": "Hydra" },
-                            { "level": 9, "action": "upgrade Resource Generation em Arc Lash" },
-                            { "level": 12, "action": "upgrade Healing em Hydra" },
-                            { "level": 13, "action": "Blizzard vira principal — reseta tudo, mantém Arc Lash+RG, Teleport, Ice Armor" },
-                            { "level": 16, "action": "variante Wormhole em Teleport" },
-                            { "level": 17, "action": "upgrade Cooldown Reduction em Hydra" },
-                            { "level": 18, "action": "upgrade Damage Bonus em Blizzard" },
-                            { "level": 21, "action": "upgrade Seek + Duration Bonus em Blizzard" },
-                            { "level": 36, "action": "variante Frigid Hydra" },
-                            { "level": 38, "action": "variante Static Field em Blizzard — remove Arc Lash, libera Ultimate Unstable Currents" },
-                            { "level": "38+", "action": "adiciona Frost Nova" },
-                            { "level": "resto até 70", "action": "maximiza ranks principais, depois utilidade, depois upgrades em Chain Lightning/Charged Bolts/Lightning Spear/Ball Lightning" }
-                  ],
-                  "total_points": 83,
-                  "enchantment_slot_1": "Teleport",
-                  "enchantment_slot_2": "Blizzard",
-                  "glyph_priority": ["Tactician", "Reinforced", "Adept", "Exploit", "Elementalist"]
-          },
-          {
-                  "id": "fireball_leveling",
-                  "name": "Fireball (base genérica p/ Meteor)",
-                  "status": "verified_S15_partial",
-                  "source": "https://www.icy-veins.com/d4/guides/fireball-sorcerer-leveling-build/",
-                  "leads_to_endgame_build": "meteoro_sustentado",
-                  "skill_bar": ["Fire Bolt", "Fireball", "Teleport", "Ice Armor", "Frost Nova", "Inferno"],
-                  "milestones": [
-                            { "level": 15, "action": "libera Slot 1 de Encantamento — atribuir Fireball" },
-                            { "level": 30, "action": "libera Slot 2 de Encantamento — atribuir Frost Nova" },
-                            { "level": 70, "action": "troca pra build de Meteor endgame (não existe rota de leveling dedicada ao Meteor ainda)" }
-                  ],
-                  "total_points": 83,
-                  "note": "Guia não publica tabela nível-a-nível completa como os outros dois; só os marcos de Encantamento."
-          }
-    ],
-    "endgame_builds": [
-          {
-                  "id": "ring_of_fire",
-                  "name": "Ring of Fire (Firewall)",
-                  "tier": "S-Tier comunidade",
-                  "source": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-guide",
-                  "status": "verified",
-                  "main_set": "Berú of the Threefold",
-                  "key_unique": "Tal Rasha's Iridescent Loop",
-                  "skill_bar": [
-                            { "skill": "Charged Bolts", "role": "principal" },
-                            { "skill": "Familiar", "role": "proc Shock" },
-                            { "skill": "Teleport", "role": "mobilidade" },
-                            { "skill": "Ice Armor", "role": "defesa" },
-                            { "skill": "Hydra", "role": "cura/CDR" },
-                            { "skill": "Firewall", "role": "backup manual (normalmente automático via set)" }
-                  ],
-                  "mercenary": { "hired": "Subo (Molotov, Scorched Earth, maphack)", "reinforcement": "Raheir (Bastion)" },
-                  "paragon": {
-                            "points_spent": 342,
-                            "boards_order": ["Start", "Enchantment Master", "Burning Instinct", "Fundamental Release", "Frigid Fate"],
-                            "glyphs_endgame": { "Start": "Tactician", "Enchantment Master": "Reinforced", "Burning Instinct": "Flamefeeder", "Fundamental Release": "Pyromaniac", "Frigid Fate": "Adept" }
-                  },
-                  "equipment": {
-                            "helm": "Godslayer Crown (alt: Harlequin Crest)",
-                            "chest": "Raiment of the Infinite",
-                            "ring_1": "Tal Rasha's Iridescent Loop",
-                            "ring_2": "X'Fal's Corroded Signet",
-                            "boots": "Flickerstep",
-                            "weapon_aspect": "Conceited",
-                            "offhand_aspect": "Control",
-                            "amulet_aspect": "Storm Swell"
-                  }
-          },
-          {
-                  "id": "static_field_blizzard",
-                  "name": "Static Field Blizzard",
-                  "tier": "S-Tier comunidade",
-                  "source": "https://maxroll.gg/d4/build-guides/blizzard-sorcerer-guide",
-                  "status": "verified",
-                  "skill_bar": [
-                            { "skill": "Blizzard", "role": "principal" },
-                            { "skill": "Ice Armor", "role": "defesa" },
-                            { "skill": "Flame Shield", "role": "imunidade" },
-                            { "skill": "Teleport", "role": "Wormhole" },
-                            { "skill": "Unstable Currents", "role": "ultimate" },
-                            { "skill": "Frost Nova", "role": "Vulnerable" }
-                  ],
-                  "mercenary": { "hired": "Subo (Molotov, Scorched Earth, Explosive Charge)", "reinforcement": "Raheir (tanque de apoio)" },
-                  "paragon": {
-                            "points_spent": 276,
-                            "boards_order": ["Start", "Static Surge", "Enchantment Master", "Fundamental Release", "Frigid Fate"],
-                            "glyphs_endgame": { "Start": "Tactician", "Static Surge": "Exploit", "Enchantment Master": "Reinforced", "Fundamental Release": "Elementalist", "Frigid Fate": "Adept" }
-                  },
-                  "equipment": {
-                            "ring_1": "Tal Rasha's Iridescent Loop",
-                            "ring_2_upgrade": "Ring of Starless Skies",
-                            "ring_pit": "Heir of Perdition",
-                            "weapon": "Blue Rose",
-                            "helm": "Godslayer Crown (alt: Harlequin Crest)",
-                            "chest": "Raiment of the Infinite (alt: Shroud of False Death)"
-                  }
-          },
-          {
-                  "id": "meteoro_sustentado",
-                  "name": "Meteoro Sustentado (Meteor)",
-                  "tier": "guia real (não é build própria, corrigida na 2ª rodada)",
-                  "source": "https://maxroll.gg/d4/build-guides/meteor-sorcerer-guide",
-                  "status": "verified",
-                  "main_set": "Berú of the Threefold",
-                  "key_mythic": "Starfall Coronet",
-                  "critical_requirement": "Selo Lendário com afixo 'Mana ao ativar Skill de Maestria'",
-                  "skill_bar": [
-                            { "skill": "Meteor", "role": "principal — spam" },
-                            { "skill": "Teleport", "role": "mobilidade via Overpower" },
-                            { "skill": "Ice Armor", "role": "defesa" },
-                            { "skill": "Blizzard", "role": "Vulnerable (auto via set)" },
-                            { "skill": "Hydra", "role": "cura/CDR, variante Behemoth" },
-                            { "skill": "Inferno", "role": "gera Overpower" },
-                            { "skill": "Ball Lightning", "role": "mantém Static Surge ativo" }
-                  ],
-                  "mercenary": { "hired": "Subo (maphack, Opening Fire)", "reinforcement": "Raheir (Bastion on Injured)" },
-                  "paragon": {
-                            "points_spent": 275,
-                            "boards_order": ["Start", "Enchantment Master", "Searing Heat", "Static Surge", "Frigid Fate"],
-                            "glyphs_endgame": { "Start": "Tactician", "Enchantment Master": "Reinforced", "Searing Heat": "Pyromaniac", "Static Surge": "Destruction", "Frigid Fate": "Adept" }
-                  },
-                  "equipment": {
-                            "priority_order": ["Raiment of the Infinite (~43% resistência)", "Starfall Coronet (~15% dano)", "Esu's Heirloom (~10% dano)"],
-                            "soul_splinters_priority": ["Abyssal Splinter of Anguish", "Abyssal Splinter of Pain", "Abyssal Splinter of the Black Soulstone"]
-                  },
-                  "pros": ["Bom dano", "Ótima mobilidade", "+50 Meteoros/segundo"],
-                  "cons": ["Pouco CC", "Dano com delay", "Requisitos altos de equipamento"]
-          }
-    ],
-    "boss_farming": [
-          { "boss": "Duriel", "location": "Gaping Crevasse (Kehjistan)", "material": "1x Greater Lair Key", "min_difficulty": "Torment I" },
-          { "boss": "Echo of Varshan", "location": "Malignant Burrow (Hawezar)", "material": "1x Lair Key", "min_difficulty": "Torment I" },
-          { "boss": "Lord Zir", "location": "The Darkened Way (Fractured Peaks)", "material": "1x Lair Key", "min_difficulty": "Torment I" }
-    ],
-    "damage_formula_general": {
-          "vulnerable_multiplier": 1.2,
-          "critical_base_multiplier": 1.5,
-          "overpower_base_chance": 0.03,
-          "note": "Multiplicadores 'xN%' se acumulam multiplicando entre si (retorno decrescente). Válido pra todas as classes, não só Mago."
-    },
-    "open_todos": [
-          "Nível exato dos pontos de leveling do Fireball (guia não publica tabela completa)",
-          "Nomes exatos dos manuais de Tempering por afixo",
-          "Node-a-node completo dos Paragon boards (hoje só temos nome do board + Glyph, não cada nó individual)",
-          "Repetir esse processo pras outras 7 classes — fora do escopo desta rodada"
-    ]
+      "$schema_note": "Versão 1 — Diablo IV, classe Sorcerer (Mago). Ainda não integrado ao app Ajuda Jogos. Todos os dados vêm de fontes públicas citadas em coleta-v1.md; nenhum arquivo do jogo foi acessado.",
+      "game": "Diablo IV",
+      "id": "diablo-iv-mago",
+      "class": {
+              "id": "sorcerer",
+              "name_pt": "Mago",
+              "name_en": "Sorcerer"
+      },
+      "season": {
+              "number": 15,
+              "name": "Hell's Legacy",
+              "patch": "3.2.0"
+      },
+      "season_mechanic": {
+              "splinters_of_evil": {
+                        "description": "3 facções ligadas aos Prime Evils: Terror (Diablo/Fogo), Destruction (Baal/Frio), Hatred (Mephisto/Físico). Cada uma dá uma 'Iconic Power' que ativa sozinha, mais uma trilha de reputação, com o custo de aumentar a vulnerabilidade àquele Prime Evil.",
+                        "factions": [
+                                    "Terror",
+                                    "Destruction",
+                                    "Hatred"
+                        ]
+              },
+              "soul_splinters": {
+                        "description": "Gemas especiais da temporada, até 3 por personagem, encaixadas em joias. 4 raridades; a versão Unique de cada uma dá um efeito forte + uma desvantagem real.",
+                        "examples": [
+                                    {
+                                                  "name": "Splinter of Hellfire",
+                                                  "effect": "+100% dano",
+                                                  "drawback": "-100% Chance de Crítico"
+                                    },
+                                    {
+                                                  "name": "Splinter of Sin",
+                                                  "effect": "+40% Vida"
+                                    },
+                                    {
+                                                  "name": "Splinter of the Black Soulstone",
+                                                  "effect": "escala dano matando grupos de inimigos",
+                                                  "drawback": "leve aumento no dano recebido"
+                                    },
+                                    {
+                                                  "name": "Splinter of Pain",
+                                                  "effect": "redução de dano extra",
+                                                  "drawback": "reduz velocidade de movimento"
+                                    },
+                                    {
+                                                  "name": "Splinter of Anguish",
+                                                  "effect": "+Crit Chance",
+                                                  "drawback": "+custo de recurso"
+                                    }
+                        ]
+              }
+      },
+      "mercenaries_system": {
+              "slots": [
+                        "hired (permanente)",
+                        "reinforcement (situacional)"
+              ],
+              "roster": [
+                        "Raheir (tanque)",
+                        "Varyana (berserker)",
+                        "Aldkin (suporte mágico)",
+                        "Subo (utilidade à distância)"
+              ],
+              "currency": "Pale Marks"
+      },
+      "enchantment_slots": {
+              "description": "Mecânica exclusiva do Mago. Uma skill num slot de encantamento não vira uma 2ª cópia ativa — dá um efeito passivo condicional.",
+              "slot_1_unlock_level": 15,
+              "slot_2_unlock_level": 30
+      },
+      "leveling_builds": [
+              {
+                        "id": "firewall_leveling",
+                        "name": "Firewall (Ring of Fire)",
+                        "status": "verified_S15",
+                        "source": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-leveling-guide",
+                        "leads_to_endgame_build": "ring_of_fire",
+                        "skill_progression": [
+                                    {
+                                                  "level": "1-2",
+                                                  "action": "Arc Lash (skill básica, AoE + Mana)"
+                                    },
+                                    {
+                                                  "level": 3,
+                                                  "action": "Fireball — Core Skill de AoE"
+                                    },
+                                    {
+                                                  "level": 4,
+                                                  "action": "Teleport"
+                                    },
+                                    {
+                                                  "level": 6,
+                                                  "action": "Ice Armor"
+                                    },
+                                    {
+                                                  "level": 7,
+                                                  "action": "upgrade Mana Regen em Ice Armor"
+                                    },
+                                    {
+                                                  "level": 8,
+                                                  "action": "Hydra"
+                                    },
+                                    {
+                                                  "level": 9,
+                                                  "action": "upgrade Resource Generation em Arc Lash"
+                                    },
+                                    {
+                                                  "level": 13,
+                                                  "action": "Firewall vira principal — reseta tudo, mantém só Arc Lash+RG, Teleport, Ice Armor+RR, joga 12 pontos em Firewall"
+                                    },
+                                    {
+                                                  "level": 14,
+                                                  "action": "variante Inescapable Reach em Arc Lash"
+                                    },
+                                    {
+                                                  "level": 15,
+                                                  "action": "1 ponto em Fireball p/ Enchantment; libera Slot 1 de Encantamento"
+                                    },
+                                    {
+                                                  "level": 16,
+                                                  "action": "variante Wormhole em Teleport"
+                                    },
+                                    {
+                                                  "level": "18/21/23",
+                                                  "action": "upgrades de Firewall: Healing, Cost Reduction, variante Ring of Fire (23)"
+                                    },
+                                    {
+                                                  "level": "pós-23",
+                                                  "action": "completa Hydra, depois Inferno, depois upgrades restantes"
+                                    },
+                                    {
+                                                  "level": 40,
+                                                  "action": "upgrade Lifecoil em Inferno — troca Hydra por Familiar"
+                                    },
+                                    {
+                                                  "level": "resto até 70",
+                                                  "action": "sobe rank de Familiar → Ice Armor → Fireball"
+                                    }
+                        ],
+                        "total_points": 83,
+                        "enchantment_slot_1": "Fireball",
+                        "enchantment_slot_2": "Teleport (ou Firewall se preferir dano a mobilidade)",
+                        "glyph_priority": [
+                                    "Pyromaniac",
+                                    "Reinforced",
+                                    "Tactician",
+                                    "Flamefeeder",
+                                    "Adept"
+                        ],
+                        "pros": [
+                                    "Great AoE",
+                                    "Easy to Play",
+                                    "Good Survivability"
+                        ],
+                        "cons": [
+                                    "Slow Cast Animation",
+                                    "Mana Hungry Early On",
+                                    "Struggles against Mobile Enemies"
+                        ],
+                        "splinters_good": [
+                                    {
+                                                  "name": "Splinter of Hellfire",
+                                                  "note": "dano de graça — o build usa DoT, que não pode crítico mesmo"
+                                    },
+                                    {
+                                                  "name": "Splinter of the Black Soulstone",
+                                                  "note": "escala dano contra grupos, aumenta pouco o dano recebido"
+                                    }
+                        ],
+                        "splinters_avoid": [
+                                    {
+                                                  "name": "Splinter of Pain",
+                                                  "note": "reduz velocidade de movimento, atrapalha o leveling"
+                                    },
+                                    {
+                                                  "name": "Splinter of Anguish",
+                                                  "note": "crítico é inútil aqui e o custo de recurso extra incomoda"
+                                    }
+                        ],
+                        "uniques_useful": [
+                                    "Vision of the Firestorm",
+                                    "Drognan's Anguish",
+                                    "Raiment of the Infinite"
+                        ],
+                        "mercenary": {
+                                    "hired": "Subo",
+                                    "hired_note": "Seeker (mapa) + Mana. Pegue Molotov + Scorched Earth pro DoT, depois Snipe + Incendiary Bolt pra ativar o Scorched Earth.",
+                                    "reinforcement": "Raheir",
+                                    "reinforcement_note": "Bastion ao ficar ferido — ótimo pra sobreviver em combates difíceis."
+                        }
+              },
+              {
+                        "id": "static_field_blizzard_leveling",
+                        "name": "Static Field Blizzard",
+                        "status": "verified_S15",
+                        "source": "https://maxroll.gg/d4/build-guides/blizzard-sorcerer-leveling-guide",
+                        "leads_to_endgame_build": "static_field_blizzard",
+                        "skill_progression": [
+                                    {
+                                                  "level": "1-2",
+                                                  "action": "Arc Lash"
+                                    },
+                                    {
+                                                  "level": 3,
+                                                  "action": "Fireball (Core, temporário)"
+              },
+                                    {
+                                                  "level": 4,
+                                                  "action": "Teleport"
+                                    },
+                                    {
+                                                  "level": 6,
+                                                  "action": "Ice Armor"
+                                    },
+                                    {
+                                                  "level": 7,
+                                                  "action": "upgrade Mana Regen em Ice Armor"
+                                    },
+                                    {
+                                                  "level": 8,
+                                                  "action": "Hydra"
+                                    },
+                                    {
+                                                  "level": 9,
+                                                  "action": "upgrade Resource Generation em Arc Lash"
+                                    },
+                                    {
+                                                  "level": 12,
+                                                  "action": "upgrade Healing em Hydra"
+                                    },
+                                    {
+                                                  "level": 13,
+                                                  "action": "Blizzard vira principal — reseta tudo, mantém Arc Lash+RG, Teleport, Ice Armor"
+                                    },
+                                    {
+                                                  "level": 16,
+                                                  "action": "variante Wormhole em Teleport"
+                                    },
+                                    {
+                                                  "level": 17,
+                                                  "action": "upgrade Cooldown Reduction em Hydra"
+                                    },
+                                    {
+                                                  "level": 18,
+                                                  "action": "upgrade Damage Bonus em Blizzard"
+                                    },
+                                    {
+                                                  "level": 21,
+                                                  "action": "upgrade Seek + Duration Bonus em Blizzard"
+                                    },
+                                    {
+                                                  "level": 36,
+                                                  "action": "variante Frigid Hydra"
+                                    },
+                                    {
+                                                  "level": 38,
+                                                  "action": "variante Static Field em Blizzard — remove Arc Lash, libera Ultimate Unstable Currents"
+                                    },
+                                    {
+                                                  "level": "38+",
+                                                  "action": "adiciona Frost Nova"
+                                    },
+                                    {
+                                                  "level": "resto até 70",
+                                                  "action": "maximiza ranks principais, depois utilidade, depois upgrades em Chain Lightning/Charged Bolts/Lightning Spear/Ball Lightning"
+                                    }
+                        ],
+                        "total_points": 83,
+                        "enchantment_slot_1": "Teleport",
+                        "enchantment_slot_2": "Blizzard",
+                        "glyph_priority": [
+                                    "Tactician",
+                                    "Reinforced",
+                                    "Adept",
+                                    "Exploit",
+                                    "Elementalist"
+                        ],
+                        "pros": [
+                                    "Great AoE",
+                                    "Easy to Play",
+                                    "Amazing Damage"
+                        ],
+                        "cons": [
+                                    "Slow Cast Animation",
+                                    "Mana Hungry Early On",
+                                    "Unlocks Relatively Late"
+                        ],
+                        "splinters_good": [
+                                    {
+                                                  "name": "Splinter of Hellfire",
+                                                  "note": "dano de graça — o build usa DoT, que não pode crítico mesmo"
+                                    },
+                                    {
+                                                  "name": "Splinter of the Black Soulstone",
+                                                  "note": "escala dano contra grupos, aumenta pouco o dano recebido"
+                                    }
+                        ],
+                        "splinters_avoid": [
+                                    {
+                                                  "name": "Splinter of Pain",
+                                                  "note": "reduz velocidade de movimento, atrapalha o leveling"
+                                    },
+                                    {
+                                                  "name": "Splinter of Anguish",
+                                                  "note": "crítico é inútil aqui e o custo de recurso extra incomoda"
+                                    }
+                        ],
+                        "uniques_useful": [
+                                    "Vision of the Firestorm (melhora builds de Firewall)",
+                                    "Ophidian Iris (libera build de Hydra endgame)"
+                        ],
+                        "mercenary": {
+                                    "hired": "Subo",
+                                    "hired_note": "Seeker (mapa) + Mana. Pegue Molotov + Scorched Earth pro DoT, depois Snipe + Incendiary Bolt pra ativar o Scorched Earth.",
+                                    "reinforcement": "Raheir",
+                                    "reinforcement_note": "Bastion ao ficar ferido — ótimo pra sobreviver em combates difíceis."
+                        }
+              },
+              {
+                        "id": "fireball_leveling",
+                        "name": "Fireball (base genérica p/ Meteor)",
+                        "status": "verified_S15_partial",
+                        "source": "https://www.icy-veins.com/d4/guides/fireball-sorcerer-leveling-build/",
+                        "leads_to_endgame_build": "meteoro_sustentado",
+                        "skill_bar": [
+                                    "Fire Bolt",
+                                    "Fireball",
+                                    "Teleport",
+                                    "Ice Armor",
+                                    "Frost Nova",
+                                    "Inferno"
+                        ],
+                        "milestones": [
+                                    {
+                                                  "level": 15,
+                                                  "action": "libera Slot 1 de Encantamento — atribuir Fireball"
+                                    },
+                                    {
+                                                  "level": 30,
+                                                  "action": "libera Slot 2 de Encantamento — atribuir Frost Nova"
+                                    },
+                                    {
+                                                  "level": 70,
+                                                  "action": "troca pra build de Meteor endgame (não existe rota de leveling dedicada ao Meteor ainda)"
+                                    }
+                        ],
+                        "total_points": 83,
+                        "note": "Guia não publica tabela nível-a-nível completa como os outros dois; só os marcos de Encantamento."
+              }
+      ],
+      "endgame_builds": [
+              {
+                        "id": "ring_of_fire",
+                        "name": "Ring of Fire (Firewall)",
+                        "tier": "S-Tier comunidade",
+                        "source": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-guide",
+                        "status": "verified",
+                        "main_set": "Berú of the Threefold",
+                        "key_unique": "Tal Rasha's Iridescent Loop",
+                        "skill_bar": [
+                                    {
+                                                  "skill": "Charged Bolts",
+                                                  "role": "principal"
+                                    },
+                                    {
+                                                  "skill": "Familiar",
+                                                  "role": "proc Shock"
+                                    },
+                                    {
+                                                  "skill": "Teleport",
+                                                  "role": "mobilidade"
+                                    },
+                                    {
+                                                  "skill": "Ice Armor",
+                                                  "role": "defesa"
+                                    },
+                                    {
+                                                  "skill": "Hydra",
+                                                  "role": "cura/CDR"
+                                    },
+                                    {
+                                                  "skill": "Firewall",
+                                                  "role": "backup manual (normalmente automático via set)"
+                                    }
+                        ],
+                        "mercenary": {
+                                    "hired": "Subo (Molotov, Scorched Earth, maphack)",
+                                    "reinforcement": "Raheir (Bastion)",
+                                    "hired_note": "Subo — maphack + spam de Molotov/Scorched Earth.",
+                                    "reinforcement_note": "Raheir — Bastion ao ficar ferido, por segurança."
+                        },
+                        "paragon": {
+                                    "points_spent": 342,
+                                    "boards_order": [
+                                                  "Start",
+                                                  "Enchantment Master",
+                                                  "Burning Instinct",
+                                                  "Fundamental Release",
+                                                  "Frigid Fate"
+                                    ],
+                                    "glyphs_endgame": {
+                                                  "Start": "Tactician",
+                                                  "Enchantment Master": "Reinforced",
+                                                  "Burning Instinct": "Flamefeeder",
+                                                  "Fundamental Release": "Pyromaniac",
+                                                  "Frigid Fate": "Adept"
+                                    }
+                        },
+                        "equipment": {
+                                    "helm": "Godslayer Crown (alt: Harlequin Crest)",
+                                    "chest": "Raiment of the Infinite",
+                                    "ring_1": "Tal Rasha's Iridescent Loop",
+                                    "ring_2": "X'Fal's Corroded Signet",
+                                    "boots": "Flickerstep",
+                                    "weapon_aspect": "Conceited",
+                                    "offhand_aspect": "Control",
+                                    "amulet_aspect": "Storm Swell"
+                        },
+                        "pros": [
+                                    "Very Tanky",
+                                    "Excellent AoE",
+                                    "Good Damage"
+                        ],
+                        "cons": [
+                                    "Tricky to Play",
+                                    "Depends on a Set",
+                                    "Can't Go Very Fast"
+                        ],
+                        "equipment_notes": "Gosta de um pouco mais de CDR que o normal (1-2 rolls extras além do hat/joias) pra manter Ice Armor e Unstable Currents ativos e ter Firewall manual sempre disponível.",
+                        "mythic_priority": [
+                                    {
+                                                  "name": "Raiment of the Infinite",
+                                                  "note": "+43% resistência (toughness)"
+                                    },
+                                    {
+                                                  "name": "Drognan's Anguish",
+                                                  "note": "+21% dano"
+                                    },
+                                    {
+                                                  "name": "Vision of the Firestorm",
+                                                  "note": "+15% dano"
+                                    },
+                                    {
+                                                  "name": "Tibault's Will",
+                                                  "note": "+5% dano"
+                                    }
+                        ],
+                        "splinters": [
+                                    {
+                                                  "name": "Abyssal Splinter of Hellfire",
+                                                  "note": "prioridade 1"
+                                    },
+                                    {
+                                                  "name": "Abyssal Splinter of Pain",
+                                                  "note": "prioridade 2"
+                                    },
+                                    {
+                                                  "name": "Abyssal Splinter of the Black Soulstone",
+                                                  "note": "prioridade 3"
+                                    }
+                        ]
+              },
+              {
+                        "id": "static_field_blizzard",
+                        "name": "Static Field Blizzard",
+                        "tier": "S-Tier comunidade",
+                        "source": "https://maxroll.gg/d4/build-guides/blizzard-sorcerer-guide",
+                        "status": "verified",
+                        "skill_bar": [
+                                    {
+                                                  "skill": "Blizzard",
+                                                  "role": "principal"
+                                    },
+                                    {
+                                                  "skill": "Ice Armor",
+                                                  "role": "defesa"
+                                    },
+                                    {
+                                                  "skill": "Flame Shield",
+                                                  "role": "imunidade"
+                                    },
+                                    {
+                                                  "skill": "Teleport",
+                                                  "role": "Wormhole"
+                                    },
+                                    {
+                                                  "skill": "Unstable Currents",
+                                                  "role": "ultimate"
+                                    },
+                                    {
+                                                  "skill": "Frost Nova",
+                                                  "role": "Vulnerable"
+                                    }
+                        ],
+                        "mercenary": {
+                                    "hired": "Subo (Molotov, Scorched Earth, Explosive Charge)",
+                                    "reinforcement": "Raheir (tanque de apoio)",
+                                    "hired_note": "Subo — maphack + spam de Molotov/Scorched Earth.",
+                                    "reinforcement_note": "Raheir — Bastion ao ficar ferido, por segurança."
+                        },
+                        "paragon": {
+                                    "points_spent": 276,
+                                    "boards_order": [
+                                                  "Start",
+                                                  "Static Surge",
+                                                  "Enchantment Master",
+                                                  "Fundamental Release",
+                                                  "Frigid Fate"
+                                    ],
+                                    "glyphs_endgame": {
+                                                  "Start": "Tactician",
+                                                  "Static Surge": "Exploit",
+                                                  "Enchantment Master": "Reinforced",
+                                                  "Fundamental Release": "Elementalist",
+                                                  "Frigid Fate": "Adept"
+                                    }
+                        },
+                        "equipment": {
+                                    "ring_1": "Tal Rasha's Iridescent Loop",
+                                    "ring_2_upgrade": "Ring of Starless Skies",
+                                    "ring_pit": "Heir of Perdition",
+                                    "weapon": "Blue Rose",
+                                    "helm": "Godslayer Crown (alt: Harlequin Crest)",
+                                    "chest": "Raiment of the Infinite (alt: Shroud of False Death)"
+                        },
+                        "pros": [
+                                    "Huge AoE",
+                                    "Low Requirements",
+                                    "Good Damage Output"
+                        ],
+                        "cons": [
+                                    "Can Feel Squishy",
+                                    "Clunky Animation",
+                                    "High Visual Clutter"
+                        ],
+                        "equipment_notes": "Uniques só de adicionar, sem exigir nada especial. Prioridade pra farmar: Raiment of the Sea > Orsivane > Galvanic Azurite. Prioridade #1 do Talisman é fechar o set Berú of the Threefold completo."
+              },
+              {
+                        "id": "meteoro_sustentado",
+                        "name": "Meteoro Sustentado (Meteor)",
+                        "tier": "guia real (não é build própria, corrigida na 2ª rodada)",
+                        "source": "https://maxroll.gg/d4/build-guides/meteor-sorcerer-guide",
+                        "status": "verified",
+                        "main_set": "Berú of the Threefold",
+                        "key_mythic": "Starfall Coronet",
+                        "critical_requirement": "Selo Lendário com afixo 'Mana ao ativar Skill de Maestria'",
+                        "skill_bar": [
+                                    {
+                                                  "skill": "Meteor",
+                                                  "role": "principal — spam"
+                                    },
+                                    {
+                                                  "skill": "Teleport",
+                                                  "role": "mobilidade via Overpower"
+                                    },
+                                    {
+                                                  "skill": "Ice Armor",
+                                                  "role": "defesa"
+                                    },
+                                    {
+                                                  "skill": "Blizzard",
+                                                  "role": "Vulnerable (auto via set)"
+                                    },
+                                    {
+                                                  "skill": "Hydra",
+                                                  "role": "cura/CDR, variante Behemoth"
+                                    },
+                                    {
+                                                  "skill": "Inferno",
+                                                  "role": "gera Overpower"
+                                    },
+                                    {
+                                                  "skill": "Ball Lightning",
+                                                  "role": "mantém Static Surge ativo"
+                                    }
+                        ],
+                        "mercenary": {
+                                    "hired": "Subo (maphack, Opening Fire)",
+                                    "reinforcement": "Raheir (Bastion on Injured)",
+                                    "hired_note": "Subo — maphack + bônus de Opening Fire.",
+                                    "reinforcement_note": "Raheir — Bastion ao ficar ferido, segurança extra."
+                        },
+                        "paragon": {
+                                    "points_spent": 275,
+                                    "boards_order": [
+                                                  "Start",
+                                                  "Enchantment Master",
+                                                  "Searing Heat",
+                                                  "Static Surge",
+                                                  "Frigid Fate"
+                                    ],
+                                    "glyphs_endgame": {
+                                                  "Start": "Tactician",
+                                                  "Enchantment Master": "Reinforced",
+                                                  "Searing Heat": "Pyromaniac",
+                                                  "Static Surge": "Destruction",
+                                                  "Frigid Fate": "Adept"
+                                    }
+                        },
+                        "equipment": {
+                                    "priority_order": [
+                                                  "Raiment of the Infinite (~43% resistência)",
+                                                  "Starfall Coronet (~15% dano)",
+                                                  "Esu's Heirloom (~10% dano)"
+                                    ],
+                                    "soul_splinters_priority": [
+                                                  "Abyssal Splinter of Anguish",
+                                                  "Abyssal Splinter of Pain",
+                                                  "Abyssal Splinter of the Black Soulstone"
+                                    ]
+                        },
+                        "pros": [
+                                    "Good Damage",
+                                    "Excellent Mobility",
+                                    "Over 50 Meteors per Second"
+                        ],
+                        "cons": [
+                                    "Lacks CC",
+                                    "Delayed Damage",
+                                    "High Requirements"
+                        ],
+                        "equipment_notes": "Precisa de Selo Lendário com afixo \"Mana when a Mastery Skill is Triggered\" — priorize esse afixo até acima do 6º slot de charm.",
+                        "mythic_priority": [
+                                    {
+                                                  "name": "Raiment of the Infinite",
+                                                  "note": "+43% resistência (toughness)"
+                                    },
+                                    {
+                                                  "name": "Starfall Coronet",
+                                                  "note": "+15% dano"
+                                    },
+                                    {
+                                                  "name": "Esu's Heirloom",
+                                                  "note": "~+10% dano"
+                                    }
+                        ],
+                        "splinters": [
+                                    {
+                                                  "name": "Abyssal Splinter of Anguish",
+                                                  "note": "prioridade 1"
+                                    },
+                                    {
+                                                  "name": "Abyssal Splinter of Pain",
+                                                  "note": "prioridade 2"
+                                    },
+                                    {
+                                                  "name": "Abyssal Splinter of the Black Soulstone",
+                                                  "note": "prioridade 3"
+                                    }
+                        ]
+              }
+      ],
+      "boss_farming": [
+              {
+                        "boss": "Duriel",
+                        "location": "Gaping Crevasse (Kehjistan)",
+                        "material": "1x Greater Lair Key",
+                        "min_difficulty": "Torment I"
+              },
+              {
+                        "boss": "Echo of Varshan",
+                        "location": "Malignant Burrow (Hawezar)",
+                        "material": "1x Lair Key",
+                        "min_difficulty": "Torment I"
+              },
+              {
+                        "boss": "Lord Zir",
+                        "location": "The Darkened Way (Fractured Peaks)",
+                        "material": "1x Lair Key",
+                        "min_difficulty": "Torment I"
+              }
+      ],
+      "damage_formula_general": {
+              "vulnerable_multiplier": 1.2,
+              "critical_base_multiplier": 1.5,
+              "overpower_base_chance": 0.03,
+              "note": "Multiplicadores 'xN%' se acumulam multiplicando entre si (retorno decrescente). Válido pra todas as classes, não só Mago."
+      },
+      "open_todos": [
+              "Nível exato dos pontos de leveling do Fireball (guia não publica tabela completa)",
+              "Nomes exatos dos manuais de Tempering por afixo",
+              "Node-a-node completo dos Paragon boards (hoje só temos nome do board + Glyph, não cada nó individual)",
+              "Repetir esse processo pras outras 7 classes — fora do escopo desta rodada"
+      ]
 }
