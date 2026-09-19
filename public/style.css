@@ -398,3 +398,49 @@ body.game-mode #buildDetails > .notes { display: none; }
 @media (max-width: 480px) {
     .diablo-proscons { grid-template-columns: 1fr; }
 }
+
+/* Tooltip genérico: qualquer ".diablo-tooltip-item" pode carregar uma
+   ".diablo-note-tip" que só aparece no hover (mouse) ou foco (teclado/toque),
+   igual ao hover-tooltip do guia fonte, mas com texto real em vez de
+   stats fabricados que não temos como confirmar. */
+.diablo-tooltip-item { position: relative; cursor: help; }
+.diablo-note-tip {
+    display: none;
+    position: absolute; left: 0; bottom: calc(100% + 6px); z-index: 5;
+    max-width: 260px; width: max-content;
+    background: #1c1830; border: 1px solid var(--accent); border-radius: 8px;
+    padding: 8px 10px; font-size: 12px; line-height: 1.4; color: var(--text);
+    box-shadow: 0 6px 18px rgba(0,0,0,.4);
+}
+.diablo-tooltip-item:hover .diablo-note-tip,
+.diablo-tooltip-item:focus .diablo-note-tip,
+.diablo-tooltip-item:focus-within .diablo-note-tip { display: block; }
+
+.diablo-note-list li { flex-wrap: wrap; }
+.diablo-note-name { font-weight: 600; }
+
+/* Árvore de mercenário: dois cartões lado a lado (Contratado / Reforço),
+   cada um com tooltip explicando o porquê da escolha. */
+.diablo-merc-tree { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+.diablo-merc-node {
+    flex: 1; min-width: 140px;
+    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 8px; padding: 10px 12px;
+}
+.diablo-merc-role { font-size: 10px; text-transform: uppercase; letter-spacing: .3px; color: var(--text-dim); }
+.diablo-merc-name { font-size: 14px; font-weight: 700; color: var(--accent-hover); margin-top: 2px; }
+
+/* Board de Paragon como nós conectados por uma linha, em vez de lista solta
+   — visual mais próximo do "mapa" do jogo, sem inventar posições de nó que
+   não temos. Cada nó carrega o glifo daquele board como tooltip. */
+.diablo-paragon-board { display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin: 6px 0; }
+.diablo-paragon-node {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 20px; padding: 5px 12px 5px 6px; font-size: 12px;
+}
+.diablo-paragon-link { width: 20px; height: 2px; background: var(--accent); opacity: .5; flex-shrink: 0; }
+@media (max-width: 480px) {
+    .diablo-paragon-board { flex-direction: column; align-items: flex-start; }
+    .diablo-paragon-link { width: 2px; height: 14px; margin-left: 9px; }
+}

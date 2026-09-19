@@ -260,6 +260,38 @@ function diabloPriorityList(items, badgeFn) {
                     `).join("")}</ol>`;
 }
 
+// Lista numerada onde cada item tem nome + uma notinha ao lado (ex: "+43%
+// resistência", "prioridade 1") — vem de {name, note} em vez de string pura.
+// Cada item também funciona como um "tooltip" simples: clique/hover no nome
+// mostra a nota completa, pro caso da nota ser cortada em telas pequenas.
+function diabloNoteList(items, badgeFn) {
+        if (!items?.length) return "";
+        return `<ol class="diablo-priority-list diablo-note-list">${items.map((it, i) => `
+                <li class="diablo-tooltip-item" tabindex="0">
+                    <span class="diablo-priority-num">${i + 1}</span>${badgeFn ? badgeFn(it.name) : ""}
+                    <span class="diablo-note-name">${escapeHtml(it.name)}</span>
+                    ${it.note ? `<span class="diablo-note-tip" role="tooltip">${escapeHtml(it.note)}</span>` : ""}
+                </li>`).join("")}</ol>`;
+}
+
+// Árvore simplificada do mercenário: contratado + reforço lado a lado, cada
+// um com sua "notinha" de motivo em formato de tooltip — inspirado na
+// árvore de habilidades do guia fonte, sem inventar os nós reais do jogo
+// (não temos esses dados), mas com a mesma lógica de "escolha + porquê".
+function diabloMercenaryTree(merc) {
+        if (!merc || (!merc.hired && !merc.reinforcement)) return "";
+        const node = (label, name, note) => !name ? "" : `
+                <div class="diablo-merc-node diablo-tooltip-item" tabindex="0">
+                    <div class="diablo-merc-role">${label}</div>
+                    <div class="diablo-merc-name">${escapeHtml(name)}</div>
+                    ${note ? `<span class="diablo-note-tip" role="tooltip">${escapeHtml(note)}</span>` : ""}
+                </div>`;
+        return `<div class="diablo-merc-tree">
+                ${node("Contratado", merc.hired, merc.hired_note)}
+                ${node("Reforço", merc.reinforcement, merc.reinforcement_note)}
+            </div>`;
+}
+
 // Caixa de Prós/Contras em duas colunas, igual ao guia fonte: verde com ✓,
 // vermelho com ✗ — não é uma lista de tarefas, é um resumo do build.
 function diabloProsCons(pros, cons) {
@@ -358,10 +390,25 @@ function renderDiabloBuildDetails(buildId) {
               if (build.glyph_priority?.length) {
                                   sections.push(diabloSection("Prioridade de Glyphs", diabloPriorityList(build.glyph_priority, () => `<span class="type-badge">💠</span>`)));
               }
+              if (build.splinters_good?.length || build.splinters_avoid?.length) {
+                                  let html = "";
+                                  if (build.splinters_good?.length) html += `<div class="diablo-pros"><div class="diablo-proscons-title">✓ Bons Splinters</div>${diabloNoteList(build.splinters_good, () => `<span class="type-badge">💎</span>`)}</div>`;
+                                  if (build.splinters_avoid?.length) html += `<div class="diablo-cons"><div class="diablo-proscons-title">✗ Evitar</div>${diabloNoteList(build.splinters_avoid, () => `<span class="type-badge">💎</span>`)}</div>`;
+                                  sections.push(diabloSection("Splinters", `<div class="diablo-proscons">${html}</div>`));
+              }
+              if (build.uniques_useful?.length) {
+                                  const items = build.uniques_useful.map(u => `<li>${diabloEquipBadge("ring")} ${escapeHtml(u)}</li>`).join("");
+                                  sections.push(diabloSection("Uniques que ajudam a acelerar", `<ul class="diablo-skill-list">${items}</ul>`));
+              }
+              if (build.mercenary) {
+                                  sections.push(diabloSection("Mercenário", diabloMercenaryTree(build.mercenary)));
+              }
               let extras = "";
               if (build.note) extras += `<p class="notes">⚠️ ${escapeHtml(build.note)}</p>`;
               if (build.total_points) extras += `<p class="notes">Total de pontos ao chegar em 70: ${escapeHtml(String(build.total_points))}</p>`;
               if (extras) sections.push(diabloSection("Observações", extras));
+              const prosConsHtmlLvl = diabloProsCons(build.pros, build.cons);
+              if (prosConsHtmlLvl) sections.push(diabloSection("Prós e Contras", prosConsHtmlLvl));
   } else {
               if (build.main_set || build.key_unique || build.key_mythic || build.critical_requirement) {
                                   let html = "";
@@ -378,23 +425,33 @@ function renderDiabloBuildDetails(buildId) {
                                   sections.push(diabloSection("Barra de skills", `<ul class="diablo-skill-list">${items}</ul>`));
               }
               if (build.mercenary) {
-                                  let html = "<p class=\"notes\">";
-                                  if (build.mercenary.hired) html += `<b>Contratado:</b> ${escapeHtml(build.mercenary.hired)}. `;
-                                  if (build.mercenary.reinforcement) html += `<b>Reforço:</b> ${escapeHtml(build.mercenary.reinforcement)}.`;
-                                  html += "</p>";
-                                  sections.push(diabloSection("Mercenário", html));
+                                  sections.push(diabloSection("Mercenário", diabloMercenaryTree(build.mercenary)));
               }
               if (build.paragon) {
                                   let html = "";
                                   if (build.paragon.points_spent) html += `<p class="notes">Pontos gastos: <b>${escapeHtml(String(build.paragon.points_spent))}</b></p>`;
                                   if (build.paragon.boards_order?.length) {
-                                                              html += `<p class="notes"><b>Ordem de boards:</b></p>${diabloPriorityList(build.paragon.boards_order, () => `<span class="type-badge">💠</span>`)}`;
+                                                              html += `<p class="notes"><b>Ordem de boards:</b></p><div class="diablo-paragon-board">${build.paragon.boards_order.map((name, i) => `
+                                                                          <div class="diablo-paragon-node diablo-tooltip-item" tabindex="0">
+                                                                              <span class="diablo-priority-num">${i + 1}</span>
+                                                                              <span class="type-badge">💠</span>
+                                                                              <span>${escapeHtml(name)}</span>
+                                                                              ${build.paragon.glyphs_endgame?.[name] ? `<span class="diablo-note-tip" role="tooltip">Glifo: ${escapeHtml(build.paragon.glyphs_endgame[name])}</span>` : ""}
+                                                                          </div>${i < build.paragon.boards_order.length - 1 ? `<span class="diablo-paragon-link"></span>` : ""}`).join("")}</div>`;
                                   }
-                                  if (build.paragon.glyphs_endgame) html += equipmentHtml(build.paragon.glyphs_endgame);
                                   sections.push(diabloSection("Paragon", html));
               }
               if (build.equipment) {
-                                  sections.push(diabloSection("Equipamento", equipmentHtml(build.equipment)));
+                                  let html = "";
+                                  if (build.equipment_notes) html += `<p class="notes">${escapeHtml(build.equipment_notes)}</p>`;
+                                  html += equipmentHtml(build.equipment);
+                                  sections.push(diabloSection("Equipamento", html));
+              }
+              if (build.mythic_priority?.length) {
+                                  sections.push(diabloSection("Prioridade de Míticos", diabloNoteList(build.mythic_priority, () => `<span class="type-badge">✨</span>`)));
+              }
+              if (build.splinters?.length) {
+                                  sections.push(diabloSection("Splinters", diabloNoteList(build.splinters, () => `<span class="type-badge">💎</span>`)));
               }
               const prosConsHtml = diabloProsCons(build.pros, build.cons);
               if (prosConsHtml) sections.push(diabloSection("Prós e Contras", prosConsHtml));
