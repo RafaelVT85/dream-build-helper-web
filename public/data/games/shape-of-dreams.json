@@ -4845,7 +4845,293 @@
       "id": "cetus",
       "name": "Cetus",
       "role": "Traveler mais recente do jogo — papel ainda sendo definido pela comunidade",
-      "builds": []
+      "builds": [
+        {
+          "id": "cetus-lee-magri-icy-veins",
+          "name": "Frostbite Combo — Ice Shield e Teaching Manners (por lee magri)",
+          "tag": "alternativa",
+          "likes": 1,
+          "views": 200,
+          "date": "2026-09-18",
+          "memories": [
+            {
+              "name": "Veias de Gelo",
+              "key": "icy-veins",
+              "type": "ice",
+              "effect": "Sempre que Cetus causa dano de Frio, ganha uma carga de Sangue Frio, até o máximo de 5. Seu próximo ataque consome todas as cargas de Sangue Frio para disparar uma explosão de gelo, causando 30% de dano de Frio por carga aos inimigos, e Cetus ganha um Escudo de 9% que decai em 3 segundos.",
+              "essences": []
+            },
+            {
+              "name": "Abraço do Frio",
+              "key": "embrace-the-chill",
+              "type": "ice",
+              "effect": "Cria uma Zona de Frio crescente na área alvo por 3 segundos. Aliados dentro da zona ganham um Escudo de 25% a cada 0,5 segundos, durando 3 segundos, enquanto inimigos sofrem 40% de dano de Frio. Ao final da duração, a Zona de Frio explode, causando 200% de dano de Frio aos inimigos e aplicando Atordoamento por 1,5 segundos.",
+              "essences": [
+                {
+                  "name": "Essência da Desolação",
+                  "key": "essence-of-bleakness",
+                  "type": "ice",
+                  "effect": "Esta Memory causa 50% de dano a mais a inimigos afetados por Frio, lentidão, enraizamento ou atordoamento."
+                },
+                {
+                  "name": "Essência do Pânico",
+                  "key": "essence-of-panic",
+                  "type": "neutral",
+                  "effect": "Tomar qualquer dano concede 30 de Memory Haste a esta Memory e aumenta sua velocidade de movimento em 20% por 3s.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Panic.avif"
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s (+80% se causar dano de Frio).",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Rigidity.avif"
+                }
+              ]
+            },
+            {
+              "name": "Ensinando Modos",
+              "key": "teaching-manners",
+              "type": "ice",
+              "effect": "Cerre os punhos e arregace as mangas por 7 segundos. Durante esse tempo, você não pode conjurar outras Memories, mas sua Velocidade de Ataque aumenta em 26% e sua Armadura em 18, seu Ataque Básico é substituído por um ataque corpo a corpo, e seu Ataque causa 170% (+8% por Bônus) de Dano. Reconjurar esta Memory durante a duração faz você avançar com um dash, empurrando inimigos para trás, causando 100% (+3% por Bônus) de dano de Frio, e concedendo um Escudo de 60% (+2% por Bônus) por inimigo atingido, que decai em 3 segundos. Esse dano e Escudo aumentam em 200% contra qualquer Chefe.",
+              "essences": [
+                {
+                  "name": "Essência da Presa",
+                  "key": "essence-of-fangs",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga desta Memory reduz 0,7s e lança 2 Presas em inimigos próximos, cada uma causando 60% de dano.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Fangs.avif"
+                },
+                {
+                  "name": "Essência do Crisol",
+                  "key": "essence-of-the-crucible",
+                  "type": "neutral",
+                  "effect": "Aumenta a Chance de Crítico em 25%. Quando um Ataque Básico Crítico acerta, o próximo uso desta Memory causa 4% mais dano e cura 4% a mais, acumulando até 40%."
+                },
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Escudo de Gelo",
+              "key": "ice-shield",
+              "type": "ice",
+              "effect": "Envolve um aliado num escudo de gelo, dando um Escudo de 130% por 3s. Quando o Escudo se rompe, causa 160% de dano de Frio a inimigos próximos e recupera 60% de vida do aliado por inimigo atingido.",
+              "essences": [
+                {
+                  "name": "Essência do Reflexo",
+                  "key": "essence-of-reflex",
+                  "type": "ice",
+                  "effect": "Ao sofrer qualquer dano, libera frio em direção ao inimigo mais próximo, causando 100% (+4% por Bônus) de dano de Frio e o empurrando para trás, então aumenta sua Armadura em 40 por 1,5 segundos."
+                },
+                {
+                  "name": "Essência de Tremor Replicado",
+                  "key": "essence-of-aftershock",
+                  "type": "ice",
+                  "effect": "Ao conjurar, libera uma onda de choque atrasada que causa 200% de dano de Frio ao redor e atordoa por 0,5s. A cada inimigo atingido, ganha 4 de armadura (até 22). Contra chefes, ganha o máximo de armadura, que dura até você conjurar esta Memory de novo.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Aftershock.avif"
+                },
+                {
+                  "name": "Essência do Vidro",
+                  "key": "essence-of-glass",
+                  "type": "heal",
+                  "effect": "Enquanto em Combate, ganhar um Escudo cura Vida igual a 12% do valor do Escudo obtido. A cura desta Memory aumenta 18% para cada Memory de Frio que você possui."
+                }
+              ]
+            },
+            {
+              "name": "Queimadura de Gelo",
+              "key": "frostbite",
+              "type": "ice",
+              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos: o primeiro causa 50% de dano de Frio adicional e concede um Escudo de 110% por 2s; o segundo causa 180% de dano de Frio adicional.",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto o Escudo está ativo, lança periodicamente uma bola de neve num inimigo próximo, causando 80% de dano de Frio. Quanto maior o Escudo, mais rápido dispara.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Snow.avif"
+                },
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, esta Memory também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente (1 vez a cada 5s por inimigo). Cada vez que ativa, aumenta permanentemente sua vida máxima em 1.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Frost.avif"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cetus-bonkertz-attackspeed-momentum",
+          "name": "Attack Speed / Momentum Spam (por Bonkertz)",
+          "tag": "meta",
+          "likes": 1,
+          "views": 345,
+          "date": "2026-09-19",
+          "notes": "Empilhe Velocidade de Ataque e invista em Ímpeto para spammar Abraço do Frio. No início de jogo, use Essência da Presa ou de Obsidiana em Queimadura de Gelo. Permafrost e Nevasca são opcionais. O build funciona sem nenhum desbloqueio deste Viajante. Depois de desbloquear Cetus totalmente, as Estrelas de Constelação recomendadas são: Destruição: Heavy Knuckle Sandwich, Hurricane. Vida: Regenerative Skin, Shielding Frost, Second Wind, Asclepius, Arcane Veins, Threat Detection. Imaginação: Monstrous Charm, Black Market, Efficient Extraction, Dismantle and Analyze, Primordial Chaos, Ordered Chaos, Bizarre Spoils, Trading Fates, Pickpocket. Flexível: Inescapable Past usado num nó de Destruição para caber mais Imaginações. Se jogar com Lucid Dreams, use praticamente todos, exceto Prudent Jellyfish e Grievous Wounds.",
+          "memories": [
+            {
+              "name": "Veias de Gelo",
+              "key": "icy-veins",
+              "type": "ice",
+              "effect": "Sempre que Cetus causa dano de Frio, ganha uma carga de Sangue Frio, até o máximo de 5. Seu próximo ataque consome todas as cargas de Sangue Frio para disparar uma explosão de gelo, causando 30% de dano de Frio por carga aos inimigos, e Cetus ganha um Escudo de 9% que decai em 3 segundos.",
+              "essences": []
+            },
+            {
+              "name": "Déjà Vu inicial",
+              "key": null,
+              "type": "neutral",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Abraço do Frio",
+              "key": "embrace-the-chill",
+              "type": "ice",
+              "effect": "Cria uma Zona de Frio crescente na área alvo por 3 segundos. Aliados dentro da zona ganham um Escudo de 25% a cada 0,5 segundos, durando 3 segundos, enquanto inimigos sofrem 40% de dano de Frio. Ao final da duração, a Zona de Frio explode, causando 200% de dano de Frio aos inimigos e aplicando Atordoamento por 1,5 segundos.",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Desolação",
+                  "key": "essence-of-bleakness",
+                  "type": "ice",
+                  "effect": "Esta Memory causa 50% de dano a mais a inimigos afetados por Frio, lentidão, enraizamento ou atordoamento."
+                },
+                {
+                  "name": "Essência da Confiança",
+                  "key": "essence-of-confidence",
+                  "type": "physical",
+                  "effect": "O dano desta Memory a inimigos próximos aumenta 40%.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Confidence.avif"
+                }
+              ]
+            },
+            {
+              "name": "Permafrost",
+              "key": "permafrost",
+              "type": "ice",
+              "effect": "Reúne e libera frio extremo numa área massiva. Aliados na área ganham um Escudo de 300% e 100 de Armadura por 10 segundos. Inimigos são congelados, sofrendo 500% de dano de Frio e ficando Atordoados por 15 segundos. Se um inimigo já estiver afetado por Frio, esse dano aumenta em 100%.",
+              "essences": [
+                {
+                  "name": "Essência da Presa",
+                  "key": "essence-of-fangs",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga desta Memory reduz 0,7s e lança 2 Presas em inimigos próximos, cada uma causando 60% de dano.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Fangs.avif"
+                },
+                {
+                  "name": "Essência do Vidro",
+                  "key": "essence-of-glass",
+                  "type": "heal",
+                  "effect": "Enquanto em Combate, ganhar um Escudo cura Vida igual a 12% do valor do Escudo obtido. A cura desta Memory aumenta 18% para cada Memory de Frio que você possui."
+                },
+                {
+                  "name": "Essência da Orientação",
+                  "key": "essence-of-guidance",
+                  "type": "light",
+                  "effect": "A cura desta Memory aumenta 40%. 30% do excesso de cura é convertido em um Escudo que dura 2 segundos.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Guidance.avif"
+                }
+              ]
+            },
+            {
+              "name": "Queimadura de Gelo",
+              "key": "frostbite",
+              "type": "ice",
+              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos: o primeiro causa 50% de dano de Frio adicional e concede um Escudo de 110% por 2s; o segundo causa 180% de dano de Frio adicional.",
+              "essences": [
+                {
+                  "name": "Essência da Precisão",
+                  "key": "essence-of-accuracy",
+                  "type": "physical",
+                  "effect": "Ao causar dano a um inimigo distante, dispara um projétil adicional que causa 50% de dano, do mesmo tipo elemental do original.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Accuracy.avif"
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto o Escudo está ativo, lança periodicamente uma bola de neve num inimigo próximo, causando 80% de dano de Frio. Quanto maior o Escudo, mais rápido dispara.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Snow.avif"
+                },
+                {
+                  "name": "Essência da Dominação",
+                  "key": "essence-of-domination",
+                  "type": "neutral",
+                  "effect": "Aumenta a Chance de Crítico em 20%. Cada vez que você acerta um crítico em um inimigo, seu Dano Crítico aumenta em 0,3%, acumulando até 20%."
+                }
+              ]
+            },
+            {
+              "name": "Nevasca",
+              "key": "blizzard",
+              "type": "ice",
+              "effect": "Invoca uma nevasca na área alvo 4 vezes a cada 0,7 segundos, causando 180% de dano de Frio aos inimigos e concedendo aos aliados um Escudo de 60% que se dissipa em 3,5 segundos. Pode manter até 10 simultaneamente.",
+              "essences": [
+                {
+                  "name": "Essência de Obsidiana",
+                  "key": "essence-of-obsidian",
+                  "type": "dark",
+                  "effect": "Conjurar esta Memory fortalece seu próximo ataque em até 5s: causa 250% de dano das Trevas e reduz o tempo de recarga desta Memory em 1s.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Obsidian.avif"
+                },
+                {
+                  "name": "Essência do Gigante",
+                  "key": "essence-of-the-giant",
+                  "type": "neutral",
+                  "effect": "Aumenta sua vida máxima em 270. O dano desta Memory aumenta 1% a cada 70 pontos de vida máxima.",
+                  "rarity": "epic"
+                },
+                {
+                  "name": "Essência do Crisol",
+                  "key": "essence-of-the-crucible",
+                  "type": "neutral",
+                  "effect": "Aumenta a Chance de Crítico em 25%. Quando um Ataque Básico Crítico acerta, o próximo uso desta Memory causa 4% mais dano e cura 4% a mais, acumulando até 40%."
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
