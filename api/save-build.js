@@ -1,6 +1,10 @@
 // POST /api/save-build
 // Body: { password: string, gameId: string, buildId: string, phase: "leveling"|"endgame", patch: object }
 // Protegido por senha simples (variável de ambiente ADMIN_PASSWORD na Vercel).
+// Enquanto ADMIN_PASSWORD não estiver configurada, o salvamento fica aberto
+// de propósito (combinado com o Rafael pra colocar a senha só no final) —
+// assim que a variável existir na Vercel, a checagem de senha volta a valer
+// automaticamente, sem precisar mudar código.
 // Salva/atualiza overrides/build/<gameId>__<buildId>.json no Vercel Blob —
 // cada build tem seu próprio arquivo, então editar builds diferentes ao
 // mesmo tempo nunca derruba uma a outra.
@@ -18,12 +22,7 @@ export default async function handler(req, res) {
   const { password, gameId, buildId, phase, patch } = req.body || {};
 
   const expected = process.env.ADMIN_PASSWORD;
-  if (!expected) {
-    return res.status(500).json({
-      error: "ADMIN_PASSWORD não configurada na Vercel — configure em Settings > Environment Variables antes de usar o painel de admin.",
-    });
-  }
-  if (password !== expected) {
+  if (expected && password !== expected) {
     return res.status(401).json({ error: "Senha incorreta" });
   }
 
