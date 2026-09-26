@@ -21,6 +21,7 @@ export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
   const [checkingAuth, setCheckingAuth] = useState(false);
+  const [openMode, setOpenMode] = useState(false); // true = ADMIN_PASSWORD ainda não configurada na Vercel
 
   const [games, setGames] = useState<GameIndexEntry[]>([]);
   const [selectedGame, setSelectedGame] = useState<string>("");
@@ -48,6 +49,7 @@ export default function AdminPage() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || `Erro ${res.status}`);
+      if (data.open) setOpenMode(true);
       setAuthed(true);
     } catch (err) {
       setAuthError(err instanceof Error ? err.message : "Erro ao entrar");
@@ -121,9 +123,13 @@ export default function AdminPage() {
     return (
       <div style={{ padding: 24, maxWidth: 400, margin: "0 auto" }}>
         <h2>Painel de admin</h2>
+        <p className="muted" style={{ fontSize: 13 }}>
+          Sem senha configurada por enquanto — é só clicar em Entrar. A senha vai ser
+          adicionada mais pra frente (variável <code>ADMIN_PASSWORD</code> na Vercel).
+        </p>
         <form onSubmit={handleLogin} className="card" style={{ display: "grid", gap: 12 }}>
           <label>
-            Senha
+            Senha (deixe em branco por enquanto)
             <input
               type="password"
               value={password}
@@ -133,7 +139,7 @@ export default function AdminPage() {
             />
           </label>
           {authError && <p style={{ color: "#f66" }}>{authError}</p>}
-          <button type="submit" disabled={checkingAuth || !password}>
+          <button type="submit" disabled={checkingAuth}>
             {checkingAuth ? "Entrando…" : "Entrar"}
           </button>
         </form>
@@ -152,6 +158,12 @@ export default function AdminPage() {
         Edite os campos da build como JSON e salve. A alteração fica guardada por cima do
         arquivo original e aparece pra todo mundo que abrir o app.
       </p>
+      {openMode && (
+        <p style={{ color: "#e0b341", fontSize: 13 }}>
+          ⚠️ Sem senha configurada ainda — qualquer pessoa com o link consegue editar. Lembrar
+          de configurar <code>ADMIN_PASSWORD</code> na Vercel antes de divulgar o app.
+        </p>
+      )}
 
       <div style={{ display: "flex", gap: 16, marginBottom: 16, flexWrap: "wrap" }}>
         <label>
