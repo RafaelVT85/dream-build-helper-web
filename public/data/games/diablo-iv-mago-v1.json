@@ -328,7 +328,21 @@
         "hired_note": "Seeker (mapa) + Mana. Pegue Molotov + Scorched Earth pro DoT, depois Snipe + Incendiary Bolt pra ativar o Scorched Earth.",
         "reinforcement": "Raheir",
         "reinforcement_note": "Bastion ao ficar ferido — ótimo pra sobreviver em combates difíceis."
-      }
+      },
+      "equipment": {
+        "weapon": "Staff (Cajado de Duas Mãos) — preferido a arma 1H+Foco: \"Two-Handed Staves are preferred over a One-Handed Weapon and Focus setup for higher damage per hit and easier upgrading while leveling.\" (Icy Veins)",
+        "weapon_affixes": "Damage Over Time Multiplier, Weapon Damage, Lightning Damage Multiplier",
+        "helm": "Cooldown Reduction, Resource Cost Reduction",
+        "chest": "Resource Cost Reduction",
+        "gloves": "Damage Over Time Multiplier, Attack Speed",
+        "boots": "Ranks to Blizzard, Movement Speed",
+        "amulet": "Damage Over Time Multiplier, Ranks to All Skills",
+        "rings": "Damage Over Time Multiplier, Attack Speed"
+      },
+      "equipment_notes": "\"Ensure you temper your best item upgrades regularly, as the extra affixes provide a significant advantage while leveling.\" Gemas: Topázio (Lightning Damage) nas armas e Inteligência nas armaduras; Diamante (Resistência a Todos os Elementos) nas joias. Temporada 15 adiciona gemas Splinter (Anguish, Pain, Sin) pros slots de joia. Fonte: Icy Veins, guia de leveling Blizzard Sorcerer.",
+      "planner_url": null,
+      "planner_url_note": "Não encontrado — a página de leveling da Icy Veins não tem link de planner embutido. O guia equivalente do Maxroll existe mas não pôde ser confirmado com o mesmo nível de detalhe nesta rodada; use o D4Planner genérico como alternativa manual.",
+      "source_gap_fill": "https://www.icy-veins.com/d4/guides/blizzard-sorcerer-leveling-build/"
     },
     {
       "id": "fireball_leveling",
@@ -359,7 +373,221 @@
         }
       ],
       "total_points": 83,
-      "note": "Guia não publica tabela nível-a-nível completa como os outros dois; só os marcos de Encantamento."
+      "note": "Guia não publica tabela nível-a-nível completa como os outros dois; só os marcos de Encantamento.",
+      "skill_progression_note": "A página da Icy Veins mostra a progressão de skills como uma imagem (árvore de talentos), não como texto — por isso não temos uma tabela nível-a-nível igual às outras builds. O total de pontos e os marcos de Encantamento abaixo são texto confirmado.",
+      "enchantment_slot_1": "Fireball — nível 15, \"assign Fireball for additional explosions\"",
+      "enchantment_slot_2": "Frost Nova — nível 30, \"assign Frost Nova to automatically trigger it\"",
+      "mercenary": {
+        "hired": "Raheir",
+        "hired_note": "Skills: Ground Slam, Raheir's Aegis, Bastion, Inspiration (conforme listado na Icy Veins).",
+        "reinforcement": "Varyana",
+        "reinforcement_note": "Bloodthirst (bônus de dano/attack speed)."
+      },
+      "equipment": {
+        "weapon": "Staff (Cajado de Duas Mãos) — \"Two-Handed Staves are preferred over One-Handed Weapons\"",
+        "weapon_affixes": "Weapon Damage, Fire Damage, All Damage; Intelligence, Max Life",
+        "helm": "Cooldown Reduction, Resource Cost Reduction",
+        "chest": "Resource Cost Reduction; Intelligence, Max Life",
+        "gloves": "Ranks to Fireball; Attack Speed, Crit Chance",
+        "pants": "Intelligence, Max Life, Resistances",
+        "boots": "Movement Speed; Intelligence, Max Life",
+        "amulet": "Ranks to All Skills/Pyromancy Skills; Attack Speed, Crit Chance",
+        "rings": "Attack Speed, Crit Chance, Cooldown Reduction"
+      },
+      "equipment_notes": "\"Two-Handed Staves are preferred over One-Handed Weapons\"; tempere upgrades regularmente. Gemas: Rubi (arma, Fire Damage), Topázio (armadura, Inteligência), Diamante (joias, Resistência a Todos). Temporada 15 adiciona gemas Splinter (Anguish, Pain, Sin). Runewords recomendadas pela Icy Veins: \"Neo+Gar\" e \"Cir+Qua\". Aspects prioritários citados: Cremator's Aspect, Aspect of the Untarnished Blaze, Edgemaster's Aspect, Scornful Aspect, Aspect of Heavenly Strength.",
+      "glyph_priority_note": "Não encontrado como lista de prioridade — a página só traz notas de balanceamento da Temporada 15 pra 3 glyphs específicos (Pyromaniac, Eliminator, Elemental Summoner), sem ordenar uma prioridade geral.",
+      "pros_cons_note": "Não encontrado — a página de leveling não lista pros/cons (isso normalmente fica só no guia de endgame).",
+      "splinters_avoid_note": "Não encontrado — a página de leveling não menciona splinters a evitar.",
+      "uniques_useful_note": "Não encontrado — a própria página defere a recomendação de uniques pro guia de endgame, sem citar nenhum na página de leveling.",
+      "planner_url": null,
+      "planner_url_note": "Não encontrado — sem link de planner na página da Icy Veins.",
+      "source_gap_fill": "https://www.icy-veins.com/d4/guides/fireball-sorcerer-leveling-build/"
+    },
+    {
+      "id": "ice_spikes_leveling",
+      "name": "Ice Spikes (Blizzard/Frozen Orb)",
+      "status": "verified_S15",
+      "source": "https://maxroll.gg/d4/build-guides/ice-spikes-sorcerer-leveling-guide",
+      "leads_to_endgame_build": "ice_spikes",
+      "skill_progression": [
+        {
+          "level": "1-4",
+          "action": "Arc Lash (skill básica) até nível 5; alternativa: Spark, que dá Crackling Energy (5), Additional Hits (9), Electric Blast (14)"
+        },
+        {
+          "level": 3,
+          "action": "Frozen Orb — Core Skill; pega Barrier (6), Explosion Damage Bonus (10), Shattered Path (15)"
+        },
+        {
+          "level": 4,
+          "action": "Teleport — Movement Speed (7), Ferocity (11), Wormhole (16)"
+        },
+        {
+          "level": 6,
+          "action": "Ice Armor — Cooldown Reduction (7), Duration Bonus & Barrier (11), Permafrost (16)"
+        },
+        {
+          "level": 8,
+          "action": "Hydra — Healing (12), Cooldown Reduction (17), Frigid Hydra (36)"
+        },
+        {
+          "level": 13,
+          "action": "Blizzard entra no lugar do Frozen Orb"
+        },
+        {
+          "level": 15,
+          "action": "Libera mecânica de Encantamentos (completar Priority Quest); Slot 1 = Teleport Enchantment"
+        },
+        {
+          "level": 18,
+          "action": "Blizzard: Damage Bonus"
+        },
+        {
+          "level": 21,
+          "action": "Blizzard: Seek and Duration Bonus"
+        },
+        {
+          "level": 22,
+          "action": "Inferno: Overpower"
+        },
+        {
+          "level": 23,
+          "action": "Blizzard: Hailstorm — variante principal do build"
+        },
+        {
+          "level": 24,
+          "action": "Inferno: Cooldown Reduction"
+        },
+        {
+          "level": 25,
+          "action": "Inferno: Living Bomb"
+        },
+        {
+          "level": 30,
+          "action": "Slot 2 de Encantamento — Frozen Orb Enchantment (aplica Vulnerable) ou Ice Armor Enchantment (defesa)"
+        },
+        {
+          "level": 36,
+          "action": "Hydra: Frigid Hydra"
+        },
+        {
+          "level": 40,
+          "action": "Inferno: Lifecoil"
+        },
+        {
+          "level": "resto até 70",
+          "action": "Maximiza ranks principais, depois utilidade; ao chegar em 70 (Pit Tier 10 → Torment 1) migra pro build de endgame"
+        }
+      ],
+      "total_points": 83,
+      "enchantment_slot_1": "Teleport — \"provides mobility on a short cooldown\", vira evade com cooldown de 5s",
+      "enchantment_slot_2": "Frozen Orb (aplica Vulnerable) ou Ice Armor (defesa) — \"Ice Armor Enchantment is a good option for defense\"",
+      "glyph_priority": [
+        "Destruction",
+        "Stalagmite",
+        "Elementalist",
+        "Tactician",
+        "Unleash"
+      ],
+      "pros": [
+        "Crowd Control",
+        "Endgame Scaling"
+      ],
+      "cons": [
+        "High Mana Cost",
+        "Feels Best With Aspects"
+      ],
+      "splinters_good": [
+        {
+          "name": "Splinter of Hellfire",
+          "note": "\"guaranteed damage increase\" — troca crítico por dano garantido"
+        },
+        {
+          "name": "Splinter of the Black Soulstone",
+          "note": "escala dano matando grupos de monstros, aumenta pouco o dano recebido"
+        },
+        {
+          "name": "Splinter of Damnation",
+          "note": "aumenta monster power e XP contra Elites"
+        },
+        {
+          "name": "Splinter of the Mother",
+          "note": "Unhindered + Vulnerable ao tocar inimigos (penalidade: crowd control ocasional)"
+        }
+      ],
+      "splinters_avoid": [
+        {
+          "name": "Splinter of Pain",
+          "note": "reduz velocidade de movimento, atrapalha o leveling"
+        }
+      ],
+      "uniques_useful": [
+        "Vision of the Firestorm",
+        "Esu's Heirloom",
+        "Tal Rasha's Iridescent Loop"
+      ],
+      "uniques_build_defining": [
+        {
+          "name": "Raiment of the Sea",
+          "note": "\"powers up Blizzard\""
+        },
+        {
+          "name": "Vision of the Firestorm",
+          "note": "\"powers up Firewall\" (útil se trocar de build)"
+        }
+      ],
+      "aspects_useful": [
+        "Shredding Blades",
+        "Recharging",
+        "Duelist's",
+        "Expectant",
+        "Elemental Acuity",
+        "Elemental Attunement",
+        "Orange Herald"
+      ],
+      "mercenary": {
+        "hired": "Raheir",
+        "hired_note": "Valiance previne dano de hits grandes e dá Unstoppable curto — \"very powerful mechanic for pushing more difficult content or playing on Hardcore\". Pegue Ground Slam, Raheir's Aegis, depois Bastion com Iron Wolf's Virtue.",
+        "hired_alt": "Subo — Seeker revela inimigos/objetos no mapa e restaura Mana; pegue Wire Trap, Ready At Hand, Cover Fire com Opening Fire.",
+        "reinforcement": "Varyana",
+        "reinforcement_note": "Bloodthirst — aumenta Attack Speed."
+      },
+      "runes": {
+        "best_in_slot": [
+          {
+            "combo": "Cir + Ceh",
+            "note": "\"Spawns wolves that deal damage and chill enemies\""
+          },
+          {
+            "combo": "Cem + Qua",
+            "note": "\"Movement speed buff every time you evade\""
+          }
+        ],
+        "alternatives": [
+          {
+            "rune": "Gar",
+            "note": "mais crítico, não combina bem com Splinter of Hellfire"
+          },
+          {
+            "rune": "Que",
+            "note": "Earthen Bulwark ajuda na defesa"
+          },
+          {
+            "rune": "Igni",
+            "note": "boa forma de gerar Offering"
+          },
+          {
+            "rune": "Tam",
+            "note": "bom se você usa a Core Skill com frequência"
+          },
+          {
+            "rune": "Jah",
+            "note": "permite ir mais rápido com Teleport"
+          }
+        ]
+      },
+      "planner_url": null,
+      "planner_url_note": "Não encontrado — a página de leveling do Maxroll não tem um link de D4Planner específico desse build embutido no texto (só o link genérico do menu de navegação)."
     }
   ],
   "endgame_builds": [
@@ -560,7 +788,50 @@
         "Clunky Animation",
         "High Visual Clutter"
       ],
-      "equipment_notes": "Uniques só de adicionar, sem exigir nada especial. Prioridade pra farmar: Raiment of the Sea > Orsivane > Galvanic Azurite. Prioridade #1 do Talisman é fechar o set Berú of the Threefold completo."
+      "equipment_notes": "Uniques só de adicionar, sem exigir nada especial. Prioridade pra farmar: Raiment of the Sea > Orsivane > Galvanic Azurite. Prioridade #1 do Talisman é fechar o set Berú of the Threefold completo.",
+      "mythic_priority": [
+        {
+          "name": "Raiment of the Sea",
+          "note": "Recomendado — \"Ranks to Blizzard\" (Icy Veins marca como recommended)"
+        },
+        {
+          "name": "Ring of Starless Skies",
+          "note": "Recomendado — \"Attack Speed\" (Icy Veins marca como recommended)"
+        },
+        {
+          "name": "Harlequin Crest",
+          "note": "Opcional — \"Cooldown Reduction (affix aleatório), Intelligence, ou Maximum Life\""
+        }
+      ],
+      "mythic_priority_note": "A Icy Veins não dá um ranking único entre os 3 — só classifica Raiment of the Sea e Ring of Starless Skies como \"recommended\" e Harlequin Crest como \"optional\".",
+      "splinters": [
+        {
+          "name": "Abyssal Splinter of Anguish",
+          "note": "prioridade 1 (ordem citada no guia)"
+        },
+        {
+          "name": "Abyssal Splinter of Pain",
+          "note": "prioridade 2"
+        },
+        {
+          "name": "Abyssal Splinter of Sin",
+          "note": "prioridade 3"
+        }
+      ],
+      "enchantments": [
+        {
+          "name": "Ice Armor",
+          "note": "Slot 1 — \"for barrier generation and mana regeneration\""
+        },
+        {
+          "name": "Teleport",
+          "note": "Slot 2 — \"for mobility and additional Lightning Damage\""
+        }
+      ],
+      "runes_note": "Runewords com explicação textual (Icy Veins): \"Cir + Vex\" — geração de Offering e bônus de rank de skill; \"Noc + Thul\" — crowd control e ativa Frost Nova, aplicando Freeze e Vulnerable.",
+      "planner_url": null,
+      "planner_url_note": "Não encontrado — sem link de planner na página da Icy Veins usada pra esse gap-fill.",
+      "source_gap_fill": "https://www.icy-veins.com/d4/guides/blizzard-sorcerer-build/"
     },
     {
       "id": "meteoro_sustentado",
@@ -674,7 +945,209 @@
           "name": "Abyssal Splinter of the Black Soulstone",
           "note": "prioridade 3"
         }
-      ]
+      ],
+      "enchantments": [
+        {
+          "name": "Meteor",
+          "note": "Slot 1 — \"Slot Meteor in the first Enchantment Slot for additional procs.\""
+        },
+        {
+          "name": "Ice Blades",
+          "note": "Slot 2 — \"for additional spawns to reduce active Cooldowns\" (spawna lâminas de gelo que reduzem cooldowns)."
+        }
+      ],
+      "runes_note": "Runewords com explicação textual (Icy Veins): \"Yul + Gar\" — acumula Chance de Crítico após lançar skills com cooldown; \"Igni + Eom\" — reduz cooldowns ativos em 0.1s por cast. Alternativas mostradas só como ícone, sem explicação textual na página: Cir, Neo, Noc — \"alternative options if you do not have the Ritual Runes listed above\" (sem detalhar o efeito de cada uma).",
+      "planner_url": null,
+      "planner_url_note": "Não encontrado — sem link de planner na página da Icy Veins usada pra esse gap-fill.",
+      "source_gap_fill": "https://www.icy-veins.com/d4/guides/meteor-sorcerer-build/"
+    },
+    {
+      "id": "ice_spikes",
+      "name": "Ice Spikes (Hailstorm)",
+      "tier": "guia real (Maxroll) — ranking S/A/B fica em tier list separada, não citada nesta página",
+      "source": "https://maxroll.gg/d4/build-guides/ice-spikes-sorcerer-guide",
+      "status": "verified",
+      "key_mythic_note": "Não usa um único Mythic fixo — o guia lista uma ordem de prioridade de Mythics pra craftar (ver mythic_priority).",
+      "set_charms": {
+        "name": "Berú of the Frozen Sea",
+        "note": "\"provides additional damage in the form of converting your direct damage into damage over time\". Bônus de 5 peças: consome todo Frostbite pra dano direto extra ao congelar inimigos, além de Mana Cost Reduction."
+      },
+      "skill_bar": [
+        {
+          "skill": "Blizzard",
+          "role": "dano principal — cria Ice Spikes e persegue inimigos"
+        },
+        {
+          "skill": "Hydra",
+          "role": "cooldown reduction + cura — manter 1 ativa"
+        },
+        {
+          "skill": "Teleport",
+          "role": "Ferocity + mobilidade; reseta com Overpower do Inferno"
+        },
+        {
+          "skill": "Ice Armor",
+          "role": "Barrier, Armor e Unstoppable (ativa Tibault's Will)"
+        },
+        {
+          "skill": "Familiar",
+          "role": "cooldown reduction menor, ativa Elementalist; castar ao menos 1x a cada 8s"
+        },
+        {
+          "skill": "Inferno",
+          "role": "gera Overpower pra resetar Teleport: Blaze"
+        }
+      ],
+      "skill_rotation": [
+        "Castar Inferno quando disponível pra empilhar Overpower pro Teleport: Blaze",
+        "Usar Teleport pra agrupar inimigos (também dá Ferocity ao acertar)",
+        "Castar Blizzard nos inimigos — ele persegue graças a Blizzard: Seek e Duration Bonus",
+        "Castar Familiar a cada 8s pra manter Elementalist",
+        "Manter Ice Armor ativo (Barrier + Ice Armor: Permafrost)",
+        "Manter 1 Hydra ativa pro cooldown reduction",
+        "Jah + Ice Armor mantêm Tibault's Will ativo pra Mana"
+      ],
+      "enchantments": [
+        {
+          "name": "Teleport",
+          "note": "mais mobilidade / qualidade de vida"
+        },
+        {
+          "name": "Frozen Orb",
+          "note": "dano — lança Orbs adicionais automaticamente, que também têm Ice Spikes"
+        }
+      ],
+      "mercenary": {
+        "hired": "Raheir",
+        "hired_note": "Valiance previne hits grandes na cooldown — \"technically a Cheat Death if it's not on cooldown\". Raheir's Aegis aumenta defesa; Bastion pode salvar sua vida.",
+        "hired_alt": "Subo — revela inimigos no mapa ou maior bônus de dano com Opening Fire.",
+        "reinforcement": "Varyana",
+        "reinforcement_note": "Bloodthirst — Attack Speed ao castar qualquer skill.",
+        "reinforcement_alt": "Aldkin (Field of Languish — damage reduction) ou Raheir (Bastion ao ficar ferido)."
+      },
+      "paragon": {
+        "strategy": "Board Rush",
+        "strategy_note": "\"prioritizes Legendary Nodes as quickly as possible for the fastest boost in damage with the least number of points. From here you can expand into nearby Glyphs until you are ready to transition to the next setup.\"",
+        "glyphs_endgame": [
+          {
+            "name": "Destruction",
+            "note": "fácil de ativar, bônus lendário de maior valor, mas só depois de ter bastante Crit Chance"
+          },
+          {
+            "name": "Stalagmite",
+            "note": "mais Crit Chance e dano aditivo"
+          },
+          {
+            "name": "Elementalist",
+            "note": "ativa ao causar dano com elementos diferentes — fácil de ativar aqui"
+          },
+          {
+            "name": "Tactician",
+            "note": "ativa ao usar Skill Defensiva — fácil com Teleport e Ice Armor"
+          },
+          {
+            "name": "Unleash",
+            "note": "ativa ao gastar Mana, dá Mana Regen extra com o bônus de dano"
+          }
+        ],
+        "glyphs_note": "\"You can level them to each Legendary Bonus in the listed order as a priority but generally you can level all Glyphs evenly after reaching the Legendary Bonus on each one.\" O nome de cada Board (Start, etc.) não aparece na página como lista textual — só a estratégia \"Board Rush\" e os 5 Glyphs acima."
+      },
+      "equipment": {
+        "soul_splinters_priority": [
+          "Abyssal Splinter of the Black Soulstone (socket na Leoric's Crown)",
+          "Abyssal Splinter of Pain (socket na Leoric's Crown)",
+          "Abyssal Splinter of Anguish",
+          "Abyssal Splinter of the Mother",
+          "Abyssal Splinter of Sin"
+        ],
+        "mythic_craft_priority": [
+          {
+            "name": "Leoric's Crown",
+            "note": "dano e defesa — boa escolha pra craftar"
+          },
+          {
+            "name": "Raiment of the Infinite",
+            "note": "maior defesa"
+          },
+          {
+            "name": "Blue Rose",
+            "note": "dano adicional"
+          },
+          {
+            "name": "Esu's Heirloom",
+            "note": "Crit Chance adicional baseado na velocidade de movimento"
+          },
+          {
+            "name": "Tibault's Will",
+            "note": "Mana Regen — requer usar Ice Armor ou Jah a cada 5s"
+          }
+        ],
+        "unique_rings_notes": "Ring of Starless Skies reduz custo de Mana (compensa o attack speed alto e o custo extra do Splinter of Anguish). Signet of Pelghain combina com Deep Freeze: Bonechill pra aplicar Frozen e remover Unstoppable (não funciona em Lair Bosses).",
+        "unique_charms": [
+          {
+            "name": "Banished Lord's Talisman",
+            "note": "fácil de ativar com Teleport, multiplicador grande"
+          },
+          {
+            "name": "Tal Rasha's Iridescent Loop",
+            "note": "dano adicional, fácil de ativar"
+          },
+          {
+            "name": "Fists of Fate",
+            "note": "como mythic, bom multiplicador"
+          },
+          {
+            "name": "Rustbitten Dirk",
+            "note": "melhor opção de single target pra Lair Bosses"
+          },
+          {
+            "name": "Stone of Jordan",
+            "note": "ofensa e defesa se investido"
+          },
+          {
+            "name": "Godslayer Crown",
+            "note": "qualidade de vida — puxa inimigos pra você e aumenta dano"
+          },
+          {
+            "name": "Endurant Faith / Soulbrand",
+            "note": "defesa extra pra sobreviver"
+          }
+        ]
+      },
+      "mythic_priority": [
+        {
+          "name": "Leoric's Crown",
+          "note": "dano e defesa"
+        },
+        {
+          "name": "Raiment of the Infinite",
+          "note": "maior defesa"
+        },
+        {
+          "name": "Blue Rose",
+          "note": "dano adicional"
+        },
+        {
+          "name": "Esu's Heirloom",
+          "note": "Crit Chance baseado em velocidade de movimento"
+        },
+        {
+          "name": "Tibault's Will",
+          "note": "Mana Regen"
+        }
+      ],
+      "runes_note": "\"IgniJah gives an extra Teleport every few seconds after casting a Non-Basic Skill. This also activates Tibault's Will.\" \"NeoMot provides additional defense.\" Alternativas de defesa: Lac e Que; alternativas de dano: Ohm ou Vex.",
+      "pros": [
+        "Powerful Frost Build",
+        "Crowd Control",
+        "Area Coverage"
+      ],
+      "cons": [
+        "Ramping Damage",
+        "Lower Defense"
+      ],
+      "planner_url": null,
+      "planner_url_note": "Não encontrado — não há link de D4Planner específico desse build embutido na página (só o link genérico do menu de navegação do site)."
     }
   ],
   "boss_farming": [
