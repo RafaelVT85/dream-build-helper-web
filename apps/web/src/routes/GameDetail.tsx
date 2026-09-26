@@ -14,7 +14,7 @@ export default function GameDetail() {
       .then((idx) => {
         const entry = idx.games.find((g) => g.id === gameId);
         if (!entry) throw new Error("Jogo não encontrado");
-        return fetchGame(entry.file);
+        return fetchGame(entry.file, gameId);
       })
       .then(setGame)
       .catch((e) => setError(e.message));

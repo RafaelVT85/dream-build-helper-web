@@ -2,10 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { fetchGame, fetchGamesIndex } from "../data/games";
 import type { AnyBuild, GameDataFile } from "../../../packages/data-schema/types";
+import BuildView from "../components/BuildView";
 
-// Renderização genérica: mostra qualquer campo presente no build sem
-// precisar de um componente dedicado por build — o schema normalizado
-// (fase 3 do plano) é o que torna isso possível de forma limpa.
 export default function BuildDetail() {
   const { gameId, buildId } = useParams();
   const [params] = useSearchParams();
@@ -19,7 +17,7 @@ export default function BuildDetail() {
       .then((idx) => {
         const entry = idx.games.find((g) => g.id === gameId);
         if (!entry) throw new Error("Jogo não encontrado");
-        return fetchGame(entry.file);
+        return fetchGame(entry.file, gameId);
       })
       .then((game: GameDataFile) => {
         const list = phase === "leveling" ? game.leveling_builds : game.endgame_builds;
@@ -34,16 +32,10 @@ export default function BuildDetail() {
   if (!build) return <p style={{ margin: 24 }} className="muted">Carregando…</p>;
 
   return (
-    <div style={{ padding: 24, maxWidth: 800 }}>
-      <h2>{build.name}</h2>
-      {build.source && (
-        <p className="muted">
-          Fonte: <a href={build.source} target="_blank" rel="noreferrer">{build.source}</a>
-        </p>
-      )}
-      <pre className="card" style={{ whiteSpace: "pre-wrap", overflowX: "auto" }}>
-        {JSON.stringify(build, null, 2)}
-      </pre>
+    <div style={{ padding: 24, maxWidth: 800, margin: "0 auto" }}>
+      <span className="pill">{phase === "leveling" ? "Leveling" : "Endgame"}</span>
+      <h2 style={{ margin: "8px 0 16px" }}>{build.name}</h2>
+      <BuildView build={build} />
     </div>
   );
 }
