@@ -1,5 +1,5 @@
 // POST /api/save-override
-// Body: { kind: "skill"|"item"|"star"|"game", key: string, patch: { name?, effect?, rarity?, category?, icon? } }
+// Body: { kind: "skill"|"item"|"star"|"game"|"traveler", key: string, patch: { name?, effect?, rarity?, category?, icon? } }
 // Lê o arquivo PRÓPRIO desse item (overrides/<kind>/<key>.json), aplica o
 // patch, e salva de volta. Cada item tem seu próprio arquivo no Blob —
 // editar dois itens diferentes ao mesmo tempo nunca derruba um ao outro
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Método não permitido" });
   }
   const { kind, key, patch } = req.body || {};
-  if (!kind || !key || !patch || !["skill", "item", "star", "game"].includes(kind)) {
+  if (!kind || !key || !patch || !["skill", "item", "star", "game", "traveler"].includes(kind)) {
     return res.status(400).json({ error: "kind, key e patch são obrigatórios" });
   }
 
