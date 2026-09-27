@@ -1,14 +1,14 @@
 // GET /api/get-overrides
 // Lista todos os arquivos em overrides/<kind>/<key>.json no Vercel Blob e
-// monta um único objeto { skill: {...}, item: {...}, star: {...}, game: {...} }
-// pro front-end aplicar por cima dos dados estáticos do jogo.
+// monta um único objeto { skill: {...}, item: {...}, star: {...}, game: {...},
+// traveler: {...} } pro front-end aplicar por cima dos dados estáticos do jogo.
 import { list } from "@vercel/blob";
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {
     return res.status(405).json({ error: "Método não permitido" });
   }
-  const result = { skill: {}, item: {}, star: {}, game: {} };
+  const result = { skill: {}, item: {}, star: {}, game: {}, traveler: {} };
   try {
     let cursor;
     const all = [];
