@@ -4,6 +4,8 @@ import { fetchGame, fetchGamesIndex } from "../data/games";
 import type { AnyBuild, ShapeBuild, ShapeTraveler } from "../../../../packages/data-schema/types";
 import { isShapeGame } from "../../../../packages/data-schema/types";
 import { useShapeOverrides } from "../lib/shapeOverrides";
+import { useGameMode } from "../lib/shapeUiPrefs";
+import { PiPPortal, usePictureInPicture } from "../lib/shapePip";
 import BuildView from "../components/BuildView";
 import ShapeBuildView from "../components/ShapeBuildView";
 
@@ -16,6 +18,8 @@ export default function BuildDetail() {
   const [shapeData, setShapeData] = useState<{ traveler: ShapeTraveler; build: ShapeBuild } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const { overrides, updateOverride } = useShapeOverrides();
+  const { gameMode, setGameMode } = useGameMode();
+  const { isSupported: pipSupported, pipWindow, openPiP, closePiP } = usePictureInPicture();
 
   useEffect(() => {
     if (!gameId || !buildId) return;
@@ -48,13 +52,56 @@ export default function BuildDetail() {
   if (error) return <p className="card" style={{ margin: 24 }}>{error}</p>;
 
   if (shapeData) {
+    const title = `${shapeData.traveler.name} — ${shapeData.build.name}`;
+    const buildContent = (
+      <ShapeBuildView traveler={shapeData.traveler} build={shapeData.build} overrides={overrides} updateOverride={updateOverride} />
+    );
+
     return (
       <div style={{ padding: 24, maxWidth: 800, margin: "0 auto" }}>
+        <div style={{ display: "flex", justifyContent: "flex-end", gap: 8, marginBottom: 8, flexWrap: "wrap" }}>
+          <button
+            className="pill"
+            style={{
+              cursor: "pointer",
+              border: "1px solid var(--border)",
+              background: gameMode ? "var(--accent)" : "transparent",
+              color: gameMode ? "#101014" : "var(--accent)",
+            }}
+            onClick={() => setGameMode(!gameMode)}
+          >
+            {gameMode ? "🎮 Sair do Modo Jogo" : "🎮 Modo Jogo"}
+          </button>
+          {pipSupported ? (
+            <button
+              className="pill"
+              style={{
+                cursor: "pointer",
+                border: "1px solid var(--border)",
+                background: pipWindow ? "var(--accent)" : "transparent",
+                color: pipWindow ? "#101014" : "var(--accent)",
+              }}
+              onClick={() => (pipWindow ? closePiP() : openPiP(title))}
+            >
+              {pipWindow ? "✕ Fechar PiP" : "📌 Picture-in-Picture"}
+            </button>
+          ) : null}
+        </div>
+
         {shapeData.build.tag ? <span className="pill">{shapeData.build.tag}</span> : null}
-        <h2 style={{ margin: "8px 0 16px" }}>
-          {shapeData.traveler.name} — {shapeData.build.name}
-        </h2>
-        <ShapeBuildView traveler={shapeData.traveler} build={shapeData.build} overrides={overrides} updateOverride={updateOverride} />
+        <h2 style={{ margin: "8px 0 16px" }}>{title}</h2>
+
+        {pipWindow ? (
+          <>
+            <p className="muted">Aberto em uma janela flutuante (Picture-in-Picture).</p>
+            <PiPPortal pipWindow={pipWindow}>
+              <h2 style={{ margin: "0 0 16px" }}>{title}</h2>
+              {buildContent}
+            </PiPPortal>
+          </>
+        ) : (
+          buildContent
+        )}
       </div>
     );
   }
