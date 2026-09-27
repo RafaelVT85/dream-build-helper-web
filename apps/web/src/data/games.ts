@@ -1,4 +1,4 @@
-import type { GameDataFile } from "../../../packages/data-schema/types";
+import type { GameDataFile } from "../../../../packages/data-schema/types";
 import { applyBuildOverride, loadBuildOverrides } from "../lib/build-overrides";
 
 // Camada de leitura de dados. Lê os JSONs estáticos que já existem em
