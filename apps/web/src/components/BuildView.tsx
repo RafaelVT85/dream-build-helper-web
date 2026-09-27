@@ -1,4 +1,4 @@
-import type { AnyBuild } from "../../../packages/data-schema/types";
+import type { AnyBuild } from "../../../../packages/data-schema/types";
 
 // Exibição legível de uma build, sem depender de um schema normalizado
 // (os dados ainda vêm no formato "solto" documentado em
@@ -138,7 +138,7 @@ export default function BuildView({ build }: { build: AnyBuild }) {
       {rest.map((key) => (
         <Section key={key} title={label(key)} value={build[key]} />
       ))}
-      {(build.planner_url || build.planner_url_note) && (
+      {Boolean(build.planner_url || build.planner_url_note) && (
         <div className="card" style={{ marginBottom: 16 }}>
           <h4 style={{ margin: "0 0 8px" }}>Planner</h4>
           {build.planner_url ? (
@@ -150,7 +150,7 @@ export default function BuildView({ build }: { build: AnyBuild }) {
           )}
         </div>
       )}
-      {(build.source || build.source_gap_fill) && (
+      {Boolean(build.source || build.source_gap_fill) && (
         <p className="muted" style={{ fontSize: 13 }}>
           Fonte: {build.source ? <ValueView value={build.source} /> : null}
           {build.source_gap_fill ? (
