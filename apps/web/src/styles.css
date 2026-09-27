@@ -112,3 +112,32 @@ body {
   height: 8px;
   border-radius: 999px;
 }
+
+/* Aparência: transparência do fundo (--bg-alpha, 0.3–1) aplicada aos painéis,
+   e cor de destaque (--accent) trocável por tema. Definidas em :root pelo
+   shapeUiPrefs.ts; os valores abaixo são só o fallback antes do primeiro apply. */
+:root {
+  --bg-alpha: 1;
+}
+
+.app-header,
+.card {
+  background: color-mix(in srgb, var(--panel) calc(var(--bg-alpha) * 100%), transparent);
+}
+
+.pill {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+}
+
+/* Modo Jogo: esconde a "moldura" do app (header, breadcrumbs) e deixa só o
+   conteúdo da build visível, pra jogar com o mínimo de distração possível. */
+/* !important necessário aqui: o header usa um style inline (display: flex)
+   pro layout normal, que tem mais especificidade que uma regra de classe comum. */
+body.game-mode .app-header {
+  display: none !important;
+}
+
+body.game-mode .app-shell > main {
+  padding-top: 0;
+}
