@@ -3,12 +3,17 @@ import { Link, useParams } from "react-router-dom";
 import { fetchGame, fetchGamesIndex } from "../data/games";
 import type { GameDataFile } from "../../../../packages/data-schema/types";
 import { isShapeGame } from "../../../../packages/data-schema/types";
+import { useShapeOverrides } from "../lib/shapeOverrides";
+import { TravelerAvatar } from "../components/ShapeVisuals";
+import ShapeGallery from "../components/ShapeGallery";
 
 export default function GameDetail() {
   const { gameId } = useParams();
   const [game, setGame] = useState<GameDataFile | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [travelerId, setTravelerId] = useState<string | null>(null);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const { overrides, updateOverride, updateIcon } = useShapeOverrides();
 
   useEffect(() => {
     if (!gameId) return;
@@ -34,46 +39,71 @@ export default function GameDetail() {
 
     return (
       <div>
-        <div style={{ display: "flex", gap: 8, padding: "24px 24px 0", flexWrap: "wrap" }}>
-          {game.travelers.map((t) => (
-            <button
-              key={t.id}
-              onClick={() => setTravelerId(t.id)}
-              className="pill"
-              style={{
-                cursor: "pointer",
-                border: "1px solid var(--border)",
-                background: t.id === traveler?.id ? "var(--accent)" : "transparent",
-                color: t.id === traveler?.id ? "#101014" : "var(--accent)",
-                fontWeight: t.id === traveler?.id ? 700 : 400,
-              }}
-            >
-              {t.name}
-            </button>
-          ))}
-        </div>
-        <div className="grid">
-          {builds.length === 0 ? (
-            <p className="muted" style={{ padding: "0 24px", gridColumn: "1 / -1" }}>
-              Nenhuma build cadastrada ainda pra {traveler?.name ?? "esse personagem"}.
-            </p>
-          ) : (
-            builds.map((b) => (
-              <Link
-                key={b.id}
-                to={`/jogos/${gameId}/builds/${b.id}?traveler=${traveler?.id}`}
-                className="card"
-                style={{ textDecoration: "none", color: "inherit" }}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, padding: "24px 24px 0", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            {game.travelers.map((t) => (
+              <button
+                key={t.id}
+                onClick={() => setTravelerId(t.id)}
+                className="pill"
+                style={{
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  border: "1px solid var(--border)",
+                  background: t.id === traveler?.id ? "var(--accent)" : "transparent",
+                  color: t.id === traveler?.id ? "#101014" : "var(--accent)",
+                  fontWeight: t.id === traveler?.id ? 700 : 400,
+                }}
               >
-                {b.tag ? <span className="pill">{b.tag}</span> : null}
-                <h3 style={{ margin: "8px 0 0" }}>{b.name}</h3>
-                <p className="muted" style={{ margin: "8px 0 0", fontSize: 13 }}>
-                  👍 {b.likes ?? 0} · 👁 {b.views ?? 0}
-                </p>
-              </Link>
-            ))
-          )}
+                <span className="avatar-sm">
+                  <TravelerAvatar traveler={{ id: t.id, name: t.name, icon: (overrides.traveler?.[t.id]?.icon as string) ?? t.icon }} />
+                </span>
+                {t.name}
+              </button>
+            ))}
+          </div>
+          <button
+            className="pill"
+            style={{
+              cursor: "pointer",
+              border: "1px solid var(--border)",
+              background: galleryOpen ? "var(--accent)" : "transparent",
+              color: galleryOpen ? "#101014" : "var(--accent)",
+            }}
+            onClick={() => setGalleryOpen((v) => !v)}
+          >
+            {galleryOpen ? "← Voltar pras builds" : "🖼️ Galeria"}
+          </button>
         </div>
+
+        {galleryOpen ? (
+          <ShapeGallery game={game} overrides={overrides} updateOverride={updateOverride} updateIcon={updateIcon} />
+        ) : (
+          <div className="grid">
+            {builds.length === 0 ? (
+              <p className="muted" style={{ padding: "0 24px", gridColumn: "1 / -1" }}>
+                Nenhuma build cadastrada ainda pra {traveler?.name ?? "esse personagem"}.
+              </p>
+            ) : (
+              builds.map((b) => (
+                <Link
+                  key={b.id}
+                  to={`/jogos/${gameId}/builds/${b.id}?traveler=${traveler?.id}`}
+                  className="card"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  {b.tag ? <span className="pill">{b.tag}</span> : null}
+                  <h3 style={{ margin: "8px 0 0" }}>{b.name}</h3>
+                  <p className="muted" style={{ margin: "8px 0 0", fontSize: 13 }}>
+                    👍 {b.likes ?? 0} · 👁 {b.views ?? 0}
+                  </p>
+                </Link>
+              ))
+            )}
+          </div>
+        )}
       </div>
     );
   }

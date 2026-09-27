@@ -3,6 +3,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { fetchGame, fetchGamesIndex } from "../data/games";
 import type { AnyBuild, ShapeBuild, ShapeTraveler } from "../../../../packages/data-schema/types";
 import { isShapeGame } from "../../../../packages/data-schema/types";
+import { useShapeOverrides } from "../lib/shapeOverrides";
 import BuildView from "../components/BuildView";
 import ShapeBuildView from "../components/ShapeBuildView";
 
@@ -14,6 +15,7 @@ export default function BuildDetail() {
   const [build, setBuild] = useState<AnyBuild | null>(null);
   const [shapeData, setShapeData] = useState<{ traveler: ShapeTraveler; build: ShapeBuild } | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const { overrides, updateOverride } = useShapeOverrides();
 
   useEffect(() => {
     if (!gameId || !buildId) return;
@@ -52,7 +54,7 @@ export default function BuildDetail() {
         <h2 style={{ margin: "8px 0 16px" }}>
           {shapeData.traveler.name} — {shapeData.build.name}
         </h2>
-        <ShapeBuildView traveler={shapeData.traveler} build={shapeData.build} />
+        <ShapeBuildView traveler={shapeData.traveler} build={shapeData.build} overrides={overrides} updateOverride={updateOverride} />
       </div>
     );
   }
