@@ -651,13 +651,13 @@
       "equipment": {
         "helm": "Vision of the Firestorm (Mythic Unique)",
         "chest": "Raiment of the Infinite (Mythic Unique)",
-        "gloves_aspect": "Writhing",
+        "gloves_aspect": "Lingering",
         "pants": "Tibault's Will (Mythic Unique)",
         "boots_aspect": "Shredding Blades",
-        "amulet_aspect": "Lingering (ou Overheating)",
+        "amulet_aspect": "Untarnished Blaze / Overheating",
         "ring_1": "Drognan's Anguish (Mythic Unique)",
-        "ring_2_aspect": "Conceited",
-        "weapon_aspect": "Untarnished Blaze (Cajado)"
+        "ring_2_aspect": "Duelist's",
+        "weapon_aspect": "Orsivane (Mythic Unique Mace) + Phoenix (Unique Focus)"
       },
       "pros": [
         "Very Tanky",
@@ -669,7 +669,7 @@
         "Depends on a Set",
         "Can't Go Very Fast"
       ],
-      "equipment_notes": "Gosta de um pouco mais de CDR que o normal (1-2 rolls extras além do chapéu/joias) pra manter Ice Armor e Unstable Currents ativos e ter Firewall manual sempre disponível. Masterwork (upgrade do ferreiro): distribua entre multiplicador de DoT e de Vulnerable no Cajado, Luvas e Joias, mantendo a proporção (100% + DoT total) : (100% + Vulnerable total) próxima de 15:7.",
+      "equipment_notes": "Gosta de um pouco mais de CDR que o normal (1-2 rolls extras além do chapéu/joias) pra manter Ice Armor e Unstable Currents ativos e ter Firewall manual sempre disponível. Masterwork (upgrade do ferreiro): distribua entre multiplicador de DoT e de Vulnerable no Cajado, Luvas e Joias, mantendo a proporção (100% + DoT total) : (100% + Vulnerable total) próxima de 15:7. [Auditado 26/09/2026: equipamento revisado e batido com o changelog do Maxroll de 21/09/2026 (troca de Cajado pra Orsivane+Phoenix, luvas pra Lingering, anel 2 pra Duelist's, amuleto Untarnished Blaze/Overheating).",
       "mythic_priority": [
         {
           "name": "Raiment of the Infinite",
@@ -724,27 +724,27 @@
       "skill_bar": [
         {
           "skill": "Blizzard",
-          "role": "principal"
-        },
-        {
-          "skill": "Ice Armor",
-          "role": "defesa"
-        },
-        {
-          "skill": "Flame Shield",
-          "role": "imunidade"
-        },
-        {
-          "skill": "Teleport",
-          "role": "Wormhole"
+          "role": "principal — spam em tudo"
         },
         {
           "skill": "Unstable Currents",
-          "role": "ultimate"
+          "role": "ultimate — cooldown alto, guardar pra bosses"
         },
         {
-          "skill": "Frost Nova",
-          "role": "Vulnerable"
+          "skill": "Ice Armor",
+          "role": "defesa principal — manter sempre ativo"
+        },
+        {
+          "skill": "Hydra",
+          "role": "utilidade — CDR e cura, ótimo contra grupos"
+        },
+        {
+          "skill": "Familiar",
+          "role": "CDR extra via Familiar: Bonus Effect (funciona com skill Shock mesmo fora da barra)"
+        },
+        {
+          "skill": "Teleport",
+          "role": "mobilidade — usar com stack de Overpower pra evitar cooldown"
         }
       ],
       "mercenary": {
@@ -788,34 +788,53 @@
         "Clunky Animation",
         "High Visual Clutter"
       ],
-      "equipment_notes": "Uniques só de adicionar, sem exigir nada especial. Prioridade pra farmar: Raiment of the Sea > Orsivane > Galvanic Azurite. Prioridade #1 do Talisman é fechar o set Berú of the Threefold completo.",
+      "equipment_notes": "Uniques só de adicionar, sem exigir nada especial. Prioridade pra farmar: Raiment of the Sea > Orsivane > Galvanic Azurite. Prioridade #1 do Talisman é fechar o set Berú of the Threefold completo. [Auditado 26/09/2026 direto no Maxroll: skill bar, Mythic Priority e Soul Splinters atualizados pro texto atual da página (antes vinham de gap-fill da Icy Veins e estavam desatualizados). Slots de anel/anel_pit/arma/elmo/peitoral seguem sem confirmação visual (a página não mostra boneco de equipamento completo pra essa build) — mantidos como estavam, sourced da Icy Veins.",
       "mythic_priority": [
         {
+          "name": "Leoric's Crown",
+          "note": "~15% dano e um pouco de resistência (com Splinters maximizados)"
+        },
+        {
           "name": "Raiment of the Sea",
-          "note": "Recomendado — \"Ranks to Blizzard\" (Icy Veins marca como recommended)"
+          "note": "+16% dano"
+        },
+        {
+          "name": "Orsivane",
+          "note": "+13% dano"
+        },
+        {
+          "name": "Galvanic Azurite",
+          "note": "+11% dano"
+        },
+        {
+          "name": "Tibault's Will",
+          "note": "+5% dano"
         },
         {
           "name": "Ring of Starless Skies",
-          "note": "Recomendado — \"Attack Speed\" (Icy Veins marca como recommended)"
-        },
-        {
-          "name": "Harlequin Crest",
-          "note": "Opcional — \"Cooldown Reduction (affix aleatório), Intelligence, ou Maximum Life\""
+          "note": "pequeno ganho de QoL — só vale a pena com rolls muito bons"
         }
       ],
-      "mythic_priority_note": "A Icy Veins não dá um ranking único entre os 3 — só classifica Raiment of the Sea e Ring of Starless Skies como \"recommended\" e Harlequin Crest como \"optional\".",
       "splinters": [
         {
-          "name": "Abyssal Splinter of Anguish",
-          "note": "prioridade 1 (ordem citada no guia)"
+          "name": "Abyssal Splinter of Hellfire",
+          "note": "prioridade 1 (equipar em Leoric's Crown)"
         },
         {
           "name": "Abyssal Splinter of Pain",
-          "note": "prioridade 2"
+          "note": "prioridade 2 (equipar em Leoric's Crown)"
+        },
+        {
+          "name": "Abyssal Splinter of the Black Soulstone",
+          "note": "prioridade 3"
+        },
+        {
+          "name": "Abyssal Splinter of Anguish",
+          "note": "prioridade 4"
         },
         {
           "name": "Abyssal Splinter of Sin",
-          "note": "prioridade 3"
+          "note": "prioridade 5"
         }
       ],
       "enchantments": [
@@ -830,8 +849,7 @@
       ],
       "runes_note": "Runewords com explicação textual (Icy Veins): \"Cir + Vex\" — geração de Offering e bônus de rank de skill; \"Noc + Thul\" — crowd control e ativa Frost Nova, aplicando Freeze e Vulnerable.",
       "planner_url": null,
-      "planner_url_note": "Não encontrado — sem link de planner na página da Icy Veins usada pra esse gap-fill.",
-      "source_gap_fill": "https://www.icy-veins.com/d4/guides/blizzard-sorcerer-build/"
+      "planner_url_note": "Não encontrado — sem link de planner na página da Icy Veins usada pra esse gap-fill."
     },
     {
       "id": "meteoro_sustentado",
