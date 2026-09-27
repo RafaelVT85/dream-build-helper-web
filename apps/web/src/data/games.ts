@@ -10,7 +10,11 @@ import { applyBuildOverride, loadBuildOverrides } from "../lib/build-overrides";
 export async function fetchGamesIndex() {
   const res = await fetch("/data/games/index.json");
   if (!res.ok) throw new Error("Não consegui carregar a lista de jogos");
-  return res.json() as Promise<{ games: { id: string; name: string; file: string }[] }>;
+  // O arquivo real (/public/data/games/index.json) é um array puro na raiz,
+  // não um objeto { games: [...] } — embutimos aqui pra manter o resto do
+  // código (GamesList, GameDetail) simples, sem mexer no formato do arquivo.
+  const games = (await res.json()) as { id: string; name: string; file: string }[];
+  return { games };
 }
 
 export async function fetchGame(file: string, gameId: string): Promise<GameDataFile> {
