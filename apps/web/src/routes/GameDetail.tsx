@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { fetchGame, fetchGamesIndex } from "../data/games";
-import type { GameDataFile } from "../../../packages/data-schema/types";
+import type { GameDataFile } from "../../../../packages/data-schema/types";
 
 export default function GameDetail() {
   const { gameId } = useParams();

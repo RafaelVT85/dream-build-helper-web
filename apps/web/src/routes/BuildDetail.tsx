@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { fetchGame, fetchGamesIndex } from "../data/games";
-import type { AnyBuild, GameDataFile } from "../../../packages/data-schema/types";
+import type { AnyBuild, GameDataFile } from "../../../../packages/data-schema/types";
 import BuildView from "../components/BuildView";
 
 export default function BuildDetail() {
