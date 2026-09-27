@@ -4,12 +4,42 @@
 // Por enquanto o objetivo é só dar tipagem e um único lugar de referência,
 // sem mudar o formato dos dados existentes.
 
+// Schema normalizado de equipamento (fase 1 da normalização do Diablo —
+// ver claude/plano-migracao-react.md). Antes cada build guardava "equipment"
+// num formato ad-hoc próprio (chaves soltas "<slot>_aspect", "<slot>" pra
+// Mythic Unique, texto de afixo em vez de nome de item...). Builds cujo
+// guia de origem não associa itens a slots (só dá ordem de prioridade de
+// craft) continuam com o formato antigo nesse campo — ver
+// "equipment_shape_note" quando presente.
+export type EquipmentSlotName =
+  | "helm"
+  | "chest"
+  | "gloves"
+  | "pants"
+  | "boots"
+  | "amulet"
+  | "ring_1"
+  | "ring_2"
+  | "weapon";
+
+export type EquipmentSlot = {
+  slot: EquipmentSlotName;
+  // "affix": a fonte só dá prioridade de afixo pro slot, sem nomear um
+  // Aspect/Unique/Mythic específico (comum em builds de leveling) — nesse
+  // caso "name" guarda a lista de afixos, não um nome de item.
+  itemType: "aspect" | "unique" | "mythic" | "set" | "affix";
+  name: string;
+  note?: string;
+};
+
 export type AnyBuild = {
   id: string;
   name: string;
   source?: string;
   status?: string;
   tier?: string;
+  equipment?: EquipmentSlot[] | Record<string, unknown>;
+  equipment_shape_note?: string;
   [key: string]: unknown;
 };
 

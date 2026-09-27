@@ -189,17 +189,54 @@
         "reinforcement": "Raheir",
         "reinforcement_note": "Bastion ao ficar ferido — ótimo pra sobreviver em combates difíceis."
       },
-      "equipment": {
-        "helm_aspect": "Arcane Ward",
-        "chest_aspect": "Disobedience",
-        "gloves_aspect": "Armageddon",
-        "pants_aspect": "Heavenly Strength",
-        "boots_aspect": "Shredding Blades",
-        "amulet_aspect": "Untarnished Blaze",
-        "ring_1_aspect": "Elemental Acuity",
-        "ring_2_aspect": "Conceited",
-        "weapon_aspect": "Lingering (Cajado)"
-      },
+      "equipment": [
+        {
+          "slot": "helm",
+          "itemType": "aspect",
+          "name": "Arcane Ward"
+        },
+        {
+          "slot": "chest",
+          "itemType": "aspect",
+          "name": "Disobedience"
+        },
+        {
+          "slot": "gloves",
+          "itemType": "aspect",
+          "name": "Armageddon"
+        },
+        {
+          "slot": "pants",
+          "itemType": "aspect",
+          "name": "Heavenly Strength"
+        },
+        {
+          "slot": "boots",
+          "itemType": "aspect",
+          "name": "Shredding Blades"
+        },
+        {
+          "slot": "amulet",
+          "itemType": "aspect",
+          "name": "Untarnished Blaze"
+        },
+        {
+          "slot": "ring_1",
+          "itemType": "aspect",
+          "name": "Elemental Acuity"
+        },
+        {
+          "slot": "ring_2",
+          "itemType": "aspect",
+          "name": "Conceited"
+        },
+        {
+          "slot": "weapon",
+          "itemType": "aspect",
+          "name": "Lingering",
+          "note": "Cajado"
+        }
+      ],
       "equipment_notes": "Pra spammar Firewall sem parar você precisa de um Aspect de recurso — Aspect of Elemental Acuity (acima) é o melhor, mas Prodigy's Aspect e Vulpine's Aspect são substitutos adequados. Sem nenhum aspect de recurso, dá pra levar rolls de Mana Regeneration no equipamento. Quando chegar no node Enchantment Master do Paragon, troque o encantamento de Teleport pelo de dano extra de fogo do Firewall.",
       "planner_url": "https://maxroll.gg/d4/planner/j849ij0q#1"
     },
@@ -329,20 +366,56 @@
         "reinforcement": "Raheir",
         "reinforcement_note": "Bastion ao ficar ferido — ótimo pra sobreviver em combates difíceis."
       },
-      "equipment": {
-        "weapon": "Staff (Cajado de Duas Mãos) — preferido a arma 1H+Foco: \"Two-Handed Staves are preferred over a One-Handed Weapon and Focus setup for higher damage per hit and easier upgrading while leveling.\" (Icy Veins)",
-        "weapon_affixes": "Damage Over Time Multiplier, Weapon Damage, Lightning Damage Multiplier",
-        "helm": "Cooldown Reduction, Resource Cost Reduction",
-        "chest": "Resource Cost Reduction",
-        "gloves": "Damage Over Time Multiplier, Attack Speed",
-        "boots": "Ranks to Blizzard, Movement Speed",
-        "amulet": "Damage Over Time Multiplier, Ranks to All Skills",
-        "rings": "Damage Over Time Multiplier, Attack Speed"
-      },
+      "equipment": [
+        {
+          "slot": "weapon",
+          "itemType": "affix",
+          "name": "Staff (Cajado de Duas Mãos)",
+          "note": "Damage Over Time Multiplier, Weapon Damage, Lightning Damage Multiplier"
+        },
+        {
+          "slot": "helm",
+          "itemType": "affix",
+          "name": "Cooldown Reduction, Resource Cost Reduction"
+        },
+        {
+          "slot": "chest",
+          "itemType": "affix",
+          "name": "Resource Cost Reduction"
+        },
+        {
+          "slot": "gloves",
+          "itemType": "affix",
+          "name": "Damage Over Time Multiplier, Attack Speed"
+        },
+        {
+          "slot": "boots",
+          "itemType": "affix",
+          "name": "Ranks to Blizzard, Movement Speed"
+        },
+        {
+          "slot": "amulet",
+          "itemType": "affix",
+          "name": "Damage Over Time Multiplier, Ranks to All Skills"
+        },
+        {
+          "slot": "ring_1",
+          "itemType": "affix",
+          "name": "Damage Over Time Multiplier, Attack Speed",
+          "note": "fonte não distingue prioridade entre os dois anéis"
+        },
+        {
+          "slot": "ring_2",
+          "itemType": "affix",
+          "name": "Damage Over Time Multiplier, Attack Speed",
+          "note": "fonte não distingue prioridade entre os dois anéis"
+        }
+      ],
       "equipment_notes": "\"Ensure you temper your best item upgrades regularly, as the extra affixes provide a significant advantage while leveling.\" Gemas: Topázio (Lightning Damage) nas armas e Inteligência nas armaduras; Diamante (Resistência a Todos os Elementos) nas joias. Temporada 15 adiciona gemas Splinter (Anguish, Pain, Sin) pros slots de joia. Fonte: Icy Veins, guia de leveling Blizzard Sorcerer.",
       "planner_url": null,
       "planner_url_note": "Não encontrado — a página de leveling da Icy Veins não tem link de planner embutido. O guia equivalente do Maxroll existe mas não pôde ser confirmado com o mesmo nível de detalhe nesta rodada; use o D4Planner genérico como alternativa manual.",
-      "source_gap_fill": "https://www.icy-veins.com/d4/guides/blizzard-sorcerer-leveling-build/"
+      "source_gap_fill": "https://www.icy-veins.com/d4/guides/blizzard-sorcerer-leveling-build/",
+      "equipment_shape_note": "Build de leveling: a fonte só dá prioridade de afixos por slot, sem nomear Aspects/Uniques específicos — por isso itemType é \"affix\" e o campo \"name\" guarda a lista de afixos, não um nome de item."
     },
     {
       "id": "fireball_leveling",
@@ -383,17 +456,56 @@
         "reinforcement": "Varyana",
         "reinforcement_note": "Bloodthirst (bônus de dano/attack speed)."
       },
-      "equipment": {
-        "weapon": "Staff (Cajado de Duas Mãos) — \"Two-Handed Staves are preferred over One-Handed Weapons\"",
-        "weapon_affixes": "Weapon Damage, Fire Damage, All Damage; Intelligence, Max Life",
-        "helm": "Cooldown Reduction, Resource Cost Reduction",
-        "chest": "Resource Cost Reduction; Intelligence, Max Life",
-        "gloves": "Ranks to Fireball; Attack Speed, Crit Chance",
-        "pants": "Intelligence, Max Life, Resistances",
-        "boots": "Movement Speed; Intelligence, Max Life",
-        "amulet": "Ranks to All Skills/Pyromancy Skills; Attack Speed, Crit Chance",
-        "rings": "Attack Speed, Crit Chance, Cooldown Reduction"
-      },
+      "equipment": [
+        {
+          "slot": "weapon",
+          "itemType": "affix",
+          "name": "Staff (Cajado de Duas Mãos)",
+          "note": "Weapon Damage, Fire Damage, All Damage; Intelligence, Max Life"
+        },
+        {
+          "slot": "helm",
+          "itemType": "affix",
+          "name": "Cooldown Reduction, Resource Cost Reduction"
+        },
+        {
+          "slot": "chest",
+          "itemType": "affix",
+          "name": "Resource Cost Reduction; Intelligence, Max Life"
+        },
+        {
+          "slot": "gloves",
+          "itemType": "affix",
+          "name": "Ranks to Fireball; Attack Speed, Crit Chance"
+        },
+        {
+          "slot": "pants",
+          "itemType": "affix",
+          "name": "Intelligence, Max Life, Resistances"
+        },
+        {
+          "slot": "boots",
+          "itemType": "affix",
+          "name": "Movement Speed; Intelligence, Max Life"
+        },
+        {
+          "slot": "amulet",
+          "itemType": "affix",
+          "name": "Ranks to All Skills/Pyromancy Skills; Attack Speed, Crit Chance"
+        },
+        {
+          "slot": "ring_1",
+          "itemType": "affix",
+          "name": "Attack Speed, Crit Chance, Cooldown Reduction",
+          "note": "fonte não distingue prioridade entre os dois anéis"
+        },
+        {
+          "slot": "ring_2",
+          "itemType": "affix",
+          "name": "Attack Speed, Crit Chance, Cooldown Reduction",
+          "note": "fonte não distingue prioridade entre os dois anéis"
+        }
+      ],
       "equipment_notes": "\"Two-Handed Staves are preferred over One-Handed Weapons\"; tempere upgrades regularmente. Gemas: Rubi (arma, Fire Damage), Topázio (armadura, Inteligência), Diamante (joias, Resistência a Todos). Temporada 15 adiciona gemas Splinter (Anguish, Pain, Sin). Runewords recomendadas pela Icy Veins: \"Neo+Gar\" e \"Cir+Qua\". Aspects prioritários citados: Cremator's Aspect, Aspect of the Untarnished Blaze, Edgemaster's Aspect, Scornful Aspect, Aspect of Heavenly Strength.",
       "glyph_priority_note": "Não encontrado como lista de prioridade — a página só traz notas de balanceamento da Temporada 15 pra 3 glyphs específicos (Pyromaniac, Eliminator, Elemental Summoner), sem ordenar uma prioridade geral.",
       "pros_cons_note": "Não encontrado — a página de leveling não lista pros/cons (isso normalmente fica só no guia de endgame).",
@@ -401,7 +513,8 @@
       "uniques_useful_note": "Não encontrado — a própria página defere a recomendação de uniques pro guia de endgame, sem citar nenhum na página de leveling.",
       "planner_url": null,
       "planner_url_note": "Não encontrado — sem link de planner na página da Icy Veins.",
-      "source_gap_fill": "https://www.icy-veins.com/d4/guides/fireball-sorcerer-leveling-build/"
+      "source_gap_fill": "https://www.icy-veins.com/d4/guides/fireball-sorcerer-leveling-build/",
+      "equipment_shape_note": "Build de leveling: a fonte só dá prioridade de afixos por slot, sem nomear Aspects/Uniques específicos — por isso itemType é \"affix\" e o campo \"name\" guarda a lista de afixos, não um nome de item."
     },
     {
       "id": "ice_spikes_leveling",
@@ -648,17 +761,55 @@
           "Burning Instinct": "Flamefeeder"
         }
       },
-      "equipment": {
-        "helm": "Vision of the Firestorm (Mythic Unique)",
-        "chest": "Raiment of the Infinite (Mythic Unique)",
-        "gloves_aspect": "Lingering",
-        "pants": "Tibault's Will (Mythic Unique)",
-        "boots_aspect": "Shredding Blades",
-        "amulet_aspect": "Untarnished Blaze / Overheating",
-        "ring_1": "Drognan's Anguish (Mythic Unique)",
-        "ring_2_aspect": "Duelist's",
-        "weapon_aspect": "Orsivane (Mythic Unique Mace) + Phoenix (Unique Focus)"
-      },
+      "equipment": [
+        {
+          "slot": "helm",
+          "itemType": "mythic",
+          "name": "Vision of the Firestorm"
+        },
+        {
+          "slot": "chest",
+          "itemType": "mythic",
+          "name": "Raiment of the Infinite"
+        },
+        {
+          "slot": "gloves",
+          "itemType": "aspect",
+          "name": "Lingering"
+        },
+        {
+          "slot": "pants",
+          "itemType": "mythic",
+          "name": "Tibault's Will"
+        },
+        {
+          "slot": "boots",
+          "itemType": "aspect",
+          "name": "Shredding Blades"
+        },
+        {
+          "slot": "amulet",
+          "itemType": "aspect",
+          "name": "Untarnished Blaze",
+          "note": "alternativa: Overheating"
+        },
+        {
+          "slot": "ring_1",
+          "itemType": "mythic",
+          "name": "Drognan's Anguish"
+        },
+        {
+          "slot": "ring_2",
+          "itemType": "aspect",
+          "name": "Duelist's"
+        },
+        {
+          "slot": "weapon",
+          "itemType": "mythic",
+          "name": "Orsivane",
+          "note": "Mace; combinar com Phoenix (Unique Focus) no offhand"
+        }
+      ],
       "pros": [
         "Very Tanky",
         "Excellent AoE",
@@ -770,14 +921,36 @@
           "Frigid Fate": "Adept"
         }
       },
-      "equipment": {
-        "ring_1": "Tal Rasha's Iridescent Loop",
-        "ring_2_upgrade": "Ring of Starless Skies",
-        "ring_pit": "Heir of Perdition",
-        "weapon": "Blue Rose",
-        "helm": "Godslayer Crown (alt: Harlequin Crest)",
-        "chest": "Raiment of the Infinite (alt: Shroud of False Death)"
-      },
+      "equipment": [
+        {
+          "slot": "ring_1",
+          "itemType": "mythic",
+          "name": "Tal Rasha's Iridescent Loop"
+        },
+        {
+          "slot": "ring_2",
+          "itemType": "unique",
+          "name": "Ring of Starless Skies",
+          "note": "alternativa pra pushing de Pit: Heir of Perdition"
+        },
+        {
+          "slot": "weapon",
+          "itemType": "unique",
+          "name": "Blue Rose"
+        },
+        {
+          "slot": "helm",
+          "itemType": "mythic",
+          "name": "Godslayer Crown",
+          "note": "alternativa: Harlequin Crest"
+        },
+        {
+          "slot": "chest",
+          "itemType": "mythic",
+          "name": "Raiment of the Infinite",
+          "note": "alternativa: Shroud of False Death"
+        }
+      ],
       "pros": [
         "Huge AoE",
         "Low Requirements",
@@ -849,7 +1022,8 @@
       ],
       "runes_note": "Runewords com explicação textual (Icy Veins): \"Cir + Vex\" — geração de Offering e bônus de rank de skill; \"Noc + Thul\" — crowd control e ativa Frost Nova, aplicando Freeze e Vulnerable.",
       "planner_url": null,
-      "planner_url_note": "Não encontrado — sem link de planner na página da Icy Veins usada pra esse gap-fill."
+      "planner_url_note": "Não encontrado — sem link de planner na página da Icy Veins usada pra esse gap-fill.",
+      "equipment_shape_note": "Gloves/pants/boots/amulet ficaram sem confirmação visual na fonte (ver equipment_notes) — por isso não entraram no array normalizado."
     },
     {
       "id": "meteoro_sustentado",
@@ -977,7 +1151,8 @@
       "runes_note": "Runewords com explicação textual (Icy Veins): \"Yul + Gar\" — acumula Chance de Crítico após lançar skills com cooldown; \"Igni + Eom\" — reduz cooldowns ativos em 0.1s por cast. Alternativas mostradas só como ícone, sem explicação textual na página: Cir, Neo, Noc — \"alternative options if you do not have the Ritual Runes listed above\" (sem detalhar o efeito de cada uma).",
       "planner_url": null,
       "planner_url_note": "Não encontrado — sem link de planner na página da Icy Veins usada pra esse gap-fill.",
-      "source_gap_fill": "https://www.icy-veins.com/d4/guides/meteor-sorcerer-build/"
+      "source_gap_fill": "https://www.icy-veins.com/d4/guides/meteor-sorcerer-build/",
+      "equipment_shape_note": "Fonte não associa esses itens a slots de equipamento — só dá uma ordem de prioridade de craft (priority_order) e de splinters (soul_splinters_priority). Por isso não foi convertido pro array EquipmentSlot[] normalizado (evita inventar slot que a fonte não confirma); mythic_priority no nível da build tem a mesma lista com notas de %."
     },
     {
       "id": "ice_spikes",
@@ -1165,7 +1340,8 @@
         "Lower Defense"
       ],
       "planner_url": null,
-      "planner_url_note": "Não encontrado — não há link de D4Planner específico desse build embutido na página (só o link genérico do menu de navegação do site)."
+      "planner_url_note": "Não encontrado — não há link de D4Planner específico desse build embutido na página (só o link genérico do menu de navegação do site).",
+      "equipment_shape_note": "Fonte não associa esses itens a slots de equipamento — só dá ordens de prioridade de craft (mythic_craft_priority), splinters (soul_splinters_priority) e charms (unique_charms). Por isso não foi convertido pro array EquipmentSlot[] normalizado (evita inventar slot que a fonte não confirma)."
     }
   ],
   "boss_farming": [
