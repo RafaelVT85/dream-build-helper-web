@@ -1,7 +1,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { fetchGamesIndex, fetchGame } from "../data/games";
 import { getBuildOverride, loadBuildOverrides, setBuildOverrideLocal } from "../lib/build-overrides";
-import type { AnyBuild, GameDataFile } from "../../../packages/data-schema/types";
+import type { AnyBuild, GameDataFile } from "../../../../packages/data-schema/types";
 
 // Painel de admin simples: login por senha (ADMIN_PASSWORD no Vercel),
 // escolhe jogo + build, edita os campos como JSON e salva. A senha nunca
