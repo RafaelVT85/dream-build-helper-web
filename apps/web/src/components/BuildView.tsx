@@ -1,4 +1,4 @@
-import type { AnyBuild } from "../../../../packages/data-schema/types";
+import type { AnyBuild, EquipmentSlot } from "../../../../packages/data-schema/types";
 
 // Exibição legível de uma build, sem depender de um schema normalizado
 // (os dados ainda vêm no formato "solto" documentado em
@@ -20,6 +20,7 @@ const FIELD_LABELS: Record<string, string> = {
   uniques_useful: "Únicos úteis",
   equipment: "Equipamento",
   equipment_notes: "Observações sobre equipamento",
+  equipment_shape_note: "Nota sobre o formato do equipamento",
   mercenary: "Mercenário",
   paragon: "Paragon",
   pros: "Prós",
@@ -37,6 +38,59 @@ const FIELD_LABELS: Record<string, string> = {
 };
 
 const HIDDEN_FIELDS = new Set(["id", "name", "phase", "status", "tier"]);
+
+const SLOT_LABELS: Record<string, string> = {
+  helm: "Elmo",
+  chest: "Peitoral",
+  gloves: "Luvas",
+  pants: "Calças",
+  boots: "Botas",
+  amulet: "Amuleto",
+  ring_1: "Anel 1",
+  ring_2: "Anel 2",
+  weapon: "Arma",
+};
+
+const ITEM_TYPE_LABELS: Record<string, string> = {
+  aspect: "Aspect",
+  unique: "Unique",
+  mythic: "Mythic Unique",
+  set: "Set",
+  affix: "Prioridade de afixo",
+};
+
+// Equipamento normalizado (EquipmentSlot[]) — ver packages/data-schema/types.ts.
+// Algumas builds ainda guardam "equipment" no formato antigo (a fonte não dá
+// slot pros itens, só ordem de prioridade de craft); pra essas, cai no
+// ValueView genérico como antes.
+function isEquipmentSlotArray(value: unknown): value is EquipmentSlot[] {
+  return (
+    Array.isArray(value) &&
+    value.length > 0 &&
+    value.every(
+      (item) =>
+        item !== null &&
+        typeof item === "object" &&
+        "slot" in item &&
+        "itemType" in item &&
+        "name" in item
+    )
+  );
+}
+
+function EquipmentView({ equipment }: { equipment: EquipmentSlot[] }) {
+  return (
+    <div style={{ display: "grid", gap: 6 }}>
+      {equipment.map((item) => (
+        <div key={item.slot}>
+          <strong>{SLOT_LABELS[item.slot] ?? item.slot}:</strong> {item.name}{" "}
+          <span className="pill">{ITEM_TYPE_LABELS[item.itemType] ?? item.itemType}</span>
+          {item.note ? <div className="muted" style={{ fontSize: 13 }}>{item.note}</div> : null}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function label(key: string): string {
   return FIELD_LABELS[key] ?? key.replace(/_/g, " ");
@@ -94,7 +148,7 @@ function Section({ title, value }: { title: string; value: unknown }) {
   return (
     <div className="card" style={{ marginBottom: 16 }}>
       <h4 style={{ margin: "0 0 8px" }}>{title}</h4>
-      <ValueView value={value} />
+      {isEquipmentSlotArray(value) ? <EquipmentView equipment={value} /> : <ValueView value={value} />}
     </div>
   );
 }
@@ -107,6 +161,7 @@ const PREFERRED_ORDER = [
   "key_mythic",
   "equipment",
   "equipment_notes",
+  "equipment_shape_note",
   "skill_bar",
   "skill_progression",
   "total_points",
