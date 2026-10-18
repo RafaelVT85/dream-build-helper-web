@@ -4,7 +4,7 @@
 // (applyGameMode/appearance), com chaves de localStorage próprias do app novo
 // pra não colidir com o site estático.
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 const GAME_MODE_KEY = "ajuda-jogos:game-mode";
 const APPEARANCE_KEY = "ajuda-jogos:appearance";
@@ -70,24 +70,38 @@ function loadGameMode(): boolean {
 
 // Modo Jogo: esconde o cabeçalho do app e a "moldura" da tela do jogo, deixando
 // só o conteúdo da build visível — pra jogar com a menor distração possível.
+// Estado compartilhado (um só pro app inteiro): o botão de sair funciona em
+// qualquer tela e a classe no <body> nunca fica fora de sincronia.
+let gameModeValue = loadGameMode();
+const gameModeListeners = new Set<() => void>();
+
+function applyGameMode() {
+  document.body.classList.toggle("game-mode", gameModeValue);
+  try {
+    localStorage.setItem(GAME_MODE_KEY, gameModeValue ? "1" : "0");
+  } catch {
+    // ignora
+  }
+}
+
+function setGlobalGameMode(value: boolean) {
+  gameModeValue = value;
+  applyGameMode();
+  gameModeListeners.forEach((l) => l());
+}
+
 export function useGameMode() {
-  const [gameMode, setGameModeState] = useState<boolean>(() => loadGameMode());
+  const gameMode = useSyncExternalStore(
+    (cb) => {
+      gameModeListeners.add(cb);
+      return () => gameModeListeners.delete(cb);
+    },
+    () => gameModeValue,
+  );
 
   useEffect(() => {
-    document.body.classList.toggle("game-mode", gameMode);
-    try {
-      localStorage.setItem(GAME_MODE_KEY, gameMode ? "1" : "0");
-    } catch {
-      // ignora
-    }
-    return () => {
-      document.body.classList.remove("game-mode");
-    };
+    applyGameMode();
   }, [gameMode]);
 
-  function setGameMode(value: boolean) {
-    setGameModeState(value);
-  }
-
-  return { gameMode, setGameMode };
+  return { gameMode, setGameMode: setGlobalGameMode };
 }
