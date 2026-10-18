@@ -7,7 +7,21 @@ import { applyBuildOverride, loadBuildOverrides } from "../lib/build-overrides";
 // armazenada no Vercel Blob) — o JSON estático nunca é alterado, os
 // overrides só sobrepõem os campos editados na hora de exibir.
 
-export async function fetchGamesIndex() {
+// Cache em memória: voltar de uma build não precisa baixar tudo de novo.
+let indexPromise: Promise<{ games: { id: string; name: string; file: string }[] }> | null = null;
+const gamePromises = new Map<string, Promise<GameDataFile>>();
+
+export function fetchGamesIndex() {
+  if (!indexPromise) {
+    indexPromise = loadGamesIndex().catch((e) => {
+      indexPromise = null;
+      throw e;
+    });
+  }
+  return indexPromise;
+}
+
+async function loadGamesIndex() {
   const res = await fetch("/data/games/index.json");
   if (!res.ok) throw new Error("Não consegui carregar a lista de jogos");
   // O arquivo real (/public/data/games/index.json) é um array puro na raiz,
@@ -17,7 +31,20 @@ export async function fetchGamesIndex() {
   return { games };
 }
 
-export async function fetchGame(file: string, gameId: string): Promise<GameDataFile> {
+export function fetchGame(file: string, gameId: string): Promise<GameDataFile> {
+  const k = `${gameId}:${file}`;
+  let p = gamePromises.get(k);
+  if (!p) {
+    p = loadGame(file, gameId).catch((e) => {
+      gamePromises.delete(k);
+      throw e;
+    });
+    gamePromises.set(k, p);
+  }
+  return p;
+}
+
+async function loadGame(file: string, gameId: string): Promise<GameDataFile> {
   const [res] = await Promise.all([fetch(`/data/games/${file}`), loadBuildOverrides()]);
   if (!res.ok) throw new Error(`Não consegui carregar os dados de ${file}`);
   const game: GameDataFile = await res.json();
