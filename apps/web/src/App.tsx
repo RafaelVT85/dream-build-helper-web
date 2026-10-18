@@ -5,7 +5,7 @@ import GameDetail from "./routes/GameDetail";
 import BuildDetail from "./routes/BuildDetail";
 import AdminPage from "./admin/AdminPage";
 import AppearancePanel from "./components/AppearancePanel";
-import { useApplyStoredAppearance } from "./lib/shapeUiPrefs";
+import { useApplyStoredAppearance, useGameMode } from "./lib/shapeUiPrefs";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -15,8 +15,22 @@ function ScrollToTop() {
   return null;
 }
 
+function NotFound() {
+  useEffect(() => {
+    document.title = "Página não encontrada — Ajuda Jogos";
+  }, []);
+  return (
+    <div className="card" style={{ margin: 24 }}>
+      <h3 style={{ marginTop: 0 }}>Página não encontrada</h3>
+      <p className="muted">Esse endereço não existe.</p>
+      <Link to="/" className="pill" style={{ textDecoration: "none" }}>← Ir para os jogos</Link>
+    </div>
+  );
+}
+
 export default function App() {
   useApplyStoredAppearance();
+  const { gameMode, setGameMode } = useGameMode();
 
   return (
     <div className="app-shell">
@@ -38,8 +52,14 @@ export default function App() {
           <Route path="/jogos/:gameId" element={<GameDetail />} />
           <Route path="/jogos/:gameId/builds/:buildId" element={<BuildDetail />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      {gameMode ? (
+        <button className="pill game-mode-exit" onClick={() => setGameMode(false)} title="Mostrar o cabeçalho de novo">
+          🎮 Sair do Modo Jogo
+        </button>
+      ) : null}
     </div>
   );
 }
