@@ -8,6 +8,7 @@ export default async function handler(req, res) {
   if (req.method !== "GET") {
     return res.status(405).json({ error: "Método não permitido" });
   }
+  res.setHeader("Cache-Control", "no-store");
   const result = { skill: {}, item: {}, star: {}, game: {}, traveler: {} };
   try {
     let cursor;
@@ -25,7 +26,8 @@ export default async function handler(req, res) {
       const [, kind] = m;
       if (!result[kind]) return;
       try {
-        const resp = await fetch(b.url);
+        const v = new Date(b.uploadedAt).getTime();
+        const resp = await fetch(`${b.url}?v=${v}`, { cache: "no-store" });
         const data = await resp.json();
         const realKey = data._originalKey;
         delete data._originalKey;
@@ -40,6 +42,7 @@ export default async function handler(req, res) {
     return res.status(200).json(result);
   } catch (err) {
     console.error(err);
-    return res.status(200).json(result);
+    // Erro de verdade (não devolve "vazio" fingindo que está tudo bem).
+    return res.status(500).json({ error: String(err) });
   }
 }

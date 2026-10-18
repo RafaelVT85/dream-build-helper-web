@@ -24,12 +24,15 @@ export default async function handler(req, res) {
     let current = {};
     const { blobs } = await list({ prefix: path, limit: 1 });
     if (blobs.length) {
-      const response = await fetch(blobs[0].url);
+      // ?v=<uploadedAt> fura o cache do CDN: sem isso, um segundo salvamento
+      // lia a versão antiga do arquivo e apagava o campo salvo antes.
+      const v = new Date(blobs[0].uploadedAt).getTime();
+      const response = await fetch(`${blobs[0].url}?v=${v}`, { cache: "no-store" });
       current = await response.json();
     }
 
     for (const [field, value] of Object.entries(patch)) {
-      if (value === undefined || value === "") {
+      if (value === undefined || value === null || value === "") {
         delete current[field];
       } else {
         current[field] = value;
@@ -39,7 +42,7 @@ export default async function handler(req, res) {
 
     await put(path, JSON.stringify(current), {
       access: "public", contentType: "application/json",
-      addRandomSuffix: false, allowOverwrite: true,
+      addRandomSuffix: false, allowOverwrite: true, cacheControlMaxAge: 60,
     });
 
     return res.status(200).json({ ok: true, data: current });

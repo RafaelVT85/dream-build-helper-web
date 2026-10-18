@@ -23,13 +23,18 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "relPath e dataBase64 são obrigatórios" });
   }
 
+  if (contentType && !/^image\//.test(contentType)) {
+    return res.status(400).json({ error: "Só imagens são aceitas" });
+  }
+
   try {
     const bytes = Buffer.from(dataBase64, "base64");
+    // addRandomSuffix: cada upload ganha uma URL nova — trocar a imagem de um
+    // item nunca fica preso na versão antiga em cache do CDN/navegador.
     const blob = await put(`icons/${relPath}`, bytes, {
       access: "public",
       contentType: contentType || "image/png",
-      addRandomSuffix: false,
-      allowOverwrite: true,
+      addRandomSuffix: true,
     });
 
     // Grava a URL no arquivo PRÓPRIO desse item (kind+key), não num arquivo
@@ -39,7 +44,8 @@ export default async function handler(req, res) {
       let current = {};
       const { blobs } = await list({ prefix: path, limit: 1 });
       if (blobs.length) {
-        const response = await fetch(blobs[0].url);
+        const v = new Date(blobs[0].uploadedAt).getTime();
+        const response = await fetch(`${blobs[0].url}?v=${v}`, { cache: "no-store" });
         current = await response.json();
       }
       current.icon = blob.url;
@@ -49,6 +55,7 @@ export default async function handler(req, res) {
         contentType: "application/json",
         addRandomSuffix: false,
         allowOverwrite: true,
+        cacheControlMaxAge: 60,
       });
     }
 
