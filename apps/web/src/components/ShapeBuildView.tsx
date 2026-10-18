@@ -73,14 +73,26 @@ const inputStyle = {
   fontSize: 13,
 };
 
+const SHOW_DESC_KEY = "ajuda-jogos:show-descriptions";
+
+function loadShowDesc(): boolean {
+  try {
+    return localStorage.getItem(SHOW_DESC_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
 function EssenceRow({
   buildId,
   rawEssence,
   overrides,
   fallbackKey,
   editMode,
+  showAll,
   updateOverride,
 }: {
+  showAll: boolean;
   buildId: string;
   rawEssence: ShapeEssence;
   overrides: OverridesStore;
@@ -91,7 +103,8 @@ function EssenceRow({
   const essence = withOverride(overrides, "item", rawEssence);
   const overrideKey = overrideKeyFor(essence);
   const obtainKey = essence.key || fallbackKey;
-  const [showEffect, setShowEffect] = useState(false);
+  const [showEffectLocal, setShowEffect] = useState(false);
+  const showEffect = showAll || showEffectLocal;
   const [obtained, setObtained] = useState(() => isObtained(buildId, obtainKey));
   const [name, setName] = useState(essence.name);
   const [effect, setEffect] = useState(essence.effect ?? "");
@@ -140,15 +153,16 @@ function EssenceRow({
       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
         <input type="checkbox" checked={obtained} onChange={toggle} title="Já consegui essa essência nessa run" />
         <IconOrBadge iconKey={essence.key} kind="item" value={essence.type} explicitPath={essence.icon} rarity={essence.rarity} />
-        <span style={{ opacity: obtained ? 0.5 : 1, textDecoration: obtained ? "line-through" : "none" }}>
-          {abbrevEssence(essence.name)}
+        <span title={essence.name} style={{ opacity: obtained ? 0.5 : 1, textDecoration: obtained ? "line-through" : "none" }}>
+          {showAll ? essence.name : abbrevEssence(essence.name)}
         </span>
         {essence.note ? <span className="pill">{String(essence.note)}</span> : null}
         {essence.effect ? (
           <button
             onClick={() => setShowEffect((v) => !v)}
             className="muted"
-            style={{ background: "none", border: "none", cursor: "pointer", fontSize: "1rem" }}
+            aria-expanded={showEffect}
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: "1.1rem", padding: "4px 8px" }}
             title="Ver descrição"
           >
             ⓘ
@@ -170,8 +184,10 @@ function MemoryCard({
   overrides,
   index,
   editMode,
+  showAll,
   updateOverride,
 }: {
+  showAll: boolean;
   buildId: string;
   rawMemory: ShapeMemory;
   overrides: OverridesStore;
@@ -182,7 +198,8 @@ function MemoryCard({
   const memory = withOverride(overrides, "skill", rawMemory);
   const overrideKey = overrideKeyFor(memory);
   const memKey = memory.key || memory.name;
-  const [expanded, setExpanded] = useState(false);
+  const [expandedLocal, setExpanded] = useState(false);
+  const expanded = showAll || expandedLocal;
   const [obtained, setObtained] = useState(() => isObtained(buildId, memKey));
   const [name, setName] = useState(memory.name);
   const [effect, setEffect] = useState(memory.effect ?? "");
@@ -221,6 +238,7 @@ function MemoryCard({
                 overrides={overrides}
                 fallbackKey={`${memKey}__${e.name}`}
                 editMode={editMode}
+                showAll={showAll}
                 updateOverride={updateOverride}
               />
             ))}
@@ -236,6 +254,7 @@ function MemoryCard({
         <input type="checkbox" checked={obtained} onChange={toggle} title="Já consegui essa Memory nessa run" />
         <button
           onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
           style={{
             background: "none",
             border: "none",
@@ -271,6 +290,7 @@ function MemoryCard({
               overrides={overrides}
               fallbackKey={`${memKey}__${e.name}`}
               editMode={editMode}
+              showAll={showAll}
               updateOverride={updateOverride}
             />
           ))}
@@ -382,21 +402,73 @@ export default function ShapeBuildView({
 }) {
   const [editMode, setEditMode] = useState(false);
   const [resetCounter, setResetCounter] = useState(0);
+  const [showAll, setShowAll] = useState(loadShowDesc);
+  const [notesOpen, setNotesOpen] = useState(false);
+  const notes = build.notes ? String(build.notes) : "";
+  const longNotes = notes.length > 280;
+
+  function toggleShowAll() {
+    const next = !showAll;
+    setShowAll(next);
+    try {
+      localStorage.setItem(SHOW_DESC_KEY, next ? "1" : "0");
+    } catch {
+      /* ignore */
+    }
+  }
 
   return (
     <div>
       <div className="muted" style={{ display: "flex", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
         {build.season ? <span>{build.season}</span> : null}
         {build.date ? <span>{build.date}</span> : null}
-        <span title="Número ilustrativo — não puxa dados reais do site da comunidade">👍 {build.likes ?? 0}</span>
-        <span title="Número ilustrativo — não puxa dados reais do site da comunidade">👁 {build.views ?? 0}</span>
+        <span title="Likes no site da comunidade (copiados na data da build; podem estar desatualizados)">👍 {build.likes ?? 0}</span>
+        <span title="Views no site da comunidade (copiadas na data da build; podem estar desatualizadas)">👁 {build.views ?? 0}</span>
       </div>
+
+      {notes ? (
+        <div className="card" style={{ marginBottom: 16 }}>
+          <strong>Dicas da build</strong>
+          <p
+            className="muted"
+            style={{
+              fontSize: 14,
+              margin: "6px 0 0",
+              lineHeight: 1.5,
+              ...(longNotes && !notesOpen
+                ? { display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" as const, overflow: "hidden" }
+                : {}),
+            }}
+          >
+            {notes}
+          </p>
+          {longNotes ? (
+            <button
+              className="pill"
+              aria-expanded={notesOpen}
+              style={{ cursor: "pointer", border: "1px solid var(--border)", background: "none", marginTop: 8 }}
+              onClick={() => setNotesOpen((v) => !v)}
+            >
+              {notesOpen ? "Mostrar menos ▴" : "Ler tudo ▾"}
+            </button>
+          ) : null}
+        </div>
+      ) : null}
 
       {build.memories?.length ? (
         <>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8, marginBottom: 8 }}>
             <h4 style={{ margin: 0 }}>Memories e Essências</h4>
-            <div style={{ display: "flex", gap: 8 }}>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <button
+                className="pill"
+                aria-pressed={showAll}
+                style={{ cursor: "pointer", border: "1px solid var(--border)", background: showAll ? "var(--accent)" : "none", color: showAll ? "#101014" : "var(--accent)" }}
+                onClick={toggleShowAll}
+                title="Mostrar a descrição de todas as Memories e Essências"
+              >
+                📖 {showAll ? "Ocultar descrições" : "Mostrar descrições"}
+              </button>
               <button className="pill" style={{ cursor: "pointer", border: "1px solid var(--border)", background: editMode ? "var(--accent)" : "none", color: editMode ? "#101014" : "var(--accent)" }} onClick={() => setEditMode((v) => !v)}>
                 ✏️ {editMode ? "Concluir edição" : "Editar"}
               </button>
@@ -404,6 +476,7 @@ export default function ShapeBuildView({
                 className="pill"
                 style={{ cursor: "pointer", border: "1px solid var(--border)", background: "none" }}
                 onClick={() => {
+                  if (!window.confirm("Limpar tudo que você marcou como conseguido nessa build?")) return;
                   resetObtained(build.id);
                   setResetCounter((n) => n + 1);
                 }}
@@ -420,6 +493,7 @@ export default function ShapeBuildView({
               overrides={overrides}
               index={i}
               editMode={editMode}
+              showAll={showAll}
               updateOverride={updateOverride}
             />
           ))}
@@ -430,11 +504,6 @@ export default function ShapeBuildView({
 
       <ConstellationSection traveler={traveler} overrides={overrides} editMode={editMode} updateOverride={updateOverride} />
 
-      {build.notes ? (
-        <p className="muted" style={{ marginTop: 16 }}>
-          {build.notes}
-        </p>
-      ) : null}
     </div>
   );
 }
