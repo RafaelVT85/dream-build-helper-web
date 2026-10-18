@@ -51,7 +51,18 @@ export default function BuildDetail() {
       .catch((e) => setError(e.message));
   }, [gameId, buildId, phase, travelerParam]);
 
-  if (error) return <p className="card" style={{ margin: 24 }}>{error}</p>;
+  useEffect(() => {
+    const n = shapeData ? shapeData.build.name : build ? String(build.name ?? "") : "";
+    if (n) document.title = `${n} — Ajuda Jogos`;
+  }, [shapeData, build]);
+
+  if (error)
+    return (
+      <div className="card" style={{ margin: 24 }}>
+        <p style={{ marginTop: 0 }}>{error}</p>
+        <Link to={gameId ? `/jogos/${gameId}` : "/"} className="pill" style={{ textDecoration: "none" }}>← Voltar</Link>
+      </div>
+    );
 
   if (shapeData) {
     const title = `${shapeData.traveler.name} — ${shapeData.build.name}`;

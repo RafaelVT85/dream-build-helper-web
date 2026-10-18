@@ -7,12 +7,14 @@ export default function GamesList() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    document.title = "Ajuda Jogos";
     fetchGamesIndex()
       .then((data) => setGames(data.games))
       .catch((e) => setError(e.message));
   }, []);
 
-  if (error) return <p className="card" style={{ margin: 24 }}>{error}</p>;
+  if (error) return <p className="card" style={{ margin: 24 }}>{error} — <button onClick={() => window.location.reload()}>Tentar de novo</button></p>;
+  if (!games.length) return <p style={{ margin: 24 }} className="muted">Carregando jogos…</p>;
 
   return (
     <div className="grid">
