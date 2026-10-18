@@ -52,7 +52,18 @@ export default function GameDetail() {
       .catch((e) => setError(e.message));
   }, [gameId]);
 
-  if (error) return <p className="card" style={{ margin: 24 }}>{error}</p>;
+  useEffect(() => {
+    const n = game ? String((game as { name?: unknown }).name ?? "") : "";
+    if (n) document.title = `${n} — Ajuda Jogos`;
+  }, [game]);
+
+  if (error)
+    return (
+      <div className="card" style={{ margin: 24 }}>
+        <p style={{ marginTop: 0 }}>{error}</p>
+        <Link to="/" className="pill" style={{ textDecoration: "none" }}>← Todos os jogos</Link>
+      </div>
+    );
   if (!game) return <p style={{ margin: 24 }} className="muted">Carregando…</p>;
 
   if (isShapeGame(game)) {
@@ -122,6 +133,9 @@ export default function GameDetail() {
                 >
                   {b.tag ? <span className="pill">{b.tag}</span> : null}
                   <h3 style={{ margin: "8px 0 0" }}>{b.name}</h3>
+                  <p className="build-summary">
+                    {(b.memories ?? []).map((m) => m.name).join(" · ")}
+                  </p>
                   <p className="muted" style={{ margin: "8px 0 0", fontSize: 13 }}>
                     👍 {b.likes ?? 0} · 👁 {b.views ?? 0}
                   </p>
