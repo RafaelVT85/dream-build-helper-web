@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { fetchGame, fetchGamesIndex } from "../data/games";
 import type { GameDataFile } from "../../../../packages/data-schema/types";
 import { isShapeGame } from "../../../../packages/data-schema/types";
@@ -11,8 +11,22 @@ export default function GameDetail() {
   const { gameId } = useParams();
   const [game, setGame] = useState<GameDataFile | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [travelerId, setTravelerId] = useState<string | null>(null);
-  const [galleryOpen, setGalleryOpen] = useState(false);
+  // Estado de navegação vive na URL (?traveler=…&view=galeria) pra "voltar" restaurar a tela.
+  const [search, setSearch] = useSearchParams();
+  const travelerId = search.get("traveler");
+  const galleryOpen = search.get("view") === "galeria";
+  const setTravelerId = (id: string) => {
+    const next = new URLSearchParams(search);
+    next.set("traveler", id);
+    next.delete("view");
+    setSearch(next, { replace: true });
+    try { sessionStorage.setItem(`last-traveler:${gameId}`, id); } catch { /* ignore */ }
+  };
+  const setGalleryOpen = (open: boolean) => {
+    const next = new URLSearchParams(search);
+    if (open) next.set("view", "galeria"); else next.delete("view");
+    setSearch(next, { replace: true });
+  };
   const { overrides, updateOverride, updateIcon } = useShapeOverrides();
 
   useEffect(() => {
@@ -25,7 +39,15 @@ export default function GameDetail() {
       })
       .then((g) => {
         setGame(g);
-        if (isShapeGame(g) && g.travelers.length) setTravelerId(g.travelers[0].id);
+        // Sem ?traveler= na URL: retoma o último visto (se existir) ou o primeiro.
+        if (isShapeGame(g) && g.travelers.length && !new URLSearchParams(window.location.search).get("traveler")) {
+          let last: string | null = null;
+          try { last = sessionStorage.getItem(`last-traveler:${gameId}`); } catch { /* ignore */ }
+          const id = g.travelers.find((t) => t.id === last)?.id ?? g.travelers[0].id;
+          const next = new URLSearchParams(window.location.search);
+          next.set("traveler", id);
+          setSearch(next, { replace: true });
+        }
       })
       .catch((e) => setError(e.message));
   }, [gameId]);
@@ -39,6 +61,10 @@ export default function GameDetail() {
 
     return (
       <div>
+        <div style={{ padding: "16px 24px 0" }}>
+          <Link to="/" className="muted" style={{ textDecoration: "none", fontSize: 14 }}>← Todos os jogos</Link>
+          <h2 style={{ margin: "4px 0 0" }}>{String((game as { name?: unknown }).name ?? "")}</h2>
+        </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, padding: "24px 24px 0", flexWrap: "wrap" }}>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {game.travelers.map((t) => (
@@ -72,7 +98,7 @@ export default function GameDetail() {
               background: galleryOpen ? "var(--accent)" : "transparent",
               color: galleryOpen ? "#101014" : "var(--accent)",
             }}
-            onClick={() => setGalleryOpen((v) => !v)}
+            onClick={() => setGalleryOpen(!galleryOpen)}
           >
             {galleryOpen ? "← Voltar pras builds" : "🖼️ Galeria"}
           </button>
@@ -114,6 +140,11 @@ export default function GameDetail() {
   ];
 
   return (
+    <div>
+      <div style={{ padding: "16px 24px 0" }}>
+        <Link to="/" className="muted" style={{ textDecoration: "none", fontSize: 14 }}>← Todos os jogos</Link>
+        <h2 style={{ margin: "4px 0 0" }}>{String((game as { name?: unknown }).name ?? "")}</h2>
+      </div>
     <div className="grid">
       {allBuilds.map((b) => (
         <Link
@@ -126,6 +157,7 @@ export default function GameDetail() {
           <h3 style={{ margin: "8px 0 0" }}>{b.name}</h3>
         </Link>
       ))}
+    </div>
     </div>
   );
 }
