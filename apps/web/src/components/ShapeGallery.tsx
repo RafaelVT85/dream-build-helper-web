@@ -5,8 +5,10 @@
 
 import { useMemo, useState, type ChangeEvent } from "react";
 import type { ShapeGameDataFile } from "../../../../packages/data-schema/types";
-import { overrideKeyFor, withOverride, relIconPath, type OverridesStore } from "../lib/shapeOverrides";
+import { overrideKeyFor, withOverride, relIconPath, type OverridesStore, type SaveResult, type SaveStatus } from "../lib/shapeOverrides";
 import { IconOrBadge, TravelerAvatar, CATEGORY_LABEL } from "./ShapeVisuals";
+import { useFieldCommit } from "../lib/useFieldCommit";
+import SaveBar from "./SaveBar";
 
 const RARITY_OPTIONS = ["", "common", "rare", "epic", "legendary", "unique"];
 const RARITY_LABEL: Record<string, string> = {
@@ -75,16 +77,58 @@ function collectGalleryItems(game: ShapeGameDataFile, overrides: OverridesStore)
   };
 }
 
+function GallerySection({
+  title,
+  kind,
+  items,
+  filter,
+  updateOverride,
+  updateIcon,
+}: {
+  title: string;
+  kind: Kind;
+  items: GalleryItem[];
+  filter: "missing" | "all";
+  updateOverride: UpdateOverride;
+  updateIcon: UpdateIcon;
+}) {
+  const filtered = filter === "all" ? items : items.filter((i) => !i.icon);
+  return (
+    <div style={{ marginBottom: 28 }}>
+      <h4 style={{ margin: "0 0 10px" }}>{title}</h4>
+      {filtered.length === 0 ? (
+        <p className="muted">{filter === "all" ? "Nada aqui ainda." : "Tudo com ícone! 🎉"}</p>
+      ) : (
+        <div style={{ display: "grid", gap: 10 }}>
+          {filtered.map((item) => (
+            <GalleryRow
+              key={`${kind}-${item.key ?? item.id ?? item.name}`}
+              kind={kind}
+              item={item}
+              updateOverride={updateOverride}
+              updateIcon={updateIcon}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ShapeGallery({
   game,
   overrides,
   updateOverride,
   updateIcon,
+  saveStatus,
+  saveNow,
 }: {
   game: ShapeGameDataFile;
   overrides: OverridesStore;
   updateOverride: UpdateOverride;
   updateIcon: UpdateIcon;
+  saveStatus: SaveStatus;
+  saveNow: () => Promise<SaveResult>;
 }) {
   const [filter, setFilter] = useState<"missing" | "all">("missing");
   const data = useMemo(() => collectGalleryItems(game, overrides), [game, overrides]);
@@ -97,44 +141,25 @@ export default function ShapeGallery({
     fontWeight: active ? 700 : 400,
   });
 
-  function Section({ title, kind, items }: { title: string; kind: Kind; items: GalleryItem[] }) {
-    const filtered = filter === "all" ? items : items.filter((i) => !i.icon);
-    return (
-      <div style={{ marginBottom: 28 }}>
-        <h4 style={{ margin: "0 0 10px" }}>{title}</h4>
-        {filtered.length === 0 ? (
-          <p className="muted">{filter === "all" ? "Nada aqui ainda." : "Tudo com ícone! 🎉"}</p>
-        ) : (
-          <div style={{ display: "grid", gap: 10 }}>
-            {filtered.map((item) => (
-              <GalleryRow
-                key={`${kind}-${item.key ?? item.id ?? item.name}`}
-                kind={kind}
-                item={item}
-                updateOverride={updateOverride}
-                updateIcon={updateIcon}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  }
+  const common = { filter, updateOverride, updateIcon };
 
   return (
-    <div style={{ padding: "24px 24px 40px" }}>
-      <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
-        <button className="pill" style={filterBtnStyle(filter === "missing")} onClick={() => setFilter("missing")}>
-          Faltando ícone
-        </button>
-        <button className="pill" style={filterBtnStyle(filter === "all")} onClick={() => setFilter("all")}>
-          Todos
-        </button>
+    <div>
+      <div style={{ padding: "24px 24px 16px" }}>
+        <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
+          <button className="pill" style={filterBtnStyle(filter === "missing")} onClick={() => setFilter("missing")}>
+            Faltando ícone
+          </button>
+          <button className="pill" style={filterBtnStyle(filter === "all")} onClick={() => setFilter("all")}>
+            Todos
+          </button>
+        </div>
+        <GallerySection title="Personagens" kind="traveler" items={data.travelers} {...common} />
+        <GallerySection title="Memories" kind="skill" items={data.skills} {...common} />
+        <GallerySection title="Essências" kind="item" items={data.essences} {...common} />
+        <GallerySection title="Estrelas da constelação" kind="star" items={data.stars} {...common} />
       </div>
-      <Section title="Personagens" kind="traveler" items={data.travelers} />
-      <Section title="Memories" kind="skill" items={data.skills} />
-      <Section title="Essências" kind="item" items={data.essences} />
-      <Section title="Estrelas da constelação" kind="star" items={data.stars} />
+      <SaveBar status={saveStatus} onSave={saveNow} />
     </div>
   );
 }
@@ -154,6 +179,12 @@ function GalleryRow({
   const [uploading, setUploading] = useState(false);
   const [name, setName] = useState(item.name);
   const [effect, setEffect] = useState(item.effect ?? "");
+  const nameCommit = useFieldCommit((v) => {
+    if (v.trim() && v !== item.name) updateOverride(kind, key, { name: v });
+  });
+  const effectCommit = useFieldCommit((v) => {
+    if (v !== (item.effect ?? "")) updateOverride(kind, key, { effect: v || undefined });
+  });
 
   const inputStyle = {
     padding: 6,
@@ -197,8 +228,11 @@ function GalleryRow({
       <div style={{ flex: 1, minWidth: 220, display: "grid", gap: 6 }}>
         <input
           value={name}
-          onChange={(e) => setName(e.target.value)}
-          onBlur={() => name.trim() && name !== item.name && updateOverride(kind, key, { name })}
+          onChange={(e) => {
+            setName(e.target.value);
+            nameCommit.schedule(e.target.value);
+          }}
+          onBlur={() => nameCommit.flush(name)}
           style={inputStyle}
         />
         {kind === "item" && (
@@ -229,8 +263,11 @@ function GalleryRow({
         )}
         <textarea
           value={effect}
-          onChange={(e) => setEffect(e.target.value)}
-          onBlur={() => effect !== (item.effect ?? "") && updateOverride(kind, key, { effect: effect || undefined })}
+          onChange={(e) => {
+            setEffect(e.target.value);
+            effectCommit.schedule(e.target.value);
+          }}
+          onBlur={() => effectCommit.flush(effect)}
           placeholder="Descrição / efeito..."
           style={{ ...inputStyle, minHeight: 50, fontFamily: "inherit" }}
         />

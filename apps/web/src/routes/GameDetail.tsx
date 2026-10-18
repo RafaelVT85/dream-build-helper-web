@@ -27,7 +27,7 @@ export default function GameDetail() {
     if (open) next.set("view", "galeria"); else next.delete("view");
     setSearch(next, { replace: true });
   };
-  const { overrides, updateOverride, updateIcon } = useShapeOverrides();
+  const { overrides, updateOverride, updateIcon, saveStatus, saveNow } = useShapeOverrides();
 
   useEffect(() => {
     if (!gameId) return;
@@ -116,7 +116,7 @@ export default function GameDetail() {
         </div>
 
         {galleryOpen ? (
-          <ShapeGallery game={game} overrides={overrides} updateOverride={updateOverride} updateIcon={updateIcon} />
+          <ShapeGallery game={game} overrides={overrides} updateOverride={updateOverride} updateIcon={updateIcon} saveStatus={saveStatus} saveNow={saveNow} />
         ) : (
           <div className="grid">
             {builds.length === 0 ? (
