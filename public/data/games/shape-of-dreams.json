@@ -5771,146 +5771,11 @@
       "role": "Traveler mais recente do jogo — papel ainda sendo definido pela comunidade",
       "builds": [
         {
-          "id": "cetus-lee-magri-icy-veins",
-          "name": "Frostbite Combo — Ice Shield e Teaching Manners (por lee magri)",
-          "tag": "alternativa",
-          "likes": 1,
-          "views": 200,
-          "date": "2026-09-18",
-          "memories": [
-            {
-              "name": "Veias de Gelo",
-              "key": "icy-veins",
-              "type": "ice",
-              "effect": "Sempre que Cetus causa dano de Frio, ganha uma carga de Sangue Frio, até o máximo de 5. Seu próximo ataque consome todas as cargas de Sangue Frio para disparar uma explosão de gelo, causando 30% de dano de Frio por carga aos inimigos, e Cetus ganha um Escudo de 9% que decai em 3 segundos.",
-              "essences": []
-            },
-            {
-              "name": "Abraço do Frio",
-              "key": "embrace-the-chill",
-              "type": "ice",
-              "effect": "Cria uma Zona de Frio crescente na área alvo por 3 segundos. Aliados dentro da zona ganham um Escudo de 25% a cada 0,5 segundos, durando 3 segundos, enquanto inimigos sofrem 40% de dano de Frio. Ao final da duração, a Zona de Frio explode, causando 200% de dano de Frio aos inimigos e aplicando Atordoamento por 1,5 segundos.",
-              "essences": [
-                {
-                  "name": "Essência da Desolação",
-                  "key": "essence-of-bleakness",
-                  "type": "ice",
-                  "effect": "Esta Memory causa 50% de dano a mais a inimigos afetados por Frio, lentidão, enraizamento ou atordoamento."
-                },
-                {
-                  "name": "Essência do Pânico",
-                  "key": "essence-of-panic",
-                  "type": "neutral",
-                  "effect": "Tomar qualquer dano concede 30 de Memory Haste a esta Memory e aumenta sua velocidade de movimento em 20% por 3s.",
-                  "rarity": "rare",
-                  "icon": "Essencias/Raro/Gem_R_Panic.avif"
-                },
-                {
-                  "name": "Essência da Rigidez",
-                  "key": "essence-of-rigidity",
-                  "type": "neutral",
-                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s (+80% se causar dano de Frio).",
-                  "rarity": "rare",
-                  "icon": "Essencias/Raro/Gem_R_Rigidity.avif"
-                }
-              ]
-            },
-            {
-              "name": "Ensinando Modos",
-              "key": "teaching-manners",
-              "type": "ice",
-              "effect": "Cerre os punhos e arregace as mangas por 7 segundos. Durante esse tempo, você não pode conjurar outras Memories, mas sua Velocidade de Ataque aumenta em 26% e sua Armadura em 18, seu Ataque Básico é substituído por um ataque corpo a corpo, e seu Ataque causa 170% (+8% por Bônus) de Dano. Reconjurar esta Memory durante a duração faz você avançar com um dash, empurrando inimigos para trás, causando 100% (+3% por Bônus) de dano de Frio, e concedendo um Escudo de 60% (+2% por Bônus) por inimigo atingido, que decai em 3 segundos. Esse dano e Escudo aumentam em 200% contra qualquer Chefe.",
-              "essences": [
-                {
-                  "name": "Essência da Presa",
-                  "key": "essence-of-fangs",
-                  "type": "physical",
-                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga desta Memory reduz 0,7s e lança 2 Presas em inimigos próximos, cada uma causando 60% de dano.",
-                  "rarity": "epic",
-                  "icon": "Essencias/Epico/Gem_E_Fangs.avif"
-                },
-                {
-                  "name": "Essência do Crisol",
-                  "key": "essence-of-the-crucible",
-                  "type": "neutral",
-                  "effect": "Aumenta a Chance de Crítico em 25%. Quando um Ataque Básico Crítico acerta, o próximo uso desta Memory causa 4% mais dano e cura 4% a mais, acumulando até 40%."
-                },
-                {
-                  "name": "Essência da Insaciabilidade",
-                  "key": "essence-of-voracity",
-                  "type": "heal",
-                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
-                  "rarity": "epic"
-                }
-              ]
-            },
-            {
-              "name": "Escudo de Gelo",
-              "key": "ice-shield",
-              "type": "ice",
-              "effect": "Envolve um aliado num escudo de gelo, dando um Escudo de 130% por 3s. Quando o Escudo se rompe, causa 160% de dano de Frio a inimigos próximos e recupera 60% de vida do aliado por inimigo atingido.",
-              "essences": [
-                {
-                  "name": "Essência do Reflexo",
-                  "key": "essence-of-reflex",
-                  "type": "ice",
-                  "effect": "Ao sofrer qualquer dano, libera frio em direção ao inimigo mais próximo, causando 100% (+4% por Bônus) de dano de Frio e o empurrando para trás, então aumenta sua Armadura em 40 por 1,5 segundos."
-                },
-                {
-                  "name": "Essência de Tremor Replicado",
-                  "key": "essence-of-aftershock",
-                  "type": "ice",
-                  "effect": "Ao conjurar, libera uma onda de choque atrasada que causa 200% de dano de Frio ao redor e atordoa por 0,5s. A cada inimigo atingido, ganha 4 de armadura (até 22). Contra chefes, ganha o máximo de armadura, que dura até você conjurar esta Memory de novo.",
-                  "rarity": "epic",
-                  "icon": "Essencias/Epico/Gem_E_Aftershock.avif"
-                },
-                {
-                  "name": "Essência do Vidro",
-                  "key": "essence-of-glass",
-                  "type": "heal",
-                  "effect": "Enquanto em Combate, ganhar um Escudo cura Vida igual a 12% do valor do Escudo obtido. A cura desta Memory aumenta 18% para cada Memory de Frio que você possui."
-                }
-              ]
-            },
-            {
-              "name": "Queimadura de Gelo",
-              "key": "frostbite",
-              "type": "ice",
-              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos: o primeiro causa 50% de dano de Frio adicional e concede um Escudo de 110% por 2s; o segundo causa 180% de dano de Frio adicional.",
-              "essences": [
-                {
-                  "name": "Essência do Ímpeto",
-                  "key": "essence-of-momentum",
-                  "type": "neutral",
-                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
-                  "rarity": "rare"
-                },
-                {
-                  "name": "Essência da Neve",
-                  "key": "essence-of-snow",
-                  "type": "ice",
-                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto o Escudo está ativo, lança periodicamente uma bola de neve num inimigo próximo, causando 80% de dano de Frio. Quanto maior o Escudo, mais rápido dispara.",
-                  "rarity": "rare",
-                  "icon": "Essencias/Raro/Gem_R_Snow.avif"
-                },
-                {
-                  "name": "Essência da Geada",
-                  "key": "essence-of-frost",
-                  "type": "ice",
-                  "effect": "Ao causar dano de Frio, esta Memory também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente (1 vez a cada 5s por inimigo). Cada vez que ativa, aumenta permanentemente sua vida máxima em 1.",
-                  "rarity": "rare",
-                  "icon": "Essencias/Raro/Gem_R_Frost.avif"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "id": "cetus-bonkertz-attackspeed-momentum",
           "name": "Attack Speed / Momentum Spam (por Bonkertz)",
           "tag": "meta",
-          "likes": 1,
-          "views": 345,
+          "likes": 9,
+          "views": 3069,
           "date": "2026-09-19",
           "notes": "Empilhe Velocidade de Ataque e invista em Ímpeto para spammar Abraço do Frio. No início de jogo, use Essência da Presa ou de Obsidiana em Queimadura de Gelo. Permafrost e Nevasca são opcionais. O build funciona sem nenhum desbloqueio deste Viajante. Depois de desbloquear Cetus totalmente, as Estrelas de Constelação recomendadas são: Destruição: Heavy Knuckle Sandwich, Hurricane. Vida: Regenerative Skin, Shielding Frost, Second Wind, Asclepius, Arcane Veins, Threat Detection. Imaginação: Monstrous Charm, Black Market, Efficient Extraction, Dismantle and Analyze, Primordial Chaos, Ordered Chaos, Bizarre Spoils, Trading Fates, Pickpocket. Flexível: Inescapable Past usado num nó de Destruição para caber mais Imaginações. Se jogar com Lucid Dreams, use praticamente todos, exceto Prudent Jellyfish e Grievous Wounds.",
           "memories": [
@@ -6050,6 +5915,638 @@
                   "key": "essence-of-the-crucible",
                   "type": "neutral",
                   "effect": "Aumenta a Chance de Crítico em 25%. Quando um Ataque Básico Crítico acerta, o próximo uso desta Memory causa 4% mais dano e cura 4% a mais, acumulando até 40%."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cetus-xeil-tank-anguillian",
+          "name": "Tanque de Vida e Escudo — Anguiliano Carregado e Abraço do Frio (por Xeil)",
+          "tag": "alternativa",
+          "likes": 3,
+          "views": 1498,
+          "date": "2026-09-21",
+          "notes": "Empilhe Fé Divina por completo junto com Abraço do Frio e então troque por Essência da Clemência. Evolua Abraço do Frio, Essência da Virtude, Anguiliano Carregado e Fé Divina quando o acúmulo estiver cheio. Rota de constelação — Vida: Colossal Sea Anguillian, Shielding Frost, Relentless Training, Arcane Veins, Adaptive Scales, Empowered Persistence, Steel Refinement, Threat Detection, mais Boundless Blessing of the Great Guide se tiver ouro ou Second Wind se morrer muito. A ideia é ir de Vida e Escudo para ficar super tanque; Heavy Knuckle Sandwich converte o Vida bônus em AP e AD. Destruição: Mana Flow, Heavy Knuckle Sandwich (e Inescapable Past, porque Vida e Imaginação ocupam os slots flexíveis). Imaginação (livre): Silver Tongue, Shape Negotiator, Monstrous Charm, Beginner's Luck (só com Déjà Vu), Dismantle and Analyze, Black Market. O autor compra essências com descontos da loja e rerrola lendárias no Destiny Pedestal para Essência do Arcano e Fé Divina. Abraço do Frio, Anguiliano Carregado e Essência da Virtude consomem muito Pó de Sonho — evoluí-los ajuda.",
+          "memories": [
+            {
+              "name": "Anguiliano Carregado",
+              "key": "charged-anguillian",
+              "type": "light",
+              "effect": "Aumenta o Poder de Habilidade em 8. Sempre que você sofre qualquer dano ou causa dano de Frio, ganha uma carga que dura 5 segundos, até 12 cargas. Cada carga aumenta em 5% o bônus de Poder de Habilidade do Anguiliano Carregado. Com o máximo de cargas, dispara um raio em 3 inimigos próximos a cada 1,5 segundo, causando 100% de dano de Luz.",
+              "essences": []
+            },
+            {
+              "name": "Déjà Vu inicial",
+              "key": null,
+              "type": "neutral",
+              "essences": [
+                {
+                  "name": "Essência da Virtude",
+                  "key": "essence-of-virtue",
+                  "type": "neutral",
+                  "effect": "O número de cargas desta Memory aumenta em 1. Cada 150% de qualidade adicional aumenta mais 1 carga.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Virtuousness.avif"
+                }
+              ]
+            },
+            {
+              "name": "Abraço do Frio",
+              "key": "embrace-the-chill",
+              "type": "ice",
+              "effect": "Cria uma Zona de Frio crescente na área alvo por 3 segundos. Aliados dentro da zona ganham um Escudo de 25% a cada 0,5 segundos, durando 3 segundos, enquanto inimigos sofrem 40% de dano de Frio. Ao final da duração, a Zona de Frio explode, causando 200% de dano de Frio aos inimigos e aplicando Atordoamento por 1,5 segundos.",
+              "essences": [
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Clemency.avif"
+                },
+                {
+                  "name": "Arcano Suprimido",
+                  "key": "suppressed-arcanum",
+                  "type": "light",
+                  "effect": "Ao conjurar, sacrifica 5% da sua Vida atual para criar uma Explosão Dourada. Inimigos atingidos sofrem 240% de dano de Luz e aliados recebem uma Barreira de 61% por 2,5 segundos. Se sua Vida estiver abaixo de 60%, a Barreira aumenta em 50%.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_SuppressedArcanum.avif"
+                },
+                {
+                  "name": "Essência da Virtude",
+                  "key": "essence-of-virtue",
+                  "type": "neutral",
+                  "effect": "O número de cargas desta Memory aumenta em 1. Cada 150% de qualidade adicional aumenta mais 1 carga.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Virtuousness.avif"
+                }
+              ]
+            },
+            {
+              "name": "Afastem-se!",
+              "key": "back-off",
+              "type": "ice",
+              "effect": "Cobre aliados próximos com gelo fino, concedendo um Escudo de 135% e 8 de Armadura por 2 segundos. Em você, o efeito aumenta em 50%. Segure a tecla de conjuração para canalizar poder no cajado e solte para golpear, causando 200% (+8% por Bônus) ~ 450% (+22% por Bônus) de dano de Frio conforme o tempo de carga, empurrando inimigos e aplicando Atordoamento por 1 segundo.",
+              "essences": [
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Frost.avif"
+                },
+                {
+                  "name": "Essência do Amor",
+                  "key": "essence-of-love",
+                  "type": "heal",
+                  "effect": "Quando esta Memory cura ou dá Escudo a um aliado, a velocidade de movimento e ataque dele aumentam 16% por 2s (metade em você mesma).",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Love.avif"
+                },
+                {
+                  "name": "Essência da Eficiência",
+                  "key": "essence-of-efficiency",
+                  "type": "neutral",
+                  "effect": "Esta Memory ganha 36 de Memory Haste, reduzindo o tempo de recarga em 26%.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Efficiency.avif"
+                }
+              ]
+            },
+            {
+              "name": "Congelamento Relâmpago",
+              "key": "flash-freeze",
+              "type": "ice",
+              "effect": "Libera energia de Frio à frente, causando 130% de dano de Frio aos inimigos e concedendo a você e aos aliados um Escudo de 90% por 3 segundos. Se o inimigo já estiver afetado por Frio, o dano aumenta em 100% e ele fica Enraizado por 1,5 segundo. As cargas são recarregadas todas de uma vez.",
+              "essences": [
+                {
+                  "name": "Essência da Leveza",
+                  "key": "essence-of-lightness",
+                  "type": "neutral",
+                  "effect": "Aumenta o Memory Haste desta Memory em 54, mas reduz seu Dano em 40%.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Fé Divina",
+                  "key": "divine-faith",
+                  "type": "light",
+                  "effect": "Cada vez que você mata um inimigo com esta Memory, ganha uma carga de Fé (até 75). Cada carga aumenta dano/cura e sua vida máxima.",
+                  "essences": [
+                    {
+                      "name": "Essência do Vento",
+                      "key": "essence-of-wind",
+                      "type": "neutral",
+                      "effect": "Conjurar esta Memory aumenta a velocidade de ataque em 33% por 5 segundos.",
+                      "rarity": "common",
+                      "icon": "Essencias/Comun/Gem_C_Wind.avif"
+                    }
+                  ],
+                  "icon": "Essencias/Lendario/Gem_L_DivineFaith.avif",
+                  "rarity": "legendary"
+                },
+                {
+                  "name": "Essência do Gigante",
+                  "key": "essence-of-the-giant",
+                  "type": "neutral",
+                  "effect": "Aumenta sua vida máxima em 260. O dano desta Memory aumenta 1% a cada 50 pontos de vida máxima.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Might.avif"
+                }
+              ],
+              "icon": "Memorias/Comun/St_C_FlashFreeze.avif"
+            },
+            {
+              "name": "Escudo de Gelo",
+              "key": "ice-shield",
+              "type": "ice",
+              "effect": "Envolve um aliado num escudo de gelo. Ao se romper, causa dano de Frio a inimigos próximos e cura o aliado.",
+              "essences": [
+                {
+                  "name": "Núcleo Glacial",
+                  "key": "glacial-core",
+                  "type": "ice",
+                  "effect": "A cada 5s, causar dano com esta Memory recupera 3,6% da sua vida máxima (100% a mais se for dano de Frio). 272% de toda vida recuperada vira dano de Frio, disparando estilhaços de gelo em inimigos próximos.",
+                  "icon": "Essencias/Unico/Gem_U_GlacialCore.avif",
+                  "rarity": "unique"
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s (+80% se causar dano de Frio).",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Rigidity.avif"
+                },
+                {
+                  "name": "Essência do Reflexo",
+                  "key": "essence-of-reflex",
+                  "type": "ice",
+                  "effect": "Ao sofrer qualquer dano, libera frio em direção ao inimigo mais próximo, causando 100% (+4% por Bônus) de dano de Frio e o empurrando para trás, então aumenta sua Armadura em 40 por 1,5 segundos.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Reflex.avif"
+                }
+              ],
+              "icon": "Memorias/Comun/St_C_IceBlock.avif"
+            }
+          ]
+        },
+        {
+          "id": "cetus-lee-magri-icy-veins",
+          "name": "Frostbite Combo — Ice Shield e Teaching Manners (por lee magri)",
+          "tag": "3ª mais vista",
+          "likes": 2,
+          "views": 1281,
+          "date": "2026-09-18",
+          "memories": [
+            {
+              "name": "Veias de Gelo",
+              "key": "icy-veins",
+              "type": "ice",
+              "effect": "Sempre que Cetus causa dano de Frio, ganha uma carga de Sangue Frio, até o máximo de 5. Seu próximo ataque consome todas as cargas de Sangue Frio para disparar uma explosão de gelo, causando 30% de dano de Frio por carga aos inimigos, e Cetus ganha um Escudo de 9% que decai em 3 segundos.",
+              "essences": []
+            },
+            {
+              "name": "Abraço do Frio",
+              "key": "embrace-the-chill",
+              "type": "ice",
+              "effect": "Cria uma Zona de Frio crescente na área alvo por 3 segundos. Aliados dentro da zona ganham um Escudo de 25% a cada 0,5 segundos, durando 3 segundos, enquanto inimigos sofrem 40% de dano de Frio. Ao final da duração, a Zona de Frio explode, causando 200% de dano de Frio aos inimigos e aplicando Atordoamento por 1,5 segundos.",
+              "essences": [
+                {
+                  "name": "Essência da Desolação",
+                  "key": "essence-of-bleakness",
+                  "type": "ice",
+                  "effect": "Esta Memory causa 50% de dano a mais a inimigos afetados por Frio, lentidão, enraizamento ou atordoamento."
+                },
+                {
+                  "name": "Essência do Pânico",
+                  "key": "essence-of-panic",
+                  "type": "neutral",
+                  "effect": "Tomar qualquer dano concede 30 de Memory Haste a esta Memory e aumenta sua velocidade de movimento em 20% por 3s.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Panic.avif"
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s (+80% se causar dano de Frio).",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Rigidity.avif"
+                }
+              ]
+            },
+            {
+              "name": "Ensinando Modos",
+              "key": "teaching-manners",
+              "type": "ice",
+              "effect": "Cerre os punhos e arregace as mangas por 7 segundos. Durante esse tempo, você não pode conjurar outras Memories, mas sua Velocidade de Ataque aumenta em 26% e sua Armadura em 18, seu Ataque Básico é substituído por um ataque corpo a corpo, e seu Ataque causa 170% (+8% por Bônus) de Dano. Reconjurar esta Memory durante a duração faz você avançar com um dash, empurrando inimigos para trás, causando 100% (+3% por Bônus) de dano de Frio, e concedendo um Escudo de 60% (+2% por Bônus) por inimigo atingido, que decai em 3 segundos. Esse dano e Escudo aumentam em 200% contra qualquer Chefe.",
+              "essences": [
+                {
+                  "name": "Essência da Presa",
+                  "key": "essence-of-fangs",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga desta Memory reduz 0,7s e lança 2 Presas em inimigos próximos, cada uma causando 60% de dano.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Fangs.avif"
+                },
+                {
+                  "name": "Essência do Crisol",
+                  "key": "essence-of-the-crucible",
+                  "type": "neutral",
+                  "effect": "Aumenta a Chance de Crítico em 25%. Quando um Ataque Básico Crítico acerta, o próximo uso desta Memory causa 4% mais dano e cura 4% a mais, acumulando até 40%."
+                },
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Escudo de Gelo",
+              "key": "ice-shield",
+              "type": "ice",
+              "effect": "Envolve um aliado num escudo de gelo, dando um Escudo de 130% por 3s. Quando o Escudo se rompe, causa 160% de dano de Frio a inimigos próximos e recupera 60% de vida do aliado por inimigo atingido.",
+              "essences": [
+                {
+                  "name": "Essência do Reflexo",
+                  "key": "essence-of-reflex",
+                  "type": "ice",
+                  "effect": "Ao sofrer qualquer dano, libera frio em direção ao inimigo mais próximo, causando 100% (+4% por Bônus) de dano de Frio e o empurrando para trás, então aumenta sua Armadura em 40 por 1,5 segundos."
+                },
+                {
+                  "name": "Essência de Tremor Replicado",
+                  "key": "essence-of-aftershock",
+                  "type": "ice",
+                  "effect": "Ao conjurar, libera uma onda de choque atrasada que causa 200% de dano de Frio ao redor e atordoa por 0,5s. A cada inimigo atingido, ganha 4 de armadura (até 22). Contra chefes, ganha o máximo de armadura, que dura até você conjurar esta Memory de novo.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Aftershock.avif"
+                },
+                {
+                  "name": "Essência do Vidro",
+                  "key": "essence-of-glass",
+                  "type": "heal",
+                  "effect": "Enquanto em Combate, ganhar um Escudo cura Vida igual a 12% do valor do Escudo obtido. A cura desta Memory aumenta 18% para cada Memory de Frio que você possui."
+                }
+              ]
+            },
+            {
+              "name": "Queimadura de Gelo",
+              "key": "frostbite",
+              "type": "ice",
+              "effect": "Seus próximos 2 ataques ficam mais rápidos e fortalecidos: o primeiro causa 50% de dano de Frio adicional e concede um Escudo de 110% por 2s; o segundo causa 180% de dano de Frio adicional.",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Neve",
+                  "key": "essence-of-snow",
+                  "type": "ice",
+                  "effect": "Ganha um Escudo de 40 que recarrega se você evitar dano por 5s. Enquanto o Escudo está ativo, lança periodicamente uma bola de neve num inimigo próximo, causando 80% de dano de Frio. Quanto maior o Escudo, mais rápido dispara.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Snow.avif"
+                },
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, esta Memory também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente (1 vez a cada 5s por inimigo). Cada vez que ativa, aumenta permanentemente sua vida máxima em 1.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Frost.avif"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cetus-shiro-ice-shield-guidance",
+          "name": "Escudo Glacial — Veias de Gelo e Pisada Glacial (por シロShiro)",
+          "tag": "4ª mais vista",
+          "likes": 1,
+          "views": 630,
+          "date": "2026-09-20",
+          "notes": "Busque um quarto slot de essência em Abraço do Frio e coloque Essência da Orientação nele para MUITO escudo extra. Se não conseguir, use Essência do Gigante ou Essência da Desolação. Escudo de Gelo com as três essências ajuda a sobreviver nas fases de invulnerabilidade se você tem dificuldade em desviar. O autor evolui Abraço do Frio até a recarga ficar abaixo de 3s e depois investe alguns níveis na passiva pelo dano extra de ataque básico; também vale evoluir só o Abraço do Frio, já que os inimigos se movem muito e trocá-lo é comum.",
+          "memories": [
+            {
+              "name": "Veias de Gelo",
+              "key": "icy-veins",
+              "type": "ice",
+              "effect": "Sempre que Cetus causa dano de Frio, ganha uma carga de Sangue Frio, até o máximo de 5. Seu próximo ataque consome todas as cargas de Sangue Frio para disparar uma explosão de gelo, causando 30% de dano de Frio por carga aos inimigos, e Cetus ganha um Escudo de 9% que decai em 3 segundos.",
+              "essences": []
+            },
+            {
+              "name": "Déjà Vu inicial",
+              "key": null,
+              "type": "neutral",
+              "essences": [
+                {
+                  "name": "Núcleo Glacial",
+                  "key": "glacial-core",
+                  "type": "ice",
+                  "effect": "A cada 5s, causar dano com esta Memory recupera 3,6% da sua vida máxima (100% a mais se for dano de Frio). 272% de toda vida recuperada vira dano de Frio, disparando estilhaços de gelo em inimigos próximos.",
+                  "icon": "Essencias/Unico/Gem_U_GlacialCore.avif",
+                  "rarity": "unique"
+                }
+              ]
+            },
+            {
+              "name": "Abraço do Frio",
+              "key": "embrace-the-chill",
+              "type": "ice",
+              "effect": "Cria uma Zona de Frio crescente na área alvo por 3 segundos. Aliados dentro da zona ganham um Escudo de 25% a cada 0,5 segundos, durando 3 segundos, enquanto inimigos sofrem 40% de dano de Frio. Ao final da duração, a Zona de Frio explode, causando 200% de dano de Frio aos inimigos e aplicando Atordoamento por 1,5 segundos.",
+              "essences": [
+                {
+                  "name": "Essência da Geada",
+                  "key": "essence-of-frost",
+                  "type": "ice",
+                  "effect": "Ao causar dano de Frio, também causa dano de Frio igual a 10% da sua vida máxima e atordoa brevemente.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Frost.avif"
+                },
+                {
+                  "name": "Núcleo Glacial",
+                  "key": "glacial-core",
+                  "type": "ice",
+                  "effect": "A cada 5s, causar dano com esta Memory recupera 3,6% da sua vida máxima (100% a mais se for dano de Frio). 272% de toda vida recuperada vira dano de Frio, disparando estilhaços de gelo em inimigos próximos.",
+                  "icon": "Essencias/Unico/Gem_U_GlacialCore.avif",
+                  "rarity": "unique"
+                },
+                {
+                  "name": "Essência da Clemência",
+                  "key": "essence-of-clemency",
+                  "type": "heal",
+                  "effect": "Recupera sua vida em 4% do dano causado por esta Memory.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Clemency.avif"
+                }
+              ]
+            },
+            {
+              "name": "Afastem-se!",
+              "key": "back-off",
+              "type": "ice",
+              "effect": "Cobre aliados próximos com gelo fino, concedendo um Escudo de 135% e 8 de Armadura por 2 segundos. Em você, o efeito aumenta em 50%. Segure a tecla de conjuração para canalizar poder no cajado e solte para golpear, causando 200% (+8% por Bônus) ~ 450% (+22% por Bônus) de dano de Frio conforme o tempo de carga, empurrando inimigos e aplicando Atordoamento por 1 segundo.",
+              "essences": [
+                {
+                  "name": "Essência de Tremor Replicado",
+                  "key": "essence-of-aftershock",
+                  "type": "ice",
+                  "effect": "Ao conjurar, libera uma onda de choque atrasada que causa 200% de dano de Frio ao redor e atordoa por 0,5s. A cada inimigo atingido, ganha 4 de armadura (até 22). Contra chefes, ganha o máximo de armadura, que dura até você conjurar esta Memory de novo.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Aftershock.avif"
+                },
+                {
+                  "name": "Essência da Desolação",
+                  "key": "essence-of-bleakness",
+                  "type": "ice",
+                  "effect": "Esta Memory causa 50% de dano a mais a inimigos afetados por Frio, lentidão, enraizamento ou atordoamento.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Bleak.avif"
+                },
+                {
+                  "name": "Essência do Reflexo",
+                  "key": "essence-of-reflex",
+                  "type": "ice",
+                  "effect": "Ao sofrer qualquer dano, libera frio em direção ao inimigo mais próximo, causando 100% (+4% por Bônus) de dano de Frio e o empurrando para trás, então aumenta sua Armadura em 40 por 1,5 segundos.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Reflex.avif"
+                }
+              ]
+            },
+            {
+              "name": "Escudo de Gelo",
+              "key": "ice-shield",
+              "type": "ice",
+              "effect": "Envolve um aliado num escudo de gelo. Ao se romper, causa dano de Frio a inimigos próximos e cura o aliado.",
+              "essences": [
+                {
+                  "name": "Essência da Paranoia",
+                  "key": "essence-of-paranoia",
+                  "type": "dark",
+                  "effect": "Ao tomar qualquer dano, esta Memory ganha 150 de Memory Haste por 6s, mas é conjurada automaticamente em inimigos próximos.",
+                  "rarity": "legendary",
+                  "icon": "Essencias/Lendario/Gem_L_Paranoia.avif"
+                },
+                {
+                  "name": "Essência do Vidro",
+                  "key": "essence-of-glass",
+                  "type": "heal",
+                  "effect": "Enquanto em Combate, ganhar um Escudo cura Vida igual a 12% do valor do Escudo obtido. A cura desta Memory aumenta 18% para cada Memory de Frio que você possui.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Glass.avif"
+                },
+                {
+                  "name": "Essência da Rigidez",
+                  "key": "essence-of-rigidity",
+                  "type": "neutral",
+                  "effect": "Ao acertar um inimigo, esta Memory concede um Escudo de 9 por 2s (+80% se causar dano de Frio).",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Rigidity.avif"
+                }
+              ],
+              "icon": "Memorias/Comun/St_C_IceBlock.avif"
+            },
+            {
+              "name": "Pisada Glacial",
+              "key": "glacial-stomp",
+              "type": "ice",
+              "effect": "Pisa no chão ao redor, atordoando inimigos por 1,5 segundo e causando 210% (+8% por Bônus) de dano de Frio. Ganha uma Barreira por 3 segundos que absorve 40% (+2% por Bônus) de dano por inimigo atingido.",
+              "essences": [
+                {
+                  "name": "Essência da Confiança",
+                  "key": "essence-of-confidence",
+                  "type": "physical",
+                  "effect": "O dano desta Memory a inimigos próximos aumenta 40%.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Confidence.avif"
+                },
+                {
+                  "name": "Essência do Congelamento",
+                  "key": "essence-of-freezing",
+                  "type": "ice",
+                  "effect": "Ao conjurar esta Memory, libera uma explosão de frio que causa 160% de dano de Frio aos inimigos. A área aumenta com a qualidade.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Glaciate.avif"
+                },
+                {
+                  "name": "Essência da Flexibilidade",
+                  "key": "essence-of-flexibility",
+                  "type": "neutral",
+                  "effect": "Enquanto esta Memory está em tempo de recarga, 37% do dano recebido é dividido ao longo de 4s, com redução de 20%.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Flexibility.avif"
+                }
+              ],
+              "icon": "Memorias/Comun/St_C_GlacialStomp.avif"
+            }
+          ]
+        },
+        {
+          "id": "cetus-swadzopa-crit-dragon",
+          "name": "Crítico e Dragãozinho de Fogo — Anguiliano Carregado (por SwadZopa)",
+          "tag": "5ª mais vista",
+          "likes": 1,
+          "views": 538,
+          "date": "2026-09-26",
+          "notes": "Esqueça o risco e vá com tudo. Os itens são raros e difíceis de achar, então use alternativas: no lugar de Pequeno Núcleo Derretido dá para usar Imolação. Nas essências, procure o que combina com o objetivo da build (por exemplo, Essência do Vento). O mais importante é conjurar as Memories antes de usar a ultimate.",
+          "memories": [
+            {
+              "name": "Anguiliano Carregado",
+              "key": "charged-anguillian",
+              "type": "light",
+              "effect": "Aumenta o Poder de Habilidade em 8. Sempre que você sofre qualquer dano ou causa dano de Frio, ganha uma carga que dura 5 segundos, até 12 cargas. Cada carga aumenta em 5% o bônus de Poder de Habilidade do Anguiliano Carregado. Com o máximo de cargas, dispara um raio em 3 inimigos próximos a cada 1,5 segundo, causando 100% de dano de Luz.",
+              "essences": []
+            },
+            {
+              "name": "Déjà Vu inicial",
+              "key": null,
+              "type": "neutral",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                }
+              ]
+            },
+            {
+              "name": "Abraço do Frio",
+              "key": "embrace-the-chill",
+              "type": "ice",
+              "effect": "Cria uma Zona de Frio crescente na área alvo por 3 segundos. Aliados dentro da zona ganham um Escudo de 25% a cada 0,5 segundos, durando 3 segundos, enquanto inimigos sofrem 40% de dano de Frio. Ao final da duração, a Zona de Frio explode, causando 200% de dano de Frio aos inimigos e aplicando Atordoamento por 1,5 segundos.",
+              "essences": [
+                {
+                  "name": "Essência da Dominação",
+                  "key": "essence-of-domination",
+                  "type": "neutral",
+                  "effect": "Aumenta a Chance de Crítico em 20%. Cada vez que você acerta um crítico em um inimigo, seu Dano Crítico aumenta em 0,3%, acumulando até 20%.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Domination.avif"
+                },
+                {
+                  "name": "Essência do Choque",
+                  "key": "essence-of-shock",
+                  "type": "light",
+                  "effect": "A cada 4º ataque básico fica fortalecido, soltando um raio que salta entre inimigos, causando 40% de dano de Luz até 2 vezes. A cada 20% de chance de crítico, o número de saltos aumenta em 1.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Shock.avif"
+                },
+                {
+                  "name": "Essência de Carmesim",
+                  "key": "essence-of-crimson",
+                  "type": "physical",
+                  "effect": "A cada 4º ataque básico fica fortalecido, causando uma Explosão Carmesim de 100% de dano das Trevas. O raio escala com a chance de crítico. Recupera 22% de vida por inimigo atingido (dobrado contra chefes).",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Crimson.avif"
+                }
+              ]
+            },
+            {
+              "name": "Pequeno Núcleo Derretido",
+              "key": "small-molten-core",
+              "type": "fire",
+              "effect": "Por 4 segundos, o Ataque Básico do Dragãozinho de Fogo causa Dano em Área e seu Dano aumenta em 100%. Passiva: invoca um Dragãozinho de Fogo que segue o Traveler. Ele tem 229 de Vida e 100 de Armadura; a cada ataque do Traveler, causa 40% de dano de Fogo ao alvo e restaura 5% da própria Vida máxima.",
+              "essences": [
+                {
+                  "name": "Essência do Carvão",
+                  "key": "essence-of-charcoal",
+                  "type": "fire",
+                  "effect": "Ao acertar um inimigo, dispara um estilhaço de carvão causando 60% de dano (100% de Fogo se o alvo já estiver queimando).",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Charcoal.avif"
+                },
+                {
+                  "name": "Essência da Febre",
+                  "key": "essence-of-fever",
+                  "type": "fire",
+                  "effect": "Ao causar dano de Fogo, infecta o alvo com Febre. Inimigos infectados explodem após 2s, causando 130% de dano de Fogo em área. Cada stack de Fogo aumenta o raio e o dano da explosão.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Fever.avif"
+                },
+                {
+                  "name": "Essência da Ferida",
+                  "key": "essence-of-the-wound",
+                  "type": "dark",
+                  "effect": "Ao causar dano, aplica uma Marca. Cada ataque num alvo Marcado causa 44% de dano a mais. Após 3 ataques, a Marca explode causando 275% de dano em área.",
+                  "icon": "Essencias/Raro/Gem_R_Wound.avif",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Fio Umbral",
+              "key": "umbral-edge",
+              "type": "dark",
+              "essences": [
+                {
+                  "name": "Essência do Crisol",
+                  "key": "essence-of-the-crucible",
+                  "type": "neutral",
+                  "effect": "Aumenta a Chance de Crítico em 25%. Quando um Ataque Básico Crítico acerta, o próximo uso desta Memory causa 4% mais dano e cura 4% a mais, acumulando até 40%.",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "Essência da Presa",
+                  "key": "essence-of-fangs",
+                  "type": "physical",
+                  "note": "core",
+                  "effect": "A cada 4º ataque básico é um crítico. Ao acertar um crítico, o tempo de recarga desta Memory reduz 0,7s e lança 2 Presas em inimigos próximos, cada uma causando 60% de dano.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Fangs.avif"
+                },
+                {
+                  "name": "Essência da Umbra",
+                  "key": "essence-of-umbra",
+                  "type": "dark",
+                  "effect": "O dano desta Memory aumenta com 42% da sua chance de crítico. Se for dano das Trevas, recupera 6% do dano causado como vida.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Epico/Gem_E_Umbra.avif"
+                }
+              ],
+              "effect": "Por 7s, imbui sua arma com o poder das Trevas, aumentando a chance de crítico em 20% e causando 52% de dano das Trevas adicional ao atacar. Corpo a corpo causa 25% a mais desse adicional.",
+              "icon": "Memorias/Epico/St_E_UmbralEdge.avif"
+            },
+            {
+              "name": "Ensinando Modos",
+              "key": "teaching-manners",
+              "type": "ice",
+              "effect": "Cerre os punhos e arregace as mangas por 7 segundos. Durante esse tempo, você não pode conjurar outras Memories, mas sua Velocidade de Ataque aumenta em 26% e sua Armadura em 18, seu Ataque Básico é substituído por um ataque corpo a corpo, e seu Ataque causa 170% (+8% por Bônus) de Dano. Reconjurar esta Memory durante a duração faz você avançar com um dash, empurrando inimigos para trás, causando 100% (+3% por Bônus) de dano de Frio, e concedendo um Escudo de 60% (+2% por Bônus) por inimigo atingido, que decai em 3 segundos. Esse dano e Escudo aumentam em 200% contra qualquer Chefe.",
+              "essences": [
+                {
+                  "name": "Essência do Ímpeto",
+                  "key": "essence-of-momentum",
+                  "type": "neutral",
+                  "effect": "Cada vez que você ataca um inimigo, o tempo de recarga desta Memory é reduzido em 0,4 segundos.",
+                  "rarity": "rare",
+                  "icon": "Essencias/Raro/Gem_R_Momentum.avif"
+                },
+                {
+                  "name": "Essência da Confiança",
+                  "key": "essence-of-confidence",
+                  "type": "physical",
+                  "effect": "O dano desta Memory a inimigos próximos aumenta 40%.",
+                  "rarity": "common",
+                  "icon": "Essencias/Comun/Gem_C_Confidence.avif"
+                },
+                {
+                  "name": "Essência da Insaciabilidade",
+                  "key": "essence-of-voracity",
+                  "type": "heal",
+                  "effect": "Por 5s após conjurar esta Memory, o dano de ataque aumenta 15% e você recupera 6 de vida por ataque.",
+                  "rarity": "epic",
+                  "icon": "Essencias/Raro/Gem_R_Insatiable.avif"
                 }
               ]
             }
