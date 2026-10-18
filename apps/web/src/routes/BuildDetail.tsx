@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { fetchGame, fetchGamesIndex } from "../data/games";
 import type { AnyBuild, ShapeBuild, ShapeTraveler } from "../../../../packages/data-schema/types";
 import { isShapeGame } from "../../../../packages/data-schema/types";
@@ -16,6 +16,7 @@ export default function BuildDetail() {
   const travelerParam = params.get("traveler");
   const [build, setBuild] = useState<AnyBuild | null>(null);
   const [shapeData, setShapeData] = useState<{ traveler: ShapeTraveler; build: ShapeBuild } | null>(null);
+  const [gameName, setGameName] = useState("");
   const [error, setError] = useState<string | null>(null);
   const { overrides, updateOverride } = useShapeOverrides();
   const { gameMode, setGameMode } = useGameMode();
@@ -32,6 +33,7 @@ export default function BuildDetail() {
         return fetchGame(entry.file, gameId);
       })
       .then((game) => {
+        setGameName(String((game as { name?: unknown }).name ?? ""));
         if (isShapeGame(game)) {
           const traveler =
             game.travelers.find((t) => t.id === travelerParam) ??
@@ -57,9 +59,20 @@ export default function BuildDetail() {
       <ShapeBuildView traveler={shapeData.traveler} build={shapeData.build} overrides={overrides} updateOverride={updateOverride} />
     );
 
+    const sorted = [...(shapeData.traveler.builds ?? [])].sort((a, b) => (b.likes ?? 0) - (a.likes ?? 0));
+    const idx = sorted.findIndex((b) => b.id === shapeData.build.id);
+    const prev = idx > 0 ? sorted[idx - 1] : null;
+    const next = idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : null;
+    const backTo = `/jogos/${gameId}?traveler=${shapeData.traveler.id}`;
+    const buildLink = (id: string) => `/jogos/${gameId}/builds/${id}?traveler=${shapeData.traveler.id}`;
+
     return (
       <div style={{ padding: 24, maxWidth: 800, margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "flex-end", gap: 8, marginBottom: 8, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 8, flexWrap: "wrap" }}>
+          <Link to={backTo} className="pill" style={{ textDecoration: "none" }}>
+            ← {shapeData.traveler.name}
+          </Link>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           <button
             className="pill"
             style={{
@@ -87,6 +100,7 @@ export default function BuildDetail() {
             </button>
           ) : null}
         </div>
+        </div>
 
         {shapeData.build.tag ? <span className="pill">{shapeData.build.tag}</span> : null}
         <h2 style={{ margin: "8px 0 16px" }}>{title}</h2>
@@ -102,6 +116,13 @@ export default function BuildDetail() {
         ) : (
           buildContent
         )}
+
+        {prev || next ? (
+          <nav style={{ display: "flex", justifyContent: "space-between", gap: 8, marginTop: 24, flexWrap: "wrap" }}>
+            {prev ? <Link to={buildLink(prev.id)} className="pill" style={{ textDecoration: "none" }}>← {prev.name}</Link> : <span />}
+            {next ? <Link to={buildLink(next.id)} className="pill" style={{ textDecoration: "none" }}>{next.name} →</Link> : null}
+          </nav>
+        ) : null}
       </div>
     );
   }
@@ -110,6 +131,10 @@ export default function BuildDetail() {
 
   return (
     <div style={{ padding: 24, maxWidth: 800, margin: "0 auto" }}>
+      <Link to={`/jogos/${gameId}`} className="pill" style={{ textDecoration: "none", marginBottom: 12, display: "inline-block" }}>
+        ← {gameName || "Voltar"}
+      </Link>
+      <br />
       <span className="pill">{phase === "leveling" ? "Leveling" : "Endgame"}</span>
       <h2 style={{ margin: "8px 0 16px" }}>{build.name}</h2>
       <BuildView build={build} />
