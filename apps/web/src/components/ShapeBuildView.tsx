@@ -1,6 +1,8 @@
 import { useState } from "react";
 import type { ShapeBuild, ShapeEssence, ShapeMemory, ShapeTraveler } from "../../../../packages/data-schema/types";
-import { overrideKeyFor, withOverride, type OverridesStore } from "../lib/shapeOverrides";
+import { overrideKeyFor, withOverride, type OverridesStore, type SaveResult, type SaveStatus } from "../lib/shapeOverrides";
+import { useFieldCommit } from "../lib/useFieldCommit";
+import SaveBar from "./SaveBar";
 import { CATEGORY_LABEL, IconOrBadge } from "./ShapeVisuals";
 
 // Exibição de uma build no schema do Shape of Dreams (memories/essences/
@@ -108,6 +110,12 @@ function EssenceRow({
   const [obtained, setObtained] = useState(() => isObtained(buildId, obtainKey));
   const [name, setName] = useState(essence.name);
   const [effect, setEffect] = useState(essence.effect ?? "");
+  const nameCommit = useFieldCommit((v) => {
+    if (v.trim() && v !== essence.name) updateOverride("item", overrideKey, { name: v });
+  });
+  const effectCommit = useFieldCommit((v) => {
+    if (v !== (essence.effect ?? "")) updateOverride("item", overrideKey, { effect: v || undefined });
+  });
 
   function toggle() {
     setObtainedFlag(buildId, obtainKey, !obtained);
@@ -121,8 +129,11 @@ function EssenceRow({
         <div style={{ flex: 1, display: "grid", gap: 6 }}>
           <input
             value={name}
-            onChange={(e) => setName(e.target.value)}
-            onBlur={() => name.trim() && name !== essence.name && updateOverride("item", overrideKey, { name })}
+            onChange={(e) => {
+              setName(e.target.value);
+              nameCommit.schedule(e.target.value);
+            }}
+            onBlur={() => nameCommit.flush(name)}
             style={inputStyle}
           />
           <select
@@ -138,8 +149,11 @@ function EssenceRow({
           </select>
           <textarea
             value={effect}
-            onChange={(e) => setEffect(e.target.value)}
-            onBlur={() => effect !== (essence.effect ?? "") && updateOverride("item", overrideKey, { effect: effect || undefined })}
+            onChange={(e) => {
+              setEffect(e.target.value);
+              effectCommit.schedule(e.target.value);
+            }}
+            onBlur={() => effectCommit.flush(effect)}
             placeholder="Descrição / efeito..."
             style={{ ...inputStyle, minHeight: 44, fontFamily: "inherit" }}
           />
@@ -203,6 +217,12 @@ function MemoryCard({
   const [obtained, setObtained] = useState(() => isObtained(buildId, memKey));
   const [name, setName] = useState(memory.name);
   const [effect, setEffect] = useState(memory.effect ?? "");
+  const nameCommit = useFieldCommit((v) => {
+    if (v.trim() && v !== memory.name) updateOverride("skill", overrideKey, { name: v });
+  });
+  const effectCommit = useFieldCommit((v) => {
+    if (v !== (memory.effect ?? "")) updateOverride("skill", overrideKey, { effect: v || undefined });
+  });
 
   function toggle() {
     setObtainedFlag(buildId, memKey, !obtained);
@@ -216,15 +236,21 @@ function MemoryCard({
           <IconOrBadge iconKey={memory.key} kind="skill" value={memory.type} explicitPath={memory.icon} />
           <input
             value={name}
-            onChange={(e) => setName(e.target.value)}
-            onBlur={() => name.trim() && name !== memory.name && updateOverride("skill", overrideKey, { name })}
+            onChange={(e) => {
+              setName(e.target.value);
+              nameCommit.schedule(e.target.value);
+            }}
+            onBlur={() => nameCommit.flush(name)}
             style={{ ...inputStyle, flex: 1 }}
           />
         </div>
         <textarea
           value={effect}
-          onChange={(e) => setEffect(e.target.value)}
-          onBlur={() => effect !== (memory.effect ?? "") && updateOverride("skill", overrideKey, { effect: effect || undefined })}
+          onChange={(e) => {
+            setEffect(e.target.value);
+            effectCommit.schedule(e.target.value);
+          }}
+          onBlur={() => effectCommit.flush(effect)}
           placeholder="Descrição / efeito..."
           style={{ ...inputStyle, minHeight: 44, marginTop: 8, width: "100%", fontFamily: "inherit" }}
         />
@@ -300,6 +326,58 @@ function MemoryCard({
   );
 }
 
+function StarEditRow({
+  star,
+  starKey,
+  updateOverride,
+}: {
+  star: { key?: string; name: string; category?: string; effect?: string; icon?: string };
+  starKey: string;
+  updateOverride: UpdateOverride;
+}) {
+  const [name, setName] = useState(star.name);
+  const [effect, setEffect] = useState(star.effect ?? "");
+  const nameCommit = useFieldCommit((v) => {
+    if (v.trim() && v !== star.name) updateOverride("star", starKey, { name: v });
+  });
+  const effectCommit = useFieldCommit((v) => {
+    if (v !== (star.effect ?? "")) updateOverride("star", starKey, { effect: v || undefined });
+  });
+  return (
+    <li style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
+      <IconOrBadge iconKey={star.key} kind="star" value={star.category} explicitPath={star.icon} />
+      <div style={{ flex: 1, display: "grid", gap: 6 }}>
+        <input
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+            nameCommit.schedule(e.target.value);
+          }}
+          onBlur={() => nameCommit.flush(name)}
+          style={inputStyle}
+        />
+        <select value={star.category ?? ""} onChange={(e) => updateOverride("star", starKey, { category: e.target.value })} style={inputStyle}>
+          {CATEGORY_OPTIONS.map((c) => (
+            <option key={c} value={c}>
+              {CATEGORY_LABEL[c]}
+            </option>
+          ))}
+        </select>
+        <textarea
+          value={effect}
+          onChange={(e) => {
+            setEffect(e.target.value);
+            effectCommit.schedule(e.target.value);
+          }}
+          onBlur={() => effectCommit.flush(effect)}
+          placeholder="Descrição / efeito..."
+          style={{ ...inputStyle, minHeight: 40, fontFamily: "inherit" }}
+        />
+      </div>
+    </li>
+  );
+}
+
 function ConstellationSection({
   traveler,
   overrides,
@@ -335,35 +413,7 @@ function ConstellationSection({
             const s = withOverride(overrides, "star", rawS);
             const sKey = overrideKeyFor(s);
             if (editMode) {
-              return (
-                <li key={sKey || i} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
-                  <IconOrBadge iconKey={s.key} kind="star" value={s.category} explicitPath={s.icon} />
-                  <div style={{ flex: 1, display: "grid", gap: 6 }}>
-                    <input
-                      defaultValue={s.name}
-                      onBlur={(e) => e.target.value.trim() && e.target.value !== s.name && updateOverride("star", sKey, { name: e.target.value })}
-                      style={inputStyle}
-                    />
-                    <select
-                      value={s.category ?? ""}
-                      onChange={(e) => updateOverride("star", sKey, { category: e.target.value })}
-                      style={inputStyle}
-                    >
-                      {CATEGORY_OPTIONS.map((c) => (
-                        <option key={c} value={c}>
-                          {CATEGORY_LABEL[c]}
-                        </option>
-                      ))}
-                    </select>
-                    <textarea
-                      defaultValue={s.effect ?? ""}
-                      onBlur={(e) => e.target.value !== (s.effect ?? "") && updateOverride("star", sKey, { effect: e.target.value || undefined })}
-                      placeholder="Descrição / efeito..."
-                      style={{ ...inputStyle, minHeight: 40, fontFamily: "inherit" }}
-                    />
-                  </div>
-                </li>
-              );
+              return <StarEditRow key={sKey || i} star={s} starKey={sKey} updateOverride={updateOverride} />;
             }
             return (
               <li key={sKey || i} style={{ display: "flex", gap: 8, alignItems: "baseline", flexWrap: "wrap" }}>
@@ -394,11 +444,15 @@ export default function ShapeBuildView({
   build,
   overrides,
   updateOverride,
+  saveStatus,
+  saveNow,
 }: {
   traveler: ShapeTraveler;
   build: ShapeBuild;
   overrides: OverridesStore;
   updateOverride: UpdateOverride;
+  saveStatus: SaveStatus;
+  saveNow: () => Promise<SaveResult>;
 }) {
   const [editMode, setEditMode] = useState(false);
   const [resetCounter, setResetCounter] = useState(0);
@@ -503,6 +557,8 @@ export default function ShapeBuildView({
       )}
 
       <ConstellationSection traveler={traveler} overrides={overrides} editMode={editMode} updateOverride={updateOverride} />
+
+      {editMode ? <SaveBar status={saveStatus} onSave={saveNow} /> : null}
 
     </div>
   );
