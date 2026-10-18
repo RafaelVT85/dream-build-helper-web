@@ -18,7 +18,7 @@ export default function BuildDetail() {
   const [shapeData, setShapeData] = useState<{ traveler: ShapeTraveler; build: ShapeBuild } | null>(null);
   const [gameName, setGameName] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const { overrides, updateOverride } = useShapeOverrides();
+  const { overrides, updateOverride, saveStatus, saveNow } = useShapeOverrides();
   const { gameMode, setGameMode } = useGameMode();
   const { isSupported: pipSupported, pipWindow, openPiP, closePiP } = usePictureInPicture();
 
@@ -67,7 +67,7 @@ export default function BuildDetail() {
   if (shapeData) {
     const title = `${shapeData.traveler.name} — ${shapeData.build.name}`;
     const buildContent = (
-      <ShapeBuildView traveler={shapeData.traveler} build={shapeData.build} overrides={overrides} updateOverride={updateOverride} />
+      <ShapeBuildView traveler={shapeData.traveler} build={shapeData.build} overrides={overrides} updateOverride={updateOverride} saveStatus={saveStatus} saveNow={saveNow} />
     );
 
     const sorted = [...(shapeData.traveler.builds ?? [])].sort((a, b) => (b.likes ?? 0) - (a.likes ?? 0));
